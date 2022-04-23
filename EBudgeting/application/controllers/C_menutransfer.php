@@ -25,7 +25,7 @@ class C_menutransfer extends CI_Controller
         $this->form_validation->set_rules('nama_pengirim', 'Nama Pengirim', 'required');
         echo $this->form_validation->run();
         if ($this->form_validation->run()) {
-            // $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
             $this->M_menutransfer->save();
             redirect(site_url('C_menutransfer'));
 

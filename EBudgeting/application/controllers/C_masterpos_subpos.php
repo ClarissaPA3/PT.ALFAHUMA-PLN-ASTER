@@ -60,6 +60,7 @@ class C_masterpos_subpos extends CI_Controller
 	{
 		$this->form_validation->set_rules('nama', 'Nama Pos', 'required');
 		if ($this->form_validation->run() == FALSE) {
+			
 			$this->load->view('masterpos/addsubpos');
 		} else {
 
@@ -105,7 +106,7 @@ class C_masterpos_subpos extends CI_Controller
 	{
 		$this->form_validation->set_rules('nama', 'Nama Pos', 'required');
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('masterpos2/addpos');
+			$this->load->view('masterpos/addsubpos2');
 		} else {
 
 			$this->M_masterpos_subpos->addsubpos2M();
@@ -127,10 +128,10 @@ class C_masterpos_subpos extends CI_Controller
 			$data['sub_pos2'] = $this->M_masterpos_subpos->show_subpos2M($id)[0];
 
 
-			$this->load->view('masterpos2/updatepos', $data);
+			$this->load->view('masterpos/updatesubpos2', $data);
 		} else {
 
-			$this->M_masterpos_subpos->update_posM();
+			$this->M_masterpos_subpos->update_subpos2M();
 			redirect(site_url('C_masterpos_subpos/show_subpos2'));
 		}
 	}
