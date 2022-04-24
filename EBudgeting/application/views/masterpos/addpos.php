@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Pos</title>
     <?php 
-    $this->load->view('templatesub/header');
+    $this->load->view('dashboard/_part/header');
     ?>
 </head>
 <body>

@@ -48,8 +48,8 @@ class C_user extends CI_Controller
 	public function show_user()
 	{
 		$data['pegawai'] = $this->M_user->show_user();
-		$this->load->view('template/sidebar');
+		$this->load->view('dashboard/templatedmpau/sidebar');
 		$this->load->view('user/rekap_pegawai.php', $data);
-		$this->load->view('template/footer');
+		
 	}
 }

@@ -6,16 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master POS </title>
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>bower_components/bootstrap/dist/css/bootstrap.min.css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>bower_components/font-awesome/css/font-awesome.min.css" />
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>bower_components/Ionicons/css/ionicons.min.css" />
-    <!-- DataTables -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" />
-    <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo base_url('assets/') ?>dist/css/AdminLTE.min.css" />
+    <?php $this->load->view('dashboard/_part/head'); ?>
+    
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?php echo base_url('assets/') ?>dist/css/skins/_all-skins.min.css" />
@@ -32,14 +24,16 @@
 </head>
 
 <body>
+   
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
-                <a  href="<?php echo site_url('C_masterpos_subpos/add_pos'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah POS</a>
+                <a href="<?php echo site_url('C_masterpos_subpos/add_pos'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah POS</a>
 
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Hover Data Table</h3>
+                        
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -61,11 +55,12 @@
 
                                 ?>
                                     <tr>
+                                       
                                         <td><?php echo $id; ?></td>
                                         <td><?php echo $nama['nama_pos'] ?></td>
                                         <td><a href="<?php echo site_url('C_masterpos_subpos/update_pos/') . $nama['id_pos']; ?>" class="btn btn-block btn-primary">Edit</a></td>
                                         <td> <a href="<?php echo site_url('C_masterpos_subpos/delete_pos/') . $nama['id_pos']; ?>" class="btn btn-block btn-danger">Hapus</a></td>
-                                      
+
                                     </tr>
                                 <?php endforeach; ?>
 
@@ -86,7 +81,8 @@
         </div>
         <!-- /.row -->
     </section>
-
+    <?php $this->load->view('dashboard/_part/js'); ?>
+        
 
     <!-- jQuery 3 -->
     <script src="<?php echo base_url('assets/') ?>bower_components/jquery/dist/jquery.min.js"></script>

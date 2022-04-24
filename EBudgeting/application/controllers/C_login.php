@@ -79,17 +79,18 @@ class C_login extends CI_Controller
 
 		$id_jabatan = $this->session->userdata('id_jabatan');
 		if ($id_jabatan == "3") {
-			$this->load->view('dashboard/dashboard');
+			$this->load->view('dashboard/dashboard_dmpau',$data);
 		} elseif ($id_jabatan == "2") {
-			$this->load->view('templatesub/header', $data);
-			$this->load->view('templatesub/sidebar', $data);
+			
+			$this->load->view('dashboard/templatebidang/sidebar', $data);
 			$this->load->view('dashboard/dashboard_bidang.php', $data);
-			$this->load->view('templatesub/footer', $data);
+			
 		} elseif ($id_jabatan == "1") {
-			$this->load->view('templatesub/header', $data);
-			$this->load->view('templatesub/sidebar', $data);
+			
+			$this->load->view('dashboard/templatesub/sidebar', $data);
 			$this->load->view('dashboard/dashboard_subbidang.php', $data);
-			$this->load->view('templatesub/footer', $data);
+			
+			
 		} else {
 			redirect(base_url("C_login"));
 		}
