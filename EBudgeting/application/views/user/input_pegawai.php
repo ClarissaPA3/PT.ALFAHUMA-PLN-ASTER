@@ -270,25 +270,10 @@
                                     <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        Account - DMPAU/ Admin
                                     </p>
                                 </li>
-                                <!-- Menu Body -->
-                                <li class="user-body">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
-                                </li>
+
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
@@ -318,7 +303,7 @@
                         <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>Welcome DMPAU/ Admin</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -380,6 +365,13 @@
                     </li>
                     <li>
                         <a href="pages/widgets.html">
+                            <i class="fa fa-user"></i> <span>Add User</span>
+                            <span class="pull-right-container">
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/widgets.html">
                             <i class="fa fa-edit"></i> <span>Transfer</span>
                             <span class="pull-right-container">
                             </span>
@@ -388,19 +380,6 @@
                     <li>
                         <a href="pages/widgets.html">
                             <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
-                            <span class="pull-right-container">
-                            </span>
-                        </a>
-                    <li>
-                        <a href="pages/calendar.html">
-                            <i class="fa fa-calendar"></i> <span>Calendar</span>
-                            <span class="pull-right-container">
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/widgets.html">
-                            <i class="fa fa-sign-out"></i> <span>Logout</span>
                             <span class="pull-right-container">
                             </span>
                         </a>
@@ -425,8 +404,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Input Pegawai 
-                </h1>
+                <h1>Tambah Pegawai</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li class="active">Dashboard</li>
@@ -435,63 +413,63 @@
 
             <!-- Main content -->
             <div class="card card-primary">
-    <div class="card-header">
-        <h3 class="card-title">
-    </div>
-    <form action="<?php echo site_url('C_user/add_user');?>" method="post" enctype="multipart/form-data">
-        <div class="card-body">
-            <input type="hidden" name="id_jabatan" id="id_jabatan" value="1">
-
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Nama Pegawai</label>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" placeholder="" required>
+                <div class="card-header">
+                    <h3 class="card-title">
                 </div>
-            </div>
+                <form action="<?php echo site_url('C_user/add_user'); ?>" method="post" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <input type="hidden" name="id_jabatan" id="id_jabatan" value="1">
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Tanggal lahir</label>
-                <div class="col-sm-5">
-                    <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="" required>
-                </div>
-            </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Nama Pegawai</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" placeholder="" required>
+                            </div>
+                        </div>
 
-           <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Alamat</label>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder="" required>
-                </div>
-            </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tanggal lahir</label>
+                            <div class="col-sm-5">
+                                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="" required>
+                            </div>
+                        </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Divisi</label>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="divisi" name="divisi" placeholder="" required>
-                </div>
-            </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Alamat</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="" required>
+                            </div>
+                        </div>
 
-             <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Username</label>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="" required>
-                </div>
-            </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Divisi</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="divisi" name="divisi" placeholder="" required>
+                            </div>
+                        </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-5">
-                    <input type="text" class="form-control" id="password" name="password" placeholder="" required>
-                </div>
-            </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Username</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="" required>
+                            </div>
+                        </div>
 
-        </div>
-        <div class="card-footer">
-         
-            <button type="submit" class="btn btn-info">Simpan</button>
-            <a href="?page=data-pegawai" title="Kembali" class="btn btn-secondary">Batal</a>
-        </div>
-    </form>
-</div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Password</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" id="password" name="password" placeholder="" required>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+
+                        <button type="submit" class="btn btn-info">Simpan</button>
+                        <a href="?page=data-pegawai" title="Kembali" class="btn btn-secondary">Batal</a>
+                    </div>
+                </form>
+            </div>
 
             <!-- right col -->
         </div>
@@ -500,14 +478,7 @@
         </section>
         <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.0
-        </div>
-        <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
-        reserved.
-    </footer>
+
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

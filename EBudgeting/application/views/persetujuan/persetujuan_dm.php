@@ -367,15 +367,39 @@
             </section>
 
             <!-- Main content -->
-            <select name="bln">
-                <?php
-                $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
-                $jlh_bln = count($bulan);
-                for ($c = 0; $c < $jlh_bln; $c += 1) {
-                    echo "<option value=$bulan[$c]> $bulan[$c] </option>";
-                }
-                ?>
-            </select>
+            <div class="card mb-3">
+                <section class="content-header mb-5"></section>
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <td rowspan="2">No</td>
+                                    <td rowspan="2">Bulan</td>
+                                    <td rowspan="2">Minggu Ke</td>
+                                    <td rowspan="2">Tanggal Mulai</td>
+                                    <td rowspan="2">Tanggal Sampai</td>
+                                    <td rowspan="2">Item</td>
+                                    <td rowspan="2">Status</td>
+                                    <td rowspan="2">Catatan</td>
+                                </tr>
+                            </thead>
+                            <tbody class="table-striped"></tbody>
+
+                            <select name="bln">
+                                <?php
+                                $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+                                $jlh_bln = count($bulan);
+                                for ($c = 0; $c < $jlh_bln; $c += 1) {
+                                    echo "<option value=$bulan[$c]> $bulan[$c] </option>";
+                                }
+                                ?>
+                            </select>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
             <!-- /.content -->
         </div>

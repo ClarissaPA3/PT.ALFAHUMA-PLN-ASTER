@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>E-Budgeting | Master Pos</title>
+    <title>E-Budgeting | Menu Pagu Anggaran</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -405,7 +405,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <a href="<?php echo site_url('C_menutransfer/add'); ?>">
-                    <h4>Tambah Data</h4>
+                    <h4>Tambah Pagu Anggaran</h4>
                 </a>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -424,84 +424,14 @@
                             <thead>
                                 <tr>
                                     <td rowspan="2">No</td>
-                                    <td rowspan="2">Id Anggota</td>
-                                    <td rowspan="2">Nama Pengirim</td>
-                                    <td rowspan="2">Email</td>
-                                    <td rowspan="2">No Telp</td>
-                                    <td rowspan="2">No Rekening</td>
-                                    <td rowspan="2">Nama Bank</td>
-                                    <td rowspan="2">Tgl Kirim</td>
-                                    <td rowspan="2">Kategori</td>
-                                    <td rowspan="2">PPN</td>
-                                    <td rowspan="2">PPN 21</td>
-                                    <td rowspan="2">PPN 22</td>
-                                    <td rowspan="2">PPN 23</td>
-                                    <td rowspan="2">Denda</td>
-                                    <td rowspan="2">Administrasi Bank</td>
-                                    <td rowspan="2">Total Dibayar</td>
-                                    <td rowspan="2">Berita</td>
-                                    <td rowspan="2">Honor Asesmen</td>
-                                    <td rowspan="2">Honor Evaluator</td>
-                                    <td rowspan="2">Nilai Kontrak</td>
-                                    <td rowspan="2">Honor Tester</td>
-                                    <td rowspan="2">Honor Feedback</td>
-                                    <td rowspan="2">Pekerjaan</td>
-                                    <td rowspan="2">Honor Pewawancara</td>
-                                    <td rowspan="2">Honor Korektor Pauli</td>
-                                    <td rowspan="2">Lumpsum Transport Bandara</td>
-                                    <td rowspan="2">Lumpsum Komsumsi</td>
-                                    <td rowspan="2">Lumpsum Transpoet Lok</td>
-                                    <td rowspan="2">Waktu Kerja</td>
-                                    <td rowspan="2">Lumpsum Uang Cod</td>
+                                    <td rowspan="2">Alokasi Anggaran</td>
+                                    <td rowspan="2">Bulan</td>
                                     <td rowspan="2">Aksi</td>
                                 </tr>
                             </thead>
                             <tbody class="table-striped">
 
-                                <?php
-                                $id = 0;
-                                foreach ($transfer as $id_anggota) :
-                                    $id++;
 
-                                ?>
-                                    <tr>
-                                        <td><?php echo $id; ?></td>
-                                        <td><?php echo $id_anggota['id_anggota'] ?></td>
-                                        <td><?php echo $id_anggota['nama_pengirim'] ?></td>
-                                        <td><?php echo $id_anggota['email'] ?></td>
-                                        <td><?php echo $id_anggota['no_telp'] ?></td>
-                                        <td><?php echo $id_anggota['no_rekening'] ?></td>
-                                        <td><?php echo $id_anggota['nama_bank'] ?></td>
-                                        <td><?php echo $id_anggota['tgl_kirim'] ?></td>
-                                        <td><?php echo $id_anggota['kategori'] ?></td>
-                                        <td><?php echo $id_anggota['PPN'] ?></td>
-                                        <td><?php echo $id_anggota['PPH_21'] ?></td>
-                                        <td><?php echo $id_anggota['PPH_22'] ?></td>
-                                        <td><?php echo $id_anggota['PPH_23'] ?></td>
-                                        <td><?php echo $id_anggota['denda'] ?></td>
-                                        <td><?php echo $id_anggota['administrasi_bank'] ?></td>
-                                        <td><?php echo $id_anggota['total_dibayar'] ?></td>
-                                        <td><?php echo $id_anggota['berita'] ?></td>
-                                        <td><?php echo $id_anggota['honor_asesmen'] ?></td>
-                                        <td><?php echo $id_anggota['honor_evaluator'] ?></td>
-                                        <td><?php echo $id_anggota['nilai_kontrak'] ?></td>
-                                        <td><?php echo $id_anggota['honor_tester'] ?></td>
-                                        <td><?php echo $id_anggota['honor_feedback'] ?></td>
-                                        <td><?php echo $id_anggota['pekerjaan'] ?></td>
-                                        <td><?php echo $id_anggota['honor_pewawancara'] ?></td>
-                                        <td><?php echo $id_anggota['honor_korektor_pauli'] ?></td>
-                                        <td><?php echo $id_anggota['lumpsum_transport_bandara'] ?></td>
-                                        <td><?php echo $id_anggota['lumpsum_komsumsi'] ?></td>
-                                        <td><?php echo $id_anggota['lumpsum_transpoet_lok'] ?></td>
-                                        <td><?php echo $id_anggota['waktu_kerja'] ?></td>
-                                        <td><?php echo $id_anggota['lumpsum_uang_cod'] ?></td>
-                                        <td>
-
-                                            <a href="<?php echo site_url('C_menutransfer/edit/') . $id_anggota['id_transfer']; ?>">Edit</a>
-                                            <a href="<?php echo site_url('C_menutransfer/delete/') . $id_anggota['id_transfer']; ?>">Hapus</a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

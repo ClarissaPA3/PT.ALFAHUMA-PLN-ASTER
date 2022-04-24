@@ -376,6 +376,39 @@
             </section>
 
             <!-- Main content -->
+            <div class="card mb-3">
+                <section class="content-header mb-5"></section>
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <td rowspan="2">Pos</td>
+                                    <td rowspan="2">Sub Pos</td>
+                                    <td rowspan="2">Sub Pos Barang</td>
+                                    <td rowspan="2">Kegiatan</td>
+                                    <td rowspan="2">Nominal</td>
+                                    <td rowspan="2">Deskripsi</td>
+                                    <td rowspan="2">Disetujui</td>
+                                    <td rowspan="2">Aksi</td>
+                                </tr>
+                            </thead>
+                            <tbody class="table-striped"></tbody>
+
+                            <select name="bln">
+                                <?php
+                                $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+                                $jlh_bln = count($bulan);
+                                for ($c = 0; $c < $jlh_bln; $c += 1) {
+                                    echo "<option value=$bulan[$c]> $bulan[$c] </option>";
+                                }
+                                ?>
+                            </select>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
             <!-- /.content -->
         </div>
