@@ -405,7 +405,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <a href="<?php echo site_url('C_menutransfer/add'); ?>">
-                    <h4>Tambah Data</h4>
+                    <h4>Tambah Rekap Transfer</h4>
                 </a>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -481,7 +481,7 @@
                                         <td><?php echo $id_anggota['denda'] ?></td>
                                         <td><?php echo $id_anggota['administrasi_bank'] ?></td>
                                         <td><?php echo $id_anggota['total_dibayar'] ?></td>
-                                        <td><?php echo $id_anggota['berita'] ?></td>
+                                        <td><?php echo $id_anggota['berita'];?></td>
                                         <td><?php echo $id_anggota['honor_asesmen'] ?></td>
                                         <td><?php echo $id_anggota['honor_evaluator'] ?></td>
                                         <td><?php echo $id_anggota['nilai_kontrak'] ?></td>
