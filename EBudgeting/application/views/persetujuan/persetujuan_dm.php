@@ -3,7 +3,7 @@
 
 <head>
     <title>E-Budgeting | Dashboard</title>
-    <?php $this->load->view("templatebidang/head.php") ?>
+    <?php $this->load->view("dashboard/_part/head.php") ?>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
