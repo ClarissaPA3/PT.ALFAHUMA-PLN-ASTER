@@ -10,6 +10,7 @@ class C_menutransfer extends CI_Controller
         $this->load->model("M_menutransfer");
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
+        
     }
 
     public function index()
