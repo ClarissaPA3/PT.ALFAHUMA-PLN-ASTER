@@ -21,8 +21,9 @@ class C_rekap_jabatan extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('template/sidebar');
+		$this->load->view('dashboard/_part/head');
+        $this->load->view('dashboard/templatebidang/sidebar');
         $this->load->view('user/rekap_jabatan.php');
-        $this->load->view('template/footer');
+        $this->load->view('dashboard/_part/footer');
     }
 }
