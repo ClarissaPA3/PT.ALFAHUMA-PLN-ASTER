@@ -3,7 +3,7 @@
 
 <head>
   <title>E-Budgeting | Dashboard</title>
-  <?php $this->load->view('dashboard/_part/head');?>
+  <?php $this->load->view('dashboard/_part/head'); ?>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -25,70 +25,16 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-            <!-- Notifications: style can be found in dropdown.less -->
-            <li class="dropdown notifications-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">10</span>
-              </a>
-              <ul class="dropdown-menu">
-                <li class="header">You have 10 notifications</li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
-                  <ul class="menu">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                        page and may cause design problems
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-users text-red"></i> 5 new members joined
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-user text-red"></i> You changed your username
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="footer"><a href="#">View all</a></li>
-              </ul>
-            </li>
-            
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs">Alexander Pierce</span>
+                <span class="hidden-xs">DM/ Bidang</span>
               </a>
               <ul class="dropdown-menu">
-                <!-- User image -->
-                <li class="user-header">
-                  <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                  <p>
-                    Account - DM/ Bidang
-                  </p>
-                </li>
 
                 <!-- Menu Footer-->
                 <li class="user-footer">
-                  <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  </div>
                   <div class="pull-right">
                     <a href="logout_admin" class="btn btn-default btn-flat">Sign out</a>
                   </div>
@@ -96,9 +42,6 @@
               </ul>
             </li>
             <!-- Control Sidebar Toggle Button -->
-            <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -174,7 +117,7 @@
               <span class="pull-right-container">
               </span>
             </a>
-         
+
           </li>
       </section>
       <!-- /.sidebar -->
@@ -188,10 +131,6 @@
           Dashboard
           <small>DM/ Bidang</small>
         </h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li class="active">Dashboard</li>
-        </ol>
       </section>
 
       <!-- Main content -->
@@ -268,9 +207,8 @@
             <div class="nav-tabs-custom">
               <!-- Tabs within a box -->
               <ul class="nav nav-tabs pull-right">
-                <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                <li class="active"><a href="#revenue-chart" data-toggle="tab"></a></li>
+                <li class="pull-left header"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</li>
               </ul>
               <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->
@@ -285,93 +223,37 @@
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
           <section class="col-lg-5 connectedSortable">
 
-            <!-- Map box -->
-            <div class="box box-solid bg-light-blue-gradient">
+            <!-- Calendar -->
+            <div class="box box-solid bg-green-gradient">
               <div class="box-header">
+                <i class="fa fa-calendar"></i>
+
+                <h3 class="box-title">Calendar</h3>
                 <!-- tools box -->
                 <div class="pull-right box-tools">
-                  <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-                    <i class="fa fa-calendar"></i></button>
-                  <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                    <i class="fa fa-minus"></i></button>
+                  <!-- button with a dropdown -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-bars"></i></button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                      <li><a href="#">Add new event</a></li>
+                      <li><a href="#">Clear events</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">View calendar</a></li>
+                    </ul>
+                  </div>
+                  <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                  </button>
                 </div>
-                <!-- Calendar -->
-                <div class="box box-solid bg-green-gradient">
-                  <div class="box-header">
-                    <i class="fa fa-calendar"></i>
-
-                    <h3 class="box-title">Calendar</h3>
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                      <!-- button with a dropdown -->
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                          <i class="fa fa-bars"></i></button>
-                        <ul class="dropdown-menu pull-right" role="menu">
-                          <li><a href="#">Add new event</a></li>
-                          <li><a href="#">Clear events</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">View calendar</a></li>
-                        </ul>
-                      </div>
-                      <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                      </button>
-                    </div>
-                    <!-- /. tools -->
-                  </div>
-                  <!-- /.box-header -->
-                  <div class="box-body no-padding">
-                    <!--The calendar -->
-                    <div id="calendar" style="width: 100%"></div>
-                  </div>
-                  <!-- /.box-body -->
-                  <div class="box-footer text-black">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <!-- Progress bars -->
-                        <div class="clearfix">
-                          <span class="pull-left">Task #1</span>
-                          <small class="pull-right">90%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                        </div>
-
-                        <div class="clearfix">
-                          <span class="pull-left">Task #2</span>
-                          <small class="pull-right">70%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                        </div>
-                      </div>
-                      <!-- /.col -->
-                      <div class="col-sm-6">
-                        <div class="clearfix">
-                          <span class="pull-left">Task #3</span>
-                          <small class="pull-right">60%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                        </div>
-
-                        <div class="clearfix">
-                          <span class="pull-left">Task #4</span>
-                          <small class="pull-right">40%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                        </div>
-                      </div>
-                      <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                  </div>
-                </div>
-                <!-- /.box -->
-
+                <!-- /. tools -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <!--The calendar -->
+                <div id="calendar" style="width: 100%"></div>
+              </div>
           </section>
           <!-- right col -->
         </div>
@@ -380,24 +262,24 @@
       </section>
       <!-- /.content -->
     </div>
-     <!-- /.content-wrapper -->
-     <footer class="main-footer">
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
       <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
+        <b>Create by</b> Mahasiswa UNS 2020.
       </div>
       <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
       reserved.
     </footer>
 
-    
+
     <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
-  
 
-   <?php $this->load->view('dashboard/_part/js');?> 
+
+  <?php $this->load->view('dashboard/_part/js'); ?>
 </body>
 
 </html>
