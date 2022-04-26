@@ -85,13 +85,12 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-              <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+              <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
             </ul>
           </li>
           <li>
-            <a href="pages/widgets.html">
-              <i class="fa fa-check"></i> <span>Persetujuan DM</span>
+          <li><a href="<?php echo site_url("C_persetujuan_dm"); ?>"><i class="fa fa-check"></i> <span>Persetujuan DM</span>
               <span class="pull-right-container">
                 <span class="pull-right-container">
                 </span>
@@ -112,7 +111,7 @@
             </a>
           </li>
           <li>
-            <a href="pages/widgets.html">
+            <a href="<?php echo site_url(""); ?>">
               <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
               <span class="pull-right-container">
               </span>
@@ -208,7 +207,8 @@
               <!-- Tabs within a box -->
               <ul class="nav nav-tabs pull-right">
                 <li class="active"><a href="#revenue-chart" data-toggle="tab"></a></li>
-                <li class="pull-left header"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</li>
+
+                <h4 class="box-title"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</h4>
               </ul>
               <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->
