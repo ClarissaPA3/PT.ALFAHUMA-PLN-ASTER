@@ -2,27 +2,66 @@
 <html lang="en">
 
 <head>
-  <?php $this->load->view("view") ?>
+  <?php $this->load->view("dashboard/_part/head"); ?>
+ 
+
+  <!-- Google Font -->
+
+  <style>
+    .example-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
+
+    .example-modal .modal {
+      background: transparent !important;
+    }
+  </style>
 </head>
 
-<body id="page-top">
+<body>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box">
 
-  <?php $this->load->view("view") ?>
+        <div class="box-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <div id="wrapper">
 
-    <?php $this->load->view("view") ?>
+
 
     <div id="content-wrapper">
 
       <div class="container-fluid">
 
-        <?php $this->load->view("view") ?>
 
+        
         <!-- DataTables -->
         <div class="card mb-3">
           <div class="card-header">
-            <a href="<?php echo site_url('ajuan') ?>"><i class="fas fa-plus"></i> Pengajuan Anggaran</a>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
+
+
+
+              <i class="fa fa-fw fa-plus"></i> Pengajuan Anggaran
+
+            </button>
+            <a href="<?php echo site_url('C_ajuananggaran/add_datapengajuan') ?>"><i class="fas fa-plus"></i> Pengajuan Anggaran</a>
           </div>
+
+
           <div class="card-body">
 
             <div class="table-responsive">
@@ -31,19 +70,20 @@
                   <tr>
                     <th>ID Pengajuan</th>
                     <th>ID Anggota</th>
-                    <th>Catatan DM 2</th>
-                    <th>Total Pengajuan 2</th>
-                    <th>Minggu 2</th>
-                    <th>Bulan 2</th>
-                    <th>Catatan DMPAU 2</th>
-                    <th>Status 2</th>
-                    <th>Tanggal Mulai 2</th>
-                    <th>Tanggal Sampai 2</th>
-                    <th>Tanggal Pengajuan 2</th>
+                    <th>Catatan DM </th>
+                    <th>Total Pengajuan </th>
+                    <th>Minggu </th>
+                    <th>Bulan </th>
+                    <th>Catatan DMPAU </th>
+                    <th>Status </th>
+                    <th>Tanggal Mulai </th>
+                    <th>Tanggal Sampai </th>
+                    <th>Tanggal Pengajuan </th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php foreach ($pengajuan_anggaran as $pengajuan_anggaran) : ?>
+
                     <tr>
                       <td width="150">
                         <?php echo $pengajuan_anggaran->id_pengajuan ?>
@@ -70,7 +110,7 @@
                         <?php echo $pengajuan_anggaran->status2 ?>
                       </td>
                       <td>
-                        <?php echo $pengajuan_anggaran->tangal_mulai2 ?>
+                        <?php echo $pengajuan_anggaran->tanggal_mulai2 ?>
                       </td>
                       <td>
                         <?php echo $pengajuan_anggaran->tanggal_sampai2 ?>
@@ -80,8 +120,8 @@
                       </td>
                       <td class="small">
                       <td width="250">
-                        <a href="<?php echo site_url('admin/edit/' . $pengajuan_anggaran->id_pengajuan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                        <a onclick="deleteConfirm('<?php echo site_url('admin/delete/' . $pengajuan_anggaran->id_pengajuan) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                        <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit dan detail</a>
+                        <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -96,19 +136,57 @@
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
-      <?php $this->load->view("view") ?>
+
+
+
+
+
+
+
 
     </div>
     <!-- /.content-wrapper -->
 
   </div>
+  <div class="modal fade" id="modal-info">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Menambahkan Ajuan?</h4>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+          <form action="<?php echo site_url('C_ajuananggaran/add_datapengajuan');?>" method="post">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+
+          </form>
+          
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
   <!-- /#wrapper -->
 
 
-  <?php $this->load->view("view") ?>
-  <?php $this->load->view("view") ?>
+  <!-- jQuery 3 -->
+  <script src="<?php echo base_url('assets/') ?>bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="<?php echo base_url('assets/') ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="<?php echo base_url('assets/') ?>bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="<?php echo base_url('assets/') ?>dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="<?php echo base_url('assets/') ?>dist/js/demo.js"></script>
 
-  <?php $this->load->view("view") ?>
+
+
 
 </body>
 

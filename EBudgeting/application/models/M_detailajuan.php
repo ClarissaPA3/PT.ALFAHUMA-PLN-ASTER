@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('NO direct script acces allowed');
 
-class M_detailajuan extends 
+class M_detailajuan extends CI_Model
 
 {
     public function add_detailanggaranM()
