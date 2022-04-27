@@ -105,9 +105,9 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Pos</a></li>
-                            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
-                            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
+                            <li class="active"><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
+                            <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
+                            <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
                         </ul>
                     </li>
                     <li class=" active treeview">
@@ -118,12 +118,12 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-                            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+                            <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+                            <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="pages/widgets.html">
+                        <a href="<?php echo site_url("C_persetujuan_dm"); ?>">
                             <i class="fa fa-check"></i> <span>Persetujuan DM</span>
                             <span class="pull-right-container">
                                 <span class="pull-right-container">
@@ -138,14 +138,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="pages/widgets.html">
+                        <a href="<?php echo site_url("C_menutransfer"); ?>">
                             <i class="fa fa-edit"></i> <span>Transfer</span>
                             <span class="pull-right-container">
                             </span>
                         </a>
                     </li>
                     <li>
-                        <a href="pages/widgets.html">
+                        <a href="<?php echo site_url("C_paguanggaran"); ?>">
                             <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
                             <span class="pull-right-container">
                             </span>

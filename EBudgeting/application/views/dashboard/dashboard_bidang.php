@@ -111,7 +111,7 @@
             </a>
           </li>
           <li>
-            <a href="<?php echo site_url(""); ?>">
+            <a href="<?php echo site_url("C_paguanggaran"); ?>">
               <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
               <span class="pull-right-container">
               </span>
