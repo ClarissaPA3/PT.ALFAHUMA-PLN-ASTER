@@ -11,6 +11,7 @@ class C_ajuananggaran extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->model('M_masterpos_subpos');
 		$this->load->model('M_detailajuan');
+		
 
 	}
 

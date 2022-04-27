@@ -9,17 +9,19 @@ class C_detailajuan extends CI_Controller {
 		$this->load->model('M_detailajuan');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
+		$this->load->library('user_agent');
 	}
 
 	public function add_detailanggaran() 
 	{
 		$this->M_detailajuan->add_detailanggaranM();
-		
+		redirect($_SERVER['HTTP_REFERER']);
 
 	}
 	public function delete_detailanggaran($id)
 	{
 		$this->M_detailajuan->delete_detailanggaranM($id);
+		redirect($_SERVER['HTTP_REFERER']);
 		
 
 	}

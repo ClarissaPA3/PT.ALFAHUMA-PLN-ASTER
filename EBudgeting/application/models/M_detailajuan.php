@@ -63,4 +63,9 @@ class M_detailajuan extends CI_Model
         // $query = $this->db->get_where('detail_pengajuananggaran', array('id_pengajuan' => $id));
         return $query->result_array();
     }
+    // Penambahan Fungsi
+    public function hitunganggaran($id)
+    {
+
+    }
 }
