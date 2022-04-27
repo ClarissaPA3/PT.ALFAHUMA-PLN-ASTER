@@ -11,16 +11,6 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>
-        </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
@@ -33,8 +23,9 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Role Admin</a></li>
-                   
+                    <li class="active"><a href="i"><i class="fa fa-circle-o"></i> Role Admin</a></li>
+                    <li><a href="<?php echo site_url(""); ?>"><i class="fa fa-circle-o"></i> Add Jabatan</a></li>
+                    <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Add Pegawai</a></li>
                     <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
                     <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
                     <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
@@ -63,13 +54,6 @@
             <li>
                 <a href="pages/widgets.html">
                     <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
-                    <span class="pull-right-container">
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="<?php echo site_url("C_user/show_user"); ?>">
-                    <i class="fa fa-user"></i> <span>Add User</span>
                     <span class="pull-right-container">
                     </span>
                 </a>
