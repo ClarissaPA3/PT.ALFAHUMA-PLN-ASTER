@@ -52,7 +52,7 @@ class M_ajuananggaran extends CI_Model
             'minggu2' => $this->input->post('minggu2'),
             'bulan2' => $this->input->post('bulan2'),
             'catatan_dmpau2' => '',
-            'status2' => '',
+            'status2' => $this->input->post('status2'),
             'tanggal_mulai2' => $this->input->post('tanggal_mulai2'),
             'tanggal_sampai2' => $this->input->post('tanggal_sampai2'),
             'tgl_pengajuan2' => $this->input->post('tgl_pengajuan2')

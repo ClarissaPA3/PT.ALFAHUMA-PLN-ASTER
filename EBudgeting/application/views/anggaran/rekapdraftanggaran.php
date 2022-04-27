@@ -77,9 +77,13 @@
 
                                     </tbody>
                                     <tfoot class="bg-gray">
-                                        <td colspan="5"><b> Total Anggaran diajukan Minggu <?= $ajuan['minggu2'];?></b></td>
-                                        <td><h4><?php echo $total['nominal_pengajuan2'];?></h4></td>
-                                        <td><h4><?php echo $total['nominal_persetujuan2'];?></h4></td>
+                                        <td colspan="5"><b> Total Anggaran diajukan Minggu <?= $ajuan['minggu2']; ?></b></td>
+                                        <td>
+                                            <h4><?php echo "Rp.".$total['nominal_pengajuan2']; ?></h4>
+                                        </td>
+                                        <td>
+                                            <h4><?php echo $total['nominal_persetujuan2']; ?></h4>
+                                        </td>
                                     </tfoot>
 
 
@@ -94,10 +98,7 @@
 
                     </div>
                     <!-- /.box-body -->
-                    <div class="box-footer">
-                        <a onclick="FormSubmit()" class="btn btn-info pull-right">Draft</a>
 
-                    </div>
                     <!-- /.box-footer -->
 
                 </div>
@@ -117,16 +118,7 @@
 
 
 
-
-
-
-    <script>
-        function FormSubmit() {
-            document.getElementById("aju").submit();
-        }
-    </script>
-
-
+    
 
 
     <?php $this->load->view('dashboard/_part/js'); ?>

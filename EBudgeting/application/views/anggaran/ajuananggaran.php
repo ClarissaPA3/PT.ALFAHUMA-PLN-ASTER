@@ -107,7 +107,29 @@
                         <?php echo $pengajuan_anggaran->catatan_dmpau2 ?>
                       </td>
                       <td>
-                        <?php echo $pengajuan_anggaran->status2 ?>
+                        
+                        <?php 
+                        if ($pengajuan_anggaran->status2 == 0) {
+                          ?> 
+                          <span class="btn btn-danger"><i class="fa fa-fw fa-warning"></i> Belum Diajukan</span>
+                          <?php
+                        }
+                        else if ($pengajuan_anggaran->status2 == 1) {
+                          ?> 
+                          <p class="btn btn-info"><i class="fa fa-fw fa-thumbs-up"></i> Sudah diajukan</p>
+                          <?php
+                        }
+                        else if ($pengajuan_anggaran->status2 == 2) {
+                          ?> 
+                          <p class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Disetujui oleh DM</p>
+                          <?php
+                        }
+                        else if ($pengajuan_anggaran->status2 == 3) {
+                          ?> 
+                          <p class="btn btn-success"><i class="fa fa-fw fa-check"></i> Disetujui oleh DMPAU</p>
+                          <?php
+                        }
+                        ?>
                       </td>
                       <td>
                         <?php echo $pengajuan_anggaran->tanggal_mulai2 ?>

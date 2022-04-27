@@ -68,8 +68,6 @@ class C_ajuananggaran extends CI_Controller
 		$data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
 		$data['id'] = $id;
 		$data['total'] = $this->M_detailajuan->hitunganggaran($id)[0];
-		
-		print_r($data['ajuan']);
 
 
 

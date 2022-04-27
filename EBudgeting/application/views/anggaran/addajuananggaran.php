@@ -16,8 +16,8 @@
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/').$id;?>" class="btn btn-info active">Input</a>
-                    <a href="<?php echo site_url('C_ajuananggaran/show_rekapanggaran/').$id;?>" class="btn btn-info">Rekap</a>
+                    <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $id; ?>" class="btn btn-info active">Input</a>
+                    <a href="<?php echo site_url('C_ajuananggaran/show_rekapanggaran/') . $id; ?>" class="btn btn-info">Rekap</a>
 
 
                     <div class="box-body">
@@ -25,6 +25,13 @@
 
                             <input type="hidden" name="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
                             <input type="hidden" name="id_anggota" value="<?php echo $ajuan['id_anggota']; ?>">
+                            <?php
+                            if ($ajuan['status2'] >= 2) {
+                            ?>
+                                <input type="hidden" name="status2" value="<?php echo $ajuan['status2']; ?>">
+                            <?php
+                            }
+                            ?>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -96,9 +103,10 @@
                                     <tr>
                                         <form action="<?php echo site_url('C_detailajuan/add_detailanggaran') ?>" method="post">
                                             <input type="hidden" name="id_pengajuan" id="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
+
                                             <td>
                                                 <select name="id_pos" id="id_pos" class="form-control">
-                                                    <option value="" selected disabled>Pilih Supplier</option>
+                                                    <option value="" selected disabled>Pos</option>
                                                     <?php foreach ($pos as $poss) : ?>
                                                         <option <?= set_select('id_pos', $poss['id_pos']) ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
                                                     <?php endforeach; ?>
@@ -106,7 +114,7 @@
                                             </td>
                                             <td>
                                                 <select name="id_subpos" id="id_subpos" class="form-control">
-                                                    <option value="" selected disabled>Pilih Supplier</option>
+                                                    <option value="" selected disabled>Sub pos</option>
                                                     <?php foreach ($subpos as $poss) : ?>
                                                         <option <?= set_select('id_subpos', $poss['id_subpos']) ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
                                                     <?php endforeach; ?>
@@ -114,7 +122,7 @@
                                             </td>
                                             <td>
                                                 <select name="id_subpos2" id="id_subpos2" class="form-control">
-                                                    <option value="" selected disabled>Pilih Supplier</option>
+                                                    <option value="" selected disabled>Sub Pos</option>
                                                     <?php foreach ($subpos2 as $poss) : ?>
                                                         <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
                                                     <?php endforeach; ?>
@@ -167,8 +175,40 @@
 
                     </div>
                     <!-- /.box-body -->
-                    <div class="box-footer">
-                        <a onclick="FormSubmit()" class="btn btn-info pull-right">Draft</a>
+                    <div class="box-footer bg-gray">
+                        <div class="pull-right">
+                            <div class="button-group">
+                                 <?php
+                                if ($ajuan['status2'] < 2) {
+                                ?>
+                                     <a onclick="FormSubmit()" class="btn btn-default"><i class="fa fa-fw fa-file-text-o"></i>Draft</a>
+                                <?php
+                                } 
+                                ?>
+                               
+                                <?php
+                                if ($ajuan['status2'] >= 2) {
+                                ?>
+                                    <a onclick="FormSubmit()" class="btn btn-info"><i class="fa fa-fw fa-check"></i> Ajukan</a>
+                                <?php
+                                } else {
+                                ?>
+                                    <a onclick="Coba()" class="btn btn-info"><i class="fa fa-fw fa-check"></i> Ajukan</a>
+                                <?php
+
+                                }
+
+                                ?>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
 
                     </div>
                     <!-- /.box-footer -->
@@ -194,8 +234,27 @@
 
 
     <script>
+        function Draft() {
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "status2";
+            input.value = "0"
+            document.getElementById('aju').appendChild(input); // put it into the DOM
+            FormSubmit();
+
+        }
+
         function FormSubmit() {
             document.getElementById("aju").submit();
+        }
+
+        function Coba() {
+            var input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "status2";
+            input.value = "1"
+            document.getElementById('aju').appendChild(input); // put it into the DOM
+            FormSubmit();
         }
     </script>
 
