@@ -58,7 +58,7 @@
               <i class="fa fa-fw fa-plus"></i> Pengajuan Anggaran
 
             </button>
-            <a href="<?php echo site_url('C_ajuananggaran/add_datapengajuan') ?>"><i class="fas fa-plus"></i> Pengajuan Anggaran</a>
+            
           </div>
 
 

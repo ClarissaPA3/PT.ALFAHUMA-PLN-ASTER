@@ -9,6 +9,9 @@ class C_ajuananggaran extends CI_Controller {
 		$this->load->model('M_ajuananggaran');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
+		$this->load->model('M_masterpos_subpos');
+		$this->load->model('M_detailajuan');
+
 	}
 
 	public function add_datapengajuan() 
@@ -31,7 +34,12 @@ class C_ajuananggaran extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			$data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
-			print_r($data['ajuan']);
+			$data['pos'] = $this->M_masterpos_subpos->show_posM();
+			$data['subpos'] =$this->M_masterpos_subpos->show_subposM();
+			$data['subpos2'] =$this->M_masterpos_subpos->show_subpos2M();
+			$data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
+
+			
 
 
 			$this->load->view('anggaran/addajuananggaran', $data);
