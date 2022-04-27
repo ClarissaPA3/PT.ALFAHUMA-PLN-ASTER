@@ -3,6 +3,11 @@
 class M_ajuananggaran extends CI_Model
 
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('M_detailajuan');
+    }
     public function add_pengajuan()
     {
         $data = array(
@@ -38,12 +43,12 @@ class M_ajuananggaran extends CI_Model
     public function update_pengajuan()
     {
         $id = $this->input->post('id_pengajuan');
-        print_r($_POST);
+        $nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
         $data = array(
             'id_pengajuan' => $id,
             'id_anggota' => $this->input->post('id_anggota'),
             'catatan_dm2' => '',
-            'total_pengajuan2' => $this->input->post('total_pengajuan2'),
+            'total_pengajuan2' => $nominalpengajuan,
             'minggu2' => $this->input->post('minggu2'),
             'bulan2' => $this->input->post('bulan2'),
             'catatan_dmpau2' => '',

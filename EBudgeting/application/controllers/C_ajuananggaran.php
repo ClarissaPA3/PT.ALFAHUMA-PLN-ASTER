@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_ajuananggaran extends CI_Controller {
+class C_ajuananggaran extends CI_Controller
+{
 
 	public function __construct()
 	{
@@ -10,23 +11,17 @@ class C_ajuananggaran extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
 		$this->load->model('M_masterpos_subpos');
-		$this->load->model('M_detailajuan');
-		
-
 	}
 
-	public function add_datapengajuan() 
+	public function add_datapengajuan()
 	{
 		$this->M_ajuananggaran->add_pengajuan();
 		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
-
-
 	}
 	public function delete_datapengajuan($id)
 	{
 		$this->M_ajuananggaran->delete_pengajuan($id);
 		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
-
 	}
 	public function update_datapengajuan($id = null)
 	{
@@ -36,40 +31,52 @@ class C_ajuananggaran extends CI_Controller {
 		if ($this->form_validation->run() == FALSE) {
 			$data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
 			$data['pos'] = $this->M_masterpos_subpos->show_posM();
-			$data['subpos'] =$this->M_masterpos_subpos->show_subposM();
-			$data['subpos2'] =$this->M_masterpos_subpos->show_subpos2M();
+			$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
+			$data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
 			$data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
+			$data['id'] = $id;
 
-			
+
 
 
 			$this->load->view('anggaran/addajuananggaran', $data);
 		} else {
 
+
+
+
 			$this->M_ajuananggaran->update_pengajuan();
 			redirect(site_url('C_ajuananggaran/show_datapengajuan'));
 		}
-		
 	}
-    public function show_datapengajuan()
+	public function show_datapengajuan()
 	{
 		$data['pengajuan_anggaran'] = $this->M_ajuananggaran->show_pengajuan();
 
 
-		$this->load->view('anggaran/ajuananggaran',$data);
-		
+		$this->load->view('anggaran/ajuananggaran', $data);
 	}
-    public function show_koreksidata()
+	public function show_koreksidata()
 	{
-		
 	}
-    public function show_rekapanggaran()
+	public function show_rekapanggaran($id)
 	{
+		$data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
+		$data['pos'] = $this->M_masterpos_subpos->show_posM();
+		$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
+		$data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
+		$data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
+		$data['id'] = $id;
+		$data['total'] = $this->M_detailajuan->hitunganggaran($id)[0];
 		
-	}
-    public function show_rekapposanggaran()
-	{
-		
-	}
+		print_r($data['ajuan']);
 
+
+
+
+		$this->load->view('anggaran/rekapdraftanggaran', $data);
+	}
+	public function show_rekapposanggaran()
+	{
+	}
 }

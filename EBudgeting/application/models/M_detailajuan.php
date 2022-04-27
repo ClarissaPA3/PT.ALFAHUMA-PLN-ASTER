@@ -66,6 +66,10 @@ class M_detailajuan extends CI_Model
     // Penambahan Fungsi
     public function hitunganggaran($id)
     {
+        $this->db->select_sum('nominal_pengajuan2');
+        $this->db->select_sum('nominal_persetujuan2');
+        $query = $this->db->get_where('detail_pengajuananggaran', array('id_pengajuan' => $id));
+        return $query->result_array();
 
     }
 }

@@ -16,8 +16,8 @@
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <a href="" class="btn btn-info active">Input</a>
-                    <a href="" class="btn btn-info">Rekap</a>
+                    <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/').$id;?>" class="btn btn-info active">Input</a>
+                    <a href="<?php echo site_url('C_ajuananggaran/show_rekapanggaran/').$id;?>" class="btn btn-info">Rekap</a>
 
 
                     <div class="box-body">
