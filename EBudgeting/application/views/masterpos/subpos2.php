@@ -404,7 +404,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Master POS</h1>
+                <h1>Master Sub Pos Barang</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li class="active">Dashboard</li>
@@ -415,19 +415,16 @@
             <section class="content">
                 <div class="row">
                     <div class="col-xs-12">
-                        <a href="<?php echo site_url('C_masterpos_subpos/add_subpos2'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah POS</a>
+                        <a href="<?php echo site_url('C_masterpos_subpos/add_subpos2'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah Pos</a>
 
                         <div class="box">
-                            <div class="box-header">
-                                <h3 class="box-title">Hover Data Table</h3>
-                            </div>
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <table id="example2" class="table table-bordered table-hover text-center">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Sub POS 2</th>
+                                            <th>Nama Sub Pos Barang</th>
                                             <th colspan="2">Aksi</th>
                                         </tr>
 

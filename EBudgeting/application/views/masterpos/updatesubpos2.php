@@ -404,7 +404,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Update Pos</h1>
+                <h1>Update Sub Pos Barang</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li class="active">Dashboard</li>
@@ -413,17 +413,13 @@
 
             <!-- Main content -->
             <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Quick Example</h3>
-                </div>
-                <!-- /.box-header -->
                 <!-- form start -->
                 <form role="form" action="<?php site_url('C_masterpos_subpos2/update_subpos2'); ?>" method="post">
                     <input type="hidden" name="id_subpos2" value="<?php echo $sub_pos2['id_subpos2']; ?>">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="nama">Nama Sub Pos</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Sub Pos" value="<?php echo $sub_pos2['nama_subpos2']; ?>">
+                            <label for="nama">Nama Sub Pos Barang</label>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Sub Pos Barang" value="<?php echo $sub_pos2['nama_subpos2']; ?>">
                         </div>
 
                         <div class="box-footer">

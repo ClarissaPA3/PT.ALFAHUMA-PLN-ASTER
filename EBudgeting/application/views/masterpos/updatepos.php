@@ -413,18 +413,14 @@
 
             <!-- Main content -->
             <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Quick Example</h3>
-                </div>
-                <!-- /.box-header -->
                 <!-- form start -->
                 <form role="form" action="<?php site_url('C_masterpos_subpos/update') ?>" method="post">
                     <div class="box-body">
                         <div class="form-group">
                             <input type="hidden" name="id_pos" value="<?php echo $pos['id_pos']; ?>">
-                            <label for="nama">Nama POS</label>
+                            <label for="nama">Nama Pos</label>
 
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama POS" value="<?php echo $pos['nama_pos']; ?>">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Pos" value="<?php echo $pos['nama_pos']; ?>">
                         </div>
 
                         <div class="box-footer">
