@@ -42,13 +42,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="total_pengajuan2" class="col-sm-2 control-label">Total Pengajuan</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="total_pengajuan2" id="total_pengajuan2" placeholder="total pengajuan" value="<?php echo $ajuan['total_pengajuan2']; ?>">
-
-                                        </div>
-                                    </div>
+                                   
                                     <div class="form-group">
                                         <label for="tanggal_mulai2" class="col-sm-2 control-label">Tanggal Mulai</label>
                                         <div class="col-sm-10">

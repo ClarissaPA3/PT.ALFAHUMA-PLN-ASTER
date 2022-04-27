@@ -3,7 +3,7 @@
 
 <head>
   <?php $this->load->view("dashboard/_part/head"); ?>
- 
+
 
   <!-- Google Font -->
 
@@ -47,7 +47,7 @@
       <div class="container-fluid">
 
 
-        
+
         <!-- DataTables -->
         <div class="card mb-3">
           <div class="card-header">
@@ -58,7 +58,7 @@
               <i class="fa fa-fw fa-plus"></i> Pengajuan Anggaran
 
             </button>
-            
+
           </div>
 
 
@@ -69,16 +69,15 @@
                 <thead>
                   <tr>
                     <th>ID Pengajuan</th>
-                    <th>ID Anggota</th>
-                    <th>Catatan DM </th>
-                    <th>Total Pengajuan </th>
-                    <th>Minggu </th>
-                    <th>Bulan </th>
-                    <th>Catatan DMPAU </th>
-                    <th>Status </th>
+                    <th>Bulan</th>
+                    <th>Pengajuan</th>
                     <th>Tanggal Mulai </th>
                     <th>Tanggal Sampai </th>
-                    <th>Tanggal Pengajuan </th>
+                    <th>Total </th>
+
+                    <th>Status </th>
+                    <th>Aksi</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -89,47 +88,10 @@
                         <?php echo $pengajuan_anggaran->id_pengajuan ?>
                       </td>
                       <td>
-                        <?php echo $pengajuan_anggaran->id_anggota ?>
-                      </td>
-                      <td>
-                        <?php echo $pengajuan_anggaran->catatan_dm2 ?>
-                      </td>
-                      <td>
-                        <?php echo $pengajuan_anggaran->total_pengajuan2 ?>
-                      </td>
-                      <td>
-                        <?php echo $pengajuan_anggaran->minggu2 ?>
-                      </td>
-                      <td>
                         <?php echo $pengajuan_anggaran->bulan2 ?>
                       </td>
                       <td>
-                        <?php echo $pengajuan_anggaran->catatan_dmpau2 ?>
-                      </td>
-                      <td>
-                        
-                        <?php 
-                        if ($pengajuan_anggaran->status2 == 0) {
-                          ?> 
-                          <span class="btn btn-danger"><i class="fa fa-fw fa-warning"></i> Belum Diajukan</span>
-                          <?php
-                        }
-                        else if ($pengajuan_anggaran->status2 == 1) {
-                          ?> 
-                          <p class="btn btn-info"><i class="fa fa-fw fa-thumbs-up"></i> Sudah diajukan</p>
-                          <?php
-                        }
-                        else if ($pengajuan_anggaran->status2 == 2) {
-                          ?> 
-                          <p class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Disetujui oleh DM</p>
-                          <?php
-                        }
-                        else if ($pengajuan_anggaran->status2 == 3) {
-                          ?> 
-                          <p class="btn btn-success"><i class="fa fa-fw fa-check"></i> Disetujui oleh DMPAU</p>
-                          <?php
-                        }
-                        ?>
+                        <?php echo $pengajuan_anggaran->tgl_pengajuan2 ?>
                       </td>
                       <td>
                         <?php echo $pengajuan_anggaran->tanggal_mulai2 ?>
@@ -138,8 +100,33 @@
                         <?php echo $pengajuan_anggaran->tanggal_sampai2 ?>
                       </td>
                       <td>
-                        <?php echo $pengajuan_anggaran->tgl_pengajuan2 ?>
+                      <?php echo $pengajuan_anggaran->total_pengajuan2 ?>
                       </td>
+                      <td>
+
+                        <?php
+                        if ($pengajuan_anggaran->status2 == 0) {
+                        ?>
+                          <span class="btn btn-danger"><i class="fa fa-fw fa-warning"></i> Belum Diajukan</span>
+                        <?php
+                        } else if ($pengajuan_anggaran->status2 == 1) {
+                        ?>
+                          <p class="btn btn-info"><i class="fa fa-fw fa-thumbs-up"></i> Sudah diajukan</p>
+                        <?php
+                        } else if ($pengajuan_anggaran->status2 == 2) {
+                        ?>
+                          <p class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Disetujui oleh DM</p>
+                        <?php
+                        } else if ($pengajuan_anggaran->status2 == 3) {
+                        ?>
+                          <p class="btn btn-success"><i class="fa fa-fw fa-check"></i> Disetujui oleh DMPAU</p>
+                        <?php
+                        }
+                        ?>
+                      </td>
+                     
+
+                      
                       <td class="small">
                       <td width="250">
                         <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit dan detail</a>
@@ -178,14 +165,14 @@
             <span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Menambahkan Ajuan?</h4>
         </div>
-        
+
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-          <form action="<?php echo site_url('C_ajuananggaran/add_datapengajuan');?>" method="post">
+          <form action="<?php echo site_url('C_ajuananggaran/add_datapengajuan'); ?>" method="post">
             <button type="submit" class="btn btn-primary">Save changes</button>
 
           </form>
-          
+
         </div>
       </div>
       <!-- /.modal-content -->
