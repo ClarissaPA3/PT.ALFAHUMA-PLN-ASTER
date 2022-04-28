@@ -9,6 +9,7 @@ class C_user extends CI_Controller
 		$this->load->model('M_user');
 		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
+		$this->load->model('M_input_jabatan');
 	}
 
 
@@ -16,7 +17,9 @@ class C_user extends CI_Controller
 	{
 		$this->form_validation->set_rules('nama_anggota', 'Nama Anggota', 'required');
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('user/input_pegawai.php');
+			$data['jabatan'] = $this->M_input_jabatan->show_jabatanM();
+			
+			$this->load->view('user/input_pegawai.php', $data);
 		} else {
 
 			$this->M_user->add_user();
@@ -34,6 +37,7 @@ class C_user extends CI_Controller
 		$this->form_validation->set_rules('nama_anggota', 'Nama Anggota', 'required');
 		if ($this->form_validation->run() == FALSE) {
 			$data['pegawai'] = $this->M_user->show_user_id($id);
+			$data['jabatan'] = $this->M_input_jabatan->show_jabatanM();
 
 			$this->load->view('user/update_pegawai', $data);
 		} else {

@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>E-Budgeting | Dashboard</title>
@@ -182,7 +184,8 @@
                 </div>
                 <form action="<?php echo site_url('C_user/add_user'); ?>" method="post" enctype="multipart/form-data">
                     <div class="card-body">
-                        <input type="hidden" name="id_jabatan" id="id_jabatan" value="1">
+                        
+                        
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Nama Pegawai</label>
@@ -206,11 +209,18 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Divisi</label>
+                            <label class="col-sm-2 col-form-label">Jabatan</label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" id="divisi" name="divisi" placeholder="" required>
+                            <select name="id_jabatan" id="id_jabatan" class="form-control">
+                                <option value="" selected disabled>Jabatan</option>
+                                <?php foreach ($jabatan as $poss) : ?>
+                                    
+                                    <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                             </div>
                         </div>
+                        
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Username</label>

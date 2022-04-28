@@ -213,7 +213,7 @@
                                         <td><?php echo $key->nama_anggota; ?> </td>
                                         <td><?php echo $key->tgl_lahir; ?> </td>
                                         <td><?php echo $key->alamat; ?> </td>
-                                        <td><?php echo $key->divisi; ?> </td>
+                                
                                         <td> <?php echo $key->username; ?> </td>
                                         <td> <?php echo md5($key->password); ?> </td>
                                         <td>
