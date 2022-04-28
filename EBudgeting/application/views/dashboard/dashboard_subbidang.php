@@ -147,12 +147,8 @@
             </ul>
           </li>
           <li>
-<<<<<<< HEAD
             <a href="<?php echo site_url('C_ajuananggaran/show_datapengajuan'); ?>">
               <i class="fa fa-check"></i> <span>Pengajuan Anggaran</span>
-=======
-          <li><a href="<?php echo site_url("C_ajuananggaran"); ?>"><i class="fa fa-check"></i> <span>Pengajuan Anggaran</span>
->>>>>>> a40cad52e5d8d0c63ac5bc75aca88e7aa9d73205
               <span class="pull-right-container">
                 <span class="pull-right-container">
                 </span>
