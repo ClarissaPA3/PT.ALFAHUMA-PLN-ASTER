@@ -82,12 +82,12 @@ class C_login extends CI_Controller
 			$this->load->view('dashboard/dashboard_dmpau',$data);
 		} elseif ($id_jabatan == "2") {
 			
-			$this->load->view('dashboard/templatebidang/sidebar', $data);
+
 			$this->load->view('dashboard/dashboard_bidang.php', $data);
 			
 		} elseif ($id_jabatan == "1") {
 			
-			$this->load->view('dashboard/templatesub/sidebar', $data);
+			
 			$this->load->view('dashboard/dashboard_subbidang.php', $data);
 			
 			

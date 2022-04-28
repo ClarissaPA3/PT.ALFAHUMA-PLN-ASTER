@@ -53,8 +53,9 @@ class C_ajuananggaran extends CI_Controller
 	{
 		$data['pengajuan_anggaran'] = $this->M_ajuananggaran->show_pengajuan();
 
-
+		
 		$this->load->view('anggaran/ajuananggaran', $data);
+		
 	}
 	public function show_koreksidata()
 	{

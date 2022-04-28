@@ -10,7 +10,7 @@
   <div class="wrapper">
     <header class="main-header">
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <a href="<?php echo site_url('C_login/login_admin'); ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>BDG</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -29,14 +29,25 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs">DM/ Bidang</span>
+                <span class="hidden-xs"><?php echo $this->session->userdata('nama_anggota'); ?></span>
               </a>
               <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                  <p>
+                    Account - DM
+                  </p>
+                </li>
 
                 <!-- Menu Footer-->
                 <li class="user-footer">
+                  <!-- <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  </div> -->
                   <div class="pull-right">
-                    <a href="logout_admin" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="<?php echo site_url('C_login/logout_admin') ?>" class="btn btn-default btn-flat">Sign out</a>
                   </div>
                 </li>
               </ul>

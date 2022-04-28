@@ -1,64 +1,113 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller {
-	function __construct(){
-	 parent::__construct();
-	 	//validasi jika user belum login
-        $this->data['CI'] =& get_instance();
-        $this->load->helper(array('form', 'url'));
-        $this->load->model('M_login');
-        
-	 }
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
+class Login extends CI_Controller
+{
+	public function __construct()
 	{
-		$this->data['title_web'] = 'Login | Sistem Informasi Perpustakaan';
-		$this->load->view('login_view',$this->data);
+		parent::__construct();
+		$this->load->model('M_user');
+		$this->load->library('session');
+		$this->load->model('M_ajuananggaran');
 	}
 
-    public function auth()
-    {
-        $user = htmlspecialchars($this->input->post('user',TRUE),ENT_QUOTES);
-        $pass = htmlspecialchars($this->input->post('pass',TRUE),ENT_QUOTES);
-        // auth
-        $proses_login = $this->db->query("SELECT * FROM tbl_login WHERE user='$user' AND pass = md5('$pass')");
-        $row = $proses_login->num_rows();
-        if($row > 0)
-        {
-            $hasil_login = $proses_login->row_array();
+	public function index()
+	{
+		$id_jabatan = $this->session->userdata('id_jabatan');
 
-            // create session
-            $this->session->set_userdata('masuk_perpus',TRUE);
-            $this->session->set_userdata('level',$hasil_login['level']);
-            $this->session->set_userdata('ses_id',$hasil_login['id_login']);
-            $this->session->set_userdata('anggota_id',$hasil_login['anggota_id']);
+		if (isset($id_jabatan)) {
+			# code...
+			redirect('Login/login_admin');
+		} else {
+			$this->load->view('login/login');
+		}
+	}
 
-            echo '<script>window.location="'.base_url().'dashboard";</script>';
-        }else{
+	public function authentikasi_admin()
+	{
 
-            echo '<script>alert("Login Gagal, Periksa Kembali Username dan Password Anda");
-            window.location="'.base_url().'"</script>';
-        }
-    }
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        echo '<script>window.location="'.base_url().'";</script>';
-    }
+		$this->load->library('form_validation');
+		// Form Validation
+		$this->form_validation->set_rules('user', 'Username', 'required');
+		$this->form_validation->set_rules('pass', 'Password', 'required');
+
+
+		$user = $this->input->post('user');
+		$pass = $this->input->post('pass');
+
+
+
+
+
+		if ($this->form_validation->run() == FALSE) {
+			redirect(base_url("Login"));
+		} else {
+			$query = $this->M_user->show_user($pass, $user);
+			// var_dump($query);
+			$id_jabatan = $query['id_jabatan'];
+			$nama_anggota = $query['nama_anggota'];
+			$id_anggota = $query['id_anggota'];
+			$akun = array(
+				'id_jabatan' => $id_jabatan,
+				'nama_anggota' => $nama_anggota,
+				'id_anggota' =>  $id_anggota
+			);
+			$this->session->set_userdata($akun);
+			redirect('Login/login_admin');
+		}
+
+
+
+
+
+		// $status_admin = $_POST['status'];
+
+
+
+	}
+	public function login_admin()
+	{
+		$id_anggota = $this->session->userdata('id_anggota');
+		$pengajuan = $this->M_ajuananggaran->showbyid_pengajuan($id_anggota);
+
+		$data['nomor'] = $pengajuan['nomor'];
+		$data['pengajuan'] = $pengajuan['pengajuan'];
+
+
+
+
+		$id_jabatan = $this->session->userdata('id_jabatan');
+		if ($id_jabatan == "3") {
+			$this->load->view('dashboard/sidebarnav/dmpau',$data);
+		} elseif ($id_jabatan == "2") {
+			
+			// $this->load->view('dashboard/templatebidang/sidebar', $data);
+			$this->load->view('dashboard/sidebarnav/dm', $data);
+			
+		} elseif ($id_jabatan == "1") {
+			
+			// $this->load->view('dashboard/templatesub/sidebar', $data);
+			$this->load->view('dashboard/sidebarnav/subbidang', $data);
+			
+			
+		} 
+        else {
+			redirect(base_url("Login"));
+		}
+
+
+		// $this->load->view('dashboard/dashboard');
+	}
+	public function logout_admin()
+	{
+		$akun = array('id_jabatan', 'nama_anggota', 'id_anggota');
+
+
+		$this->session->unset_userdata($akun);
+
+
+		$this->session->sess_destroy();
+		redirect(base_url("Login"));
+	}
 }

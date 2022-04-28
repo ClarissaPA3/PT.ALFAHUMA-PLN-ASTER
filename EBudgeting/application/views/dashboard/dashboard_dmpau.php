@@ -3,14 +3,14 @@
 
 <head>
   <title>E-Budgeting | Dashboard</title>
-  <?php $this->load->view('dashboard/_part/head');?>
+  <?php $this->load->view('dashboard/_part/head'); ?>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
     <header class="main-header">
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <a href="<?php echo site_url('C_login/login_admin'); ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>BDG</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -25,12 +25,12 @@
 
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-           
+
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs">DMPAU</span>
+                <span class="hidden-xs"><?php echo $this->session->userdata('nama_anggota'); ?></span>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
@@ -44,11 +44,11 @@
 
                 <!-- Menu Footer-->
                 <li class="user-footer">
-                  <div class="pull-left">
+                  <!-- <div class="pull-left">
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  </div>
+                  </div> -->
                   <div class="pull-right">
-                    <a href="logout_admin" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="<?php echo site_url('C_login/logout_admin') ?>" class="btn btn-default btn-flat">Sign out</a>
                   </div>
                 </li>
               </ul>
@@ -62,7 +62,84 @@
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <?php $this->load->view('dashboard/templatedmpau/sidebar'); ?>
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p>Welcome DMPAU/ Admin</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">MAIN NAVIGATION</li>
+          <li class="active treeview">
+            <a href="#">
+              <i class="fa fa-dashboard"></i> <span>Data Master</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li class="active"><a href="i"><i class="fa fa-circle-o"></i> Role Admin</a></li>
+              <li><a href="<?php echo site_url(""); ?>"><i class="fa fa-circle-o"></i> Add Jabatan</a></li>
+              <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Add Pegawai</a></li>
+              <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
+              <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
+              <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
+            </ul>
+          </li>
+          <li class=" active treeview">
+            <a href="#">
+              <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="pages/widgets.html">
+              <i class="fa fa-check"></i> <span>Persetujuan DMPAU</span>
+              <span class="pull-right-container">
+                <span class="pull-right-container">
+                </span>
+            </a>
+          </li>
+          <li>
+            <a href="pages/widgets.html">
+              <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo site_url("C_menutransfer"); ?>">
+              <i class="fa fa-edit"></i> <span>Transfer</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo site_url("C_paguanggaran"); ?>">
+              <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
+              <span class="pull-right-container">
+              </span>
+            </a>
+          </li>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -214,12 +291,12 @@
                   <div class="box-footer text-black">
                     <div class="row">
                       <div class="col-sm-6">
-                        
+
+                      </div>
+                      <!-- /.row -->
                     </div>
-                    <!-- /.row -->
                   </div>
-                </div>
-                <!-- /.box -->
+                  <!-- /.box -->
 
           </section>
           <!-- right col -->
@@ -229,7 +306,7 @@
       </section>
       <!-- /.content -->
     </div>
-<!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
     <footer class="main-footer">
       <div class="pull-right hidden-xs">
         <b>Create by</b> Mahasiswa UNS 2020.
@@ -238,15 +315,15 @@
       reserved.
     </footer>
 
-    
+
     <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
 
- 
-   <?php $this->load->view('dashboard/_part/js');?> 
+
+  <?php $this->load->view('dashboard/_part/js'); ?>
 </body>
 
 </html>
