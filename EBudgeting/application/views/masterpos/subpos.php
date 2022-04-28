@@ -114,14 +114,9 @@
                 <!-- /.row -->
             </section>
 
-            <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
-
         </section>
         <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <b>Create by</b> Mahasiswa UNS 2020.

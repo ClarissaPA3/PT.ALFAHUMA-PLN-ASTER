@@ -161,12 +161,11 @@
             <!-- right col -->
         </div>
         <!-- /.row (main row) -->
-        <?php $this->load->view('dashboard/sidebarnav/_footpage.php');?>
+        <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
 
         </section>
         <!-- /.content -->
     </div>
-    
 
     <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->

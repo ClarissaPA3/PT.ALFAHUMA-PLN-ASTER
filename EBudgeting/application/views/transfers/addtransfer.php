@@ -98,12 +98,15 @@
           <button type="submit">Submit</button>
       </div>
       </form>
-      <!-- right col -->
     </div>
-    <!-- /.row (main row) -->
+    <!-- /.box -->
 
-    </section>
-    <!-- /.content -->
+    <!-- right col -->
+  </div>
+  <!-- /.row (main row) -->
+
+  </section>
+  <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
