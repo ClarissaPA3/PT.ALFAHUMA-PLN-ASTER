@@ -32,7 +32,7 @@
                                 <table class="table table-bordered text-center">
                                     <thead>
                                         <tr>
-                                            <th> POS</th>
+                                            <th>POS</th>
                                             <th>SUB POS</th>
                                             <th>SUB POS</th>
                                             <th>Kegiatan</th>
@@ -79,7 +79,7 @@
                                     <tfoot class="bg-gray">
                                         <td colspan="5"><b> Total Anggaran diajukan Minggu <?= $ajuan['minggu2']; ?></b></td>
                                         <td>
-                                            <h4><?php echo "Rp.".$total['nominal_pengajuan2']; ?></h4>
+                                            <h4><?php echo "Rp." . $total['nominal_pengajuan2']; ?></h4>
                                         </td>
                                         <td>
                                             <h4><?php echo $total['nominal_persetujuan2']; ?></h4>
@@ -118,7 +118,7 @@
 
 
 
-    
+
 
 
     <?php $this->load->view('dashboard/_part/js'); ?>

@@ -65,11 +65,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-<<<<<<< Updated upstream
                                 <span class="hidden-xs"><?php echo $this->session->userdata('nama_anggota'); ?></span>
-=======
-                                <span class="hidden-xs">DMPAU</span>
->>>>>>> Stashed changes
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -83,21 +79,11 @@
 
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
                                     <div class="pull-right">
                                         <a href="logout_admin" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
-<<<<<<< Updated upstream
-=======
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
->>>>>>> Stashed changes
                         </li>
                     </ul>
                 </div>
@@ -115,7 +101,6 @@
                     <div class="pull-left info">
                         <p>Welcome DMPAU/ Admin</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-<<<<<<< Updated upstream
                     </div>
                 </div>
                 <!-- /.search form -->
@@ -255,164 +240,6 @@
         </footer>
 
         <!-- Add the sidebar's background. This div must be placed
-=======
-                    </div>
-                </div>
-                <!-- /.search form -->
-                <!-- sidebar menu: : style can be found in sidebar.less -->
-                <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Data Master</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active"><a href="i"><i class="fa fa-circle-o"></i> Role Admin</a></li>
-                            <li><a href="<?php echo site_url(""); ?>"><i class="fa fa-circle-o"></i> Add Jabatan</a></li>
-                            <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Add Pegawai</a></li>
-                            <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
-                            <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
-                            <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
-                        </ul>
-                    </li>
-                    <li class=" active treeview">
-                        <a href="#">
-                            <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-                            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="pages/widgets.html">
-                            <i class="fa fa-check"></i> <span>Persetujuan DMPAU</span>
-                            <span class="pull-right-container">
-                                <span class="pull-right-container">
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/widgets.html">
-                            <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
-                            <span class="pull-right-container">
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo site_url("C_menutransfer"); ?>">
-                            <i class="fa fa-edit"></i> <span>Transfer</span>
-                            <span class="pull-right-container">
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/widgets.html">
-                            <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
-                            <span class="pull-right-container">
-                            </span>
-                        </a>
-                    </li>
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>Data Pegawai
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>
-            </section>
-
-            <!-- Main content -->
-
-            <div class="card mb-3">
-                <section class="content-header mb-5"></section>
-                <div class="card-header">
-                    <a class="btn btn-primary" href="<?php echo site_url('C_user/add_user'); ?>">Tambah Data</a>
-                </div>
-                <div class="card-body">
-
-                    <div class="table-responsive">
-                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <td rowspan="2">ID</td>
-                                    <td rowspan="2">Nama</td>
-                                    <td rowspan="2">Tanggal Lahir</td>
-                                    <td rowspan="2">Alamat</td>
-                                    <td rowspan="2">Divisi</td>
-                                    <td rowspan="2">Jabatan</td>
-                                    <td rowspan="2">Username</td>
-                                    <td rowspan="2">Password</td>
-                                    <td rowspan="2">aksi</td>
-                                </tr>
-                            </thead>
-                            <tbody class="table-striped">
-                                <?php $no = 0; ?>
-                                <?php foreach ($pegawai as $key) : ?>
-                                    <?php
-                                    $no++
-                                    ?>
-                                    <tr>
-                                        <!-- masukkan data dengan php echo beserta perulangan -->
-                                        <td> <?php echo $no; ?> </td>
-                                        <td> <?php echo $key->id_jabatan; ?> </td>
-                                        <td><?php echo $key->nama_anggota; ?> </td>
-                                        <td><?php echo $key->tgl_lahir; ?> </td>
-                                        <td><?php echo $key->alamat; ?> </td>
-                                        <td><?php echo $key->divisi; ?> </td>
-                                        <td> <?php echo $key->username; ?> </td>
-                                        <td> <?php echo md5($key->password); ?> </td>
-                                        <td>
-                                            <a href="<?php echo site_url('C_user/update_user/') . $key->id_anggota; ?>">Edit</a>
-                                            <a href="<?php echo site_url('C_user/delete_user/') . $key->id_anggota; ?>">Delete</a>
-
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- right col -->
-    </div>
-    <!-- /.row (main row) -->
-
-    <!-- right col -->
-    </div>
-    <!-- /.row (main row) -->
-
-    </section>
-    <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Create by</b> Mahasiswa UNS 2020.
-        </div>
-        <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
-        reserved.
-    </footer>
-
-    <!-- Add the sidebar's background. This div must be placed
->>>>>>> Stashed changes
        immediately after the control sidebar -->
         <div class="control-sidebar-bg"></div>
     </div>

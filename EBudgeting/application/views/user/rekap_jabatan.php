@@ -192,15 +192,6 @@
                                         <td rowspan="2">Aksi</td>
                                     </tr>
                                 </thead>
-                                <tbody class="table-striped">
-                                    <tr>
-                                        <td> 1 </td>
-                                        <td> Sub Bidang </td>
-                                        <td> </td>
-                                        <td> </td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
                             </table>
                         </div>
                     </div>
