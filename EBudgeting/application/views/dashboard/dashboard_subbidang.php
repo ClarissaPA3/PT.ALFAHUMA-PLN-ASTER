@@ -99,9 +99,6 @@
               </ul>
             </li>
             <!-- Control Sidebar Toggle Button -->
-            <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -145,13 +142,17 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-              <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+              <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
             </ul>
           </li>
           <li>
+<<<<<<< HEAD
             <a href="<?php echo site_url('C_ajuananggaran/show_datapengajuan'); ?>">
               <i class="fa fa-check"></i> <span>Pengajuan Anggaran</span>
+=======
+          <li><a href="<?php echo site_url("C_ajuananggaran"); ?>"><i class="fa fa-check"></i> <span>Pengajuan Anggaran</span>
+>>>>>>> a40cad52e5d8d0c63ac5bc75aca88e7aa9d73205
               <span class="pull-right-container">
                 <span class="pull-right-container">
                 </span>
@@ -330,52 +331,6 @@
                     <!--The calendar -->
                     <div id="calendar" style="width: 100%"></div>
                   </div>
-                  <!-- /.box-body -->
-                  <div class="box-footer text-black">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <!-- Progress bars -->
-                        <div class="clearfix">
-                          <span class="pull-left">Task #1</span>
-                          <small class="pull-right">90%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                        </div>
-
-                        <div class="clearfix">
-                          <span class="pull-left">Task #2</span>
-                          <small class="pull-right">70%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                        </div>
-                      </div>
-                      <!-- /.col -->
-                      <div class="col-sm-6">
-                        <div class="clearfix">
-                          <span class="pull-left">Task #3</span>
-                          <small class="pull-right">60%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                        </div>
-
-                        <div class="clearfix">
-                          <span class="pull-left">Task #4</span>
-                          <small class="pull-right">40%</small>
-                        </div>
-                        <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                        </div>
-                      </div>
-                      <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                  </div>
-                </div>
-                <!-- /.box -->
-
           </section>
           <!-- right col -->
         </div>
@@ -387,7 +342,7 @@
     <!-- /.content-wrapper -->
     <footer class="main-footer">
       <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
+        <b>Create by</b> Mahasiswa UNS 2020
       </div>
       <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
       reserved.
