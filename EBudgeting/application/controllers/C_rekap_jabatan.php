@@ -21,11 +21,7 @@ class C_rekap_jabatan extends CI_Controller
      */
     public function index()
     {
-<<<<<<< Updated upstream
         $this->load->view('dashboard/_part/head');
-=======
-		$this->load->view('dashboard/_part/head');
->>>>>>> Stashed changes
         $this->load->view('user/rekap_jabatan.php');
         $this->load->view('dashboard/_part/footer');
     }
