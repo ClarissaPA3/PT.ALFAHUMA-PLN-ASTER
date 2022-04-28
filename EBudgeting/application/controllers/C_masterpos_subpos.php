@@ -51,7 +51,7 @@ class C_masterpos_subpos extends CI_Controller
 	{
 
 		$data['pos'] = $this->M_masterpos_subpos->show_posM();
-		print_r($data['pos']);
+		
 		$this->load->view('masterpos/pos', $data);
 	}
 
@@ -95,7 +95,7 @@ class C_masterpos_subpos extends CI_Controller
 	public function show_subpos()
 	{
 		$data['sub_pos'] = $this->M_masterpos_subpos->show_subposM();
-		print_r($data['sub_pos']);
+		
 		$this->load->view('masterpos/subpos', $data);
 		
 	}
@@ -138,7 +138,7 @@ class C_masterpos_subpos extends CI_Controller
 	public function show_subpos2()
 	{
 		$data['sub_pos2'] = $this->M_masterpos_subpos->show_subpos2M();
-		print_r($data['sub_pos2']);
+		
 		$this->load->view('masterpos/subpos2', $data);
 		
 	}
