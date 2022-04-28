@@ -21,8 +21,7 @@ class C_input_jabatan extends CI_Controller
      */
     public function index()
     {
-		$this->load->view('dashboard/_part/head');
-        $this->load->view('dashboard/templatebidang/sidebar');
+        $this->load->view('dashboard/_part/head');
         $this->load->view('user/input_jabatan.php');
         $this->load->view('dashboard/_part/footer');
     }
