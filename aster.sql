@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2022 at 01:29 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.28
+-- Generation Time: Apr 28, 2022 at 09:16 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -75,6 +75,13 @@ CREATE TABLE `pagu_anggaran` (
   `tahun` varchar(1024) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `pagu_anggaran`
+--
+
+INSERT INTO `pagu_anggaran` (`id_paguanggaran`, `id_anggota`, `nominal_pagu`, `nominal_terpakai`, `bulan`, `tahun`) VALUES
+(2, 2, '150.000.000', '127.000.000', 'Maret', '2022');
+
 -- --------------------------------------------------------
 
 --
@@ -97,9 +104,9 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id_anggota`, `id_jabatan`, `nama_anggota`, `tgl_lahir`, `alamat`, `divisi`, `username`, `password`) VALUES
-(1, 1, 'Rohman', '2022-04-13', 'Jl panglima Tempur', 'Administrasi Keuangan', 'rohman@coba.com', 'rohman'),
-(2, 2, 'DM', '2022-04-14', 'meong', 'DM', 'DM', 'DM'),
-(3, 3, 'DMPAU', '2022-04-20', 'DMPAU', 'DMPAU', 'DMPAU', 'DMPAU');
+(1, 1, 'Rohman Putra', '1986-10-12', 'Jl. Gajah Mada No 12 Surakarta, Jawa Tengah', 'Administrasi Keuangan', 'rohmanputra', 'rohman'),
+(2, 2, 'Muhammad Ridho', '1994-02-09', 'Jl. Panglima Sudirman No 5 Caruban, Jawa Timur.', 'Bidang', 'muhammadridho', 'ridho'),
+(3, 3, 'Freniska Ayu', '1997-08-29', 'Jl. Ahmad Yani No 4 Madiun, Jawa Timur.', 'Admin DMPAU', 'freniskaayu', 'freniska');
 
 -- --------------------------------------------------------
 
@@ -121,6 +128,13 @@ CREATE TABLE `pengajuan_anggaran` (
   `tgl_pengajuan2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `pengajuan_anggaran`
+--
+
+INSERT INTO `pengajuan_anggaran` (`id_pengajuan`, `id_anggota`, `catatan_dm2`, `total_pengajuan2`, `minggu2`, `bulan2`, `catatan_dmpau2`, `status2`, `tanggal_mulai2`, `tanggal_sampai2`, `tgl_pengajuan2`) VALUES
+(1, 1, '', '', '', '', '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1970-01-01');
+
 -- --------------------------------------------------------
 
 --
@@ -131,6 +145,13 @@ CREATE TABLE `pos` (
   `id_pos` int(11) NOT NULL,
   `nama_pos` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pos`
+--
+
+INSERT INTO `pos` (`id_pos`, `nama_pos`) VALUES
+(1, 'Operasi');
 
 -- --------------------------------------------------------
 
@@ -143,6 +164,13 @@ CREATE TABLE `sub_pos` (
   `nama_subpos` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `sub_pos`
+--
+
+INSERT INTO `sub_pos` (`id_subpos`, `nama_subpos`) VALUES
+(1, 'Material');
+
 -- --------------------------------------------------------
 
 --
@@ -153,6 +181,13 @@ CREATE TABLE `sub_pos2` (
   `id_subpos2` int(11) NOT NULL,
   `nama_subpos2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sub_pos2`
+--
+
+INSERT INTO `sub_pos2` (`id_subpos2`, `nama_subpos2`) VALUES
+(1, 'Alat Tulis Kantor');
 
 -- --------------------------------------------------------
 
@@ -192,6 +227,13 @@ CREATE TABLE `transfer` (
   `waktu_kerja` varchar(255) NOT NULL,
   `lumpsum_uang_cod` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transfer`
+--
+
+INSERT INTO `transfer` (`id_transfer`, `id_anggota`, `nama_pengirim`, `email`, `no_telp`, `no_rekening`, `nama_bank`, `tgl_kirim`, `kategori`, `PPN`, `PPH_21`, `PPH_22`, `PPH_23`, `denda`, `administrasi_bank`, `total_dibayar`, `berita`, `honor_asesmen`, `honor_evaluator`, `nilai_kontrak`, `honor_tester`, `honor_feedback`, `pekerjaan`, `honor_pewawancara`, `honor_korektor_pauli`, `lumpsum_transport_bandara`, `lumpsum_komsumsi`, `lumpsum_transpoet_lok`, `waktu_kerja`, `lumpsum_uang_cod`) VALUES
+(10, 2, 'Rohman Putra', 'rohmanputra@gmail.com', 2147483647, 2147483647, 'BCA', '2022-04-28 12:40:00', 'Transfer dana', 10, 10, 10, 10, 15, 20, 500, 'transfer sukses !', 50, 50, '1.000.000', 50, 50, 'Wiraswasta', 50, 50, '1', '1', '1', '48 jam', '1');
 
 --
 -- Indexes for dumped tables
@@ -279,43 +321,43 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT for table `pagu_anggaran`
 --
 ALTER TABLE `pagu_anggaran`
-  MODIFY `id_paguanggaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_paguanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pengajuan_anggaran`
 --
 ALTER TABLE `pengajuan_anggaran`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pos`
 --
 ALTER TABLE `pos`
-  MODIFY `id_pos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sub_pos`
 --
 ALTER TABLE `sub_pos`
-  MODIFY `id_subpos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_subpos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sub_pos2`
 --
 ALTER TABLE `sub_pos2`
-  MODIFY `id_subpos2` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_subpos2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transfer`
 --
 ALTER TABLE `transfer`
-  MODIFY `id_transfer` int(40) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transfer` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
