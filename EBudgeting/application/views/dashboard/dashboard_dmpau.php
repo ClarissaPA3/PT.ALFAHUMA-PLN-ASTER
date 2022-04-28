@@ -53,10 +53,6 @@
                 </li>
               </ul>
             </li>
-            <!-- Control Sidebar Toggle Button -->
-            <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -88,8 +84,7 @@
             </a>
             <ul class="treeview-menu">
               <li class="active"><a href="i"><i class="fa fa-circle-o"></i> Role Admin</a></li>
-              <li><a href="<?php echo site_url(""); ?>"><i class="fa fa-circle-o"></i> Add Jabatan</a></li>
-              <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Add Pegawai</a></li>
+              <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Pegawai</a></li>
               <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
               <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
               <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
@@ -149,10 +144,6 @@
           Dashboard
           <small>DMPAU/ Admin</small>
         </h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li class="active">Dashboard</li>
-        </ol>
       </section>
 
       <!-- Main content -->
@@ -229,9 +220,9 @@
             <div class="nav-tabs-custom">
               <!-- Tabs within a box -->
               <ul class="nav nav-tabs pull-right">
-                <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                <li class="active"><a href="#revenue-chart" data-toggle="tab"></a></li>
+
+                <h4 class="box-title"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</h4>
               </ul>
               <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->
@@ -246,57 +237,47 @@
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
           <section class="col-lg-5 connectedSortable">
 
-            <!-- Map box -->
-            <div class="box box-solid bg-light-blue-gradient">
+            <!-- Calendar -->
+            <div class="box box-solid bg-green-gradient">
               <div class="box-header">
+                <i class="fa fa-calendar"></i>
+
+                <h3 class="box-title">Calendar</h3>
                 <!-- tools box -->
                 <div class="pull-right box-tools">
-                  <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-                    <i class="fa fa-calendar"></i></button>
-                  <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                    <i class="fa fa-minus"></i></button>
+                  <!-- button with a dropdown -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-bars"></i></button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                      <li><a href="#">Add new event</a></li>
+                      <li><a href="#">Clear events</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">View calendar</a></li>
+                    </ul>
+                  </div>
+                  <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                  </button>
                 </div>
-                <!-- Calendar -->
-                <div class="box box-solid bg-green-gradient">
-                  <div class="box-header">
-                    <i class="fa fa-calendar"></i>
+                <!-- /. tools -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <!--The calendar -->
+                <div id="calendar" style="width: 100%"></div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer text-black">
+                <div class="row">
+                  <div class="col-sm-6">
 
-                    <h3 class="box-title">Calendar</h3>
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                      <!-- button with a dropdown -->
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                          <i class="fa fa-bars"></i></button>
-                        <ul class="dropdown-menu pull-right" role="menu">
-                          <li><a href="#">Add new event</a></li>
-                          <li><a href="#">Clear events</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">View calendar</a></li>
-                        </ul>
-                      </div>
-                      <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                      </button>
-                      <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                      </button>
-                    </div>
-                    <!-- /. tools -->
                   </div>
-                  <!-- /.box-header -->
-                  <div class="box-body no-padding">
-                    <!--The calendar -->
-                    <div id="calendar" style="width: 100%"></div>
-                  </div>
-                  <!-- /.box-body -->
-                  <div class="box-footer text-black">
-                    <div class="row">
-                      <div class="col-sm-6">
-
-                      </div>
-                      <!-- /.row -->
-                    </div>
-                  </div>
-                  <!-- /.box -->
+                  <!-- /.row -->
+                </div>
+              </div>
+              <!-- /.box -->
 
           </section>
           <!-- right col -->

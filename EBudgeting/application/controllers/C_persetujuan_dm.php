@@ -22,7 +22,6 @@ class C_persetujuan_dm extends CI_Controller
     public function index()
     {
         $this->load->view('dashboard/_part/head');
-        $this->load->view('dashboard/templatebidang/sidebar');
         $this->load->view('persetujuan/persetujuan_dm.php');
         $this->load->view('dashboard/_part/footer');
     }

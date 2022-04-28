@@ -21,7 +21,6 @@ class C_rekap_anggaran extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('dashboard/templatedmpau/sidebar');
         $this->load->view('rekapitulasi/rekap_anggaran.php');
         $this->load->view('dashboard/_part/footer');
     }
