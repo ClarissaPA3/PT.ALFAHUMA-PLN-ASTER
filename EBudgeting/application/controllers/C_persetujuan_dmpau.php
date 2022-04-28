@@ -21,8 +21,6 @@ class C_persetujuan_dmpau extends CI_Controller
      */
     public function index()
     {
-        $this->load->view('dashboard/templatedmpau/sidebar');
         $this->load->view('persetujuan/persetujuan_dmpau.php');
-        $this->load->view('dashboard/_part/footer');
     }
 }

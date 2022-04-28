@@ -97,12 +97,12 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-              <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+              <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
             </ul>
           </li>
           <li>
-            <a href="pages/widgets.html">
+            <a href="<?php echo site_url("C_persetujuan_dmpau"); ?>">
               <i class="fa fa-check"></i> <span>Persetujuan DMPAU</span>
               <span class="pull-right-container">
                 <span class="pull-right-container">
