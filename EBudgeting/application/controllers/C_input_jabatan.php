@@ -51,7 +51,7 @@ class C_input_jabatan extends CI_Controller
     {
 
         $data['jabatan'] = $this->M_input_jabatan->show_jabatanM();
-        print_r($data['jabatan']);
+       
         $this->load->view('jabatan/jabatan', $data);
     }
 

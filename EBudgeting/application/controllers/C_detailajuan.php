@@ -36,7 +36,7 @@ class C_detailajuan extends CI_Controller {
 			$data['subpos'] =$this->M_masterpos_subpos->show_subposM();
 			$data['subpos2'] =$this->M_masterpos_subpos->show_subpos2M();
 
-			print_r($data['ajuan']);
+			
 
 
 			$this->load->view('anggaran/addajuananggaran', $data);
