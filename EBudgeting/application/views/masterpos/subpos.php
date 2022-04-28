@@ -65,7 +65,7 @@
             <section class="content">
                 <div class="row">
                     <div class="col-xs-12">
-                        <a href="<?php echo site_url('C_masterpos_subpos/add_pos'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah Pos</a>
+                        <a href="<?php echo site_url('C_masterpos_subpos/add_subpos'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah Pos</a>
 
                         <div class="box">
                             <div class="box-header">
