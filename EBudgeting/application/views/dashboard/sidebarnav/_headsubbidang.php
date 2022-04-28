@@ -89,9 +89,6 @@
               </ul>
             </li>
             <!-- Control Sidebar Toggle Button -->
-            <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-            </li>
           </ul>
         </div>
       </nav>
@@ -135,8 +132,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-              <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+              <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
             </ul>
           </li>
           <li>
@@ -148,7 +145,7 @@
             </a>
           </li>
           <li>
-            <a href="pages/widgets.html">
+            <a href="#">
               <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
               <span class="pull-right-container">
               </span>

@@ -155,7 +155,7 @@
             </a>
           </li>
           <li>
-            <a href="pages/widgets.html">
+            <a href="#">
               <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
               <span class="pull-right-container">
               </span>
