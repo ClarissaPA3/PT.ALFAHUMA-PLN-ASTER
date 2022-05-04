@@ -56,7 +56,7 @@ class M_detailajuan extends CI_Model
         $this->db->join('sub_pos2', 'detail_pengajuananggaran.id_subpos2 = sub_pos2.id_subpos2');
         $this->db->where('id_pengajuan ', $id);
         $query = $this->db->get();
-        
+
 
         // Produces:
         // SELECT * FROM blogs JOIN comments ON comments.id = blogs.id
@@ -70,6 +70,11 @@ class M_detailajuan extends CI_Model
         $this->db->select_sum('nominal_persetujuan2');
         $query = $this->db->get_where('detail_pengajuananggaran', array('id_pengajuan' => $id));
         return $query->result_array();
-
+    }
+    public function item($id)
+    {
+        
+        $query = $this->db->get_where('detail_pengajuananggaran', array('id_pengajuan' => $id));
+        return $query->num_rows();
     }
 }
