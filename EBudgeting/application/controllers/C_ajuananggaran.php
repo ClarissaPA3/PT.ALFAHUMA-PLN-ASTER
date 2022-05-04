@@ -16,7 +16,9 @@ class C_ajuananggaran extends CI_Controller
 
 	public function add_datapengajuan()
 	{
+
 		$this->M_ajuananggaran->add_pengajuan();
+
 		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
 	}
 	public function delete_datapengajuan($id)
@@ -36,6 +38,9 @@ class C_ajuananggaran extends CI_Controller
 			$data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
 			$data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
 			$data['id'] = $id;
+			$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
+			$data['minggu'] = array('1', '2', '3', '4');
+
 
 
 
@@ -53,10 +58,10 @@ class C_ajuananggaran extends CI_Controller
 	public function show_datapengajuan()
 	{
 		$data['pengajuan_anggaran'] = $this->M_ajuananggaran->show_pengajuan();
+		$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
+		$data['minggu'] = array('1', '2', '3', '4');
 
-		
 		$this->load->view('anggaran/ajuananggaran', $data);
-		
 	}
 	public function show_koreksidata()
 	{
@@ -79,5 +84,4 @@ class C_ajuananggaran extends CI_Controller
 	public function show_rekapposanggaran()
 	{
 	}
-	
 }

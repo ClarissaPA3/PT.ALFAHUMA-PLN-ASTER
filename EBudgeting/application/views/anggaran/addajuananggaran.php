@@ -60,7 +60,14 @@
                                                     <label for="minggu2" class="col-sm-2 control-label">Minggu</label>
 
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="minggu2" name="minggu2" id="minggu2" placeholder="minggu" value="<?php echo $ajuan['minggu2']; ?>">
+                                                        <select name="minggu2" id="minggu2" class="form-control">
+                                                            <option value="" selected disabled>=== Pilih Minggu ==</option>
+                                                            <?php foreach ($minggu as $mingguu) : ?>
+                                                                <?php print_r($mingguu); ?>
+                                                                <option <?= set_select('minggu2', $mingguu); ?> <?php if ($mingguu == $ajuan['minggu2']) echo "selected"; ?> value="<?= $mingguu ?>">Minggu ke -<?= $mingguu; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+
 
                                                     </div>
                                                 </div>
@@ -77,7 +84,14 @@
                                                 <div class="form-group">
                                                     <label for="bulan2" class="col-sm-2 control-label">Bulan</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="bulan2" id="bulan2" placeholder="bulan" value="<?php echo $ajuan['bulan2']; ?>">
+                                                        <select name="bulan2" id="bulan2" class="form-control">
+                                                            <option value="" selected disabled>=== Pilih Bulan ==</option>
+                                                            <?php foreach ($bulan as $bulann) : ?>
+
+                                                                <option <?= set_select('bulan2', $bulann); ?> <?php if ($bulann == $ajuan['bulan2']) echo "selected"; ?> value="<?= $bulann ?>"><?= $bulann; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+
 
                                                     </div>
                                                 </div>

@@ -170,60 +170,81 @@
             <span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Menambahkan Ajuan?</h4>
         </div>
-        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="minggu2" class="col-sm-2 control-label">Minggu</label>
+        <form class="form-horizontal" id="aju" action="<?php echo site_url('C_ajuananggaran/add_datapengajuan'); ?>" method="post">
+          <div class="content">
 
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="minggu2" name="minggu2" id="minggu2" placeholder="minggu">
 
-                                                    </div>
-                                                </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="minggu2" class="col-sm-2 control-label">Minggu</label>
 
-                                                <div class="form-group">
-                                                    <label for="tanggal_mulai2" class="col-sm-2 control-label">Tanggal Mulai</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai">
+                  <div class="col-sm-10">
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="bulan2" class="col-sm-2 control-label">Bulan</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="bulan2" id="bulan2" placeholder="bulan">
+                    <select name="minggu2" id="minggu2" class="form-control">
+                      <option value="" selected disabled>=== Pilih Minggu ==</option>
+                      <?php foreach ($minggu as $mingguu) : ?>
+                        <?php print_r($mingguu); ?>
+                        <option <?= set_select('minggu2', $mingguu); ?> value="<?= $mingguu ?>">Minggu ke -<?= $mingguu; ?></option>
+                      <?php endforeach; ?>
+                    </select>
 
-                                                    </div>
-                                                </div>
 
-                                                <div class="form-group">
-                                                    <label for="tanggal_sampai2" class="col-sm-2 control-label">Tanggal Sampai</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai">
+                  </div>
+                </div>
 
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="tgl_pengajuan2" class="col-sm-2 control-label">Tanggal pengajuan</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tgl_pengajuan2" id="tgl_pengajuan2" placeholder="tanggal pengajuan" >
+                <div class=" form-group">
+                  <label for="tanggal_mulai2" class="col-sm-2 control-label">Tanggal Mulai</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai">
 
-                                                    </div>
-                                                </div>
-                                            </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="bulan2" class="col-sm-2 control-label">Bulan</label>
+                  <div class="col-sm-10">
+                    <select name="bulan2" id="bulan2" class="form-control">
+                      <option value="" selected disabled>=== Pilih Bulan ==</option>
+                      <?php foreach ($bulan as $bulann) : ?>
 
-                                        </div>
+                        <option <?= set_select('bulan2', $bulann); ?> value="<?= $bulann ?>"><?= $bulann; ?></option>
+                      <?php endforeach; ?>
+                    </select>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-          <form action="<?php echo site_url('C_ajuananggaran/add_datapengajuan'); ?>" method="post">
+
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="tanggal_sampai2" class="col-sm-2 control-label">Tanggal Sampai</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai">
+
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="tgl_pengajuan2" class="col-sm-2 control-label">Tanggal pengajuan</label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" name="tgl_pengajuan2" id="tgl_pengajuan2" placeholder="tanggal pengajuan">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+
             <button type="submit" class="btn btn-primary">Save changes</button>
 
-          </form>
 
-        </div>
+          </div>
+        </form>
       </div>
       <!-- /.modal-content -->
     </div>

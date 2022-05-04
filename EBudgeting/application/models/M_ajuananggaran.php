@@ -10,18 +10,19 @@ class M_ajuananggaran extends CI_Model
     }
     public function add_pengajuan()
     {
+        print_r($_POST);
         $data = array(
             'id_pengajuan' => '',
             'id_anggota' => $this->session->userdata('id_anggota'),
             'catatan_dm2' => '',
             'total_pengajuan2' => '',
-            'minggu2' => '',
-            'bulan2' => '',
+            'minggu2' => $this->input->post('minggu2'),
+            'bulan2' => $this->input->post('bulan2'),
             'catatan_dmpau2' => '',
-            'status2' => '',
-            'tanggal_mulai2' => '',
-            'tanggal_sampai2' => '',
-            'tgl_pengajuan2' => ''
+            'status2' => '0',
+            'tanggal_mulai2' => $this->input->post('tanggal_mulai2'),
+            'tanggal_sampai2' => $this->input->post('tanggal_sampai2'),
+            'tgl_pengajuan2' => date("Y-m-d")
         );
         $this->db->insert('pengajuan_anggaran', $data);
     }
