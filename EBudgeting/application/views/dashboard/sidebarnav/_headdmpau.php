@@ -101,7 +101,7 @@
         </a>
       </li>
       <li>
-        <a href="pages/widgets.html">
+        <a href="<?php echo site_url("C_koreksi_anggaran"); ?>">
           <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
           <span class="pull-right-container">
           </span>
