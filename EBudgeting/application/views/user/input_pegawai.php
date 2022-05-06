@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -184,8 +183,8 @@
                 </div>
                 <form action="<?php echo site_url('C_user/add_user'); ?>" method="post" enctype="multipart/form-data">
                     <div class="card-body">
-                        
-                        
+
+
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Nama Pegawai</label>
@@ -211,16 +210,16 @@
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Jabatan</label>
                             <div class="col-sm-5">
-                            <select name="id_jabatan" id="id_jabatan" class="form-control">
-                                <option value="" selected disabled>Jabatan</option>
-                                <?php foreach ($jabatan as $poss) : ?>
-                                    
-                                    <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
-                                <?php endforeach; ?>
-                            </select>
+                                <select name="id_jabatan" id="id_jabatan" class="form-control">
+                                    <option value="" selected disabled>Jabatan</option>
+                                    <?php foreach ($jabatan as $poss) : ?>
+
+                                        <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                         </div>
-                        
+
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Username</label>

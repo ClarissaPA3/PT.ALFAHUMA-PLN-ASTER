@@ -193,11 +193,10 @@
                                     <td rowspan="2">Nama</td>
                                     <td rowspan="2">Tanggal Lahir</td>
                                     <td rowspan="2">Alamat</td>
-                                    <td rowspan="2">Divisi</td>
                                     <td rowspan="2">Jabatan</td>
                                     <td rowspan="2">Username</td>
                                     <td rowspan="2">Password</td>
-                                    <td rowspan="2">aksi</td>
+                                    <td rowspan="2">Aksi</td>
                                 </tr>
                             </thead>
                             <tbody class="table-striped">
@@ -208,14 +207,13 @@
                                     ?>
                                     <tr>
                                         <!-- masukkan data dengan php echo beserta perulangan -->
-                                        <td> <?php echo $no; ?> </td>
-                                        <td> <?php echo $key->id_jabatan; ?> </td>
+                                        <td><?php echo $no; ?> </td>
                                         <td><?php echo $key->nama_anggota; ?> </td>
                                         <td><?php echo $key->tgl_lahir; ?> </td>
                                         <td><?php echo $key->alamat; ?> </td>
-                                
-                                        <td> <?php echo $key->username; ?> </td>
-                                        <td> <?php echo md5($key->password); ?> </td>
+                                        <td><?php echo $key->divisi; ?> </td>
+                                        <td><?php echo $key->username; ?> </td>
+                                        <td><?php echo md5($key->password); ?> </td>
                                         <td>
                                             <a href="<?php echo site_url('C_user/update_user/') . $key->id_anggota; ?>">Edit</a>
                                             <a href="<?php echo site_url('C_user/delete_user/') . $key->id_anggota; ?>">Delete</a>

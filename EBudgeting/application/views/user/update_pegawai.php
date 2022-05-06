@@ -208,9 +208,15 @@
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Divisi</label>
+                                <label class="col-sm-2 col-form-label">Jabatan</label>
                                 <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="divisi" name="divisi" placeholder="" value="<?php echo $key->divisi; ?>" required>
+                                    <select name="id_jabatan" id="id_jabatan" class="form-control">
+                                        <option value="" selected disabled>Jabatan</option>
+                                        <?php foreach ($jabatan as $poss) : ?>
+
+                                            <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
 
