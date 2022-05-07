@@ -23,7 +23,7 @@ class C_paguanggaran extends CI_Controller
     {
 
 
-        $this->form_validation->set_rules('nominal_pagu', 'Nominal Pagu', 'required');
+        $this->form_validation->set_rules('nominal_pagu', 'Nominal Pagu', 'required|min_length[3]|max_length[64]');
         echo $this->form_validation->run();
         if ($this->form_validation->run()) {
             $this->session->set_flashdata('success', 'Berhasil disimpan');
@@ -41,7 +41,7 @@ class C_paguanggaran extends CI_Controller
 
         $paguanggaran = $this->M_paguanggaran;
         $validation = $this->form_validation;
-        $validation->set_rules('nominal_pagu', 'Nominal Pagu', 'required');
+        $validation->set_rules('nominal_pagu', 'Nominal Pagu', 'required|min_length[3]|max_length[64]');
 
         if ($validation->run()) {
             $paguanggaran->update($id);

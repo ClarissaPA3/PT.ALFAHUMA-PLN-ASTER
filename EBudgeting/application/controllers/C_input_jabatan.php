@@ -14,7 +14,7 @@ class C_input_jabatan extends CI_Controller
     }
     public function add_jabatan()
     {
-        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required');
+        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('jabatan/addjabatan');
         } else {
@@ -33,7 +33,7 @@ class C_input_jabatan extends CI_Controller
     }
     public function update_jabatan($id)
     {
-        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required');
+        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
 
 
         if ($this->form_validation->run() == FALSE) {
