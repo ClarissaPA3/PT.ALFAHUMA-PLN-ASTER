@@ -23,7 +23,7 @@ class C_menutransfer extends CI_Controller
     {
 
 
-        $this->form_validation->set_rules('nama_pengirim', 'Nama Pengirim', 'required');
+        $this->form_validation->set_rules('nama_pengirim', 'Nama Pengirim', 'required|alpha_numeric_spaces|max_length[64]');
         echo $this->form_validation->run();
         if ($this->form_validation->run()) {
 
@@ -187,7 +187,7 @@ public function edit($id = null)
 
     $transfers = $this->M_menutransfer;
     $validation = $this->form_validation;
-    $validation->set_rules('nama_pengirim', 'Nama Pengirim', 'required');
+    $validation->set_rules('nama_pengirim', 'Nama Pengirim', 'required|alpha_numeric_spaces|max_length[64]');
 
     if ($validation->run()) {
         $transfers->update($id);
