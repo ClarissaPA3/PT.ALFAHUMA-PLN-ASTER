@@ -58,7 +58,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Rekap Jabatan</h1>
+                <h1>Data Jabatan</h1>
             </section>
 
             <!-- Main content -->

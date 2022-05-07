@@ -46,7 +46,7 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-xs-12">
                             <select name="bln">
                                 <option selected="selected">Bulan</option>
                                 <?php
@@ -57,45 +57,46 @@
                                 }
                                 ?>
                             </select>
-                            <div class="card mb-3">
-                                <div class="card-body">
-
-                                    <div class="table-responsive">
-                                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
-                                                <tr>
-                                                    <td rowspan="2">Pos</td>
-                                                    <td rowspan="2">Sub Pos</td>
-                                                    <td rowspan="2">Sub Pos Barang</td>
-                                                    <td rowspan="2">Kegiatan</td>
-                                                    <td rowspan="2">Nominal</td>
-                                                    <td rowspan="2">Deskripsi</td>
-                                                    <td rowspan="2">Disetujui</td>
-                                                    <td rowspan="2">Aksi</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="table-striped"></tbody>
-                                        </table>
-                                    </div>
+                            <div class="box">
+                                <div class="box-header">
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table id="example2" class="table table-bordered table-hover text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>Pos</th>
+                                                <th>Sub Pos</th>
+                                                <th>Sub Pos Barang</th>
+                                                <th>Kegiatan</th>
+                                                <th>Nominal</th>
+                                                <th>Deskripsi</th>
+                                                <th>Disetujui</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped"></tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.box -->
-
                     </div>
-
+                    <!-- /.box -->
 
             </div>
-            <!-- /.row -->
-            </section>
 
-            <!-- right col -->
+
         </div>
+        <!-- /.row -->
+        </section>
 
-        <!-- /.row (main row) -->
+        <!-- right col -->
+    </div>
+
+    <!-- /.row (main row) -->
 
 
-        <!-- /.content -->
+    <!-- /.content -->
     </div>
     </div>
     </form>
