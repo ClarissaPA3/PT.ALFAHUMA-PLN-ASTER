@@ -11,7 +11,7 @@ class M_ajuananggaran extends CI_Model
     // Sub bidang
     public function add_pengajuan()
     {
-        
+
         print_r($_POST);
         $data = array(
             'id_pengajuan' => '',
@@ -45,7 +45,7 @@ class M_ajuananggaran extends CI_Model
 
     public function update_pengajuan()
     {
-        
+
         $id = $this->input->post('id_pengajuan');
         $nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
         $data = array(
@@ -80,13 +80,17 @@ class M_ajuananggaran extends CI_Model
     // New persetujuan DMPAU
     public function show_persetujuanDMPAU()
     {
-        $query = $this->db->get_where('pengajuan_anggaran', array('status2' => '2'));
+        $this->db->select('*');
+        $this->db->from('pengajuan_anggaran');
+        $this->db->where('status2 >=', '2');
+      
+        $query = $this->db->get();
         return $query->result_array();
     }
 
     public function update_pengajuanDM()
     {
-        
+
         $id = $this->input->post('id_pengajuan');
         $nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
         $data = array(
@@ -102,13 +106,13 @@ class M_ajuananggaran extends CI_Model
             'tanggal_sampai2' => $this->input->post('tanggal_sampai2'),
             'tgl_pengajuan2' => $this->input->post('tgl_pengajuan2')
         );
-       
+
 
         $this->db->update('pengajuan_anggaran', $data, array('id_pengajuan' => $id));
     }
     public function update_pengajuanDMPAU()
     {
-        
+
         $id = $this->input->post('id_pengajuan');
         $nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
         $data = array(
@@ -124,7 +128,7 @@ class M_ajuananggaran extends CI_Model
             'tanggal_sampai2' => $this->input->post('tanggal_sampai2'),
             'tgl_pengajuan2' => $this->input->post('tgl_pengajuan2')
         );
-       
+
 
         $this->db->update('pengajuan_anggaran', $data, array('id_pengajuan' => $id));
     }

@@ -56,7 +56,7 @@
                                     <td><?php echo $ajuan['tanggal_mulai2'];?></td>
                                     <td><?php echo $ajuan['tanggal_sampai2'];?></td>
                                
-                                    <td><?=  $ajuan['status2']; ?></td>
+                                    <td></td>
                                     <td>
                                         <?php 
                                         
