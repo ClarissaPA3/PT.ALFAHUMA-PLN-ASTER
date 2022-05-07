@@ -48,7 +48,7 @@
                 <section class="content">
                     <div class="row">
 
-                        <div class="col-md-12">
+                        <div class="col-xs-12">
                             <select name="bln">
                                 <option selected="selected">Bulan</option>
                                 <?php
@@ -59,46 +59,47 @@
                                 }
                                 ?>
                             </select>
-                            <div class="card mb-3">
-                                <div class="card-body">
-
-                                    <div class="table-responsive">
-                                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
-                                                <tr>
-                                                    <td rowspan="2">No</td>
-                                                    <td rowspan="2">Minggu Ke</td>
-                                                    <td rowspan="2">Bulan</td>
-                                                    <td rowspan="2">Tanggal Mulai</td>
-                                                    <td rowspan="2">Tanggal Sampai</td>
-                                                    <td rowspan="2">Item</td>
-                                                    <td rowspan="2">Status</td>
-                                                    <td rowspan="2">Catatan</td>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="table-striped"></tbody>
-                                        </table>
-                                    </div>
+                            <div class="box">
+                                <div class="box-header">
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table id="example2" class="table table-bordered table-hover text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Minggu Ke</th>
+                                                <th>Bulan</th>
+                                                <th>Tanggal Mulai</th>
+                                                <th>Tanggal Sampai</th>
+                                                <th>Item</th>
+                                                <th>Status</th>
+                                                <th>Catatan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped"></tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.box -->
-
                     </div>
-
+                    <!-- /.box -->
 
             </div>
-            <!-- /.row -->
-            </section>
 
-            <!-- right col -->
+
         </div>
-        <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
+        <!-- /.row -->
+        </section>
 
-        <!-- /.row (main row) -->
+        <!-- right col -->
+    </div>
+    <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
+
+    <!-- /.row (main row) -->
 
 
-        <!-- /.content -->
+    <!-- /.content -->
     </div>
     </div>
     </form>

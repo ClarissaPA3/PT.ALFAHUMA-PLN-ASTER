@@ -59,76 +59,75 @@
                                 }
                                 ?>
                             </select>
-                            <div class="card mb-3">
-                                <section class="content-header mb-5"></section>
-                                <div class="card-body">
+                            <div class="box">
+                                <div class="box-header">
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table id="example2" class="table table-bordered table-hover text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>ID Pengajuan</th>
+                                                <th>Bulan</th>
+                                                <th>Minggu Ke</th>
+                                                <th>Tanggal Mulai</th>
+                                                <th>Tanggal Sampai</th>
+                                                <th>Item</th>
+                                                <th>Status</th>
+                                                <th>Catatan</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped">
+                                            <?php foreach ($pengajuan as $ajuan) : ?>
 
-                                    <div class="table-responsive">
-                                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
                                                 <tr>
-                                                    <td rowspan="2">ID Pengajuan</td>
-                                                    <td rowspan="2">Bulan</td>
-                                                    <td rowspan="2">Minggu Ke</td>
-                                                    <td rowspan="2">Tanggal Mulai</td>
-                                                    <td rowspan="2">Tanggal Sampai</td>
-                                                    <td rowspan="2">Item</td>
-                                                    <td rowspan="2">Status</td>
-                                                    <td rowspan="2">Catatan</td>
-                                                    <td>Aksi</td>
+                                                    <td><?php echo $ajuan['id_pengajuan']; ?></td>
+                                                    <td><?php echo $ajuan['bulan2']; ?></td>
+                                                    <td><?php echo $ajuan['minggu2']; ?></td>
+                                                    <td><?php echo $ajuan['tanggal_mulai2']; ?></td>
+                                                    <td><?php echo $ajuan['tanggal_sampai2']; ?></td>
+
+                                                    <td>-</td>
+                                                    <td>
+                                                        <?php
+                                                        if ($ajuan['status2'] == 1) {
+                                                        ?>
+                                                            <p class="btn btn-primary">Menunggu persetujuan</p>
+
+                                                        <?php
+                                                        }
+                                                        ?>
+
+                                                    <td>-</td>
+                                                    <td>
+                                                        <a href="<?php echo site_url('C_persetujuan_dm/reviewdm/') . $ajuan['id_pengajuan']; ?>" class="btn btn-primary">Review</a>
+                                                    </td>
+
                                                 </tr>
-                                            </thead>
-                                            <tbody class="table-striped">
-                                                <?php foreach ($pengajuan as $ajuan) : ?>
-
-                                                    <tr>
-                                                        <td><?php echo $ajuan['id_pengajuan']; ?></td>
-                                                        <td><?php echo $ajuan['bulan2']; ?></td>
-                                                        <td><?php echo $ajuan['minggu2']; ?></td>
-                                                        <td><?php echo $ajuan['tanggal_mulai2']; ?></td>
-                                                        <td><?php echo $ajuan['tanggal_sampai2']; ?></td>
-
-                                                        <td>-</td>
-                                                        <td>
-                                                            <?php
-                                                            if ($ajuan['status2'] == 1) {
-                                                            ?>
-                                                                <p class="btn btn-primary">Menunggu persetujuan</p>
-
-                                                            <?php
-                                                            }
-                                                            ?>
-
-                                                        <td>-</td>
-                                                        <td>
-                                                            <a href="<?php echo site_url('C_persetujuan_dm/reviewdm/') . $ajuan['id_pengajuan']; ?>" class="btn btn-primary">Review</a>
-                                                        </td>
-
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.box -->
-
                     </div>
-
+                    <!-- /.box -->
 
             </div>
-            <!-- /.row -->
-            </section>
 
-            <!-- right col -->
+
         </div>
-        <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
+        <!-- /.row -->
+        </section>
 
-        <!-- /.row (main row) -->
+        <!-- right col -->
+    </div>
+
+    <!-- /.row (main row) -->
 
 
-        <!-- /.content -->
+    <!-- /.content -->
     </div>
     </div>
     </form>

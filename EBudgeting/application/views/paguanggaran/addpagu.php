@@ -74,39 +74,70 @@
             <div class="container-fluid">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
+                    <h1>Tambah Pagu Anggaran</h1>
                 </section>
 
                 <!-- Main content -->
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">
-                    </div>
-                    <form action="<?php site_url('C_paguanggaran/add') ?>" method="post">
-                        <input type="text" name="id_anggota" placeholder="Id Anggota" value="">
-                        <input type="text" name="nominal_pagu" placeholder="Nominal Pagu">
-                        <input type="text" name="nominal_terpakai" placeholder="Nominal Terpakai">
-                        <input type="text" name="bulan" placeholder="Bulan">
-                        <input type="text" name="tahun" placeholder="Tahun">
+                <section class="content">
+                    <div class="row">
 
-                        <button type="submit">Submit</button>
-                </div>
-                </form>
-                <!-- right col -->
-            </div>
-            <!-- /.row (main row) -->
+                        <div class="col-md-12">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                </div>
+                                <form action="<?php echo site_url('C_paguanggaran/add'); ?>" method="post" enctype="multipart/form-data">
+                                    <div class="card-body">
 
-            </section>
-            <!-- /.content -->
-        </div>
-        <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">ID Anggota</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="id_anggota" name="id_anggota" placeholder="" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Nominal Pagu</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="nominal_pagu" name="nominal_pagu" placeholder="" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Nominal Terpakai</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="nominal_terpakai" name="nominal_terpakai" placeholder="" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Bulan</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="bulan" name="bulan" placeholder="" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Tahun</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="tahun" name="tahun" placeholder="" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-info">Simpan</button>
+                                    </div>
+                                </form>
+                                <!-- right col -->
+                            </div>
+                            <!-- /.row (main row) -->
 
-        <!-- Add the sidebar's background. This div must be placed
+                </section>
+                <!-- /.content -->
+
+                <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
-        <div class="control-sidebar-bg"></div>
-    </div>
-    <!-- ./wrapper -->
+                <div class="control-sidebar-bg"></div>
+            </div>
+            <!-- ./wrapper -->
 
-    <?php $this->load->view('dashboard/_part/js'); ?>
+            <?php $this->load->view('dashboard/_part/js'); ?>
 </body>
 
 </html>

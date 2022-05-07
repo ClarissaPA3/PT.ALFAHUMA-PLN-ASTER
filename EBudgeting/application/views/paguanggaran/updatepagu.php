@@ -73,50 +73,72 @@
       <div class="container-fluid">
         <!-- Content Header (Page header) -->
         <section class="content-header">
+          <h1>Edit Pagu Anggaran</h1>
         </section>
 
         <!-- Main content -->
-        <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">
-          </div>
+        <section class="content">
+          <div class="row">
 
-          <form action="<?php site_url('C_paguanggaran/edit') ?>" method="post">
-            <?php foreach ($paguanggaran as $key) : ?>
+            <div class="col-md-12">
+              <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">
+                </div>
+                <form action="<?php echo site_url('C_paguanggaran/edit'); ?>" method="post" enctype="multipart/form-data">
+                  <div class="card-body">
+                    <?php foreach ($paguanggaran as $key) : ?>
 
-              <input type="hidden" name="id_paguanggaran" value="<?php echo $key['id_paguanggaran']; ?>">
-              <input type="hidden" name="id_anggota" placeholder="Id Anggota" value="<?php echo $key['id_anggota']; ?>">
-              <input type="text" name="nominal_pagu" placeholder="Nominal Pagu" value="<?php echo $key['nominal_pagu']; ?>">
-              <input type="text" name="nominal_terpakai" placeholder="Nominal Terpakai" value="<?php echo $key['nominal_terpakai']; ?>">
-              <input type="text" name="bulan" placeholder="Bulan" value="<?php echo $key['bulan']; ?>">
-              <input type="text" name="tahun" placeholder="Tahun" value="<?php echo $key['tahun']; ?>">
-              <button type="submit">Submit</button>
-            <?php endforeach; ?>
-        </div>
-        </form>
-        <!-- right col -->
+                      <input type="hidden" name="id_paguanggaran" value="<?php echo $key['id_paguanggaran']; ?>">
+                      <input type="hidden" name="id_anggota" placeholder="Id Anggota" value="<?php echo $key['id_anggota']; ?>">
+
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Nominal Pagu</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="nominal_pagu" name="nominal_pagu" placeholder="" value="<?php echo $key['nominal_pagu']; ?>" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Nominal Terpakai</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="nominal_terpakai" name="nominal_terpakai" placeholder="" value="<?php echo $key['nominal_terpakai']; ?>" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Bulan</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="bulan" name="bulan" placeholder="" value="<?php echo $key['bulan']; ?>" required>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Tahun</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="tahun" name="tahun" placeholder="" value="<?php echo $key['tahun']; ?>" required>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit" class="btn btn-info">Simpan</button>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+              </form>
+              <!-- right col -->
+            </div>
+            <!-- /.row (main row) -->
+
+        </section>
+        <!-- /.content -->
       </div>
-      <!-- /.row (main row) -->
+      <!-- /.content-wrapper -->
 
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Create by</b> Mahasiswa UNS 2020.
-      </div>
-      <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
-      reserved.
-    </footer>
-
-    <!-- Add the sidebar's background. This div must be placed
+      <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-  </div>
-  <!-- ./wrapper -->
+      <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
 
-  <?php $this->load->view('dashboard/_part/js'); ?>
+    <?php $this->load->view('dashboard/_part/js'); ?>
 </body>
 
 </html>

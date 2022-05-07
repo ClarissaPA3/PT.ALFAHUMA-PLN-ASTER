@@ -194,76 +194,74 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
+                        <div class="col-xs-12">
+                            <a href="<?php echo site_url('C_user/add_user'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah Pegawai</a>
 
-                        <div class="col-md-12">
-                            <div class="card mb-3">
-                                <section class="content-header mb-5"></section>
-                                <div class="card-header">
-                                    <a class="btn btn-primary" href="<?php echo site_url('C_user/add_user'); ?>">Tambah Data</a>
+                            <div class="box">
+                                <div class="box-header">
                                 </div>
-                                <div class="card-body">
-
-                                    <div class="table-responsive">
-                                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
-                                            <thead>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table id="example2" class="table table-bordered table-hover text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nama</th>
+                                                <th>Tanggal Lahir</th>
+                                                <th>Alamat</th>
+                                                <th>Jabatan</th>
+                                                <th>Username</th>
+                                                <th>Password</th>
+                                                <th colspan="2">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped">
+                                            <?php $no = 0; ?>
+                                            <?php foreach ($pegawai as $key) : ?>
+                                                <?php
+                                                $no++
+                                                ?>
                                                 <tr>
-                                                    <td rowspan="2">ID</td>
-                                                    <td rowspan="2">Nama</td>
-                                                    <td rowspan="2">Tanggal Lahir</td>
-                                                    <td rowspan="2">Alamat</td>
-                                                    <td rowspan="2">Jabatan</td>
-                                                    <td rowspan="2">Username</td>
-                                                    <td rowspan="2">Password</td>
-                                                    <td rowspan="2">Aksi</td>
+                                                    <!-- masukkan data dengan php echo beserta perulangan -->
+                                                    <td><?php echo $no; ?> </td>
+                                                    <td><?php echo $key->nama_anggota; ?> </td>
+                                                    <td><?php echo $key->tgl_lahir; ?> </td>
+                                                    <td><?php echo $key->alamat; ?> </td>
+                                                    <td><?php echo $key->divisi; ?> </td>
+                                                    <td><?php echo $key->username; ?> </td>
+                                                    <td><?php echo md5($key->password); ?> </td>
+                                                    <td>
+                                                        <a href="<?php echo site_url('C_user/update_user/') . $key->id_anggota; ?>" class="btn btn-block btn-primary">Edit</a>
+                                                        <a href="<?php echo site_url('C_user/delete_user/') . $key->id_anggota; ?>" class="btn btn-block btn-danger">Delete</a>
+
+                                                    </td>
                                                 </tr>
-                                            </thead>
-                                            <tbody class="table-striped">
-                                                <?php $no = 0; ?>
-                                                <?php foreach ($pegawai as $key) : ?>
-                                                    <?php
-                                                    $no++
-                                                    ?>
-                                                    <tr>
-                                                        <!-- masukkan data dengan php echo beserta perulangan -->
-                                                        <td><?php echo $no; ?> </td>
-                                                        <td><?php echo $key->nama_anggota; ?> </td>
-                                                        <td><?php echo $key->tgl_lahir; ?> </td>
-                                                        <td><?php echo $key->alamat; ?> </td>
-                                                        <td><?php echo $key->divisi; ?> </td>
-                                                        <td><?php echo $key->username; ?> </td>
-                                                        <td><?php echo md5($key->password); ?> </td>
-                                                        <td>
-                                                            <a href="<?php echo site_url('C_user/update_user/') . $key->id_anggota; ?>">Edit</a>
-                                                            <a href="<?php echo site_url('C_user/delete_user/') . $key->id_anggota; ?>">Delete</a>
+                                            <?php endforeach; ?>
+                                        </tbody>
 
-                                                        </td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                            </tbody>
-
-                                        </table>
-                                    </div>
+                                    </table>
                                 </div>
                             </div>
-
                         </div>
-                        <!-- /.box -->
 
                     </div>
-
+                    <!-- /.box -->
 
             </div>
-            <!-- /.row -->
-            </section>
 
-            <!-- right col -->
+
         </div>
-        <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
+        <!-- /.row -->
+        </section>
 
-        <!-- /.row (main row) -->
+        <!-- right col -->
+    </div>
+    <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
+
+    <!-- /.row (main row) -->
 
 
-        <!-- /.content -->
+    <!-- /.content -->
     </div>
 
     </div>

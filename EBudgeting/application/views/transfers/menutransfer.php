@@ -75,15 +75,16 @@
             <div class="container-fluid">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <a href="<?php echo site_url('C_menutransfer/add'); ?>">
-                        <h4>Tambah Rekap Transfer</h4>
+                    <h1>Tambah Rekap Transfer</h1>
                     </a>
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-xs-12">
+                            <a href="<?php echo site_url('C_menutransfer/add'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah Rekap Transfer</a>
+
                             <div class="card mb-3">
                                 <section class="content-header mb-5"></section>
                                 <div class="card-body">
@@ -93,7 +94,7 @@
                                             <thead>
                                                 <tr>
                                                     <td rowspan="2">No</td>
-                                                    <td rowspan="2">Id Anggota</td>
+                                                    <td rowspan="2">ID Anggota</td>
                                                     <td rowspan="2">Nama Pengirim</td>
                                                     <td rowspan="2">Email</td>
                                                     <td rowspan="2">No Telp</td>
@@ -166,8 +167,8 @@
                                                         <td><?php echo $id_anggota['lumpsum_uang_cod'] ?></td>
                                                         <td>
 
-                                                            <a href="<?php echo site_url('C_menutransfer/edit/') . $id_anggota['id_transfer']; ?>">Edit</a>
-                                                            <a href="<?php echo site_url('C_menutransfer/delete/') . $id_anggota['id_transfer']; ?>">Hapus</a>
+                                                            <a href="<?php echo site_url('C_menutransfer/edit/') . $id_anggota['id_transfer']; ?>" class="btn btn-block btn-primary">Edit</a>
+                                                            <a href="<?php echo site_url('C_menutransfer/delete/') . $id_anggota['id_transfer']; ?>" class="btn btn-block btn-danger">Hapus</a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>

@@ -73,68 +73,72 @@
             <div class="container-fluid">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <a href="<?php echo site_url('C_paguanggaran/add'); ?>">
-                        <h4>Tambah Pagu Anggaran</h4>
+                    <h1>Setting Pagu Anggaran</h1>
                     </a>
                 </section>
 
                 <!-- Main content -->
-                <div class="card mb-3">
-                    <section class="content-header mb-5"></section>
-                    <div class="card-body">
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="<?php echo site_url('C_paguanggaran/add'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Tambah Pagu Anggaran</a>
 
-                        <div class="table-responsive">
-                            <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <td rowspan="2">No</td>
-                                        <td rowspan="2">Id Anggota</td>
-                                        <td rowspan="2">Nominal Pagu</td>
-                                        <td rowspan="2">Nominal Terpakai</td>
-                                        <td rowspan="2">Bulan</td>
-                                        <td rowspan="2">Tahun</td>
-                                        <td rowspan="2">Aksi</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="table-striped">
+                            <div class="box">
+                                <div class="box-header">
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <table id="example2" class="table table-bordered table-hover text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>ID Anggota</th>
+                                                <th>Nominal Pagu</th>
+                                                <th>Nominal Terpakai</th>
+                                                <th>Bulan</th>
+                                                <th>Tahun</th>
+                                                <th colspan="2">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-striped">
 
-                                    <?php
-                                    $id = 0;
-                                    foreach ($pagu_anggaran as $id_anggota) :
-                                        $id++;
+                                            <?php
+                                            $id = 0;
+                                            foreach ($pagu_anggaran as $id_anggota) :
+                                                $id++;
 
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $id; ?></td>
-                                            <td><?php echo $id_anggota['id_anggota'] ?></td>
-                                            <td><?php echo $id_anggota['nominal_pagu'] ?></td>
-                                            <td><?php echo $id_anggota['nominal_terpakai'] ?></td>
-                                            <td><?php echo $id_anggota['bulan'] ?></td>
-                                            <td><?php echo $id_anggota['tahun'] ?></td>
-                                            <td>
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $id; ?></td>
+                                                    <td><?php echo $id_anggota['id_anggota'] ?></td>
+                                                    <td><?php echo $id_anggota['nominal_pagu'] ?></td>
+                                                    <td><?php echo $id_anggota['nominal_terpakai'] ?></td>
+                                                    <td><?php echo $id_anggota['bulan'] ?></td>
+                                                    <td><?php echo $id_anggota['tahun'] ?></td>
+                                                    <td>
 
-                                                <a href="<?php echo site_url('C_paguanggaran/edit/') . $id_anggota['id_paguanggaran']; ?>">Edit</a>
-                                                <a href="<?php echo site_url('C_paguanggaran/delete/') . $id_anggota['id_paguanggaran']; ?>">Hapus</a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                                                        <a href="<?php echo site_url('C_paguanggaran/edit/') . $id_anggota['id_paguanggaran']; ?>" class="btn btn-block btn-primary">Edit</a>
+                                                        <a href="<?php echo site_url('C_paguanggaran/delete/') . $id_anggota['id_paguanggaran']; ?>" class="btn btn-block btn-danger">Hapus</a>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
-                </div>
+                    <!-- /.box -->
 
             </div>
-            <!-- /.box -->
+
 
         </div>
+        <!-- /.row -->
+        </section>
 
-
-    </div>
-    <!-- /.row -->
-    </section>
-
-    <!-- right col -->
+        <!-- right col -->
     </div>
     <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
 
