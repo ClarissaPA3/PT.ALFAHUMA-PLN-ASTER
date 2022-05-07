@@ -24,7 +24,7 @@ class C_persetujuan_dm extends CI_Controller
     {
         $data['pengajuan'] = $this->M_persetujuan->show_pengajuan_sub();
 
-        print_r($data);
+      
         $this->load->view('dashboard/_part/head');
         $this->load->view('persetujuan/persetujuan_dm.php', $data);
         $this->load->view('dashboard/_part/footer');

@@ -127,7 +127,7 @@
             </ul>
           </li>
           <li>
-          <li><a href="<?php echo site_url("C_persetujuan_dm"); ?>"><i class="fa fa-check"></i> <span>Persetujuan DM</span>
+          <li><a href="<?php echo site_url("C_persetujuan_dm/show_pengajuandm"); ?>"><i class="fa fa-check"></i> <span>Persetujuan DM</span>
               <span class="pull-right-container">
                 <span class="pull-right-container">
                 </span>
