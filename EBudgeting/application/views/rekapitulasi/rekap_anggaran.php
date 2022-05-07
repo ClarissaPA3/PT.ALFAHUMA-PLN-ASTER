@@ -38,6 +38,21 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        .example-modal .modal {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            right: auto;
+            left: auto;
+            display: block;
+            z-index: 1;
+        }
+
+        .example-modal .modal {
+            background: transparent !important;
+        }
+    </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -65,98 +80,70 @@
                 </section>
 
                 <!-- Main content -->
-                <select name="bln">
-                    <option selected="selected">Bulan</option>
-                    <?php
-                    $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
-                    $jlh_bln = count($bulan);
-                    for ($c = 0; $c < $jlh_bln; $c += 1) {
-                        echo "<option value=$bulan[$c]> $bulan[$c] </option>";
-                    }
-                    ?>
-                </select>
-                <div class="card mb-3">
-                    <div class="card-body">
+                <section class="content">
+                    <div class="row">
 
-                        <div class="table-responsive">
-                            <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <td rowspan="2">No</td>
-                                        <td rowspan="2">Kode Pos</td>
-                                        <td rowspan="2">Uraian</td>
-                                        <td colspan="5">Rencana Kebutuhan</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Minggu I</td>
-                                        <td>Minggu II</td>
-                                        <td>Minggu III</td>
-                                        <td>Minggu IV</td>
-                                        <td>Total</td>
-                                    </tr>
-                                </thead>
-                                <tbody class="table-striped">
-                                    <tr>
-                                        <!-- masukkan data dengan php echo beserta perulangan -->
-                                        <td>1</td>
-                                        <td>001</td>
-                                        <td>Biaya Jasa</td>
-                                        <td>2</td>
-                                        <td>5</td>
-                                        <td>1</td>
-                                        <td>4</td>
-                                        <td>12</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="col-md-12">
+                            <select name="bln">
+                                <option selected="selected">Bulan</option>
+                                <?php
+                                $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+                                $jlh_bln = count($bulan);
+                                for ($c = 0; $c < $jlh_bln; $c += 1) {
+                                    echo "<option value=$bulan[$c]> $bulan[$c] </option>";
+                                }
+                                ?>
+                            </select>
+                            <div class="card mb-3">
+                                <div class="card-body">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <td rowspan="2">No</td>
+                                                    <td rowspan="2">Kode Pos</td>
+                                                    <td rowspan="2">Uraian</td>
+                                                    <td colspan="5">Rencana Kebutuhan</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Minggu I</td>
+                                                    <td>Minggu II</td>
+                                                    <td>Minggu III</td>
+                                                    <td>Minggu IV</td>
+                                                    <td>Total</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="table-striped">
+                                                <tr>
+                                                    <!-- masukkan data dengan php echo beserta perulangan -->
+                                                    <td>1</td>
+                                                    <td>001</td>
+                                                    <td>Biaya Jasa</td>
+                                                    <td>2</td>
+                                                    <td>5</td>
+                                                    <td>1</td>
+                                                    <td>4</td>
+                                                    <td>12</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        </form>
                     </div>
-                </div>
+                    <!-- /.modal-content -->
             </div>
-
-            <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-            <div class="control-sidebar-bg"></div>
+            <!-- /.modal-dialog -->
         </div>
-        <!-- ./wrapper -->
+        <!-- Add the sidebar's background. This div must be placed
 
-        <!-- jQuery 3 -->
-        <script src="<?php echo base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-        <!-- jQuery UI 1.11.4 -->
-        <script src="<?php echo base_url() ?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
-        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-        <script>
-            $.widget.bridge('uibutton', $.ui.button);
-        </script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- Morris.js charts -->
-        <script src="<?php echo base_url() ?>assets/bower_components/raphael/raphael.min.js"></script>
-        <script src="<?php echo base_url() ?>assets/bower_components/morris.js/morris.min.js"></script>
-        <!-- Sparkline -->
-        <script src="<?php echo base_url() ?>assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-        <!-- jvectormap -->
-        <script src="<?php echo base_url() ?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="<?php echo base_url() ?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <!-- jQuery Knob Chart -->
-        <script src="<?php echo base_url() ?>assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-        <!-- daterangepicker -->
-        <script src="<?php echo base_url() ?>assets/bower_components/moment/min/moment.min.js"></script>
-        <script src="<?php echo base_url() ?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <!-- datepicker -->
-        <script src="<?php echo base_url() ?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-        <!-- Bootstrap WYSIHTML5 -->
-        <script src="<?php echo base_url() ?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-        <!-- Slimscroll -->
-        <script src="<?php echo base_url() ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <!-- FastClick -->
-        <script src="<?php echo base_url() ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
-        <!-- AdminLTE App -->
-        <script src="<?php echo base_url() ?>assets/dist/js/adminlte.min.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="<?php echo base_url() ?>assets/dist/js/pages/dashboard.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="<?php echo base_url() ?>assets/dist/js/demo.js"></script>
+  <div class="control-sidebar-bg"></div>
+  </div>
+
+  <?php $this->load->view('dashboard/_part/js'); ?>
 </body>
 
 </html>

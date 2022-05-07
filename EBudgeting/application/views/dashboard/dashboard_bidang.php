@@ -37,13 +37,7 @@
                   <ul class="menu">
                     <li>
                       <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                        page and may cause design problems
+                        <i class="fa fa-users text-aqua"></i> Koreksi Anggaran
                       </a>
                     </li>
                   </ul>
