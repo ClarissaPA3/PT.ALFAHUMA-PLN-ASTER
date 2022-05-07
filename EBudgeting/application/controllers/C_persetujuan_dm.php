@@ -13,7 +13,6 @@ class C_persetujuan_dm extends CI_Controller
         $this->load->model('M_masterpos_subpos');
         $this->load->model('M_detailajuan');
         $this->load->model('M_ajuananggaran');
-
     }
     public function index()
     {
@@ -30,18 +29,32 @@ class C_persetujuan_dm extends CI_Controller
         $this->load->view('persetujuan/persetujuan_dm.php', $data);
         $this->load->view('dashboard/_part/footer');
     }
-    public function reviewdm($id)
+    public function reviewdm($id = null)
     {
-        $data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
+        $this->form_validation->set_rules('id_pengajuan', 'Id pengajuan', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
+            $data['pos'] = $this->M_masterpos_subpos->show_posM();
+            $data['subpos'] = $this->M_masterpos_subpos->show_subposM();
+            $data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
+            $data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
+            $data['id'] = $id;
+            $this->load->view('persetujuan/review_dm', $data);
+
+
+        } else {
+            
+            $this->M_ajuananggaran->update_pengajuanDM();
+            $this->M_detailajuan->update_pengajuanDM();
+            redirect(site_url('C_persetujuan_dm/show_pengajuandm'));
+        }
+    }
+    
+    public function testing()
+    {
         $data['pos'] = $this->M_masterpos_subpos->show_posM();
-        $data['subpos'] = $this->M_masterpos_subpos->show_subposM();
-        $data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
-        $data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
-        $data['id'] = $id;
-
-
-
-
-        $this->load->view('persetujuan/review_dm', $data);
+        print_r($_POST);
+        $this->load->view('persetujuan/testing', $data);
     }
 }

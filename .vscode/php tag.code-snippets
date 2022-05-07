@@ -21,5 +21,13 @@
 		"body": "<?php $1 ?>",
 		"description": "Create a PHP tag"
 
+	},
+
+	"Echoing PHP Tag":{
+		"scope": "html, javascript",
+		"prefix": "echo",
+		"body": "<?= $1 ?>",
+		"description": "Echoing PHP Tag"
+
 	}
 }

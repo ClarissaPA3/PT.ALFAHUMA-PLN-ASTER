@@ -113,7 +113,6 @@
 </nav>
 </header>
 <!-- Left side column. contains the logo and sidebar -->
-<?php $this->load->view('dashboard/templatedmpau/sidebar'); ?>
 
 
 <!-- Content Wrapper. Contains page content -->

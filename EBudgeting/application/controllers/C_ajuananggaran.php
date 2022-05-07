@@ -47,9 +47,7 @@ class C_ajuananggaran extends CI_Controller
 
 			$this->load->view('anggaran/addajuananggaran', $data);
 		} else {
-
-
-
+			print_r($_POST);
 
 			$this->M_ajuananggaran->update_pengajuan();
 			redirect(site_url('C_ajuananggaran/show_datapengajuan'));
@@ -63,6 +61,7 @@ class C_ajuananggaran extends CI_Controller
 
 		$this->load->view('anggaran/ajuananggaran', $data);
 	}
+
 	public function show_koreksidata()
 	{
 	}
@@ -84,4 +83,8 @@ class C_ajuananggaran extends CI_Controller
 	public function show_rekapposanggaran()
 	{
 	}
+
+
+	// Baru Persetujuan DM
+	
 }

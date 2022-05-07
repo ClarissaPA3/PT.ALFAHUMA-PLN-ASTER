@@ -130,7 +130,7 @@
 
                             <td class="small">
                             <td width="250">
-                              <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit dan detail</a>
+                              <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Detail anggaran</a>
                               <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                           </tr>
@@ -177,9 +177,9 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="minggu2" class="col-sm-2 control-label">Minggu</label>
+                  <label for="minggu2" class="col-sm-3  control-label">Minggu</label>
 
-                  <div class="col-sm-10">
+                  <div class="col-sm-9">
 
                     <select name="minggu2" id="minggu2" class="form-control">
                       <option value="" selected disabled>=== Pilih Minggu ==</option>
@@ -194,8 +194,8 @@
                 </div>
 
                 <div class=" form-group">
-                  <label for="tanggal_mulai2" class="col-sm-2 control-label">Tanggal Mulai</label>
-                  <div class="col-sm-10">
+                  <label for="tanggal_mulai2" class="col-sm-3  control-label">Tanggal Mulai</label>
+                  <div class="col-sm-9">
                     <input type="date" class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai">
 
                   </div>
@@ -203,8 +203,8 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="bulan2" class="col-sm-2 control-label">Bulan</label>
-                  <div class="col-sm-10">
+                  <label for="bulan2" class="col-sm-3 control-label">Bulan</label>
+                  <div class="col-sm-9">
                     <select name="bulan2" id="bulan2" class="form-control">
                       <option value="" selected disabled>=== Pilih Bulan ==</option>
                       <?php foreach ($bulan as $bulann) : ?>
@@ -218,24 +218,15 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="tanggal_sampai2" class="col-sm-2 control-label">Tanggal Sampai</label>
-                  <div class="col-sm-10">
+                  <label for="tanggal_sampai2" class="col-sm-3  control-label">Tanggal Sampai</label>
+                  <div class="col-sm-9">
                     <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai">
-
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="tgl_pengajuan2" class="col-sm-2 control-label">Tanggal pengajuan</label>
-                  <div class="col-sm-10">
-                    <input type="date" class="form-control" name="tgl_pengajuan2" id="tgl_pengajuan2" placeholder="tanggal pengajuan">
 
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-
 
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>

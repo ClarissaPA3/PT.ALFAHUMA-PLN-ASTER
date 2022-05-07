@@ -103,6 +103,7 @@
 
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group">
                                                     <label for="tgl_pengajuan2" class="col-sm-2 control-label">Tanggal pengajuan</label>
                                                     <div class="col-sm-10">
@@ -138,6 +139,7 @@
                                                             <select name="id_pos" id="id_pos" class="form-control">
                                                                 <option value="" selected disabled>Pos</option>
                                                                 <?php foreach ($pos as $poss) : ?>
+                                                                    
                                                                     <option <?= set_select('id_pos', $poss['id_pos']) ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
@@ -266,6 +268,7 @@
         <!-- /.content -->
     </div>
 
+
     <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
@@ -282,6 +285,11 @@
 
 
     <script>
+        
+
+        
+
+
         function Draft() {
             var input = document.createElement("input");
             input.type = "hidden";

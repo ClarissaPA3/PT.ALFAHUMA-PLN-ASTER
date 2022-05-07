@@ -47,17 +47,11 @@
 
 
                                 <div class="box-body">
-                                    <form class="form-horizontal" id="aju" action="<?php echo site_url('C_ajuananggaran/update_datapengajuan'); ?>" method="post">
+                                    <form class="form-horizontal" id="ajuananggaran" action="<?php echo site_url('C_persetujuan_dm/reviewdm'); ?>" method="post">
 
                                         <input type="hidden" name="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
                                         <input type="hidden" name="id_anggota" value="<?php echo $ajuan['id_anggota']; ?>">
-                                        <?php
-                                        if ($ajuan['status2'] >= 2) {
-                                        ?>
-                                            <input type="hidden" name="status2" value="<?php echo $ajuan['status2']; ?>">
-                                        <?php
-                                        }
-                                        ?>
+                                        <input type="hidden" name="status2" value="<?php echo $ajuan['status2']; ?>" id="status">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
@@ -102,125 +96,117 @@
                                                 </div>
                                             </div>
 
+
+                                        </div>
+
+                                        <!-- mulai ini -->
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table class="table table-bordered text-center">
+                                                    <tr>
+                                                        <th> POS</th>
+                                                        <th>SUB POS</th>
+                                                        <th>SUB POS</th>
+                                                        <th>Kegiatan</th>
+                                                        <th>nominal</th>
+                                                        <th>Deskripsi</th>
+                                                        <th colspan="2">Disetujui</th>
+                                                    </tr>
+
+                                                    <?php foreach ($detailajuan as $key) : ?>
+
+                                                        <tr>
+
+                                                            <input type="hidden" name="id_pengajuan" id="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
+                                                            <input type="hidden" name="id_detailpengajuan[]" id="id_detailpengajuan[]" value="<?= $key['id_detailpengajuan']; ?>">
+
+                                                            <td>
+                                                                <select name="id_pos[]" id="id_pos" class="form-control">
+                                                                    <option value="" selected disabled>Pos</option>
+                                                                    <?php foreach ($pos as $poss) : ?>
+                                                                        <option <?= set_select('id_pos', $poss['id_pos']) ?> <?php if ($poss['id_pos'] == $key['id_pos']) echo "Selected"; ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select name="id_subpos[]" id="id_subpos" class="form-control">
+                                                                    <option value="" selected disabled>Sub pos</option>
+                                                                    <?php foreach ($subpos as $poss) : ?>
+                                                                        <option <?= set_select('id_subpos', $poss['id_subpos']) ?> <?php if ($poss['id_subpos'] == $key['id_subpos']) echo "Selected"; ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select name="id_subpos2[]" id="id_subpos2" class="form-control">
+                                                                    <option value="" selected disabled>Sub Pos</option>
+                                                                    <?php foreach ($subpos2 as $poss) : ?>
+                                                                        <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> <?php if ($poss['id_subpos2'] == $key['id_subpos2']) echo "Selected"; ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" name="kegiatan[]" id="kegiatan" placeholder="kegiatan" class="form-control" value="<?= $key['kegiatan2']; ?>">
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" name="nominal[]" id="nominal" placeholder="nominal" class="form-control" value="<?= $key['nominal_pengajuan2']; ?>">
+                                                            </td>
+                                                            <td> <input type="text" name="deskripsi[]" id="deskripsi" placeholder="deskripsi" class="form-control" value="<?= $key['deskripsi2']; ?>"></td>
+                                                            <td> <input type="text" name="nominal_persetujuan2[]" id="nominal_persetujuan2" placeholder="nominal persetujuan" class="form-control" value="<?= $key['nominal_persetujuan2']; ?>"></td>
+
+
+
+                                                        </tr>
+                                                    <?php endforeach; ?>
+
+
+
+                                                </table>
+
+                                            </div>
+                                            <div class="col-md-12" id="review-dm">
+                                                <?php
+                                                if ($ajuan['catatan_dm2']) {
+                                                ?>
+
+                                                    <label for="catatan_dm2">Catatan DM</label>
+                                                    <textarea name="catatan_dm2" id="catatan_dm2" class="form-control" cols="30" rows="10"><?php echo $ajuan['catatan_dm2']; ?></textarea>
+                                                <?php
+                                                    # code...
+                                                }
+                                                ?>
+                                            </div>
                                         </div>
                                     </form>
 
 
-
-                                    <!-- mulai ini -->
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <table class="table table-bordered text-center">
-                                                <tr>
-                                                    <th> POS</th>
-                                                    <th>SUB POS</th>
-                                                    <th>SUB POS</th>
-                                                    <th>Kegiatan</th>
-                                                    <th>nominal</th>
-                                                    <th colspan="2">Deskripsi</th>
-                                                </tr>
-                                                <tr>
-                                                    <form action="<?php echo site_url('C_detailajuan/add_detailanggaran') ?>" method="post">
-                                                        <input type="hidden" name="id_pengajuan" id="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
-
-                                                        <td>
-                                                            <select name="id_pos" id="id_pos" class="form-control">
-                                                                <option value="" selected disabled>Pos</option>
-                                                                <?php foreach ($pos as $poss) : ?>
-                                                                    <option <?= set_select('id_pos', $poss['id_pos']) ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <select name="id_subpos" id="id_subpos" class="form-control">
-                                                                <option value="" selected disabled>Sub pos</option>
-                                                                <?php foreach ($subpos as $poss) : ?>
-                                                                    <option <?= set_select('id_subpos', $poss['id_subpos']) ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <select name="id_subpos2" id="id_subpos2" class="form-control">
-                                                                <option value="" selected disabled>Sub Pos</option>
-                                                                <?php foreach ($subpos2 as $poss) : ?>
-                                                                    <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" name="kegiatan" id="kegiatan" placeholder="kegiatan" class="form-control">
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" name="nominal" id="nominal" placeholder="nominal" class="form-control">
-                                                        </td>
-                                                        <td> <input type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" class="form-control"></td>
-                                                        <td><button type="submit">Kirim</button></td>
-                                                    </form>
-                                                </tr>
-                                                <?php foreach ($detailajuan as $key) : ?>
-                                                    <tr>
-
-
-
-                                                        <td>
-                                                            <h4><?php echo $key['nama_pos']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['nama_subpos']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['nama_subpos2']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['kegiatan2']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['nominal_pengajuan2']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['deskripsi2']; ?></h4>
-                                                        </td>
-                                                        <td><a href="<?php echo site_url('C_detailajuan/delete_detailanggaran/') . $key['id_detailpengajuan']; ?>">Hapus</a></td>
-
-                                                    </tr>
-                                                <?php endforeach; ?>
-
-
-                                            </table>
-
-                                        </div>
-                                    </div>
-
-
                                 </div>
                                 <!-- /.box-body -->
-                                <div class="box-footer bg-gray">
+                                <div class="box-footer bg-gray" id="box-footer">
                                     <div class="pull-right">
-                                        <div class="button-group">
-                                            <?php
-                                            if ($ajuan['status2'] < 2) {
-                                            ?>
-                                                <a onclick="FormSubmit()" class="btn btn-default"><i class="fa fa-fw fa-file-text-o"></i>Draft</a>
-                                            <?php
-                                            }
-                                            ?>
+                                        <?php
+                                        if ($ajuan['catatan_dm2']) {
+                                        ?>
+                                          <button class="btn btn-warning" id="tmbhkoreksi">Ajukan koreksi</button>
 
-                                            <?php
-                                            if ($ajuan['status2'] >= 2) {
-                                            ?>
-                                                <a onclick="FormSubmit()" class="btn btn-info"><i class="fa fa-fw fa-check"></i> Ajukan</a>
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <a onclick="Coba()" class="btn btn-info"><i class="fa fa-fw fa-check"></i> Ajukan</a>
-                                            <?php
+                                            <button onclick="Kirim()" class="btn btn-primary">Setujui</button>
 
-                                            }
+                                        <?php
+                                        }
+                                        else{
+                                            ?> 
+                                             <button class="btn btn-default" id="revisi">Ajukan Revisi</button>
+                                             <button onclick="Kirim()" class="btn btn-primary">Setujui</button>
+                                            
+                                            
+                                            
+                                            <?php
+                                        }
+                                        ?>
+                                       
+                                        
 
-                                            ?>
 
-                                        </div>
 
 
 
@@ -249,7 +235,7 @@
 
             <!-- right col -->
         </div>
-        <?php $this->load->view('dashboard/sidebarnav/_footpage.php');?>
+        <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
         <!-- /.row (main row) -->
 
         </section>
@@ -447,7 +433,7 @@
         </div>
     </aside>
     <!-- /.control-sidebar -->
-    
+
     <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
@@ -459,37 +445,58 @@
 
 
 
-   
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 
     <script>
-        function Draft() {
-            var input = document.createElement("input");
-            input.type = "hidden";
-            input.name = "status2";
-            input.value = "0"
-            document.getElementById('aju').appendChild(input); // put it into the DOM
+        $(document).ready(function() {
+            $(document).on('click', '#revisi', function() {
+
+
+                $('#review-dm').append('<div id="review">\
+            </div>').append('<label for="catatan_dm2">Catatan DM</label>\
+            <textarea name="catatan_dm2" id="catatan_dm2" class="form-control" cols="30" rows="10"></textarea>');
+                $('#box-footer').empty().append('<div class="pull-right">\
+            <button class="btn btn-default" id="kembali">Kembali</button>\
+            <button class="btn btn-warning" id="tmbhkoreksi">Ajukan koreksi</button>\
+            </div>');
+            });
+
+            $(document).on('click', '#kembali', function() {
+                $('#review-dm').empty();
+                $('#box-footer').empty().append('<div class="pull-right">\
+                                        <button class="btn btn-default" id="revisi">Ajukan Revisi</button>\
+                                        <button onclick="Kirim()" class="btn btn-primary">Setujui</button>\
+                                    </div>');
+
+
+
+            });
+          
+            $(document).on('click', '#tmbhkoreksi', function() {
+                $('#status').val('1');
+                FormSubmit();
+
+
+            });
+        });
+
+        function Kirim() {
+            var input = document.getElementById('status');
+            input.setAttribute('value', '2');
             FormSubmit();
+
 
         }
 
         function FormSubmit() {
-            document.getElementById("aju").submit();
-        }
+            document.getElementById('ajuananggaran').submit();
 
-        function Coba() {
-            var input = document.createElement("input");
-            input.type = "hidden";
-            input.name = "status2";
-            input.value = "1"
-            document.getElementById('aju').appendChild(input); // put it into the DOM
-            FormSubmit();
         }
     </script>
 
 
-        
+
 
     <?php $this->load->view('dashboard/_part/js'); ?>
 </body>

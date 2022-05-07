@@ -25,12 +25,14 @@ class M_detailajuan extends CI_Model
     }
     public function update_detailanggaranM()
     {
-        $id = $this->input->post('id_detailpengajuan');
-
-        $data = array(
-            'id_detailpengajuan' => '',
+        $id_detailpengajuan = $this->input->post('id_detailpengajuan');
+		
+		
+		$id_pengajuan =$this->input->post('id_pengajuan');
+		$data = array(
+            'id_detailpengajuan' => $id_detailpengajuan,
             'id_subpos2' => $this->input->post('id_subpos2'),
-            'id_pengajuan' => $this->input->post('id_pengajuan'),
+            'id_pengajuan' => $id_pengajuan,
             'id_subpos' => $this->input->post('id_subpos'),
             'id_pos' => $this->input->post('id_pos'),
             'nominal_pengajuan2' => $this->input->post('nominal'),
@@ -38,8 +40,50 @@ class M_detailajuan extends CI_Model
             'deskripsi2' => $this->input->post('deskripsi'),
             'kegiatan2' => $this->input->post('kegiatan')
         );
+        echo "\n";
+        print_r($data);
+        $this->db->update('detail_pengajuananggaran', $data, array('id_detailpengajuan' => $id_detailpengajuan));
 
-        $this->db->update('detail_pengajuananggaran', $data, array('id_detailpengajuan' => $id));
+      
+    }
+
+    public function update_pengajuanDM()
+    {
+        $id_detailpengajuan = $this->input->post('id_detailpengajuan');
+		
+		
+		$id_pengajuan =$this->input->post('id_pengajuan');
+		// for ($i=0; $i < count($id_detailpengajuan); $i++) { 
+		// 	$data = array(
+		// 		'id_detailpengajuan' => $id_detailpengajuan[$i],
+		// 		'id_subpos2' => $this->input->post('id_subpos2')[$i],
+		// 		'id_pengajuan' => $id_pengajuan,
+		// 		'id_subpos' => $this->input->post('id_subpos')[$i],
+		// 		'id_pos' => $this->input->post('id_pos')[$i],
+		// 		'nominal_pengajuan2' => $this->input->post('nominal')[$i],
+		// 		'nominal_persetujuan2' => $this->input->post('nominal_persetujuan2')[$i],
+		// 		'deskripsi2' => $this->input->post('deskripsi')[$i],
+		// 		'kegiatan2' => $this->input->post('kegiatan')[$i]
+		// 	);
+		// 	echo "\n";
+		// 	print_r($data);
+        //     $this->db->update('detail_pengajuananggaran', $data, array('id_detailpengajuan' => $id_detailpengajuan[$i]));
+		// }
+        $data = array(
+            'id_detailpengajuan' => $id_detailpengajuan[0],
+            'id_subpos2' => $this->input->post('id_subpos2')[0],
+            'id_pengajuan' => $id_pengajuan,
+            'id_subpos' => $this->input->post('id_subpos')[0],
+            'id_pos' => $this->input->post('id_pos')[0],
+            'nominal_pengajuan2' => $this->input->post('nominal')[0],
+            'nominal_persetujuan2' => $this->input->post('nominal_persetujuan2')[0],
+            'deskripsi2' => $this->input->post('deskripsi')[0],
+            'kegiatan2' => $this->input->post('kegiatan')[0]
+        );
+        echo "\n";
+        print_r($data);
+        $this->db->update('detail_pengajuananggaran', $data, array('id_detailpengajuan' => $id_detailpengajuan[0]));
+
     }
     public function show_detailanggaranM()
     {
