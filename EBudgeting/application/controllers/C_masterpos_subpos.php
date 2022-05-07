@@ -14,7 +14,7 @@ class C_masterpos_subpos extends CI_Controller
 	}
 	public function add_pos()
 	{
-		$this->form_validation->set_rules('nama', 'Nama Pos', 'required');
+		$this->form_validation->set_rules('nama', 'Nama Pos', 'required|alpha_numeric_spaces|max_length[64]');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('masterpos/addpos');
 		} else {
@@ -33,7 +33,7 @@ class C_masterpos_subpos extends CI_Controller
 	}
 	public function update_pos($id)
 	{
-		$this->form_validation->set_rules('nama', 'Nama Pos', 'required');
+		$this->form_validation->set_rules('nama', 'Nama Pos', 'required|alpha_numeric_spaces|max_length[64]');
 
 
 		if ($this->form_validation->run() == FALSE) {
