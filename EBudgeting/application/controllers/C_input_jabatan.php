@@ -14,7 +14,7 @@ class C_input_jabatan extends CI_Controller
     }
     public function add_jabatan()
     {
-        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
+        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('jabatan/addjabatan');
         } else {
@@ -22,9 +22,6 @@ class C_input_jabatan extends CI_Controller
             $this->M_input_jabatan->add_jabatanM();
             redirect(site_url('C_input_jabatan/show_jabatan'));
         }
-
-
-
     }
     public function delete_jabatan($id)
     {
@@ -33,7 +30,7 @@ class C_input_jabatan extends CI_Controller
     }
     public function update_jabatan($id)
     {
-        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
+        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required');
 
 
         if ($this->form_validation->run() == FALSE) {
@@ -51,9 +48,7 @@ class C_input_jabatan extends CI_Controller
     {
 
         $data['jabatan'] = $this->M_input_jabatan->show_jabatanM();
-       
+
         $this->load->view('jabatan/jabatan', $data);
     }
-
-    
 }
