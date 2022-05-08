@@ -209,7 +209,7 @@
                                                 <th>Nama</th>
                                                 <th>Tanggal Lahir</th>
                                                 <th>Alamat</th>
-                                                <th>Jabatan</th>
+                                                
                                                 <th>Username</th>
                                                 <th>Password</th>
                                                 <th colspan="2">Aksi</th>
@@ -227,7 +227,7 @@
                                                     <td><?php echo $key->nama_anggota; ?> </td>
                                                     <td><?php echo $key->tgl_lahir; ?> </td>
                                                     <td><?php echo $key->alamat; ?> </td>
-                                                    <td><?php echo $key->divisi; ?> </td>
+                                                
                                                     <td><?php echo $key->username; ?> </td>
                                                     <td><?php echo md5($key->password); ?> </td>
                                                     <td>
