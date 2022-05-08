@@ -104,13 +104,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="tgl_pengajuan2" class="col-sm-2 control-label">Tanggal pengajuan</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tgl_pengajuan2" id="tgl_pengajuan2" placeholder="tanggal pengajuan" value="<?php echo date('Y-m-d', strtotime($ajuan['tgl_pengajuan2'])); ?>">
-
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
 
                                         </div>

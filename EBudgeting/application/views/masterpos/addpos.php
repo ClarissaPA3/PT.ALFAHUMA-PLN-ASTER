@@ -61,20 +61,25 @@
       </section>
 
       <!-- Main content -->
-      <div class="box box-primary">
-        <!-- form start -->
-        <form role="form" action="<?php site_url('C_masterpos_subpos/add'); ?>" method="post">
-          <div class="box-body">
-            <div class="form-group">
-              <label for="nama">Nama Pos</label>
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Pos">
-            </div>
+      <section class="content">
+        <div class="box box-primary">
 
-            <div class="box-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-      </div>
+          <!-- form start -->
+          <form role="form" action="<?php site_url('C_masterpos_subpos/add'); ?>" method="post">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="nama">Nama Pos</label>
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Pos">
+              </div>
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+        </div>
+
+      </section>
+
       <!-- /.box -->
 
       <!-- right col -->

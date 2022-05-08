@@ -131,16 +131,16 @@
                             <td class="small">
                             <td width="250">
                               <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Detail anggaran</a>
-                              <?php 
+                              <?php
                               if ($pengajuan_anggaran->status2 < 2) {
-                                ?> 
-                                 <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
-
-                                <?php
-                              }
-                              
                               ?>
-                             
+                                <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
+
+                              <?php
+                              }
+
+                              ?>
+
                             </td>
                           </tr>
                         <?php endforeach; ?>
@@ -163,7 +163,13 @@
 
       <!-- right col -->
     </div>
-    <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>Create by</b> Mahasiswa UNS 2020.
+      </div>
+      <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
+      reserved.
+    </footer>
 
     <!-- /.row (main row) -->
 
