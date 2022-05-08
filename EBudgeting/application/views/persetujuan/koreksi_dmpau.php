@@ -84,10 +84,8 @@
                         </div>
                     </div>
                     <!-- /.box -->
-
+                    <a href="<?php echo site_url('C_persetujuan_dmpau/'); ?>" class="btn btn-primary">Submit</a>
             </div>
-
-
         </div>
         <!-- /.row -->
         </section>
