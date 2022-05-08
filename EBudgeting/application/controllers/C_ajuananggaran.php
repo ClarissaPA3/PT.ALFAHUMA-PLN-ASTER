@@ -23,7 +23,9 @@ class C_ajuananggaran extends CI_Controller
 	}
 	public function delete_datapengajuan($id)
 	{
+		$this->M_detailajuan->delete_alldetailanggaranM($id);
 		$this->M_ajuananggaran->delete_pengajuan($id);
+		
 		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
 	}
 	public function update_datapengajuan($id = null)

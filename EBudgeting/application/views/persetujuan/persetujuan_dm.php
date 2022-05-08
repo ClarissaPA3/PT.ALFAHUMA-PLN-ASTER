@@ -79,19 +79,22 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-striped">
-                                            <?php foreach ($pengajuan as $ajuan) : ?>
+                                            <?php
+                                            for ($i = 0; $i < count($pengajuan); $i++) :
+                                            ?>
+
 
                                                 <tr>
-                                                    <td><?php echo $ajuan['id_pengajuan']; ?></td>
-                                                    <td><?php echo $ajuan['bulan2']; ?></td>
-                                                    <td><?php echo $ajuan['minggu2']; ?></td>
-                                                    <td><?php echo $ajuan['tanggal_mulai2']; ?></td>
-                                                    <td><?php echo $ajuan['tanggal_sampai2']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['id_pengajuan']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['bulan2']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['minggu2']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['tanggal_mulai2']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['tanggal_sampai2']; ?></td>
 
-                                                    <td>-</td>
+                                                    <td><?= $item[$i]; ?></td>
                                                     <td>
                                                         <?php
-                                                        if ($ajuan['status2'] == 1) {
+                                                        if ($pengajuan[$i]['status2'] == 1) {
                                                         ?>
                                                             <p class="btn btn-primary">Menunggu persetujuan</p>
 
@@ -99,13 +102,14 @@
                                                         }
                                                         ?>
 
-                                                    <td>-</td>
+                                                    <td><?= $pengajuan[$i]['catatan_dm2'];?></td>
                                                     <td>
-                                                        <a href="<?php echo site_url('C_persetujuan_dm/reviewdm/') . $ajuan['id_pengajuan']; ?>" class="btn btn-primary">Review</a>
+                                                        <a href="<?php echo site_url('C_persetujuan_dm/reviewdm/') . $pengajuan[$i]['id_pengajuan']; ?>" class="btn btn-primary">Review</a>
                                                     </td>
 
                                                 </tr>
-                                            <?php endforeach; ?>
+                                            <?php
+                                            endfor; ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -117,11 +121,11 @@
             </div>
 
 
-            </div>
+        </div>
         <!-- /.row -->
         </section>
 
-    <!-- /.content -->
+        <!-- /.content -->
     </div>
 
     </div>

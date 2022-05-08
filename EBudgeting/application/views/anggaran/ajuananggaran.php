@@ -131,7 +131,16 @@
                             <td class="small">
                             <td width="250">
                               <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Detail anggaran</a>
-                              <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
+                              <?php 
+                              if ($pengajuan_anggaran->status2 < 2) {
+                                ?> 
+                                 <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
+
+                                <?php
+                              }
+                              
+                              ?>
+                             
                             </td>
                           </tr>
                         <?php endforeach; ?>

@@ -23,6 +23,14 @@ class M_detailajuan extends CI_Model
     {
         $this->db->delete('detail_pengajuananggaran', array('id_detailpengajuan' => $id));
     }
+
+    // New 
+    public function delete_alldetailanggaranM($id)
+    {
+        $this->db->delete('detail_pengajuananggaran', array('id_pengajuan' => $id));
+    }
+
+    
     public function update_detailanggaranM()
     {
         $id_detailpengajuan = $this->input->post('id_detailpengajuan');

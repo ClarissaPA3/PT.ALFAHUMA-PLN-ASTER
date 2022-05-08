@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah ajuan</title>
+    <title>Review DM</title>
     <?php $this->load->view('dashboard/_part/head'); ?>
 </head>
 
@@ -27,10 +27,12 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Tambah Ajuan anggaran</h1>
+                <h1>Review DM</h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
+                    <li>Dashboard</li>
+                    <li>Pengajuan DM</li>
+                    <li class="active">Review</li>
                 </ol>
             </section>
 

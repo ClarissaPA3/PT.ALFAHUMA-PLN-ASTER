@@ -96,10 +96,10 @@
                                                 <tfoot class="bg-gray">
                                                     <td colspan="5"><b> Total Anggaran diajukan Minggu ke - <?= $ajuan['minggu2']; ?></b></td>
                                                     <td>
-                                                        <h4><?php echo "Rp." . $total['nominal_pengajuan2']; ?></h4>
+                                                        <h4><?php echo "Rp. " . $total['nominal_pengajuan2']; ?></h4>
                                                     </td>
                                                     <td>
-                                                        <h4><?php echo $total['nominal_persetujuan2']; ?></h4>
+                                                        <h4><?php echo "Rp. " .  $total['nominal_persetujuan2']; ?></h4>
                                                     </td>
                                                 </tfoot>
 

@@ -23,7 +23,12 @@ class C_persetujuan_dm extends CI_Controller
     public function show_pengajuandm()
     {
         $data['pengajuan'] = $this->M_persetujuan->show_pengajuan_sub();
-        
+        foreach ($data['pengajuan'] as $k) {
+
+
+            $data['item'][] = $this->M_detailajuan->item($k['id_pengajuan']);
+        }
+
 
       
         $this->load->view('dashboard/_part/head');
