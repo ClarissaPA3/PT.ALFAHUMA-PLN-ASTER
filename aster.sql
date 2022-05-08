@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2022 at 09:16 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Generation Time: May 08, 2022 at 01:34 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,7 +94,6 @@ CREATE TABLE `pegawai` (
   `nama_anggota` varchar(255) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(255) NOT NULL,
-  `divisi` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -103,10 +102,10 @@ CREATE TABLE `pegawai` (
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`id_anggota`, `id_jabatan`, `nama_anggota`, `tgl_lahir`, `alamat`, `divisi`, `username`, `password`) VALUES
-(1, 1, 'Rohman Putra', '1986-10-12', 'Jl. Gajah Mada No 12 Surakarta, Jawa Tengah', 'Administrasi Keuangan', 'rohmanputra', 'rohman'),
-(2, 2, 'Muhammad Ridho', '1994-02-09', 'Jl. Panglima Sudirman No 5 Caruban, Jawa Timur.', 'Bidang', 'muhammadridho', 'ridho'),
-(3, 3, 'Freniska Ayu', '1997-08-29', 'Jl. Ahmad Yani No 4 Madiun, Jawa Timur.', 'Admin DMPAU', 'freniskaayu', 'freniska');
+INSERT INTO `pegawai` (`id_anggota`, `id_jabatan`, `nama_anggota`, `tgl_lahir`, `alamat`, `username`, `password`) VALUES
+(1, 1, 'Rohman Putra', '1986-10-12', 'Jl. Gajah Mada No 12 Surakarta, Jawa Tengah', 'rohmanputra', 'rohman'),
+(2, 2, 'Muhammad Ridho', '1994-02-09', 'Jl. Panglima Sudirman No 5 Caruban, Jawa Timur.', 'muhammadridho', 'ridho'),
+(3, 3, 'Freniska Ayu', '1997-08-29', 'Jl. Ahmad Yani No 4 Madiun, Jawa Timur.', 'freniskaayu', 'freniska');
 
 -- --------------------------------------------------------
 
@@ -127,13 +126,6 @@ CREATE TABLE `pengajuan_anggaran` (
   `tanggal_sampai2` datetime NOT NULL,
   `tgl_pengajuan2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pengajuan_anggaran`
---
-
-INSERT INTO `pengajuan_anggaran` (`id_pengajuan`, `id_anggota`, `catatan_dm2`, `total_pengajuan2`, `minggu2`, `bulan2`, `catatan_dmpau2`, `status2`, `tanggal_mulai2`, `tanggal_sampai2`, `tgl_pengajuan2`) VALUES
-(1, 1, '', '', '', '', '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1970-01-01');
 
 -- --------------------------------------------------------
 
