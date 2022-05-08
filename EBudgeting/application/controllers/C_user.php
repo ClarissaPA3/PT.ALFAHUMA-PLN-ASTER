@@ -15,10 +15,10 @@ class C_user extends CI_Controller
 
 	public function add_user()
 	{
-		$this->form_validation->set_rules('nama_anggota', 'Nama Anggota', 'required');
+		$this->form_validation->set_rules('nama_anggota', 'Nama Anggota', 'required|alpha|max_length[64]');
 		if ($this->form_validation->run() == FALSE) {
 			$data['jabatan'] = $this->M_input_jabatan->show_jabatanM();
-			
+
 			$this->load->view('user/input_pegawai.php', $data);
 		} else {
 
@@ -34,7 +34,7 @@ class C_user extends CI_Controller
 	public function update_user($id = null)
 	{
 
-		$this->form_validation->set_rules('nama_anggota', 'Nama Anggota', 'required');
+		$this->form_validation->set_rules('nama_anggota', 'Nama Anggota', 'required|alpha|max_length[64]');
 		if ($this->form_validation->run() == FALSE) {
 			$data['pegawai'] = $this->M_user->show_user_id($id);
 			$data['jabatan'] = $this->M_input_jabatan->show_jabatanM();

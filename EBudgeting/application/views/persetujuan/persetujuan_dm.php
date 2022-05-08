@@ -117,18 +117,13 @@
             </div>
 
 
-        </div>
+            </div>
         <!-- /.row -->
         </section>
 
-        <!-- right col -->
-    </div>
-
-    <!-- /.row (main row) -->
-
-
     <!-- /.content -->
     </div>
+
     </div>
     </form>
     </div>
@@ -138,9 +133,14 @@
     </div>
     <!-- Add the sidebar's background. This div must be placed
 
-<div class="control-sidebar-bg"></div>
-</div>
+  <div class="control-sidebar-bg"></div>
+  </div>
+  
 
+
+
+
+  <?php $this->load->view('dashboard/_part/js'); ?>
 </body>
 
 </html>
