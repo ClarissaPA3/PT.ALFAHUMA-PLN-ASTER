@@ -86,6 +86,7 @@
                                                 <div class="form-group">
                                                     <label for="bulan2" class="col-sm-2 control-label">Bulan</label>
                                                     <div class="col-sm-10">
+                                                
                                                         <select name="bulan2" id="bulan2" class="form-control" disabled>
                                                             <option value="" selected disabled>=== Pilih Bulan ==</option>
                                                             <?php foreach ($bulan as $bulann) : ?>
@@ -504,6 +505,9 @@
         }
 
         function FormSubmit() {
+            $(':disabled').each(function(e) {
+                    $(this).removeAttr('disabled');
+                });
             document.getElementById('ajuananggaran').submit();
 
         }

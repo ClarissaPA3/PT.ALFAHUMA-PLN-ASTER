@@ -510,7 +510,7 @@
         function FormSubmit() {
             $(':disabled').each(function(e) {
                     $(this).removeAttr('disabled');
-                })
+                });
             document.getElementById('ajuananggaran').submit();
 
         }

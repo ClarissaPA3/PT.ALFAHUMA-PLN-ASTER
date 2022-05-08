@@ -41,6 +41,8 @@ class C_persetujuan_dm extends CI_Controller
             $data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
             $data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
             $data['id'] = $id;
+            $data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
+            $data['minggu'] = array('1', '2', '3', '4');
             $this->load->view('persetujuan/review_dm', $data);
 
 
