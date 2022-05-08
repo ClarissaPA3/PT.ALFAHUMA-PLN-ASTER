@@ -196,7 +196,7 @@
                                 <div class="card-header">
                                     <h3 class="card-title">
                                 </div>
-                                <form action="<?php echo site_url('C_user/update_user'); ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo site_url('C_user/update_user/').$id; ?>" method="post" enctype="multipart/form-data">
                                     <div class="card-body">
 
                                         <?php
@@ -210,6 +210,7 @@
                                                 <label class="col-sm-2 col-form-label">Nama Pegawai</label>
                                                 <div class="col-sm-5">
                                                     <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" placeholder="" value="<?php echo $key->nama_anggota; ?>" required>
+                                                    <?php echo form_error('nama_anggota'); ?>
                                                 </div>
                                             </div>
 
@@ -217,6 +218,7 @@
                                                 <label class="col-sm-2 col-form-label">Tanggal lahir</label>
                                                 <div class="col-sm-5">
                                                     <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="" value="<?php echo date('Y-m-d', strtotime($key->tgl_lahir)); ?>" required>
+                                                    <?php echo form_error('tgl_lahir'); ?>
                                                 </div>
                                             </div>
 
@@ -224,6 +226,7 @@
                                                 <label class="col-sm-2 col-form-label">Alamat</label>
                                                 <div class="col-sm-5">
                                                     <input type="text" class="form-control" id="alamat" name="alamat" placeholder="" value="<?php echo $key->alamat; ?>" required>
+                                                    <?php echo form_error('alamat'); ?>
                                                 </div>
                                             </div>
 
@@ -234,9 +237,10 @@
                                                         <option value="" selected disabled>Jabatan</option>
                                                         <?php foreach ($jabatan as $poss) : ?>
 
-                                                            <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
+                                                            <option <?= set_select('id_jabatan', $poss['id_jabatan'])?> <?php if ($poss['id_jabatan'] == $key->id_jabatan) echo "selected";?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
                                                         <?php endforeach; ?>
                                                     </select>
+                                                    <?php echo form_error('id_jabatan'); ?>
                                                 </div>
                                             </div>
 
@@ -244,13 +248,16 @@
                                                 <label class="col-sm-2 col-form-label">Username</label>
                                                 <div class="col-sm-5">
                                                     <input type="text" class="form-control" id="username" name="username" placeholder="" value="<?php echo $key->username; ?>" required>
+                                                    <?php echo form_error('username'); ?>
                                                 </div>
+                                               
                                             </div>
 
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Password</label>
                                                 <div class="col-sm-5">
                                                     <input type="password" class="form-control" id="password" name="password" placeholder="" value="<?php echo $key->password; ?>" required>
+                                                    <?php echo form_error('password'); ?>
                                                 </div>
                                             </div>
 
@@ -258,7 +265,7 @@
                                     <div class="card-footer">
 
                                         <button type="submit" class="btn btn-info">Simpan</button>
-                                        <a href="?page=data-pegawai" title="Kembali" class="btn btn-secondary">Batal</a>
+                                        <a href="<?php echo $_SERVER['HTTP_REFERER'];?>" title="Kembali" class="btn btn-secondary">Batal</a>
                                     </div>
                                 <?php endforeach; ?>
                                 </form>
