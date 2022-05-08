@@ -75,7 +75,7 @@
             <div class="container-fluid">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>Tambah Rekap Transfer</h1>
+                    <h1>Transfer</h1>
                     </a>
                 </section>
 
