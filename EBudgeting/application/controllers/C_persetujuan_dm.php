@@ -23,6 +23,7 @@ class C_persetujuan_dm extends CI_Controller
     public function show_pengajuandm()
     {
         $data['pengajuan'] = $this->M_persetujuan->show_pengajuan_sub();
+        
 
       
         $this->load->view('dashboard/_part/head');

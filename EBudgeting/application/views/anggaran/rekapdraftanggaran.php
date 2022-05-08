@@ -32,7 +32,7 @@
                         <!-- Horizontal Form -->
                         <div class="box box-info">
                             <div class="box-header with-border">
-                                <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $id; ?>" class="btn btn-info ">Input</a>
+                                <a href="<?php echo $_SERVER['HTTP_REFERER'];?>" class="btn btn-info ">Input</a>
                                 <a href="<?php echo site_url('C_ajuananggaran/show_rekapanggaran/') . $id; ?>" class="btn btn-info active">Rekap</a>
 
 

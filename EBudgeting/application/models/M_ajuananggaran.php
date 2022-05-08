@@ -112,6 +112,7 @@ class M_ajuananggaran extends CI_Model
     }
     public function update_pengajuanDMPAU()
     {
+        
 
         $id = $this->input->post('id_pengajuan');
         $nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];

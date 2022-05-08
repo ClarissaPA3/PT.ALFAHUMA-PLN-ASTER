@@ -65,17 +65,60 @@
                                     <table id="example2" class="table table-bordered table-hover text-center">
                                         <thead>
                                             <tr>
-                                                <th>Pos</th>
-                                                <th>Sub Pos</th>
-                                                <th>Sub Pos Barang</th>
-                                                <th>Kegiatan</th>
-                                                <th>Nominal</th>
-                                                <th>Deskripsi</th>
-                                                <th>Disetujui</th>
+                                                <th rowspan="2">ID Pengajuan</th>
+                                                <th rowspan="2">Bulan</th>
+                                                <th rowspan="2">Minggu Ke</th>
+                                                <th rowspan="2">Tanggal Mulai</th>
+                                                <th rowspan="2">Tanggal Sampai</th>
+                                                <th rowspan="2">Item</th>
+                                                <th rowspan="2">Status</th>
+                                                <th rowspan="2">Catatan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="table-striped"></tbody>
+                                        <tbody class="table-striped">
+                                            
+                                            <?php 
+                                            for ($i=0; $i < count($pengajuan); $i++) :
+                                            ?>
+                                           
+                             
+
+                                                <tr>
+                                                    <td><?php echo $pengajuan[$i]['id_pengajuan']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['bulan2']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['minggu2']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['tanggal_mulai2']; ?></td>
+                                                    <td><?php echo $pengajuan[$i]['tanggal_sampai2']; ?></td>
+
+                                                    <td><?= $item[$i];?></td>
+                                                    <td>
+                                                        <?php
+
+                                                        if ($pengajuan[$i]['status2'] == 2) {
+                                                        ?>
+                                                            <p class="btn btn-primary">Menunggu persetujuan</p>
+
+                                                        <?php
+                                                        } elseif ($pengajuan[$i]['status2'] == 3) {
+
+                                                        ?>
+                                                            <p class="btn btn-primary">Selesai</p>
+
+                                                        <?php
+                                                        }
+                                                        ?>
+
+                                                    <td><?= $pengajuan[$i]['catatan_dmpau2'];?></td>
+                                                    <td>
+                                                        <a href="<?php echo site_url('C_persetujuan_dmpau/reviewdmpau/') . $pengajuan[$i]['id_pengajuan']; ?>" class="btn btn-primary">Review</a>
+                                                    </td>
+
+                                                </tr>
+                                              
+                                            <?php 
+                                            endfor;?>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>

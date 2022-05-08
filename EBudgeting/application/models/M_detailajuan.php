@@ -51,8 +51,8 @@ class M_detailajuan extends CI_Model
     {
         $id_detailpengajuan = $this->input->post('id_detailpengajuan');
 		
-		
-		$id_pengajuan =$this->input->post('id_pengajuan');
+		print_r($_POST);
+		$id_pengajuan = $this->input->post('id_pengajuan');
 		for ($i=0; $i < count($id_detailpengajuan); $i++) { 
 			$data = array(
 				'id_detailpengajuan' => $id_detailpengajuan[$i],

@@ -53,13 +53,25 @@
                                         <input type="hidden" name="id_anggota" value="<?php echo $ajuan['id_anggota']; ?>">
                                         <input type="hidden" name="catatan_dm2" value="<?php echo $ajuan['catatan_dm2']; ?>">
                                         <input type="hidden" name="status2" value="<?php echo $ajuan['status2']; ?>" id="status">
+                                        <input type="hidden" name="tgl_pengajuan2" id="tgl_pengajuan2" value="<?php echo date('Y-m-d', strtotime($ajuan['tgl_pengajuan2'])); ?>">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="minggu2" class="col-sm-2 control-label">Minggu</label>
 
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" id="minggu2" name="minggu2" id="minggu2" placeholder="minggu" value="<?php echo $ajuan['minggu2']; ?>">
+                                                        
+                                                        <select name="minggu2"  id="minggu2" class="form-control" disabled>
+                                                            <option value="" selected disabled>=== Pilih Minggu ==</option>
+                                                            <?php foreach ($minggu as $mingguu) : ?>
+                                                                
+                    
+                                                                <option <?= set_select('minggu2', $mingguu); ?> <?php if ($mingguu == $ajuan['minggu2']) echo "selected"; ?> value="<?= $mingguu ?>">Minggu ke -<?= $mingguu; ?></option>
+                                                            <?php endforeach; ?>
+
+                                                        </select>
+                                                        
+
 
                                                     </div>
                                                 </div>
@@ -67,7 +79,7 @@
                                                 <div class="form-group">
                                                     <label for="tanggal_mulai2" class="col-sm-2 control-label">Tanggal Mulai</label>
                                                     <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_mulai2'])); ?>">
+                                                        <input type="date" readonly class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_mulai2'])); ?>">
 
                                                     </div>
                                                 </div>
@@ -76,7 +88,15 @@
                                                 <div class="form-group">
                                                     <label for="bulan2" class="col-sm-2 control-label">Bulan</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="bulan2" id="bulan2" placeholder="bulan" value="<?php echo $ajuan['bulan2']; ?>">
+                                                        <select name="bulan2" id="bulan2" class="form-control" disabled>
+                                                            <option value="" selected disabled>=== Pilih Bulan ==</option>
+                                                            <?php foreach ($bulan as $bulann) : ?>
+
+                                                                <option <?= set_select('bulan2', $bulann); ?> <?php if ($bulann == $ajuan['bulan2']) echo "selected"; ?> value="<?= $bulann ?>"><?= $bulann; ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                       
+
 
                                                     </div>
                                                 </div>
@@ -84,19 +104,13 @@
                                                 <div class="form-group">
                                                     <label for="tanggal_sampai2" class="col-sm-2 control-label">Tanggal Sampai</label>
                                                     <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_sampai2'])); ?>">
+                                                        <input type="date"  class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_sampai2'])); ?>" readonly>
 
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="tgl_pengajuan2" class="col-sm-2 control-label">Tanggal pengajuan</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tgl_pengajuan2" id="tgl_pengajuan2" placeholder="tanggal pengajuan" value="<?php echo date('Y-m-d', strtotime($ajuan['tgl_pengajuan2'])); ?>">
 
-                                                    </div>
-                                                </div>
+
                                             </div>
-
 
                                         </div>
 
@@ -121,18 +135,19 @@
 
                                                             <input type="hidden" name="id_pengajuan" id="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
                                                             <input type="hidden" name="id_detailpengajuan[]" id="id_detailpengajuan[]" value="<?= $key['id_detailpengajuan']; ?>">
-                                                            
+
 
                                                             <td>
-                                                                <select name="id_pos[]" id="id_pos" class="form-control">
+                                                                <select name="id_pos[]" disabled id="id_pos" class="form-control">
                                                                     <option value="" selected disabled>Pos</option>
                                                                     <?php foreach ($pos as $poss) : ?>
                                                                         <option <?= set_select('id_pos', $poss['id_pos']) ?> <?php if ($poss['id_pos'] == $key['id_pos']) echo "Selected"; ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
                                                                     <?php endforeach; ?>
                                                                 </select>
+                                                                
                                                             </td>
                                                             <td>
-                                                                <select name="id_subpos[]" id="id_subpos" class="form-control">
+                                                                <select name="id_subpos[]" disabled id="id_subpos" class="form-control">
                                                                     <option value="" selected disabled>Sub pos</option>
                                                                     <?php foreach ($subpos as $poss) : ?>
                                                                         <option <?= set_select('id_subpos', $poss['id_subpos']) ?> <?php if ($poss['id_subpos'] == $key['id_subpos']) echo "Selected"; ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
@@ -140,7 +155,7 @@
                                                                 </select>
                                                             </td>
                                                             <td>
-                                                                <select name="id_subpos2[]" id="id_subpos2" class="form-control">
+                                                                <select name="id_subpos2[]" disabled id="id_subpos2" class="form-control">
                                                                     <option value="" selected disabled>Sub Pos</option>
                                                                     <?php foreach ($subpos2 as $poss) : ?>
                                                                         <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> <?php if ($poss['id_subpos2'] == $key['id_subpos2']) echo "Selected"; ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
@@ -148,12 +163,12 @@
                                                                 </select>
                                                             </td>
                                                             <td>
-                                                                <input type="text" name="kegiatan[]" id="kegiatan" placeholder="kegiatan" class="form-control" value="<?= $key['kegiatan2']; ?>">
+                                                                <input type="text" name="kegiatan[]" id="kegiatan" placeholder="kegiatan" class="form-control" value="<?= $key['kegiatan2']; ?>" readonly>
                                                             </td>
                                                             <td>
-                                                                <input type="number" name="nominal[]" id="nominal" placeholder="nominal" class="form-control" value="<?= $key['nominal_pengajuan2']; ?>">
+                                                                <input type="number" name="nominal[]" id="nominal" placeholder="nominal" class="form-control" value="<?= $key['nominal_pengajuan2']; ?>" readonly>
                                                             </td>
-                                                            <td> <input type="text" name="deskripsi[]" id="deskripsi" placeholder="deskripsi" class="form-control" value="<?= $key['deskripsi2']; ?>"></td>
+                                                            <td> <input readonly type="text" name="deskripsi[]" id="deskripsi" placeholder="deskripsi" class="form-control" value="<?= $key['deskripsi2']; ?>"></td>
                                                             <td> <input type="text" name="nominal_persetujuan2[]" id="nominal_persetujuan2" placeholder="nominal persetujuan" class="form-control" value="<?= $key['nominal_persetujuan2']; ?>"></td>
 
 
@@ -189,24 +204,23 @@
                                         <?php
                                         if ($ajuan['catatan_dmpau2']) {
                                         ?>
-                                          <button class="btn btn-warning" id="tmbhkoreksi">Ajukan koreksi</button>
+                                            <button class="btn btn-warning" id="tmbhkoreksi">Ajukan koreksi</button>
 
                                             <button onclick="Kirim()" class="btn btn-primary">Setujui</button>
 
                                         <?php
-                                        }
-                                        else{
-                                            ?> 
-                                             <button class="btn btn-default" id="revisi">Ajukan Revisi</button>
-                                             <button onclick="Kirim()" class="btn btn-primary">Setujui</button>
-                                            
-                                            
-                                            
-                                            <?php
+                                        } else {
+                                        ?>
+                                            <button class="btn btn-default" id="revisi">Ajukan Revisi</button>
+                                            <button onclick="Kirim()" class="btn btn-primary">Setujui</button>
+
+
+
+                                        <?php
                                         }
                                         ?>
-                                       
-                                        
+
+
 
 
 
@@ -452,7 +466,9 @@
 
     <script>
         $(document).ready(function() {
+            
             $(document).on('click', '#revisi', function() {
+
 
 
                 $('#review-dm').append('<div id="review">\
@@ -474,7 +490,7 @@
 
 
             });
-          
+
             $(document).on('click', '#tmbhkoreksi', function() {
                 $('#status').val('2');
                 FormSubmit();
@@ -492,6 +508,9 @@
         }
 
         function FormSubmit() {
+            $(':disabled').each(function(e) {
+                    $(this).removeAttr('disabled');
+                })
             document.getElementById('ajuananggaran').submit();
 
         }
