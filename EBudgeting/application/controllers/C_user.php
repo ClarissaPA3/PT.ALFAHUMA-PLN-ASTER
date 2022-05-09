@@ -23,6 +23,7 @@ class C_user extends CI_Controller
 		$this->form_validation->set_rules('username', 'Username', 'required|regex_match[/^[A-Za-z][A-Za-z0-9_]{7,29}$/]', array('regex_match' => '<ul>
 		<li>A valid username should start with an alphabet.</li>
 		<li>All other characters can be alphabets, numbers or an underscore</li>
+		<li>Minimum eight in length</li>
 		</ul>'));
 		$this->form_validation->set_rules('password', 'Password', 'required|regex_match[/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/]', array('regex_match' => '<ul>
 		<li>At least one upper case </li>
