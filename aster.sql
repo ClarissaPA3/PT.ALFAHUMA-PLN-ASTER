@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 03:40 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Waktu pembuatan: 09 Bulan Mei 2022 pada 07.09
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_pengajuananggaran`
+-- Struktur dari tabel `detail_pengajuananggaran`
 --
 
 CREATE TABLE `detail_pengajuananggaran` (
@@ -39,10 +39,18 @@ CREATE TABLE `detail_pengajuananggaran` (
   `kegiatan2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `detail_pengajuananggaran`
+--
+
+INSERT INTO `detail_pengajuananggaran` (`id_detailpengajuan`, `id_subpos2`, `id_pengajuan`, `id_subpos`, `id_pos`, `nominal_pengajuan2`, `nominal_persetujuan2`, `deskripsi2`, `kegiatan2`) VALUES
+(1, 1, 2, 1, 1, '500000', '500000', 'Perlengkapan rapat proyek minggu ke satu', 'Rapat minggu ke satu'),
+(2, 4, 4, 3, 7, '600000', '400000', 'Pelaksanaan proyek', 'Pelaksanaan proyek');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jabatan`
+-- Struktur dari tabel `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -52,7 +60,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jabatan`
+-- Dumping data untuk tabel `jabatan`
 --
 
 INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `tingkatan_user`) VALUES
@@ -63,7 +71,7 @@ INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `tingkatan_user`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pagu_anggaran`
+-- Struktur dari tabel `pagu_anggaran`
 --
 
 CREATE TABLE `pagu_anggaran` (
@@ -76,16 +84,16 @@ CREATE TABLE `pagu_anggaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pagu_anggaran`
+-- Dumping data untuk tabel `pagu_anggaran`
 --
 
 INSERT INTO `pagu_anggaran` (`id_paguanggaran`, `id_anggota`, `nominal_pagu`, `nominal_terpakai`, `bulan`, `tahun`) VALUES
-(3, 2, '150.000.000', '127.000.000', 'Maret', '2022');
+(3, 2, '150.000.000', '129.000.000', 'Maret', '2022');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pegawai`
+-- Struktur dari tabel `pegawai`
 --
 
 CREATE TABLE `pegawai` (
@@ -99,18 +107,19 @@ CREATE TABLE `pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pegawai`
+-- Dumping data untuk tabel `pegawai`
 --
 
 INSERT INTO `pegawai` (`id_anggota`, `id_jabatan`, `nama_anggota`, `tgl_lahir`, `alamat`, `username`, `password`) VALUES
 (1, 1, 'Rohman Putra', '1986-10-12', 'Jl. Gajah Mada No 12 Surakarta, Jawa Tengah', 'rohmanputra', 'rohman'),
 (2, 2, 'Muhammad Ridho', '1994-02-09', 'Jl. Panglima Sudirman No 5 Caruban, Jawa Timur.', 'muhammadridho', 'ridho'),
-(3, 3, 'Freniska Ayu', '1997-08-29', 'Jl. Ahmad Yani No 4 Madiun, Jawa Timur.', 'freniskaayu', 'freniska');
+(3, 3, 'Freniska Ayu', '1997-08-29', 'Jl. Ahmad Yani No 4 Madiun, Jawa Timur.', 'freniskaayu', 'freniska'),
+(8, 1, 'rohmanriski', '1999-05-02', 'Madiun', 'rohmanriski20', 'Rohmanriski20@');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengajuan_anggaran`
+-- Struktur dari tabel `pengajuan_anggaran`
 --
 
 CREATE TABLE `pengajuan_anggaran` (
@@ -127,10 +136,19 @@ CREATE TABLE `pengajuan_anggaran` (
   `tgl_pengajuan2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `pengajuan_anggaran`
+--
+
+INSERT INTO `pengajuan_anggaran` (`id_pengajuan`, `id_anggota`, `catatan_dm2`, `total_pengajuan2`, `minggu2`, `bulan2`, `catatan_dmpau2`, `status2`, `tanggal_mulai2`, `tanggal_sampai2`, `tgl_pengajuan2`) VALUES
+(2, 1, '', '500000', '1', 'April', '', 3, '2022-04-04 00:00:00', '2022-04-10 00:00:00', '1970-01-01'),
+(3, 1, '', '', '2', 'April', '', 0, '2022-04-11 00:00:00', '2022-04-17 00:00:00', '2022-05-09'),
+(4, 1, 'pengurangan biaya', '600000', '3', 'April', '', 2, '2022-05-16 00:00:00', '2022-05-22 00:00:00', '');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pos`
+-- Struktur dari tabel `pos`
 --
 
 CREATE TABLE `pos` (
@@ -139,17 +157,18 @@ CREATE TABLE `pos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pos`
+-- Dumping data untuk tabel `pos`
 --
 
 INSERT INTO `pos` (`id_pos`, `nama_pos`) VALUES
 (1, 'Operasi A'),
-(6, 'Operasi B');
+(6, 'Operasi B'),
+(7, 'Pemeliharaan');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sub_pos`
+-- Struktur dari tabel `sub_pos`
 --
 
 CREATE TABLE `sub_pos` (
@@ -158,17 +177,18 @@ CREATE TABLE `sub_pos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `sub_pos`
+-- Dumping data untuk tabel `sub_pos`
 --
 
 INSERT INTO `sub_pos` (`id_subpos`, `nama_subpos`) VALUES
 (1, 'Material A'),
-(2, 'Material B');
+(2, 'Material B'),
+(3, 'Jasa Borongan');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sub_pos2`
+-- Struktur dari tabel `sub_pos2`
 --
 
 CREATE TABLE `sub_pos2` (
@@ -177,17 +197,18 @@ CREATE TABLE `sub_pos2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `sub_pos2`
+-- Dumping data untuk tabel `sub_pos2`
 --
 
 INSERT INTO `sub_pos2` (`id_subpos2`, `nama_subpos2`) VALUES
 (1, 'Alat Tulis Kantor A'),
-(3, 'Alat Tulis Kantor B');
+(3, 'Alat Tulis Kantor B'),
+(4, 'Perkakas');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transfer`
+-- Struktur dari tabel `transfer`
 --
 
 CREATE TABLE `transfer` (
@@ -224,7 +245,7 @@ CREATE TABLE `transfer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transfer`
+-- Dumping data untuk tabel `transfer`
 --
 
 INSERT INTO `transfer` (`id_transfer`, `id_anggota`, `nama_pengirim`, `email`, `no_telp`, `no_rekening`, `nama_bank`, `tgl_kirim`, `kategori`, `PPN`, `PPH_21`, `PPH_22`, `PPH_23`, `denda`, `administrasi_bank`, `total_dibayar`, `berita`, `honor_asesmen`, `honor_evaluator`, `nilai_kontrak`, `honor_tester`, `honor_feedback`, `pekerjaan`, `honor_pewawancara`, `honor_korektor_pauli`, `lumpsum_transport_bandara`, `lumpsum_komsumsi`, `lumpsum_transpoet_lok`, `waktu_kerja`, `lumpsum_uang_cod`) VALUES
@@ -237,7 +258,7 @@ INSERT INTO `transfer` (`id_transfer`, `id_anggota`, `nama_pengirim`, `email`, `
 --
 
 --
--- Indexes for table `detail_pengajuananggaran`
+-- Indeks untuk tabel `detail_pengajuananggaran`
 --
 ALTER TABLE `detail_pengajuananggaran`
   ADD PRIMARY KEY (`id_detailpengajuan`),
@@ -247,121 +268,121 @@ ALTER TABLE `detail_pengajuananggaran`
   ADD KEY `id_pengajuan` (`id_pengajuan`);
 
 --
--- Indexes for table `jabatan`
+-- Indeks untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indexes for table `pagu_anggaran`
+-- Indeks untuk tabel `pagu_anggaran`
 --
 ALTER TABLE `pagu_anggaran`
   ADD PRIMARY KEY (`id_paguanggaran`),
   ADD KEY `id_anggota` (`id_anggota`);
 
 --
--- Indexes for table `pegawai`
+-- Indeks untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`id_anggota`),
   ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
--- Indexes for table `pengajuan_anggaran`
+-- Indeks untuk tabel `pengajuan_anggaran`
 --
 ALTER TABLE `pengajuan_anggaran`
   ADD PRIMARY KEY (`id_pengajuan`),
   ADD KEY `id_anggota` (`id_anggota`);
 
 --
--- Indexes for table `pos`
+-- Indeks untuk tabel `pos`
 --
 ALTER TABLE `pos`
   ADD PRIMARY KEY (`id_pos`);
 
 --
--- Indexes for table `sub_pos`
+-- Indeks untuk tabel `sub_pos`
 --
 ALTER TABLE `sub_pos`
   ADD PRIMARY KEY (`id_subpos`);
 
 --
--- Indexes for table `sub_pos2`
+-- Indeks untuk tabel `sub_pos2`
 --
 ALTER TABLE `sub_pos2`
   ADD PRIMARY KEY (`id_subpos2`);
 
 --
--- Indexes for table `transfer`
+-- Indeks untuk tabel `transfer`
 --
 ALTER TABLE `transfer`
   ADD PRIMARY KEY (`id_transfer`),
   ADD KEY `id_anggota` (`id_anggota`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `detail_pengajuananggaran`
+-- AUTO_INCREMENT untuk tabel `detail_pengajuananggaran`
 --
 ALTER TABLE `detail_pengajuananggaran`
-  MODIFY `id_detailpengajuan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detailpengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `jabatan`
+-- AUTO_INCREMENT untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pagu_anggaran`
+-- AUTO_INCREMENT untuk tabel `pagu_anggaran`
 --
 ALTER TABLE `pagu_anggaran`
   MODIFY `id_paguanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pegawai`
+-- AUTO_INCREMENT untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `pengajuan_anggaran`
+-- AUTO_INCREMENT untuk tabel `pengajuan_anggaran`
 --
 ALTER TABLE `pengajuan_anggaran`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pos`
+-- AUTO_INCREMENT untuk tabel `pos`
 --
 ALTER TABLE `pos`
-  MODIFY `id_pos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `sub_pos`
+-- AUTO_INCREMENT untuk tabel `sub_pos`
 --
 ALTER TABLE `sub_pos`
-  MODIFY `id_subpos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_subpos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `sub_pos2`
+-- AUTO_INCREMENT untuk tabel `sub_pos2`
 --
 ALTER TABLE `sub_pos2`
-  MODIFY `id_subpos2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_subpos2` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `transfer`
+-- AUTO_INCREMENT untuk tabel `transfer`
 --
 ALTER TABLE `transfer`
   MODIFY `id_transfer` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `detail_pengajuananggaran`
+-- Ketidakleluasaan untuk tabel `detail_pengajuananggaran`
 --
 ALTER TABLE `detail_pengajuananggaran`
   ADD CONSTRAINT `detail_pengajuananggaran_ibfk_1` FOREIGN KEY (`id_pengajuan`) REFERENCES `pengajuan_anggaran` (`id_pengajuan`),
@@ -370,25 +391,25 @@ ALTER TABLE `detail_pengajuananggaran`
   ADD CONSTRAINT `detail_pengajuananggaran_ibfk_4` FOREIGN KEY (`id_subpos2`) REFERENCES `sub_pos2` (`id_subpos2`);
 
 --
--- Constraints for table `pagu_anggaran`
+-- Ketidakleluasaan untuk tabel `pagu_anggaran`
 --
 ALTER TABLE `pagu_anggaran`
   ADD CONSTRAINT `pagu_anggaran_ibfk_1` FOREIGN KEY (`id_anggota`) REFERENCES `pegawai` (`id_anggota`);
 
 --
--- Constraints for table `pegawai`
+-- Ketidakleluasaan untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
   ADD CONSTRAINT `pegawai_ibfk_1` FOREIGN KEY (`id_jabatan`) REFERENCES `jabatan` (`id_jabatan`);
 
 --
--- Constraints for table `pengajuan_anggaran`
+-- Ketidakleluasaan untuk tabel `pengajuan_anggaran`
 --
 ALTER TABLE `pengajuan_anggaran`
   ADD CONSTRAINT `pengajuan_anggaran_ibfk_1` FOREIGN KEY (`id_anggota`) REFERENCES `pegawai` (`id_anggota`);
 
 --
--- Constraints for table `transfer`
+-- Ketidakleluasaan untuk tabel `transfer`
 --
 ALTER TABLE `transfer`
   ADD CONSTRAINT `transfer_ibfk_1` FOREIGN KEY (`id_anggota`) REFERENCES `pegawai` (`id_anggota`);
