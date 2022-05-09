@@ -70,33 +70,30 @@ class C_login extends CI_Controller
 	{
 		$id_anggota = $this->session->userdata('id_anggota');
 		$pengajuan = $this->M_ajuananggaran->showbyid_pengajuan($id_anggota);
-
-		$data['nomor'] = $pengajuan['nomor'];
-		$data['pengajuan'] = $pengajuan['pengajuan'];
-
-
-
+	
+		
+		
 
 		$id_jabatan = $this->session->userdata('id_jabatan');
 		if ($id_jabatan == "3") {
-			$this->load->view('dashboard/dashboard_dmpau',$data);
+			$this->load->view('dashboard/dashboard_dmpau');
 		} elseif ($id_jabatan == "2") {
-			
 
-			$this->load->view('dashboard/dashboard_bidang.php', $data);
-			
+
+			$this->load->view('dashboard/dashboard_bidang.php');
 		} elseif ($id_jabatan == "1") {
-			
-			
-			$this->load->view('dashboard/dashboard_subbidang.php', $data);
-			
-			
+			$datanotifikasi = array(
+				'totalnotifikasi' => $pengajuan['totalnotifikasi'],
+				'dm' => $pengajuan['dm'],
+				'dmpau' =>  $pengajuan['dmpau']
+			);
+			$this->session->set_userdata($datanotifikasi);
+
+
+			$this->load->view('dashboard/dashboard_subbidang.php');
 		} else {
 			redirect(base_url("C_login"));
 		}
-
-
-		// $this->load->view('dashboard/dashboard');
 	}
 	public function logout_admin()
 	{

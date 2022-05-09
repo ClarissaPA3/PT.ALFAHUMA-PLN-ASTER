@@ -15,25 +15,34 @@
 
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
+        <!-- Notification Menu -->
 
         <li class="dropdown notifications-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-bell-o"></i>
-            <span class="label label-warning">10</span>
+            <span class="label label-warning"><?php echo  $this->session->userdata('totalnotifikasi'); ?></span>
           </a>
           <ul class="dropdown-menu">
-            <li class="header">You have 10 notifications</li>
+            <li class="header">Anda memiliki <?php echo  $this->session->userdata('totalnotifikasi'); ?> notifikasi</li>
             <li>
 
               <ul class="menu">
-                <li>
-                  <a href="#">
-                    <i class="fa fa-users text-aqua"></i> Koreksi Anggaran
-                  </a>
-                </li>
+                <?php foreach ($this->session->userdata('dm') as $iddm) : ?>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No ' . $iddm['id_pengajuan'] . ' disetujui oleh DM!'; ?>
+                    </a>
+                  </li>
+                <?php endforeach; ?>
+                <?php foreach ($this->session->userdata('dmpau')  as $iddm) : ?>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No ' . $iddm['id_pengajuan'] . ' disetujui oleh DMPAU!'; ?>
+                    </a>
+                  </li>
+                <?php endforeach; ?>
               </ul>
-            </li>
-            <li class="footer"><a href="#">View all</a></li>
+
           </ul>
         </li>
 
