@@ -80,7 +80,6 @@
                                             <thead>
                                                 <tr>
                                                     <td>No</td>
-                                                    <td>ID Anggota</td>
                                                     <td>Nama Pengirim</td>
                                                     <td>Email</td>
                                                     <td>No Telp</td>
