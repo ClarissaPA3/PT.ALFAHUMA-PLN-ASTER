@@ -88,6 +88,7 @@
 
                                 <form action="<?php site_url('C_masterpos_subpos/update') ?>" method="post">
                                     <?php foreach ($transfers as $key) : ?>
+                                        <input type="hidden" name="id_anggota" value="<?php echo $key['id_anggota']; ?>">
 
                                         <input type="hidden" name="id_transfer" value="<?php echo $key['id_transfer']; ?>">
 
