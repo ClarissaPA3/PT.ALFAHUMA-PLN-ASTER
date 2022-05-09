@@ -113,19 +113,6 @@
                                                     <th>Rencana Kebutuhan (Total)</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <!-- masukkan data dengan php echo beserta perulangan -->
-                                                    <td>1</td>
-                                                    <td>001</td>
-                                                    <td>Biaya Operasi</td>
-                                                    <td>2</td>
-                                                    <td>1</td>
-                                                    <td>4</td>
-                                                    <td>8</td>
-                                                    <td>15</td>
-                                                </tr>
-                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
