@@ -49,7 +49,7 @@ class C_ajuananggaran extends CI_Controller
 
 			$this->load->view('anggaran/addajuananggaran', $data);
 		} else {
-			print_r($_POST);
+			
 
 			$this->M_ajuananggaran->update_pengajuan();
 			redirect(site_url('C_ajuananggaran/show_datapengajuan'));

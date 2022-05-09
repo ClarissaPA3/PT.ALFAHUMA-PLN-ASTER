@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>E-Budgeting | Master Pos</title>
+    <title>E-Budgeting | Menu Transfer</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -38,21 +38,7 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <style>
-        .example-modal .modal {
-            position: relative;
-            top: auto;
-            bottom: auto;
-            right: auto;
-            left: auto;
-            display: block;
-            z-index: 1;
-        }
-
-        .example-modal .modal {
-            background: transparent !important;
-        }
-    </style>
+    
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -90,40 +76,40 @@
                                 <div class="card-body">
 
                                     <div class="table-responsive">
-                                        <table class="table table-hover text-center table-striped" id="dataTable" width="100%" cellspacing="0">
+                                        <table id="example2" class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <td rowspan="2">No</td>
-                                                    <td rowspan="2">ID Anggota</td>
-                                                    <td rowspan="2">Nama Pengirim</td>
-                                                    <td rowspan="2">Email</td>
-                                                    <td rowspan="2">No Telp</td>
-                                                    <td rowspan="2">No Rekening</td>
-                                                    <td rowspan="2">Nama Bank</td>
-                                                    <td rowspan="2">Tgl Kirim</td>
-                                                    <td rowspan="2">Kategori</td>
-                                                    <td rowspan="2">PPN</td>
-                                                    <td rowspan="2">PPN 21</td>
-                                                    <td rowspan="2">PPN 22</td>
-                                                    <td rowspan="2">PPN 23</td>
-                                                    <td rowspan="2">Denda</td>
-                                                    <td rowspan="2">Administrasi Bank</td>
-                                                    <td rowspan="2">Total Dibayar</td>
-                                                    <td rowspan="2">Berita</td>
-                                                    <td rowspan="2">Honor Asesmen</td>
-                                                    <td rowspan="2">Honor Evaluator</td>
-                                                    <td rowspan="2">Nilai Kontrak</td>
-                                                    <td rowspan="2">Honor Tester</td>
-                                                    <td rowspan="2">Honor Feedback</td>
-                                                    <td rowspan="2">Pekerjaan</td>
-                                                    <td rowspan="2">Honor Pewawancara</td>
-                                                    <td rowspan="2">Honor Korektor Pauli</td>
-                                                    <td rowspan="2">Lumpsum Transport Bandara</td>
-                                                    <td rowspan="2">Lumpsum Komsumsi</td>
-                                                    <td rowspan="2">Lumpsum Transpoet Lok</td>
-                                                    <td rowspan="2">Waktu Kerja</td>
-                                                    <td rowspan="2">Lumpsum Uang Cod</td>
-                                                    <td rowspan="2">Aksi</td>
+                                                    <td>No</td>
+                                                    <td>ID Anggota</td>
+                                                    <td>Nama Pengirim</td>
+                                                    <td>Email</td>
+                                                    <td>No Telp</td>
+                                                    <td>No Rekening</td>
+                                                    <td>Nama Bank</td>
+                                                    <td>Tgl Kirim</td>
+                                                    <td>Kategori</td>
+                                                    <td>PPN</td>
+                                                    <td>PPN 21</td>
+                                                    <td>PPN 22</td>
+                                                    <td>PPN 23</td>
+                                                    <td>Denda</td>
+                                                    <td>Administrasi Bank</td>
+                                                    <td>Total Dibayar</td>
+                                                    <td>Berita</td>
+                                                    <td>Honor Asesmen</td>
+                                                    <td>Honor Evaluator</td>
+                                                    <td>Nilai Kontrak</td>
+                                                    <td>Honor Tester</td>
+                                                    <td>Honor Feedback</td>
+                                                    <td>Pekerjaan</td>
+                                                    <td>Honor Pewawancara</td>
+                                                    <td>Honor Korektor Pauli</td>
+                                                    <td>Lumpsum Transport Bandara</td>
+                                                    <td>Lumpsum Komsumsi</td>
+                                                    <td>Lumpsum Transpoet Lok</td>
+                                                    <td>Waktu Kerja</td>
+                                                    <td>Lumpsum Uang Cod</td>
+                                                    <td>Aksi</td>
                                                 </tr>
                                             </thead>
                                             <tbody class="table-striped">

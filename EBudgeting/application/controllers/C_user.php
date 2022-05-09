@@ -28,7 +28,7 @@ class C_user extends CI_Controller
 		<li>At least one upper case </li>
 		<li>At least one lower case English letter</li>
 		<li>At least one digit</li>
-		<li>At least one special character</li>
+		<li>At least one special character (#?!@$%^&*-)</li>
 		<li>Minimum eight in length</li>
 		</ul>'));
 
@@ -65,7 +65,7 @@ class C_user extends CI_Controller
 		<li>At least one upper case </li>
 		<li>At least one lower case English letter</li>
 		<li>At least one digit</li>
-		<li>At least one special character</li>
+		<li>At least one special character (#?!@$%^&*-)</li>
 		<li>Minimum eight in length</li>
 		</ul>'));
 
