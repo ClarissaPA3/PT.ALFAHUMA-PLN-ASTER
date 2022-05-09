@@ -142,7 +142,7 @@ class M_menutransfer extends CI_Model
         $data = array(
 
             'id_transfer' => '',
-            'id_anggota' => '2',
+            'id_anggota' => $this->session->userdata('id_anggota'),
             'nama_pengirim' => $this->input->post('nama_pengirim'),
             'email' => $this->input->post('email'),
             'no_telp' => $this->input->post('no_telp'),
