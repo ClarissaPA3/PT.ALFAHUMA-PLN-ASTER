@@ -79,36 +79,37 @@
                                         <table id="example2" class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <td>No</td>
-                                                    <td>Nama Pengirim</td>
-                                                    <td>Email</td>
-                                                    <td>No Telp</td>
-                                                    <td>No Rekening</td>
-                                                    <td>Nama Bank</td>
-                                                    <td>Tgl Kirim</td>
-                                                    <td>Kategori</td>
-                                                    <td>PPN</td>
-                                                    <td>PPN 21</td>
-                                                    <td>PPN 22</td>
-                                                    <td>PPN 23</td>
-                                                    <td>Denda</td>
-                                                    <td>Administrasi Bank</td>
-                                                    <td>Total Dibayar</td>
-                                                    <td>Berita</td>
-                                                    <td>Honor Asesmen</td>
-                                                    <td>Honor Evaluator</td>
-                                                    <td>Nilai Kontrak</td>
-                                                    <td>Honor Tester</td>
-                                                    <td>Honor Feedback</td>
-                                                    <td>Pekerjaan</td>
-                                                    <td>Honor Pewawancara</td>
-                                                    <td>Honor Korektor Pauli</td>
-                                                    <td>Lumpsum Transport Bandara</td>
-                                                    <td>Lumpsum Komsumsi</td>
-                                                    <td>Lumpsum Transpoet Lok</td>
-                                                    <td>Waktu Kerja</td>
-                                                    <td>Lumpsum Uang Cod</td>
-                                                    <td>Aksi</td>
+                                                    <th>No</th>
+                                                    <th>ID Anggota</th>
+                                                    <th>Nama Pengirim</th>
+                                                    <th>Email</th>
+                                                    <th>No Telp</th>
+                                                    <th>No Rekening</th>
+                                                    <th>Nama Bank</th>
+                                                    <th>Tgl Kirim</th>
+                                                    <th>Kategori</th>
+                                                    <th>PPN</th>
+                                                    <th>PPN 21</th>
+                                                    <th>PPN 22</th>
+                                                    <th>PPN 23</th>
+                                                    <th>Denda</th>
+                                                    <th>Administrasi Bank</th>
+                                                    <th>Total Dibayar</th>
+                                                    <th>Berita</th>
+                                                    <th>Honor Asesmen</th>
+                                                    <th>Honor Evaluator</th>
+                                                    <th>Nilai Kontrak</th>
+                                                    <th>Honor Tester</th>
+                                                    <th>Honor Feedback</th>
+                                                    <th>Pekerjaan</th>
+                                                    <th>Honor Pewawancara</th>
+                                                    <th>Honor Korektor Pauli</th>
+                                                    <th>Lumpsum Transport Banhara</th>
+                                                    <th>Lumpsum Komsumsi</th>
+                                                    <th>Lumpsum Transpoet Lok</th>
+                                                    <th>Waktu Kerja</th>
+                                                    <th>Lumpsum Uang Cod</th>
+                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="table-striped">
