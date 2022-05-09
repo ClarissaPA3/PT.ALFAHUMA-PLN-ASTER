@@ -73,6 +73,7 @@
             <div class="container-fluid">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
+                <h1>Edit Transferr</h1>
                 </section>
 
                 <!-- Main content -->
@@ -90,8 +91,7 @@
 
                                         <input type="hidden" name="id_transfer" value="<?php echo $key['id_transfer']; ?>">
 
-                                        
-                                        <input type="hidden" name="id_anggota" placeholder="id_anggota" value="<?php echo $key['id_anggota']; ?>">
+                                                        
                                             
 
                                     <div class="form-group row">

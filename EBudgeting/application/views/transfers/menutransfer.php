@@ -80,7 +80,6 @@
                                             <thead>
                                                 <tr>
                                                     <td>No</td>
-                                                    <td>ID Anggota</td>
                                                     <td>Nama Pengirim</td>
                                                     <td>Email</td>
                                                     <td>No Telp</td>
@@ -122,7 +121,6 @@
                                                 ?>
                                                     <tr>
                                                         <td><?php echo $id; ?></td>
-                                                        <td><?php echo $id_anggota['id_anggota'] ?></td>
                                                         <td><?php echo $id_anggota['nama_pengirim'] ?></td>
                                                         <td><?php echo $id_anggota['email'] ?></td>
                                                         <td><?php echo $id_anggota['no_telp'] ?></td>

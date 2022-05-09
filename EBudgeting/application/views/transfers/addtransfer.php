@@ -89,12 +89,7 @@
                                 <form action="<?php site_url('C_masterpos_subpos/add') ?>" method="post">
                                     <div class="card-body">
          
-                                    <div class="form-group row">
-                                            <label class="col-sm-2 col-form-label">Id Anggota</label>
-                                            <div class="col-sm-5">
-                                            <input type="text" name="id_anggota" placeholder="Id Anggota" value="">
-                                            </div>
-                                        </div>
+                                  
 
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama Pengirim</label>
