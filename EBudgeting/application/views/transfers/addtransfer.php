@@ -90,8 +90,9 @@
                                     <div class="card-body">
          
                                   
-
-                                        <div class="form-group row">
+                            <div class="row">
+                              <div class="col-md-6">
+                              <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama Pengirim</label>
                                             <div class="col-sm-5">
                                       <input type="text" name="nama_pengirim" placeholder="Nama Pengirim">                                  
@@ -196,6 +197,9 @@
                                       <input type="text" name="berita" placeholder="Berita">
                                     </div>
                                     </div>
+                              </div>
+                              <div class="col-md-6">
+                              
                                     
                                     <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Honor Asesmen</label>
@@ -287,6 +291,8 @@
                                       <input type="text" name="lumpsum_uang_cod" placeholder="Lumpsum Uang Cod">
                                     </div>
                                     </div>
+                              </div>
+                            </div>
             
                                     <div class="card-footer">
                                         <button type="submit" class="btn btn-info">Submit</button>

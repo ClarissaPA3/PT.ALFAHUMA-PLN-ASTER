@@ -93,7 +93,8 @@
                                         <input type="hidden" name="id_transfer" value="<?php echo $key['id_transfer']; ?>">
 
                                                         
-                                            
+                                        <div class="row">
+                                        <div class="col-md-6">  
 
                                     <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Nama Pengirim</label>
@@ -199,7 +200,10 @@
                                         <input type="text" name="berita" placeholder="berita" value="<?php echo $key['berita']; ?>">
                                             </div>
                                         </div>
+                                        </div>
 
+
+                                        <div class="col-md-6">
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label">Honor Asesmen</label>
                                             <div class="col-sm-5">
@@ -290,12 +294,14 @@
                                         <input type="text" name="lumpsum_uang_cod" placeholder="lumpsum_uang_cod" value="<?php echo $key['lumpsum_uang_cod']; ?>">
                                             </div>
                                         </div>
-                                        
+                                        </div>
+
                                          <div class="card-footer">
                                         <button type="submit" class="btn btn-info">Submit</button>
                                     </div>
                                     <?php endforeach; ?>
                             </div>
+                       
                             </form>
                         </div>
                         <!-- /.box -->

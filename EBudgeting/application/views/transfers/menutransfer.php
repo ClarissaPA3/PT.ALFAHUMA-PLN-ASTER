@@ -104,9 +104,9 @@
                                                     <th>Pekerjaan</th>
                                                     <th>Honor Pewawancara</th>
                                                     <th>Honor Korektor Pauli</th>
-                                                    <th>Lumpsum Transport Banhara</th>
+                                                    <th>Lumpsum Transport Bandara</th>
                                                     <th>Lumpsum Komsumsi</th>
-                                                    <th>Lumpsum Transpoet Lok</th>
+                                                    <th>Lumpsum Transport Lok</th>
                                                     <th>Waktu Kerja</th>
                                                     <th>Lumpsum Uang Cod</th>
                                                     <th>Aksi</th>
