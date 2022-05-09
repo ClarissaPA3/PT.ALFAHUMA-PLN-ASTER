@@ -38,22 +38,21 @@ class C_paguanggaran extends CI_Controller
 
     public function edit($id = null)
     {
+        
+        $this->form_validation->set_rules('nominal_pagu', 'Nominal Pagu', 'required|min_length[3]|max_length[64]');
+        $this->form_validation->set_rules('nominal_terpakai', 'Nominal Terpakai', 'required|min_length[1]|max_length[64]');
+        $this->form_validation->set_rules('bulan', 'Bulan', 'required|min_length[3]|max_length[64]');
+        $this->form_validation->set_rules('tahun', 'Tahun', 'required|min_length[3]|max_length[64]');
 
-
-        $paguanggaran = $this->M_paguanggaran;
-        $validation = $this->form_validation;
-        $validation->set_rules('nominal_pagu', 'Nominal Pagu', 'required|min_length[3]|max_length[64]');
-        $validation->set_rules('nominal_terpakai', 'Nominal Terpakai', 'required|min_length[1]|max_length[64]');
-        $validation->set_rules('bulan', 'Bulan', 'required|min_length[3]|max_length[64]');
-        $validation->set_rules('tahun', 'Tahun', 'required|min_length[3]|max_length[64]');
-
-        if ($validation->run()) {
-            $paguanggaran->update($id);
+        if ( $this->form_validation->run()) {
+            $this->M_paguanggaran->update($id);
 
             redirect(site_url('C_paguanggaran'));
         } else {
 
-            $data["paguanggaran"] = $paguanggaran->getById($id);
+
+            $data["paguanggaran"] = $this->M_paguanggaran->getById($id);
+            $data['id'] = $id;
 
             $this->load->view("paguanggaran/updatepagu", $data);
         }

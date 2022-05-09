@@ -59,9 +59,11 @@ class M_paguanggaran extends CI_Model
         $this->db->insert('pagu_anggaran', $data);
     }
 
-    public function update($id)
+    public function update()
     {
-        $post = $this->input->post();
+        $id = $this->input->post('id_paguanggaran');
+        
+        
         $data = array(
 
             'id_paguanggaran' => $id,

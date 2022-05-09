@@ -85,7 +85,7 @@
                 <div class="card-header">
                   <h3 class="card-title">
                 </div>
-                <form action="<?php echo site_url('C_paguanggaran/edit'); ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo site_url('C_paguanggaran/edit/').$id; ?>" method="post" enctype="multipart/form-data">
                   <div class="card-body">
                     <?php foreach ($paguanggaran as $key) : ?>
 
@@ -96,24 +96,28 @@
                         <label class="col-sm-2 col-form-label">Nominal Pagu</label>
                         <div class="col-sm-5">
                           <input type="text" class="form-control" id="nominal_pagu" name="nominal_pagu" placeholder="" value="<?php echo $key['nominal_pagu']; ?>" required>
+                          <?php echo form_error('nominal_pagu');?>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Nominal Terpakai</label>
                         <div class="col-sm-5">
                           <input type="text" class="form-control" id="nominal_terpakai" name="nominal_terpakai" placeholder="" value="<?php echo $key['nominal_terpakai']; ?>" required>
+                          <?php echo form_error('nominal_terpakai');?>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Bulan</label>
                         <div class="col-sm-5">
                           <input type="text" class="form-control" id="bulan" name="bulan" placeholder="" value="<?php echo $key['bulan']; ?>" required>
+                          <?php echo form_error('bulan');?>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tahun</label>
                         <div class="col-sm-5">
                           <input type="text" class="form-control" id="tahun" name="tahun" placeholder="" value="<?php echo $key['tahun']; ?>" required>
+                          <?php echo form_error('tahun');?>
                         </div>
                       </div>
                   </div>
