@@ -31,26 +31,26 @@
                 <span class="label label-warning"><?php echo  $this->session->userdata('totalnotifikasi'); ?></span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">Anda memiliki <?php echo  $this->session->userdata('totalnotifikasi');?> notifikasi</li>
+                <li class="header">Anda memiliki <?php echo  $this->session->userdata('totalnotifikasi'); ?> notifikasi</li>
                 <li>
 
                   <ul class="menu">
-                    <?php foreach ($this->session->userdata('dm') as $iddm) :?>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No '. $iddm['id_pengajuan'] . ' disetujui oleh DM!';?>
-                      </a>
-                    </li>
+                    <?php foreach ($this->session->userdata('dm') as $iddm) : ?>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No ' . $iddm['id_pengajuan'] . ' disetujui oleh DM!'; ?>
+                        </a>
+                      </li>
                     <?php endforeach; ?>
-                    <?php foreach ($this->session->userdata('dmpau')  as $iddm) :?>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No '. $iddm['id_pengajuan'] . ' disetujui oleh DMPAU!';?>
-                      </a>
-                    </li>
+                    <?php foreach ($this->session->userdata('dmpau')  as $iddm) : ?>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No ' . $iddm['id_pengajuan'] . ' disetujui oleh DMPAU!'; ?>
+                        </a>
+                      </li>
                     <?php endforeach; ?>
                   </ul>
-                
+
               </ul>
             </li>
 
@@ -104,15 +104,15 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
-          <li class="active">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-dashboard"></i> <span>Data Master</span>
               <span class="pull-right-container">
                 <i class=""></i>
               </span>
             </a>
-            <ul class="active-menu">
-              <li class="active"><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
+            <ul class="treeview-menu">
+              <li class="treeview"><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
               <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
               <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
             </ul>
@@ -146,14 +146,14 @@
               </span>
             </a>
           </li>
-          <li class="active">
+          <li class="treeview">
             <a href="#">
               <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
               <span class="pull-right-container">
                 <i class=""></i>
               </span>
             </a>
-            <ul class="active-menu">
+            <ul class="treeview-menu">
               <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
               <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
             </ul>
