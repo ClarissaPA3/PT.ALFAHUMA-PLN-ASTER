@@ -108,11 +108,11 @@
             <a href="#">
               <i class="fa fa-dashboard"></i> <span>Data Master</span>
               <span class="pull-right-container">
-                <i class=""></i>
+                <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="treeview"><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
+              <li class="active"><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
               <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
               <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
             </ul>
@@ -150,7 +150,7 @@
             <a href="#">
               <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
               <span class="pull-right-container">
-                <i class=""></i>
+                <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
