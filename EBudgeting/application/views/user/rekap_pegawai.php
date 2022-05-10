@@ -130,7 +130,7 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li class="active"><a href="<?php echo site_url("C_input_jabatan/show_jabatan"); ?>"><i class="fa fa-circle-o"></i> Jabatan</a></li>
+                            <li><a href="<?php echo site_url("C_input_jabatan/show_jabatan"); ?>"><i class="fa fa-circle-o"></i> Jabatan</a></li>
                             <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Pegawai</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
@@ -166,14 +166,14 @@
                             </span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        <ul class="active-menu">
+                        <ul class="treeview-menu">
                             <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
                             <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
                         </ul>
@@ -228,17 +228,15 @@
                                                     <td><?php echo $key->nama_anggota; ?> </td>
                                                     <td><?php echo $key->tgl_lahir; ?> </td>
                                                     <td><?php echo $key->alamat; ?> </td>
-                                                    
+
                                                     <td>
                                                         <?php
-                                                        $array = array_intersect(array($key->id_jabatan),array_flip($status));
-                                                        
-                                                        
-                                                        if (!empty($array)) {
-                                                        
-                                                            echo $status[$array[0]];
+                                                        $array = array_intersect(array($key->id_jabatan), array_flip($status));
 
-                                                      
+
+                                                        if (!empty($array)) {
+
+                                                            echo $status[$array[0]];
                                                         }
                                                         ?>
                                                     </td>

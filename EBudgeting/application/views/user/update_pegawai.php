@@ -119,15 +119,15 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active">
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Data Master</span>
                             <span class="pull-right-container">
-                                <i class=""></i>
+                                <i class="fa fa-angle-left pull-right"></i>
                             </span>
                         </a>
-                        <ul class="active-menu">
-                            <li class="active"><a href="<?php echo site_url("C_input_jabatan/show_jabatan"); ?>"><i class="fa fa-circle-o"></i> Jabatan</a></li>
+                        <ul class="treeview-menu">
+                            <li><a href="<?php echo site_url("C_input_jabatan/show_jabatan"); ?>"><i class="fa fa-circle-o"></i> Jabatan</a></li>
                             <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Pegawai</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
@@ -163,14 +163,14 @@
                             </span>
                         </a>
                     </li>
-                    <li class="active">
+                    <li class="treeview">
                         <a href="#">
                             <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
                             <span class="pull-right-container">
                                 <i class=""></i>
                             </span>
                         </a>
-                        <ul class="active-menu">
+                        <ul class="treeview-menu">
                             <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
                             <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
                         </ul>
@@ -196,7 +196,7 @@
                                 <div class="card-header">
                                     <h3 class="card-title">
                                 </div>
-                                <form action="<?php echo site_url('C_user/update_user/').$id; ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo site_url('C_user/update_user/') . $id; ?>" method="post" enctype="multipart/form-data">
                                     <div class="card-body">
 
                                         <?php
@@ -237,7 +237,7 @@
                                                         <option value="" selected disabled>Jabatan</option>
                                                         <?php foreach ($jabatan as $poss) : ?>
 
-                                                            <option <?= set_select('id_jabatan', $poss['id_jabatan'])?> <?php if ($poss['id_jabatan'] == $key->id_jabatan) echo "selected";?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
+                                                            <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> <?php if ($poss['id_jabatan'] == $key->id_jabatan) echo "selected"; ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
                                                         <?php endforeach; ?>
                                                     </select>
                                                     <?php echo form_error('id_jabatan'); ?>
@@ -250,7 +250,7 @@
                                                     <input type="text" class="form-control" id="username" name="username" placeholder="" value="<?php echo $key->username; ?>" required>
                                                     <?php echo form_error('username'); ?>
                                                 </div>
-                                               
+
                                             </div>
 
                                             <div class="form-group row">
@@ -265,7 +265,7 @@
                                     <div class="card-footer">
 
                                         <button type="submit" class="btn btn-info">Simpan</button>
-                                        <a href="<?php echo $_SERVER['HTTP_REFERER'];?>" title="Kembali" class="btn btn-secondary">Batal</a>
+                                        <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" title="Kembali" class="btn btn-secondary">Batal</a>
                                     </div>
                                 <?php endforeach; ?>
                                 </form>
