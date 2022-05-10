@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 09:04 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: May 10, 2022 at 03:45 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -113,6 +113,7 @@ CREATE TABLE `pegawai` (
   `nama_anggota` varchar(255) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(255) NOT NULL,
+  `jabatan` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -121,17 +122,17 @@ CREATE TABLE `pegawai` (
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`id_anggota`, `id_jabatan`, `nama_anggota`, `tgl_lahir`, `alamat`, `username`, `password`) VALUES
-(1, 1, 'Rohman Putra', '1986-10-12', 'Jl. Gajah Mada No 12 Surakarta, Jawa Tengah', 'rohmanputra', 'rohman'),
-(2, 2, 'Muhammad Ridho', '1994-02-09', 'Jl. Panglima Sudirman No 5 Caruban, Jawa Timur.', 'muhammadridho', 'ridho'),
-(3, 3, 'Freniska Ayu', '1997-08-29', 'Jl. Ahmad Yani No 4 Madiun, Jawa Timur.', 'freniskaayu', 'freniska'),
-(8, 1, 'Risma Adelisna', '1992-03-01', 'Jl. Ahmad Dahlan No 10 Jawa Timur.', 'rismaadelisna20', 'Risma20@'),
-(9, 2, 'Arya Saputra', '1995-05-21', 'Jl. Panglima Sudirman No 5 Solo, Jawa Timur.', 'aryasaputra10', 'Aryasaputra10@'),
-(10, 3, 'Annisa Indah', '1999-11-09', 'Jl. Gajah Mada No 12 Ponorogo, Jawa Timur', 'annisaindah05', 'Annisaindah05@'),
-(11, 1, 'Faiz Nur Azizy', '1996-07-13', 'Jl. Embong Brantas No 12 Malang, Jawa Timur', 'faiznur60', 'Faiznur60@'),
-(12, 1, 'Rifqi Ihsan Saputra', '1990-09-01', 'Jl. Raya Gubeng No 15 Surabaya, Jawa Timur.', 'rifqiihsan28', 'Rifqiihsan28@'),
-(13, 3, 'Ajeng Putri Subagyo', '2000-02-28', 'Jl. Diponegoro No 1 Kediri, Jawa Timur.', 'ajengputri02', 'Ajengputri02@'),
-(14, 2, 'Muhammad Daffa ', '1998-04-12', 'Komplek Perumahan Pratista Antapani Estate No 12 Bandung, Jawa Barat.', 'muhammaddaffa12', 'Muhammaddaffa12@');
+INSERT INTO `pegawai` (`id_anggota`, `id_jabatan`, `nama_anggota`, `tgl_lahir`, `alamat`, `jabatan`, `username`, `password`) VALUES
+(1, 1, 'Rohman Putra', '1986-10-12', 'Jl. Gajah Mada No 12 Surakarta, Jawa Tengah', '', 'rohmanputra', 'rohman'),
+(2, 2, 'Muhammad Ridho', '1994-02-09', 'Jl. Panglima Sudirman No 5 Caruban, Jawa Timur.', '', 'muhammadridho', 'ridho'),
+(3, 3, 'Freniska Ayu', '1997-08-29', 'Jl. Ahmad Yani No 4 Madiun, Jawa Timur.', '', 'freniskaayu', 'freniska'),
+(8, 1, 'Risma Adelisna', '1992-03-01', 'Jl. Ahmad Dahlan No 10 Jawa Timur.', '', 'rismaadelisna20', 'Risma20@'),
+(9, 2, 'Arya Saputra', '1995-05-21', 'Jl. Panglima Sudirman No 5 Solo, Jawa Timur.', '', 'aryasaputra10', 'Aryasaputra10@'),
+(10, 3, 'Annisa Indah', '1999-11-09', 'Jl. Gajah Mada No 12 Ponorogo, Jawa Timur', '', 'annisaindah05', 'Annisaindah05@'),
+(11, 1, 'Faiz Nur Azizy', '1996-07-13', 'Jl. Embong Brantas No 12 Malang, Jawa Timur', '', 'faiznur60', 'Faiznur60@'),
+(12, 1, 'Rifqi Ihsan Saputra', '1990-09-01', 'Jl. Raya Gubeng No 15 Surabaya, Jawa Timur.', '', 'rifqiihsan28', 'Rifqiihsan28@'),
+(13, 3, 'Ajeng Putri Subagyo', '2000-02-28', 'Jl. Diponegoro No 1 Kediri, Jawa Timur.', '', 'ajengputri02', 'Ajengputri02@'),
+(14, 2, 'Muhammad Daffa ', '1998-04-12', 'Komplek Perumahan Pratista Antapani Estate No 12 Bandung, Jawa Barat.', '', 'muhammaddaffa12', 'Muhammaddaffa12@');
 
 -- --------------------------------------------------------
 

@@ -124,31 +124,19 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview">
+                    <li class="active">
                         <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Data Master</span>
                             <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
+                                <i class=""></i>
                             </span>
                         </a>
-                        <ul class="treeview-menu">
+                        <ul class="active-menu">
                             <li class="active"><a href="<?php echo site_url("C_input_jabatan/show_jabatan"); ?>"><i class="fa fa-circle-o"></i> Jabatan</a></li>
                             <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Pegawai</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
-                        </ul>
-                    </li>
-                    <li class=" active treeview">
-                        <a href="#">
-                            <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-                            <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
                         </ul>
                     </li>
                     <li>
@@ -180,6 +168,18 @@
                             </span>
                         </a>
                     </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
+                            <span class="pull-right-container">
+                                <i class=""></i>
+                            </span>
+                        </a>
+                        <ul class="active-menu">
+                            <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+                            <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+                        </ul>
+                    </li>
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -205,68 +205,68 @@
                                     <div class="card-body">
 
 
-            
 
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Nama Pegawai</label>
-                                                <div class="col-sm-5">
-                                                    <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" placeholder=""  required>
-                                                    <?php echo form_error('nama_anggota'); ?>
-                                                </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Nama Pegawai</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" placeholder="" required>
+                                                <?php echo form_error('nama_anggota'); ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Tanggal lahir</label>
+                                            <div class="col-sm-5">
+                                                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="" required>
+                                                <?php echo form_error('tgl_lahir'); ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Alamat</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="" required>
+                                                <?php echo form_error('alamat'); ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Jabatan</label>
+                                            <div class="col-sm-5">
+                                                <select name="id_jabatan" id="id_jabatan" class="form-control">
+                                                    <option value="" selected disabled>Jabatan</option>
+                                                    <?php foreach ($jabatan as $poss) : ?>
+
+                                                        <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                                <?php echo form_error('id_jabatan'); ?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Username</label>
+                                            <div class="col-sm-5">
+                                                <input type="text" class="form-control" id="username" name="username" placeholder="" required>
+                                                <?php echo form_error('username'); ?>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Tanggal lahir</label>
-                                                <div class="col-sm-5">
-                                                    <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="" required>
-                                                    <?php echo form_error('tgl_lahir'); ?>
-                                                </div>
-                                            </div>
+                                        </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Alamat</label>
-                                                <div class="col-sm-5">
-                                                    <input type="text" class="form-control" id="alamat" name="alamat" placeholder=""  required>
-                                                    <?php echo form_error('alamat'); ?>
-                                                </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Password</label>
+                                            <div class="col-sm-5">
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="" required>
+                                                <?php echo form_error('password'); ?>
                                             </div>
-
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Jabatan</label>
-                                                <div class="col-sm-5">
-                                                    <select name="id_jabatan" id="id_jabatan" class="form-control">
-                                                        <option value="" selected disabled>Jabatan</option>
-                                                        <?php foreach ($jabatan as $poss) : ?>
-
-                                                            <option <?= set_select('id_jabatan', $poss['id_jabatan']) ?> value="<?= $poss['id_jabatan'] ?>"><?= $poss['nama_jabatan'] ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                    <?php echo form_error('id_jabatan'); ?>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Username</label>
-                                                <div class="col-sm-5">
-                                                    <input type="text" class="form-control" id="username" name="username" placeholder=""  required>
-                                                    <?php echo form_error('username'); ?>
-                                                </div>
-                                               
-                                            </div>
-
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Password</label>
-                                                <div class="col-sm-5">
-                                                    <input type="password" class="form-control" id="password" name="password" placeholder=""  required>
-                                                    <?php echo form_error('password'); ?>
-                                                </div>
-                                            </div>
+                                        </div>
 
                                     </div>
                                     <div class="card-footer">
 
                                         <button type="submit" class="btn btn-info">Simpan</button>
-                                        <a href="<?php echo $_SERVER['HTTP_REFERER'];?>" title="Kembali" class="btn btn-default">Batal</a>
+                                        <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" title="Kembali" class="btn btn-default">Batal</a>
                                     </div>
                                 </form>
                             </div>
