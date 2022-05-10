@@ -7,7 +7,7 @@ class C_persetujuan_dm extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('M_persetujuan');
+        
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
         $this->load->model('M_masterpos_subpos');
@@ -22,18 +22,32 @@ class C_persetujuan_dm extends CI_Controller
     }
     public function show_pengajuandm()
     {
-        $data['pengajuan'] = $this->M_persetujuan->show_pengajuan_sub();
+        $data['pengajuan'] = $this->M_ajuananggaran->show_pengajuan_sub();
         foreach ($data['pengajuan'] as $k) {
 
 
             $data['item'][] = $this->M_detailajuan->item($k['id_pengajuan']);
         }
+        $data['status'] = array(
+            '0' => '<span class="btn btn-danger"><i class="fa fa-fw fa-warning"></i>Draft</span>',
+            '1' => '<span class="btn btn-info"><i class="fa fa-fw fa-thumbs-up"></i> Telah diajukan oleh subidang</span>',
+            '2' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Telah disetujui oleh DM</span>',
+            '3' => '<span class="btn btn-success"><i class="fa fa-fw fa-check"></i> Telah disetujui oleh DMPAU</span>',
+
+            '5' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Koreksi Anggaran oleh DM</span>',
+            '6' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Koreksi Anggaran oleh DMPAU</span>'
+
+
+
+        );
+
+        
 
 
       
-        $this->load->view('dashboard/_part/head');
+       
         $this->load->view('persetujuan/persetujuan_dm.php', $data);
-        $this->load->view('dashboard/_part/footer');
+
     }
     public function reviewdm($id = null)
     {

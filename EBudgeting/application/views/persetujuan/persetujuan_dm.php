@@ -25,6 +25,7 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
+
         <?php
         if ($this->session->userdata('id_jabatan') == 1) {
             $this->load->view('dashboard/sidebarnav/_headsubbidang');
@@ -35,6 +36,7 @@
         }
 
         ?>
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <div class="container-fluid">
@@ -43,7 +45,6 @@
                     <h1>Persetujuan DM</h1>
 
                 </section>
-
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
@@ -94,15 +95,18 @@
                                                     <td><?= $item[$i]; ?></td>
                                                     <td>
                                                         <?php
-                                                        if ($pengajuan[$i]['status2'] == 1) {
-                                                        ?>
-                                                            <p class="btn btn-primary">Menunggu persetujuan</p>
+                                                        $array = array_intersect(array($pengajuan[$i]['status2']),array_flip($status));
+                                                        
+                                                        
+                                                        if (!empty($array)) {
+                                                        
+                                                            echo $status[$array[0]];
 
-                                                        <?php
+                                                      
                                                         }
                                                         ?>
 
-                                                    <td><?= $pengajuan[$i]['catatan_dm2'];?></td>
+                                                    <td><?= $pengajuan[$i]['catatan_dm2']; ?></td>
                                                     <td>
                                                         <a href="<?php echo site_url('C_persetujuan_dm/reviewdm/') . $pengajuan[$i]['id_pengajuan']; ?>" class="btn btn-primary">Review</a>
                                                     </td>
@@ -117,34 +121,34 @@
                         </div>
                     </div>
                     <!-- /.box -->
+                </section>
+
+
+
 
             </div>
 
 
         </div>
-        <!-- /.row -->
-        </section>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Create by</b> Mahasiswa UNS 2020.
+            </div>
+            <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
+            reserved.
+        </footer>
+
+
 
         <!-- /.content -->
     </div>
 
-    </div>
-    </form>
-    </div>
-    <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-    </div>
-    <!-- Add the sidebar's background. This div must be placed
-
-  <div class="control-sidebar-bg"></div>
-  </div>
-  
+ 
 
 
 
 
-  <?php $this->load->view('dashboard/_part/js'); ?>
+    <?php $this->load->view('dashboard/_part/js'); ?>
 </body>
 
 </html>

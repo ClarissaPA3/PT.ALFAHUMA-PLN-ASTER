@@ -491,7 +491,7 @@
             });
 
             $(document).on('click', '#tmbhkoreksi', function() {
-                $('#status').val('1');
+                $('#status').val('5');
                 FormSubmit();
 
 

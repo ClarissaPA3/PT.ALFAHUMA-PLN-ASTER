@@ -38,7 +38,7 @@ class M_ajuananggaran extends CI_Model
             $query = $this->db->get_where('pengajuan_anggaran', array('id_pengajuan' => $id));
             return $query->result_array();
         } else {
-            $query = $this->db->get('pengajuan_anggaran');
+            $query = $this->db->get_where('pengajuan_anggaran', array('id_anggota' => $this->session->userdata('id_anggota')));
             return $query->result();
         }
     }
@@ -66,15 +66,23 @@ class M_ajuananggaran extends CI_Model
     }
     public function showbyid_pengajuan($id)
     {
-        $query = $this->db->get_where('pengajuan_anggaran', array('id_anggota ' => $id, 'status2' => '1'));
+        $dm = $this->db->get_where('pengajuan_anggaran', array('id_anggota ' => $id, 'status2' => '2'));
+        $dmpau = $this->db->get_where('pengajuan_anggaran', array('id_anggota ' => $id, 'status2' => '3'));
+        $totalnotifikasi = $dm->num_rows() + $dmpau->num_rows();
 
-        return array('nomor' => $query->num_rows(), 'pengajuan' => $query->result_array());
+        return  array('totalnotifikasi' => $totalnotifikasi, 'dm' => $dm->result_array(), 'dmpau' => $dmpau->result_array());
     }
     // DM
     // New persetujuan DM
     public function show_pengajuan_sub()
     {
-        $query = $this->db->get_where('pengajuan_anggaran', array('status2' => '1'));
+        $this->db->select('*');
+
+		$this->db->from('pengajuan_anggaran');
+		$this->db->where('status2 >=','1');
+
+        $query = $this->db->get();
+		
         return $query->result_array();
     }
     // New persetujuan DMPAU

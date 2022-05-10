@@ -77,12 +77,12 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-striped">
-                                            
-                                            <?php 
-                                            for ($i=0; $i < count($pengajuan); $i++) :
+
+                                            <?php
+                                            for ($i = 0; $i < count($pengajuan); $i++) :
                                             ?>
-                                           
-                             
+
+
 
                                                 <tr>
                                                     <td><?php echo $pengajuan[$i]['id_pengajuan']; ?></td>
@@ -91,33 +91,27 @@
                                                     <td><?php echo $pengajuan[$i]['tanggal_mulai2']; ?></td>
                                                     <td><?php echo $pengajuan[$i]['tanggal_sampai2']; ?></td>
 
-                                                    <td><?= $item[$i];?></td>
+                                                    <td><?= $item[$i]; ?></td>
                                                     <td>
                                                         <?php
+                                                        $array = array_intersect(array($pengajuan[$i]['status2']), array_flip($status));
 
-                                                        if ($pengajuan[$i]['status2'] == 2) {
-                                                        ?>
-                                                            <p class="btn btn-primary">Menunggu persetujuan</p>
 
-                                                        <?php
-                                                        } elseif ($pengajuan[$i]['status2'] == 3) {
+                                                        if (!empty($array)) {
 
-                                                        ?>
-                                                            <p class="btn btn-primary">Selesai</p>
-
-                                                        <?php
+                                                            echo $status[$array[0]];
                                                         }
                                                         ?>
 
-                                                    <td><?= $pengajuan[$i]['catatan_dmpau2'];?></td>
+                                                    <td><?= $pengajuan[$i]['catatan_dmpau2']; ?></td>
                                                     <td>
                                                         <a href="<?php echo site_url('C_persetujuan_dmpau/reviewdmpau/') . $pengajuan[$i]['id_pengajuan']; ?>" class="btn btn-primary">Review</a>
                                                     </td>
 
                                                 </tr>
-                                              
-                                            <?php 
-                                            endfor;?>
+
+                                            <?php
+                                            endfor; ?>
                                         </tbody>
                                     </table>
                                 </div>

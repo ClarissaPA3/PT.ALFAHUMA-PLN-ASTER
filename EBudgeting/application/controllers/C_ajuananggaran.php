@@ -16,7 +16,6 @@ class C_ajuananggaran extends CI_Controller
 
 	public function add_datapengajuan()
 	{
-
 		$this->M_ajuananggaran->add_pengajuan();
 
 		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
@@ -25,8 +24,8 @@ class C_ajuananggaran extends CI_Controller
 	{
 		$this->M_detailajuan->delete_alldetailanggaranM($id);
 		$this->M_ajuananggaran->delete_pengajuan($id);
-		
-		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
+
+		redirect(site_url('C_ajuananggaran/update_datapengajuan/3'));
 	}
 	public function update_datapengajuan($id = null)
 	{
@@ -49,7 +48,7 @@ class C_ajuananggaran extends CI_Controller
 
 			$this->load->view('anggaran/addajuananggaran', $data);
 		} else {
-			
+
 
 			$this->M_ajuananggaran->update_pengajuan();
 			redirect(site_url('C_ajuananggaran/show_datapengajuan'));
@@ -89,4 +88,5 @@ class C_ajuananggaran extends CI_Controller
 
 	// Baru Persetujuan DM
 	
+
 }
