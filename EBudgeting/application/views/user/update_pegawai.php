@@ -119,31 +119,19 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview">
+                    <li class="active">
                         <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Data Master</span>
                             <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
+                                <i class=""></i>
                             </span>
                         </a>
-                        <ul class="treeview-menu">
+                        <ul class="active-menu">
                             <li class="active"><a href="<?php echo site_url("C_input_jabatan/show_jabatan"); ?>"><i class="fa fa-circle-o"></i> Jabatan</a></li>
                             <li><a href="<?php echo site_url("C_user/show_user"); ?>"><i class="fa fa-circle-o"></i> Pegawai</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
                             <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
-                        </ul>
-                    </li>
-                    <li class=" active treeview">
-                        <a href="#">
-                            <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-                            <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
                         </ul>
                     </li>
                     <li>
@@ -174,6 +162,18 @@
                             <span class="pull-right-container">
                             </span>
                         </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
+                            <span class="pull-right-container">
+                                <i class=""></i>
+                            </span>
+                        </a>
+                        <ul class="active-menu">
+                            <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+                            <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+                        </ul>
                     </li>
             </section>
             <!-- /.sidebar -->
