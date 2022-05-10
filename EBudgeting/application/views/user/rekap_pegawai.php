@@ -228,10 +228,7 @@
                                                     <td><?php echo $key->nama_anggota; ?> </td>
                                                     <td><?php echo $key->tgl_lahir; ?> </td>
                                                     <td><?php echo $key->alamat; ?> </td>
-                                                    <td><?php 
-                                                    echo $key->id_jabatan;
                                                     
-                                                    ?></td>
                                                     <td>
                                                         <?php
                                                         $array = array_intersect(array($key->id_jabatan),array_flip($status));
