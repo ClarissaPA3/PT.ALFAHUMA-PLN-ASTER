@@ -105,6 +105,7 @@
                                                       
                                                         }
                                                         ?>
+                                                    </td>
 
                                                     <td><?= $pengajuan[$i]['catatan_dm2']; ?></td>
                                                     <td>

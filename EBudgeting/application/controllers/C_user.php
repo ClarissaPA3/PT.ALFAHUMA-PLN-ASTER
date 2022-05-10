@@ -36,7 +36,7 @@ class C_user extends CI_Controller
 
 		if ($this->form_validation->run() == FALSE) {
 			$data['jabatan'] = $this->M_input_jabatan->show_jabatanM();
-			
+
 
 			$this->load->view('user/input_pegawai.php', $data);
 		} else {
@@ -87,6 +87,11 @@ class C_user extends CI_Controller
 	public function show_user()
 	{
 		$data['pegawai'] = $this->M_user->show_user();
+		$data['status'] = array(
+			'1' => 'Sub Bidang',
+			'2' => 'Bidang',
+			'3' => 'DMPAU'
+		);
 		$this->load->view('user/rekap_pegawai.php', $data);
 	}
 }
