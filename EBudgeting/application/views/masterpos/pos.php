@@ -98,34 +98,28 @@
 
                                             </tr>
                                         <?php endforeach; ?>
-
-
-
                                     </tbody>
-                                    <tfoot>
-
-                                    </tfoot>
                                 </table>
                             </div>
-                            <!-- /.box-body -->
                         </div>
-                        <!-- /.box -->
-
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
-            </section>
-            <?php $this->load->view('dashboard/_part/js'); ?>
+                <!-- /.box -->
 
-            </section>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                <b>Create by</b> Mahasiswa UNS 2020.
-            </div>
-            <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
-            reserved.
-        </footer>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    </section>
+    <?php $this->load->view('dashboard/_part/js'); ?>
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Create by</b> Mahasiswa UNS 2020.
+        </div>
+        <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
+        reserved.
+    </footer>

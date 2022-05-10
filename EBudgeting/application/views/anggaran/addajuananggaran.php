@@ -104,7 +104,7 @@
                                                     </div>
                                                 </div>
 
-                                                
+
                                             </div>
 
                                         </div>
@@ -133,7 +133,7 @@
                                                             <select name="id_pos" id="id_pos" class="form-control">
                                                                 <option value="" selected disabled>Pos</option>
                                                                 <?php foreach ($pos as $poss) : ?>
-                                                                    
+
                                                                     <option <?= set_select('id_pos', $poss['id_pos']) ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
@@ -227,63 +227,42 @@
                                             ?>
 
                                         </div>
-
-
-
-
                                     </div>
-
-
-
-
                                 </div>
                                 <!-- /.box-footer -->
-
                             </div>
                             <!-- /.box-header -->
-                            <!-- form start -->
-
                         </div>
                         <!-- /.box -->
-
                     </div>
-
-
                 </div>
                 <!-- /.row -->
             </section>
 
+            <!-- /.box -->
+
             <!-- right col -->
         </div>
-        <?php $this->load->view('dashboard/sidebarnav/_footpage.php'); ?>
         <!-- /.row (main row) -->
 
         </section>
         <!-- /.content -->
     </div>
-
-
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Create by</b> Mahasiswa UNS 2020.
+        </div>
+        <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
+        reserved.
+    </footer>
+    <!-- Add the sidebar's background. This div must be placed
+immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
 
-
-
-
-
-
-
-
-
-
-
-
     <script>
-        
-
-        
-
-
         function Draft() {
             var input = document.createElement("input");
             input.type = "hidden";
@@ -307,9 +286,6 @@
             FormSubmit();
         }
     </script>
-
-
-
 
     <?php $this->load->view('dashboard/_part/js'); ?>
 </body>

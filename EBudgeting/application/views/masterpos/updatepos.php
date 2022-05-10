@@ -76,17 +76,20 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                 </form>
-            </div>
-            <!-- /.box -->
+                </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
 
-            <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </section>
 
         </section>
         <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
             <b>Create by</b> Mahasiswa UNS 2020.
@@ -94,6 +97,8 @@
         <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
         reserved.
     </footer>
+
+    </div>
     <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>

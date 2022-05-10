@@ -96,12 +96,7 @@
                                                 <td> <a href="<?php echo site_url('C_masterpos_subpos/delete_subpos/') . $nama['id_subpos']; ?>" class="btn btn-block btn-danger">Hapus</a></td>
                                             </tr>
                                         <?php endforeach; ?>
-
-
                                     </tbody>
-                                    <tfoot>
-
-                                    </tfoot>
                                 </table>
                             </div>
                             <!-- /.box-body -->
