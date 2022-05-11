@@ -181,7 +181,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>0</h3>
+                <h3><?php echo $pengajuan['totalanggaran']==0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
 
                 <p>Total Ajuan Anggaran</p>
               </div>
@@ -196,7 +196,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
               <div class="inner">
-                <h3>0</h3>
+              <h3><?php echo $pengajuan['totaldisetujui']==0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
 
                 <p>Pengajuan Disetujui</p>
               </div>
@@ -211,7 +211,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h3>0</h3>
+              <h3><?php echo $pengajuan['totalrevisi']==0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
 
                 <p>Koreksi</p>
               </div>
