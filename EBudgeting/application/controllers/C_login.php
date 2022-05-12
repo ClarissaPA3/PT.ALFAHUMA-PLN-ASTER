@@ -70,6 +70,8 @@ class C_login extends CI_Controller
 	{
 		$id_anggota = $this->session->userdata('id_anggota');
 		$pengajuan = $this->M_ajuananggaran->showbyid_pengajuan($id_anggota);
+		
+		
 	
 		
 		
@@ -88,9 +90,11 @@ class C_login extends CI_Controller
 				'dmpau' =>  $pengajuan['dmpau']
 			);
 			$this->session->set_userdata($datanotifikasi);
+			$data['pengajuan'] = $pengajuan;
+	
 
 
-			$this->load->view('dashboard/dashboard_subbidang.php');
+			$this->load->view('dashboard/dashboard_subbidang.php', $data);
 		} else {
 			redirect(base_url("C_login"));
 		}

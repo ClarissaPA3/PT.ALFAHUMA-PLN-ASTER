@@ -137,6 +137,7 @@
                                                                     <option <?= set_select('id_pos', $poss['id_pos']) ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
+                                                            <?php echo form_error('id_pos'); ?>
                                                         </td>
                                                         <td>
                                                             <select name="id_subpos" id="id_subpos" class="form-control">
@@ -145,6 +146,7 @@
                                                                     <option <?= set_select('id_subpos', $poss['id_subpos']) ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
+                                                            <?php echo form_error('id_subpos'); ?>
                                                         </td>
                                                         <td>
                                                             <select name="id_subpos2" id="id_subpos2" class="form-control">
@@ -153,14 +155,19 @@
                                                                     <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
+                                                            
+                                                            <?php echo form_error('id_subpos2'); ?>
                                                         </td>
                                                         <td>
                                                             <input type="text" name="kegiatan" id="kegiatan" placeholder="kegiatan" class="form-control">
+                                                            <?php echo form_error('kegiatan'); ?>
                                                         </td>
                                                         <td>
                                                             <input type="number" name="nominal" id="nominal" placeholder="nominal" class="form-control">
+                                                            <?php echo form_error('nominal'); ?>
                                                         </td>
-                                                        <td> <input type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" class="form-control"></td>
+                                                        <td> <input type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" class="form-control">
+                                                            <?php echo form_error('deskripsi'); ?></td>
                                                         <td><button type="submit">Kirim</button></td>
                                                     </form>
                                                 </tr>

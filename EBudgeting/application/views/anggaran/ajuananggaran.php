@@ -196,12 +196,12 @@
 
                   <div class="col-sm-9">
 
-                    <select name="minggu2" id="minggu2" class="form-control">
+                    <select name="minggu2" id="minggu2" class="form-control" required>
                       <option value="" selected disabled>=== Pilih Minggu ==</option>
                       <?php foreach ($minggu as $mingguu) : ?>
-                        <?php print_r($mingguu); ?>
                         <option <?= set_select('minggu2', $mingguu); ?> value="<?= $mingguu ?>">Minggu ke -<?= $mingguu; ?></option>
                       <?php endforeach; ?>
+                    
                     </select>
 
 
@@ -211,7 +211,7 @@
                 <div class=" form-group">
                   <label for="tanggal_mulai2" class="col-sm-3  control-label">Tanggal Mulai</label>
                   <div class="col-sm-9">
-                    <input type="date" class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai">
+                    <input type="date" class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai" required>
 
                   </div>
                 </div>
@@ -220,7 +220,7 @@
                 <div class="form-group">
                   <label for="bulan2" class="col-sm-3 control-label">Bulan</label>
                   <div class="col-sm-9">
-                    <select name="bulan2" id="bulan2" class="form-control">
+                    <select name="bulan2" id="bulan2" class="form-control" required>
                       <option value="" selected disabled>=== Pilih Bulan ==</option>
                       <?php foreach ($bulan as $bulann) : ?>
 
@@ -235,7 +235,7 @@
                 <div class="form-group">
                   <label for="tanggal_sampai2" class="col-sm-3  control-label">Tanggal Sampai</label>
                   <div class="col-sm-9">
-                    <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai">
+                    <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai" required>
 
                   </div>
                 </div>
@@ -256,7 +256,7 @@
     </div>
     <!-- /.modal-dialog -->
   </div>
-  <!-- Add the sidebar's background. This div must be placed
+  <!-- Add the sidebar's background. This div must be placed -->
 
   <div class="control-sidebar-bg"></div>
   </div>
