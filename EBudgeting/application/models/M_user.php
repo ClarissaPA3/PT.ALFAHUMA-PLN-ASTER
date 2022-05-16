@@ -43,9 +43,23 @@ class M_user extends CI_Model
     public function show_user($passw = null, $user = null)
     { 
         if (isset($passw) && isset($user)) {
-            $query = $this->db->get_where('pegawai', array('username' => $user,'password' => $passw), 1);
-  
-            return $query->result_array()[0];
+            $username = $this->db->get_where('pegawai', array('username' => $user), 1)->num_rows();
+            $password = $this->db->get_where('pegawai', array('password' => $passw), 1)->num_rows();
+            if ($username == 1) {
+                if ($password == 1) {
+                    $query = $this->db->get_where('pegawai', array('username' => $user,'password' => $passw), 1);
+                    return $query->result_array()[0];
+                }
+                else {
+                    return array('password' => 'Password yang anda masukkan salah', 'status' => 0);
+                }
+            }
+            else {
+                return array('username' => 'Username yang anda masukkan salah' ,'password' => 'Password yang anda masukkan salah','status' => 0);
+            }
+            
+
+          
         }
         
         else {

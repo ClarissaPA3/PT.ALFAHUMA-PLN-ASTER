@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<?php  ?>
 <!DOCTYPE html>
 <html>
 
@@ -69,9 +70,18 @@
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
+          <?php echo $this->session->flashdata('username'); ?>
+        </div>
+
+
+        <div class="form-group has-feedback">
           <input type="password" class="form-control" placeholder="Password" id="pass" name="pass" required="required" autocomplete="off">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
+        <div class="form-group has-feedback">
+          <?php echo $this->session->flashdata('password'); ?>
+        </div>
+
 
         <div class="row">
           <div class="col-xs-8">

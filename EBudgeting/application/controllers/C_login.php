@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class C_login extends CI_Controller
 {
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -10,21 +11,27 @@ class C_login extends CI_Controller
 		$this->load->library('session');
 		$this->load->model('M_ajuananggaran');
 	}
+	
 
 	public function index()
 	{
+
+	
+		
 		$id_jabatan = $this->session->userdata('id_jabatan');
 
 		if (isset($id_jabatan)) {
 			# code...
 			redirect('C_login/login_admin');
 		} else {
+			
 			$this->load->view('login/login');
 		}
 	}
 
 	public function authentikasi_admin()
 	{
+		
 
 
 		$this->load->library('form_validation');
@@ -43,18 +50,30 @@ class C_login extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			redirect(base_url("C_login"));
 		} else {
+			
 			$query = $this->M_user->show_user($pass, $user);
-			// var_dump($query);
-			$id_jabatan = $query['id_jabatan'];
-			$nama_anggota = $query['nama_anggota'];
-			$id_anggota = $query['id_anggota'];
-			$akun = array(
-				'id_jabatan' => $id_jabatan,
-				'nama_anggota' => $nama_anggota,
-				'id_anggota' =>  $id_anggota
-			);
-			$this->session->set_userdata($akun);
+			if (isset($query['status'])) {
+				
+				$this->session->set_flashdata($query);
+				redirect('C_login');
+				
+			}
+			else {
+				$id_jabatan = $query['id_jabatan'];
+				$nama_anggota = $query['nama_anggota'];
+				$id_anggota = $query['id_anggota'];
+				$akun = array(
+					'id_jabatan' => $id_jabatan,
+					'nama_anggota' => $nama_anggota,
+					'id_anggota' =>  $id_anggota
+				);
+				$this->session->set_userdata($akun);
 			redirect('C_login/login_admin');
+
+			}
+			
+		
+			
 		}
 
 

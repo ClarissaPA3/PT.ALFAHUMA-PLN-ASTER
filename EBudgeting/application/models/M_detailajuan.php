@@ -5,7 +5,7 @@ class M_detailajuan extends CI_Model
 {
     public function add_detailanggaranM()
     {
-        print_r($_POST);
+        
         $data = array(
             'id_detailpengajuan' => '',
             'id_subpos2' => $this->input->post('id_subpos2'),
