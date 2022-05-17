@@ -263,11 +263,7 @@
         <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
         reserved.
     </footer>
-    <!-- Add the sidebar's background. This div must be placed
-immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-    </div>
-    <!-- ./wrapper -->
+   
 
     <script>
         function Draft() {
@@ -292,6 +288,7 @@ immediately after the control sidebar -->
             document.getElementById('aju').appendChild(input); // put it into the DOM
             FormSubmit();
         }
+
     </script>
 
     <?php $this->load->view('dashboard/_part/js'); ?>

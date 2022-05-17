@@ -39,21 +39,7 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <style>
-    .example-modal .modal {
-      position: relative;
-      top: auto;
-      bottom: auto;
-      right: auto;
-      left: auto;
-      display: block;
-      z-index: 1;
-    }
 
-    .example-modal .modal {
-      background: transparent !important;
-    }
-  </style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -80,71 +66,73 @@
         <!-- Main content -->
         <section class="content">
           <div class="row">
-
+            <!-- left column -->
             <div class="col-md-12">
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Tambah Rekap Transfer</h3>
                 </div>
+                <!-- /.box-header -->
+                <!-- form start -->
                 <form action="<?php site_url('C_masterpos_subpos/add') ?>" method="post">
-                  <div class="card-body">
-
+                  <div class="box-body">
 
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Nama Pengirim</label>
                           <div class="col-sm-5">
-                            <input type="text" name="nama_pengirim" placeholder="Nama Pengirim">
+                            <input type="text" class="form-control" name="nama_pengirim" placeholder="Nama Pengirim">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Email</label>
                           <div class="col-sm-5">
-                            <input type="email" name="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">No Telp</label>
                           <div class="col-sm-5">
-                            <input type="number" name="no_telp" placeholder="No Telp">
+                            <input type="number" class="form-control" name="no_telp" placeholder="No Telp">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">No Rekening</label>
                           <div class="col-sm-5">
-                            <input type="number" name="no_rekening" placeholder="No Rekening">
+                            <input type="number" class="form-control" name="no_rekening" placeholder="No Rekening">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Nama Bank</label>
                           <div class="col-sm-5">
-                            <input type="text" name="nama_bank" placeholder="Nama Bank">
+                            <input type="text" class="form-control" name="nama_bank" placeholder="Nama Bank">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Tgl Kirim</label>
                           <div class="col-sm-5">
-                            <input type="datetime-local" name="tgl_kirim" placeholder="Tgl Kirim">
+                            <input type="datetime-local" class="form-control" name="tgl_kirim" placeholder="Tgl Kirim">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Kategori</label>
                           <div class="col-sm-5">
-                            <input type="text" name="kategori" placeholder="Kategori">
+                            <input type="text" class="form-control" name="kategori" placeholder="Kategori">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">PPN</label>
                           <div class="col-sm-5">
-                            <input type="number" name="PPN" placeholder="PPN">
+                            <input type="number" class="form-control" name="PPN" placeholder="PPN">
                           </div>
                         </div>
 
@@ -152,49 +140,49 @@
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">PPH 21</label>
                           <div class="col-sm-5">
-                            <input type="number" name="PPH_21" placeholder="PPH 21">
+                            <input type="number" class="form-control" name="PPH_21" placeholder="PPH 21">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">PPH 22</label>
                           <div class="col-sm-5">
-                            <input type="number" name="PPH_22" placeholder="PPH 22">
+                            <input type="number" class="form-control" name="PPH_22" placeholder="PPH 22">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">PPH 23</label>
                           <div class="col-sm-5">
-                            <input type="number" name="PPH_23" placeholder="PPH 23">
+                            <input type="number" class="form-control" name="PPH_23" placeholder="PPH 23">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Denda</label>
                           <div class="col-sm-5">
-                            <input type="number" name="denda" placeholder="Denda">
+                            <input type="number" class="form-control" name="denda" placeholder="Denda">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Administrasi Bank</label>
                           <div class="col-sm-5">
-                            <input type="number" name="administrasi_bank" placeholder="Administrasi Bank">
+                            <input type="number" class="form-control" name="administrasi_bank" placeholder="Administrasi Bank">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Total Dibayar</label>
                           <div class="col-sm-5">
-                            <input type="text" name="total_dibayar" placeholder="Total Dibayar">
+                            <input type="text" class="form-control" name="total_dibayar" placeholder="Total Dibayar">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Berita</label>
                           <div class="col-sm-5">
-                            <input type="text" name="berita" placeholder="Berita">
+                            <input type="text" class="form-control" name="berita" placeholder="Berita">
                           </div>
                         </div>
                       </div>
@@ -204,103 +192,113 @@
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Honor Asesmen</label>
                           <div class="col-sm-5">
-                            <input type="number" name="honor_asesmen" placeholder="Honor Asesmen">
+                            <input type="number" class="form-control" name="honor_asesmen" placeholder="Honor Asesmen">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Honor Evaluator</label>
                           <div class="col-sm-5">
-                            <input type="number" name="honor_evaluator" placeholder="Honor Evaluator">
+                            <input type="number" class="form-control" name="honor_evaluator" placeholder="Honor Evaluator">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Honor Tester</label>
                           <div class="col-sm-5">
-                            <input type="number" name="honor_tester" placeholder="Honor Tester">
+                            <input type="number" class="form-control" name="honor_tester" placeholder="Honor Tester">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Honor Feedback</label>
                           <div class="col-sm-5">
-                            <input type="number" name="honor_feedback" placeholder="Honor Feedback">
+                            <input type="number" class="form-control" name="honor_feedback" placeholder="Honor Feedback">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Honor Pewawancara</label>
                           <div class="col-sm-5">
-                            <input type="number" name="honor_pewawancara" placeholder="Honor Pewawancara">
+                            <input type="number" class="form-control" name="honor_pewawancara" placeholder="Honor Pewawancara">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Honor Korektor Pauli</label>
                           <div class="col-sm-5">
-                            <input type="number" name="honor_korektor_pauli" placeholder="Honor Korektor Pauli">
+                            <input type="number" class="form-control" name="honor_korektor_pauli" placeholder="Honor Korektor Pauli">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Nilai Kontrak</label>
                           <div class="col-sm-5">
-                            <input type="text" name="nilai_kontrak" placeholder="Nilai Kontrak">
+                            <input type="text" class="form-control" name="nilai_kontrak" placeholder="Nilai Kontrak">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Pekerjaan</label>
                           <div class="col-sm-5">
-                            <input type="text" name="pekerjaan" placeholder="Pekerjaan">
+                            <input type="text" class="form-control" name="pekerjaan" placeholder="Pekerjaan">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Waktu Kerja</label>
                           <div class="col-sm-5">
-                            <input type="text" name="waktu_kerja" placeholder="Waktu Kerja">
+                            <input type="text" class="form-control" name="waktu_kerja" placeholder="Waktu Kerja">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Lumpsum Transport Bandara</label>
                           <div class="col-sm-5">
-                            <input type="text" name="lumpsum_transport_bandara" placeholder="Lumpsum Transport Bandara">
+                            <input type="text" class="form-control" name="lumpsum_transport_bandara" placeholder="Lumpsum Transport Bandara">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Lumpsum Konsumsi</label>
                           <div class="col-sm-5">
-                            <input type="text" name="lumpsum_komsumsi" placeholder="Lumpsum Komsumsi">
+                            <input type="text" class="form-control" name="lumpsum_komsumsi" placeholder="Lumpsum Komsumsi">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Lumpsum Transpoet Lok</label>
                           <div class="col-sm-5">
-                            <input type="text" name="lumpsum_transpoet_lok" placeholder="Lumpsum Transpoet Lok">
+                            <input type="text" class="form-control" name="lumpsum_transpoet_lok" placeholder="Lumpsum Transpoet Lok">
                           </div>
                         </div>
 
                         <div class="form-group row">
                           <label class="col-sm-2 col-form-label">Lumpsum Uang Cod</label>
                           <div class="col-sm-5">
-                            <input type="text" name="lumpsum_uang_cod" placeholder="Lumpsum Uang Cod">
+                            <input type="text" class="form-control" name="lumpsum_uang_cod" placeholder="Lumpsum Uang Cod">
                           </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <!-- /.box-body -->
 
-                    <div class="card-footer">
-                      <button type="submit" class="btn btn-info">Submit</button>
-                    </div>
+                  <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
                 </form>
               </div>
+              <!-- /.box -->
+
+
+
             </div>
+
+            <!--/.col (left) -->
+
           </div>
+
 
       </div>
       <!-- /.box -->
