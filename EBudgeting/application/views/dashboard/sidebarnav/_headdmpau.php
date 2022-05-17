@@ -110,13 +110,6 @@
         </a>
       </li>
       <li>
-        <a href="<?php echo site_url("C_koreksi_anggaran"); ?>">
-          <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
-          <span class="pull-right-container">
-          </span>
-        </a>
-      </li>
-      <li>
         <a href="<?php echo site_url("C_menutransfer"); ?>">
           <i class="fa fa-edit"></i> <span>Transfer</span>
           <span class="pull-right-container">
