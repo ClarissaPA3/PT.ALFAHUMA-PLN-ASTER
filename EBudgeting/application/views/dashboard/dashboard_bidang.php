@@ -95,31 +95,10 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-dashboard"></i> <span>Data Master</span>
-              <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
-              <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
-              <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
-            </ul>
-          </li>
-          <li>
           <li><a href="<?php echo site_url("C_persetujuan_dm/show_pengajuandm"); ?>"><i class="fa fa-check"></i> <span>Persetujuan DM</span>
               <span class="pull-right-container">
                 <span class="pull-right-container">
                 </span>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo site_url("C_koreksi_anggaran"); ?>">
-              <i class="fa fa-th"></i> <span>Koreksi Anggaran</span>
-              <span class="pull-right-container">
-              </span>
             </a>
           </li>
           <li>
@@ -129,18 +108,11 @@
               </span>
             </a>
           </li>
-          <li>
-            <a href="<?php echo site_url("C_paguanggaran"); ?>">
-              <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
-              <span class="pull-right-container">
-              </span>
-            </a>
-          </li>
           <li class="treeview">
             <a href="#">
               <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
               <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i><i class=""></i>
+                <i class="fa fa-angle-left pull-right"></i><i class=""></i>
               </span>
             </a>
             <ul class="treeview-menu">
