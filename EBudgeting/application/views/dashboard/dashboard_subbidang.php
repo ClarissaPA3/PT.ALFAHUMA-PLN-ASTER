@@ -127,6 +127,18 @@
               </span>
             </a>
           </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-files-o"></i> <span>Rekapitulasi</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+            </ul>
+          </li>
       </section>
       <!-- /.sidebar -->
     </aside>
@@ -150,7 +162,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3><?php echo $pengajuan['totalanggaran']==0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
+                <h3><?php echo $pengajuan['totalanggaran'] == 0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
 
                 <p>Total Ajuan Anggaran</p>
               </div>
@@ -165,7 +177,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
               <div class="inner">
-              <h3><?php echo $pengajuan['totaldisetujui']==0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
+                <h3><?php echo $pengajuan['totaldisetujui'] == 0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
 
                 <p>Pengajuan Disetujui</p>
               </div>
@@ -180,7 +192,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-              <h3><?php echo $pengajuan['totalrevisi']==0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
+                <h3><?php echo $pengajuan['totalrevisi'] == 0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
 
                 <p>Koreksi</p>
               </div>
