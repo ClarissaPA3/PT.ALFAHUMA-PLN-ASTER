@@ -105,18 +105,6 @@
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
           <li class="treeview">
-            <a href="#">
-              <i class="fa fa-dashboard"></i> <span>Data Master</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="<?php echo site_url("C_masterpos_subpos/show_pos"); ?>"><i class="fa fa-circle-o"></i> Pos</a></li>
-              <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos"); ?>"><i class="fa fa-circle-o"></i> Sub Pos</a></li>
-              <li><a href="<?php echo site_url("C_masterpos_subpos/show_subpos2"); ?>"><i class="fa fa-circle-o"></i> Sub Pos Barang </a></li>
-            </ul>
-          </li>
           <li>
             <a href="<?php echo site_url('C_ajuananggaran/show_datapengajuan'); ?>">
               <i class="fa fa-check"></i> <span>Pengajuan Anggaran</span>
@@ -135,13 +123,6 @@
           <li>
             <a href="<?php echo site_url("C_menutransfer"); ?>">
               <i class="fa fa-edit"></i> <span>Transfer</span>
-              <span class="pull-right-container">
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="<?php echo site_url("C_paguanggaran"); ?>">
-              <i class="fa fa-laptop"></i> <span>Setting Pagu Anggaran</span>
               <span class="pull-right-container">
               </span>
             </a>
@@ -181,7 +162,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3><?php echo $pengajuan['totalanggaran']==0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
+                <h3><?php echo $pengajuan['totalanggaran'] == 0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
 
                 <p>Total Ajuan Anggaran</p>
               </div>
@@ -196,7 +177,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
               <div class="inner">
-              <h3><?php echo $pengajuan['totaldisetujui']==0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
+                <h3><?php echo $pengajuan['totaldisetujui'] == 0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
 
                 <p>Pengajuan Disetujui</p>
               </div>
@@ -211,7 +192,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-              <h3><?php echo $pengajuan['totalrevisi']==0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
+                <h3><?php echo $pengajuan['totalrevisi'] == 0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
 
                 <p>Koreksi</p>
               </div>
