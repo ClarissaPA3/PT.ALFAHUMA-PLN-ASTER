@@ -171,7 +171,7 @@
                                                                 <input type="number" name="nominal[]" id="nominal" placeholder="nominal" class="form-control" value="<?= $key['nominal_pengajuan2']; ?>" readonly>
                                                             </td>
                                                             <td> <input readonly type="text" name="deskripsi[]" id="deskripsi" placeholder="deskripsi" class="form-control" value="<?= $key['deskripsi2']; ?>"></td>
-                                                            <td> <input type="text" name="nominal_persetujuan2[]" id="nominal_persetujuan2" placeholder="nominal persetujuan" class="form-control" value="<?= $key['nominal_persetujuan2']; ?>"></td>
+                                                            <td> <input type="number" name="nominal_persetujuan2[]" id="nominal_persetujuan2" placeholder="nominal persetujuan" class="form-control" value="<?= $key['nominal_persetujuan2']; ?>"></td>
 
 
 

@@ -43,6 +43,19 @@ class M_ajuananggaran extends CI_Model
         }
     }
 
+    public function koreksi_data()
+    {
+        $this->db->select('*');
+        $this->db->from('pengajuan_anggaran');
+        $this->db->where('id_anggota',  $this->session->userdata('id_anggota'));
+        $this->db->where('status2', '5');
+        $this->db->or_where('status2', '6');
+        $query = $this->db->get()->result();
+        return $query;
+   
+
+    }
+
     public function update_pengajuan()
     {
 

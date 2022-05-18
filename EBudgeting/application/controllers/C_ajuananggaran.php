@@ -87,6 +87,32 @@ class C_ajuananggaran extends CI_Controller
 
 
 	// Baru Persetujuan DM
-	
+	public function testing($id = null)
+	{
+		$this->form_validation->set_rules('id_pengajuan', 'Id pengajuan', 'required');
 
+
+		if ($this->form_validation->run() == FALSE) {
+			$data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
+			$data['pos'] = $this->M_masterpos_subpos->show_posM();
+			$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
+			$data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
+			$data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
+			$data['id'] = $id;
+			$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
+			$data['minggu'] = array('1', '2', '3', '4');
+
+
+
+
+
+			$this->load->view('testing',$data);
+		} else {
+
+
+			$this->M_ajuananggaran->update_pengajuan();
+			redirect(site_url('C_ajuananggaran/show_datapengajuan'));
+		}
+		
+	}
 }

@@ -49,7 +49,7 @@
 
 
                                 <div class="box-body">
-                                    <form class="form-horizontal" id="ajuananggaran" action="<?php echo site_url('C_persetujuan_dm/reviewdm'); ?>" method="post">
+                                    <form class="form-horizontal" id="ajuananggaran" action="<?php echo site_url('C_koreksi_anggaran/update_koreksi'); ?>" method="post">
 
                                         <input type="hidden" name="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
                                         <input type="hidden" name="id_anggota" value="<?php echo $ajuan['id_anggota']; ?>">
@@ -61,7 +61,7 @@
 
                                                     <div class="col-sm-10">
 
-                                                        <select name="minggu2" id="minggu2" class="form-control" disabled>
+                                                        <select name="minggu2" id="minggu2" class="form-control">
                                                             <option value="" selected disabled>=== Pilih Minggu ==</option>
                                                             <?php foreach ($minggu as $mingguu) : ?>
 
@@ -79,7 +79,7 @@
                                                 <div class="form-group">
                                                     <label for="tanggal_mulai2" class="col-sm-2 control-label">Tanggal Mulai</label>
                                                     <div class="col-sm-10">
-                                                        <input type="date" readonly class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_mulai2'])); ?>">
+                                                        <input type="date" class="form-control" name="tanggal_mulai2" id="tanggal_mulai2" placeholder="tanggal mulai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_mulai2'])); ?>">
 
                                                     </div>
                                                 </div>
@@ -88,8 +88,8 @@
                                                 <div class="form-group">
                                                     <label for="bulan2" class="col-sm-2 control-label">Bulan</label>
                                                     <div class="col-sm-10">
-                                                
-                                                        <select name="bulan2" id="bulan2" class="form-control" disabled>
+
+                                                        <select name="bulan2" id="bulan2" class="form-control">
                                                             <option value="" selected disabled>=== Pilih Bulan ==</option>
                                                             <?php foreach ($bulan as $bulann) : ?>
 
@@ -105,7 +105,7 @@
                                                 <div class="form-group">
                                                     <label for="tanggal_sampai2" class="col-sm-2 control-label">Tanggal Sampai</label>
                                                     <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_sampai2'])); ?>" readonly>
+                                                        <input type="date" class="form-control" name="tanggal_sampai2" id="tanggal_sampai2" placeholder="tanggal sampai" value="<?php echo date('Y-m-d', strtotime($ajuan['tanggal_sampai2'])); ?>">
 
                                                     </div>
                                                 </div>
@@ -127,7 +127,8 @@
                                                         <th>Kegiatan</th>
                                                         <th>nominal</th>
                                                         <th>Deskripsi</th>
-                                                        <th colspan="2">Disetujui</th>
+                                                        <th>Disetujui</th>
+
                                                     </tr>
 
                                                     <?php foreach ($detailajuan as $key) : ?>
@@ -139,7 +140,7 @@
 
 
                                                             <td>
-                                                                <select name="id_pos[]" disabled id="id_pos" class="form-control">
+                                                                <select name="id_pos[]" id="id_pos" class="form-control">
                                                                     <option value="" selected disabled>Pos</option>
                                                                     <?php foreach ($pos as $poss) : ?>
                                                                         <option <?= set_select('id_pos', $poss['id_pos']) ?> <?php if ($poss['id_pos'] == $key['id_pos']) echo "Selected"; ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
@@ -148,7 +149,7 @@
 
                                                             </td>
                                                             <td>
-                                                                <select name="id_subpos[]" disabled id="id_subpos" class="form-control">
+                                                                <select name="id_subpos[]" id="id_subpos" class="form-control">
                                                                     <option value="" selected disabled>Sub pos</option>
                                                                     <?php foreach ($subpos as $poss) : ?>
                                                                         <option <?= set_select('id_subpos', $poss['id_subpos']) ?> <?php if ($poss['id_subpos'] == $key['id_subpos']) echo "Selected"; ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
@@ -156,7 +157,7 @@
                                                                 </select>
                                                             </td>
                                                             <td>
-                                                                <select name="id_subpos2[]" disabled id="id_subpos2" class="form-control">
+                                                                <select name="id_subpos2[]" id="id_subpos2" class="form-control">
                                                                     <option value="" selected disabled>Sub Pos</option>
                                                                     <?php foreach ($subpos2 as $poss) : ?>
                                                                         <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> <?php if ($poss['id_subpos2'] == $key['id_subpos2']) echo "Selected"; ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
@@ -164,13 +165,14 @@
                                                                 </select>
                                                             </td>
                                                             <td>
-                                                                <input type="text" name="kegiatan[]" id="kegiatan" placeholder="kegiatan" class="form-control" value="<?= $key['kegiatan2']; ?>" readonly>
+                                                                <input type="text" name="kegiatan[]" id="kegiatan" placeholder="kegiatan" class="form-control" value="<?= $key['kegiatan2']; ?>">
                                                             </td>
                                                             <td>
-                                                                <input type="number" name="nominal[]" id="nominal" placeholder="nominal" class="form-control" value="<?= $key['nominal_pengajuan2']; ?>" readonly>
+                                                                <input type="number" name="nominal[]" id="nominal" placeholder="nominal" class="form-control" value="<?= $key['nominal_pengajuan2']; ?>">
                                                             </td>
-                                                            <td> <input readonly type="text" name="deskripsi[]" id="deskripsi" placeholder="deskripsi" class="form-control" value="<?= $key['deskripsi2']; ?>"></td>
-                                                            <td> <input type="number" name="nominal_persetujuan2[]" id="nominal_persetujuan2" placeholder="nominal persetujuan" class="form-control" value="<?= $key['nominal_persetujuan2']; ?>"></td>
+                                                            <td> <input type="text" name="deskripsi[]" id="deskripsi" placeholder="deskripsi" class="form-control" value="<?= $key['deskripsi2']; ?>"></td>
+                                                            <td><input readonly type="text" name="nominal_persetujuan2[]" id="nominal_persetujuan2" placeholder="nominal persetujuan" class="form-control" class="form-control" value="<?= $key['nominal_persetujuan2']; ?>"></td>
+
 
 
 
@@ -179,20 +181,45 @@
 
 
 
+
+
+
                                                 </table>
 
                                             </div>
                                             <div class="col-md-12" id="review-dm">
+
                                                 <?php
                                                 if ($ajuan['catatan_dm2']) {
                                                 ?>
+                                                    <div class="form-group has-warning">
 
-                                                    <label for="catatan_dm2">Catatan DM</label>
-                                                    <textarea name="catatan_dm2" id="catatan_dm2" class="form-control" cols="30" rows="10"><?php echo $ajuan['catatan_dm2']; ?></textarea>
+                                                        <label for="catatan_dm2">Catatan DM</label>
+                                                        <textarea disabled name="catatan_dm2" id="catatan_dm2" class="form-control" cols="30" rows="10"><?php echo $ajuan['catatan_dm2']; ?></textarea>
+                                                    </div>
+
+
                                                 <?php
                                                     # code...
                                                 }
+
+
                                                 ?>
+
+                                            </div>
+                                            <div class="col-md-12">
+                                                <?php
+                                                if ($ajuan['catatan_dmpau2']) {
+                                                ?>
+                                                    <div class="form-group has-warning">
+                                                        <label for="catatan_dmpau2">Catatan DMPAU</label>
+                                                        <textarea disabled name="catatan_dmpau2" id="catatan_dm2" class="form-control" cols="30" rows="10"><?php echo $ajuan['catatan_dmpau2']; ?></textarea>
+                                                    </div>
+
+
+                                                <?php
+                                                    # code...
+                                                } ?>
                                             </div>
                                         </div>
                                     </form>
@@ -203,17 +230,18 @@
                                 <div class="box-footer bg-gray" id="box-footer">
                                     <div class="pull-right">
                                         <?php
-                                        if ($ajuan['catatan_dm2']) {
+                                        if ($ajuan['status2'] == 5) {
                                         ?>
-                                            <button class="btn btn-warning" id="tmbhkoreksi">Ajukan koreksi</button>
 
-                                            <button onclick="Kirim()" class="btn btn-primary">Setujui</button>
+
+                                            <button id="kirimDM" class="btn btn-primary">Ajukan ke DM</button>
 
                                         <?php
-                                        } else {
+                                        }
+                                        if ($ajuan['status2'] == 6) {
                                         ?>
-                                            <button class="btn btn-default" id="revisi">Ajukan Revisi</button>
-                                            <button onclick="Kirim()" class="btn btn-primary">Setujui</button>
+
+                                            <button id="kirimDMPAU" class="btn btn-primary">Ajukan Ke DMPAU</button>
 
 
 
@@ -467,40 +495,19 @@
 
     <script>
         $(document).ready(function() {
-            $(document).on('click', '#revisi', function() {
-
-
-                $('#review-dm').append('<div id="review">\
-            </div>').append('<label for="catatan_dm2">Catatan DM</label>\
-            <textarea name="catatan_dm2" id="catatan_dm2" class="form-control" cols="30" rows="10"></textarea>');
-                $('#box-footer').empty().append('<div class="pull-right">\
-            <button class="btn btn-default" id="kembali">Kembali</button>\
-            <button class="btn btn-warning" id="tmbhkoreksi">Ajukan koreksi</button>\
-            </div>');
-            });
-
-            $(document).on('click', '#kembali', function() {
-                $('#review-dm').empty();
-                $('#box-footer').empty().append('<div class="pull-right">\
-                                        <button class="btn btn-default" id="revisi">Ajukan Revisi</button>\
-                                        <button onclick="Kirim()" class="btn btn-primary">Setujui</button>\
-                                    </div>');
-
-
+            $(document).on('click','#kirimDM', function(){
+                Kirim(7);
 
             });
-
-            $(document).on('click', '#tmbhkoreksi', function() {
-                $('#status').val('5');
-                FormSubmit();
-
+            $(document).on('click','#kirimDMPAU', function(){
+                Kirim(8);
 
             });
         });
 
-        function Kirim() {
+        function Kirim(id) {
             var input = document.getElementById('status');
-            input.setAttribute('value', '2');
+            input.setAttribute('value', id);
             FormSubmit();
 
 
@@ -508,8 +515,8 @@
 
         function FormSubmit() {
             $(':disabled').each(function(e) {
-                    $(this).removeAttr('disabled');
-                });
+                $(this).removeAttr('disabled');
+            });
             document.getElementById('ajuananggaran').submit();
 
         }
