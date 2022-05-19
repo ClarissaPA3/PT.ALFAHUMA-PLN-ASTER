@@ -104,24 +104,13 @@
                               <?php echo $pengajuan_anggaran->total_pengajuan2 ?>
                             </td>
                             <td>
+                              <?php
+                              $array = array_intersect(array($pengajuan_anggaran->status2), array_flip($status));
 
-                              <?php
-                              if ($pengajuan_anggaran->status2 == 0) {
-                              ?>
-                                <span class="btn btn-danger"><i class="fa fa-fw fa-warning"></i> Belum Diajukan</span>
-                              <?php
-                              } else if ($pengajuan_anggaran->status2 == 1) {
-                              ?>
-                                <p class="btn btn-info"><i class="fa fa-fw fa-thumbs-up"></i> Sudah diajukan</p>
-                              <?php
-                              } else if ($pengajuan_anggaran->status2 == 2) {
-                              ?>
-                                <p class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Disetujui oleh DM</p>
-                              <?php
-                              } else if ($pengajuan_anggaran->status2 == 3) {
-                              ?>
-                                <p class="btn btn-success"><i class="fa fa-fw fa-check"></i> Disetujui oleh DMPAU</p>
-                              <?php
+
+                              if (!empty($array)) {
+
+                                echo $status[$array[0]];
                               }
                               ?>
                             </td>
@@ -201,7 +190,7 @@
                       <?php foreach ($minggu as $mingguu) : ?>
                         <option <?= set_select('minggu2', $mingguu); ?> value="<?= $mingguu ?>">Minggu ke -<?= $mingguu; ?></option>
                       <?php endforeach; ?>
-                    
+
                     </select>
 
 
@@ -260,7 +249,7 @@
 
   <div class="control-sidebar-bg"></div>
   </div>
-  
+
 
 
 

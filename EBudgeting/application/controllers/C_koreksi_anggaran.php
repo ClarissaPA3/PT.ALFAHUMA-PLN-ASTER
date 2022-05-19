@@ -21,8 +21,7 @@ class C_koreksi_anggaran extends CI_Controller
         
 		$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
 		$data['minggu'] = array('1', '2', '3', '4');
-		print_r($data['pengajuan_anggaran']);
-
+		
 	
         $this->load->view('persetujuan/koreksi_anggaran.php', $data);
     }
