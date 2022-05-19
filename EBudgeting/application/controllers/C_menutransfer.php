@@ -18,6 +18,26 @@ class C_menutransfer extends CI_Controller
         $this->load->view("transfers/menutransfer", $data);
     }
 
+     public function view_transfer()
+    {
+        $dari =$this->input->post('dari');
+        $sampai =$this->input->post('sampai');
+
+        $data['dari'] = $dari;
+        $data['sampai'] = $sampai;
+        $data['transfer'] = $this->db->query("SELECT * FROM transfer WHERE date(transfer.tgl_kirim) >= '$dari' AND date(transfer.tgl_kirim) <= '$sampai' ORDER BY transfer.tgl_kirim DESC")->result_array();
+
+        // $data["transfer"] = $this->M_menutransfer->getAll();
+        $this->load->view("transfers/view_menutransfer", $data);
+    }
+
+    public function print()
+    {
+        $data['title'] = 'Data Transfer';
+        $data["transfer"] = $this->M_menutransfer->getAll();
+        $this->load->view("transfers/print", $data);
+    }
+
     public function add()
     {
 
