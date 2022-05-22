@@ -77,7 +77,7 @@ class M_ajuananggaran extends CI_Model
 
         $this->db->update('pengajuan_anggaran', $data, array('id_pengajuan' => $id));
     }
-    public function showbyid_pengajuan($id)
+    public function showbyid_pengajuansub($id)
     {
         
         
@@ -89,13 +89,54 @@ class M_ajuananggaran extends CI_Model
        
         $dm = $this->db->get_where('pengajuan_anggaran', array('id_anggota' => $id, 'status2' => '2'));
         $dmpau = $this->db->get_where('pengajuan_anggaran', array('id_anggota ' => $id, 'status2' => '3'));
-        $totalnotifikasi = $dm->num_rows() + $dmpau->num_rows();
+        $koreksi = $this->db->query(sprintf("SELECT * FROM `pengajuan_anggaran` WHERE `status2` = '5' OR `status2`='6' AND id_anggota=%s",$id));
+        $totalnotifikasi = $dm->num_rows() + $dmpau->num_rows() + $revisi;
         
 
-        return  array('totalnotifikasi' => $totalnotifikasi, 'dm' => $dm->result_array(), 'dmpau' => $dmpau->result_array(), 'totalanggaran' => $totalanggaran, 'totalrevisi' => $revisi, 'totaldisetujui' => $anggarandisetujui);
+        return  array('totalnotifikasi' => $totalnotifikasi, 'dm' => $dm->result_array(), 'dmpau' => $dmpau->result_array(), 'totalanggaran' => $totalanggaran, 'totalrevisi' => $revisi, 'totaldisetujui' => $anggarandisetujui, 'koreksi' => $koreksi->result_array());
     }
-    // DM
-    // New persetujuan DM
+    
+    public function showbyid_pengajuandm($id)
+    {
+        
+        
+          
+        $totalanggaran = $this->db->get_where('pengajuan_anggaran',array('status2>' => '1'))->num_rows();
+        $anggarandisetujui = $this->db->query("SELECT * FROM `pengajuan_anggaran` WHERE status2='3'")->num_rows();
+        $revisi = $this->db->query("SELECT * FROM `pengajuan_anggaran` WHERE `status2` = '5' OR `status2`='6'")->num_rows();
+    
+       
+        // Notifikasi
+        $sub = $this->db->get_where('pengajuan_anggaran', array('status2' => '1'));
+        
+        $koreksi = $this->db->query("SELECT * FROM `pengajuan_anggaran` WHERE `status2` = '7'");
+        $totalnotifikasi = $sub->num_rows()  + $koreksi->num_rows();
+        
+
+        return  array('totalnotifikasi' => $totalnotifikasi,'sub' => $sub->result_array(), 'totalanggaran' => $totalanggaran, 'totalrevisi' => $revisi, 'totaldisetujui' => $anggarandisetujui, 'koreksi' => $koreksi->result_array());
+    }
+
+    public function showbyid_pengajuandmpau($id)
+    {
+        
+        
+        $totalanggaran = $this->db->get_where('pengajuan_anggaran',array('status2>' => '1'))->num_rows();
+        $anggarandisetujui = $this->db->query("SELECT * FROM `pengajuan_anggaran` WHERE status2='3'")->num_rows();
+        $revisi = $this->db->query("SELECT * FROM `pengajuan_anggaran` WHERE `status2` = '5' OR `status2`='6'")->num_rows();
+    
+       
+        // Notifikasi
+        $dm = $this->db->get_where('pengajuan_anggaran', array('status2' => '2'));
+        
+        $koreksi = $this->db->query("SELECT * FROM `pengajuan_anggaran` WHERE `status2` = '8'");
+        $totalnotifikasi = $dm->num_rows()  + $koreksi->num_rows();
+        
+
+        return  array('totalnotifikasi' => $totalnotifikasi, 'dm' => $dm->result_array(), 'totalanggaran' => $totalanggaran, 'totalrevisi' => $revisi, 'totaldisetujui' => $anggarandisetujui, 'koreksi' => $koreksi->result_array());
+    }
+    
+
+
     public function show_pengajuan_sub()
     {
         $this->db->select('*');

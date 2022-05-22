@@ -49,6 +49,13 @@
                         </a>
                       </li>
                     <?php endforeach; ?>
+                    <?php foreach ($this->session->userdata('koreksi')  as $iddm) : ?>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No ' . $iddm['id_pengajuan'] . ' Memerlukan koreksi'; ?>
+                        </a>
+                      </li>
+                    <?php endforeach; ?>
                   </ul>
 
               </ul>

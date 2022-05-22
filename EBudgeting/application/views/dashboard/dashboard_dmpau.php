@@ -29,21 +29,30 @@
             <li class="dropdown notifications-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">10</span>
+                <span class="label label-warning"><?php echo  $this->session->userdata('totalnotifikasi'); ?></span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have 10 notifications</li>
+                <li class="header">Anda memiliki <?php echo  $this->session->userdata('totalnotifikasi'); ?> notifikasi</li>
                 <li>
 
                   <ul class="menu">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-users text-aqua"></i> Koreksi Anggaran
-                      </a>
-                    </li>
+                    <?php foreach ($this->session->userdata('dm') as $iddm) : ?>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No ' . $iddm['id_pengajuan'] . ' disetujui oleh DM'; ?>
+                        </a>
+                      </li>
+                    <?php endforeach; ?>
+
+                    <?php foreach ($this->session->userdata('koreksi')  as $iddm) : ?>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> <?= 'Pengajuan No ' . $iddm['id_pengajuan'] . ' telah dikoreksi'; ?>
+                        </a>
+                      </li>
+                    <?php endforeach; ?>
                   </ul>
-                </li>
-                <li class="footer"><a href="#">View all</a></li>
+
               </ul>
             </li>
 
@@ -118,7 +127,7 @@
                 </span>
             </a>
           </li>
-          
+
           <li>
             <a href="<?php echo site_url("C_menutransfer"); ?>">
               <i class="fa fa-edit"></i> <span>Transfer</span>
@@ -163,12 +172,13 @@
       <!-- Main content -->
       <section class="content">
         <!-- Small boxes (Stat box) -->
+
         <div class="row">
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3>0</h3>
+                <h3><?php echo $pengajuan['totalanggaran'] == 0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
 
                 <p>Total Ajuan Anggaran</p>
               </div>
@@ -183,7 +193,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
               <div class="inner">
-                <h3>0</h3>
+                <h3><?php echo $pengajuan['totaldisetujui'] == 0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
 
                 <p>Pengajuan Disetujui</p>
               </div>
@@ -198,7 +208,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h3>0</h3>
+                <h3><?php echo $pengajuan['totalrevisi'] == 0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
 
                 <p>Koreksi</p>
               </div>
@@ -225,6 +235,7 @@
           </div>
           <!-- ./col -->
         </div>
+        <!-- /.row -->
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">

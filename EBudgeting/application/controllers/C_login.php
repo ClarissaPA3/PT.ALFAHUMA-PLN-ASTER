@@ -88,7 +88,7 @@ class C_login extends CI_Controller
 	public function login_admin()
 	{
 		$id_anggota = $this->session->userdata('id_anggota');
-		$pengajuan = $this->M_ajuananggaran->showbyid_pengajuan($id_anggota);
+		
 		
 		
 	
@@ -97,16 +97,42 @@ class C_login extends CI_Controller
 
 		$id_jabatan = $this->session->userdata('id_jabatan');
 		if ($id_jabatan == "3") {
-			$this->load->view('dashboard/dashboard_dmpau');
-		} elseif ($id_jabatan == "2") {
-
-
-			$this->load->view('dashboard/dashboard_bidang.php');
-		} elseif ($id_jabatan == "1") {
+			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuandmpau($id_anggota);
+			
 			$datanotifikasi = array(
 				'totalnotifikasi' => $pengajuan['totalnotifikasi'],
 				'dm' => $pengajuan['dm'],
-				'dmpau' =>  $pengajuan['dmpau']
+	
+				'koreksi' => $pengajuan['koreksi']
+			);
+			$this->session->set_userdata($datanotifikasi);
+			$data['pengajuan'] = $pengajuan;
+			
+	
+			$this->load->view('dashboard/dashboard_dmpau', $data);
+		} elseif ($id_jabatan == "2") {
+			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuandm($id_anggota);
+			
+			$datanotifikasi = array(
+				'totalnotifikasi' => $pengajuan['totalnotifikasi'],
+				'dm' => $pengajuan['sub'],
+				
+				'koreksi' => $pengajuan['koreksi']
+			);
+			$this->session->set_userdata($datanotifikasi);
+			$data['pengajuan'] = $pengajuan;
+	
+
+
+			$this->load->view('dashboard/dashboard_bidang.php', $data);
+		} elseif ($id_jabatan == "1") {
+			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuansub($id_anggota);
+			
+			$datanotifikasi = array(
+				'totalnotifikasi' => $pengajuan['totalnotifikasi'],
+				'dm' => $pengajuan['dm'],
+				'dmpau' =>  $pengajuan['dmpau'],
+				'koreksi' => $pengajuan['koreksi']
 			);
 			$this->session->set_userdata($datanotifikasi);
 			$data['pengajuan'] = $pengajuan;
