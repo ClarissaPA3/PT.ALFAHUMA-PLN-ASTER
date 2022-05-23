@@ -267,9 +267,9 @@
                         </div>
 
                         <div class="form-group row">
-                          <label class="col-sm-2 col-form-label">Lumpsum Transpoet Lok</label>
+                          <label class="col-sm-2 col-form-label">Lumpsum Transport Lok</label>
                           <div class="col-sm-5">
-                            <input type="text" class="form-control" name="lumpsum_transpoet_lok" placeholder="Lumpsum Transpoet Lok">
+                            <input type="text" class="form-control" name="lumpsum_transport_lok" placeholder="Lumpsum Transport Lok">
                           </div>
                         </div>
 

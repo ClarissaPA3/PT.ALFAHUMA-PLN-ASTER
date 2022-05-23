@@ -219,7 +219,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Honor Evaluator</label>
                                                         <div class="col-sm-5">
-                                                            <input type="number" class="form-control"name="honor_evaluator" placeholder="honor_evaluator" value="<?php echo $key['honor_evaluator']; ?>">
+                                                            <input type="number" class="form-control" name="honor_evaluator" placeholder="honor_evaluator" value="<?php echo $key['honor_evaluator']; ?>">
                                                         </div>
                                                     </div>
 
@@ -280,9 +280,9 @@
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 col-form-label">Lumpsum Transpoet Lok</label>
+                                                        <label class="col-sm-2 col-form-label">Lumpsum Transport Lok</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="lumpsum_transpoet_lok" placeholder="lumpsum_transpoet_lok" value="<?php echo $key['lumpsum_transpoet_lok']; ?>">
+                                                            <input type="text" class="form-control" name="lumpsum_transport_lok" placeholder="lumpsum_transport_lok" value="<?php echo $key['lumpsum_transport_lok']; ?>">
                                                         </div>
                                                     </div>
 
