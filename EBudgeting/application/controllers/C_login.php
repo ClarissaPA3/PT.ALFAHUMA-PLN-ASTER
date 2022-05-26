@@ -10,28 +10,29 @@ class C_login extends CI_Controller
 		$this->load->model('M_user');
 		$this->load->library('session');
 		$this->load->model('M_ajuananggaran');
+		$this->load->model('M_paguanggaran');
 	}
-	
+
 
 	public function index()
 	{
 
-	
-		
+
+
 		$id_jabatan = $this->session->userdata('id_jabatan');
 
 		if (isset($id_jabatan)) {
 			# code...
 			redirect('C_login/login_admin');
 		} else {
-			
+
 			$this->load->view('login/login');
 		}
 	}
 
 	public function authentikasi_admin()
 	{
-		
+
 
 
 		$this->load->library('form_validation');
@@ -50,15 +51,13 @@ class C_login extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			redirect(base_url("C_login"));
 		} else {
-			
+
 			$query = $this->M_user->show_user($pass, $user);
 			if (isset($query['status'])) {
-				
+
 				$this->session->set_flashdata($query);
 				redirect('C_login');
-				
-			}
-			else {
+			} else {
 				$id_jabatan = $query['id_jabatan'];
 				$nama_anggota = $query['nama_anggota'];
 				$id_anggota = $query['id_anggota'];
@@ -68,12 +67,11 @@ class C_login extends CI_Controller
 					'id_anggota' =>  $id_anggota
 				);
 				$this->session->set_userdata($akun);
-			redirect('C_login/login_admin');
+				$d = strtotime("April 2022");
+				
+				redirect('C_login/login_admin');
 
 			}
-			
-		
-			
 		}
 
 
@@ -90,53 +88,63 @@ class C_login extends CI_Controller
 		$id_anggota = $this->session->userdata('id_anggota');
 		
 		
+		$pagu = $this->M_paguanggaran->updatepagu('May 26 2022');
 		
-	
-		
-		
+
+
+
+
+
+
 
 		$id_jabatan = $this->session->userdata('id_jabatan');
 		if ($id_jabatan == "3") {
 			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuandmpau($id_anggota);
-			
+
 			$datanotifikasi = array(
 				'totalnotifikasi' => $pengajuan['totalnotifikasi'],
 				'dm' => $pengajuan['dm'],
-	
-				'koreksi' => $pengajuan['koreksi']
+
+				'koreksi' => $pengajuan['koreksi'],
+				
 			);
 			$this->session->set_userdata($datanotifikasi);
 			$data['pengajuan'] = $pengajuan;
-			
-	
+			$data['pagu'] = $pagu;
+
+
 			$this->load->view('dashboard/dashboard_dmpau', $data);
 		} elseif ($id_jabatan == "2") {
 			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuandm($id_anggota);
-			
+
 			$datanotifikasi = array(
 				'totalnotifikasi' => $pengajuan['totalnotifikasi'],
 				'dm' => $pengajuan['sub'],
+
+				'koreksi' => $pengajuan['koreksi'],
 				
-				'koreksi' => $pengajuan['koreksi']
 			);
 			$this->session->set_userdata($datanotifikasi);
 			$data['pengajuan'] = $pengajuan;
-	
+			$data['pagu'] = $pagu;
+
 
 
 			$this->load->view('dashboard/dashboard_bidang.php', $data);
 		} elseif ($id_jabatan == "1") {
 			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuansub($id_anggota);
-			
+
 			$datanotifikasi = array(
 				'totalnotifikasi' => $pengajuan['totalnotifikasi'],
 				'dm' => $pengajuan['dm'],
 				'dmpau' =>  $pengajuan['dmpau'],
-				'koreksi' => $pengajuan['koreksi']
+				'koreksi' => $pengajuan['koreksi'],
+				
 			);
 			$this->session->set_userdata($datanotifikasi);
 			$data['pengajuan'] = $pengajuan;
-	
+			$data['pagu'] = $pagu;
+
 
 
 			$this->load->view('dashboard/dashboard_subbidang.php', $data);

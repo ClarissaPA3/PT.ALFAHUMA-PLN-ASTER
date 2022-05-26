@@ -158,7 +158,7 @@
               <div class="icon">
                 <i class="fa fa-book"></i>
               </div>
-              
+
             </div>
           </div>
           <!-- ./col -->
@@ -173,7 +173,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              
+
             </div>
           </div>
           <!-- ./col -->
@@ -195,7 +195,8 @@
             <!-- small box -->
             <div class="small-box bg-red">
               <div class="inner">
-                <h3>0</h3>
+
+                <h4><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguterpakai'], 2, ',', '.'); ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguanggaran'], 2, ',', '.'); ?></h4>
 
                 <p>Pagu Anggaran</p>
               </div>
@@ -229,7 +230,7 @@
 
           </section>
           <!-- /.Left col -->
-          
+
         </div>
         <!-- /.row (main row) -->
 
