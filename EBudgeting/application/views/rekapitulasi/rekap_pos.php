@@ -99,6 +99,38 @@
                                                     <th>Rencana Kebutuhan (Total)</th>
                                                 </tr>
                                             </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1.1</td>
+                                                    <td>Material</td>
+                                                    <td>Rp. 1.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 7.000.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1.1</td>
+                                                    <td>Jasa Borongan</td>
+                                                    <td>Rp. 1.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 7.000.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1.1</td>
+                                                    <td>Material Bangunan</td>
+                                                    <td>Rp. 1.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 7.000.000</td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>

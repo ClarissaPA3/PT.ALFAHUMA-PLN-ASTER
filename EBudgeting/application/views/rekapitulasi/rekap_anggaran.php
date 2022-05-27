@@ -115,6 +115,48 @@
                                                     <th>Rencana Kebutuhan (Total)</th>
                                                 </tr>
                                             </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1.1</td>
+                                                    <td>Operasi A</td>
+                                                    <td>Rp. 1.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 7.000.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1.1</td>
+                                                    <td>Operasi B</td>
+                                                    <td>Rp. 1.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 7.000.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1.1</td>
+                                                    <td>Pegawai</td>
+                                                    <td>Rp. 1.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 7.000.000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1.1</td>
+                                                    <td>Pemeliharaan</td>
+                                                    <td>Rp. 1.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 2.000.000</td>
+                                                    <td>Rp. 7.000.000</td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
