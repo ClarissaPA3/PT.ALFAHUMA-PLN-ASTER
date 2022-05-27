@@ -155,7 +155,7 @@
                                                                     <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
                                                                 <?php endforeach; ?>
                                                             </select>
-                                                            
+
                                                             <?php echo form_error('id_subpos2'); ?>
                                                         </td>
                                                         <td>
@@ -263,7 +263,7 @@
         <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
         reserved.
     </footer>
-   
+
 
     <script>
         function Draft() {
@@ -288,7 +288,6 @@
             document.getElementById('aju').appendChild(input); // put it into the DOM
             FormSubmit();
         }
-
     </script>
 
     <?php $this->load->view('dashboard/_part/js'); ?>

@@ -48,122 +48,156 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-
           <div class="col-md-12">
-            <!-- Horizontal Form -->
-            <div class="box box-info">
-              <div class="card mb-3">
-                <div class="card-header">
-                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
-
-                    <i class="fa fa-fw fa-plus"></i> Pengajuan Anggaran
-
-                  </button>
-
-                </div>
-
-
-                <div class="card-body">
-
-                  <div class="table-responsive">
-                    <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>ID Pengajuan</th>
-                          <th>Bulan</th>
-                          <th>Pengajuan</th>
-                          <th>Tanggal Mulai </th>
-                          <th>Tanggal Sampai </th>
-                          <th>Total </th>
-
-                          <th>Status </th>
-                          <th>Aksi</th>
-
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php foreach ($pengajuan_anggaran as $pengajuan_anggaran) : ?>
-
-                          <tr>
-                            <td width="150">
-                              <?php echo $pengajuan_anggaran->id_pengajuan ?>
-                            </td>
-                            <td>
-                              <?php echo $pengajuan_anggaran->bulan2 ?>
-                            </td>
-                            <td>
-                              <?php echo $pengajuan_anggaran->tgl_pengajuan2 ?>
-                            </td>
-                            <td>
-                              <?php echo $pengajuan_anggaran->tanggal_mulai2 ?>
-                            </td>
-                            <td>
-                              <?php echo $pengajuan_anggaran->tanggal_sampai2 ?>
-                            </td>
-                            <td>
-                              <?php echo $pengajuan_anggaran->total_pengajuan2 ?>
-                            </td>
-                            <td>
-                              <?php
-                              $array = array_intersect(array($pengajuan_anggaran->status2), array_flip($status));
-
-
-                              if (!empty($array)) {
-
-                                echo $status[$array[0]];
-                              }
-                              ?>
-                            </td>
-
-
-
-                            <td class="small">
-                            <td width="250">
-                              <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Detail anggaran</a>
-                              <?php
-                              if ($pengajuan_anggaran->status2 < 2) {
-                              ?>
-                                <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
-
-                              <?php
-                              }
-
-                              ?>
-
-                            </td>
-                          </tr>
-                        <?php endforeach; ?>
-
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+            <form method="GET" action="" class="form-inline">
+              <div id="form-tanggal">
+                <label>Minggu Ke</label><br>
+                <select name="minggu">
+                  <option value="">Pilih</option>
+                  <option value="1">Minggu Ke-1</option>
+                  <option value="2">Minggu Ke-2</option>
+                  <option value="3">Minggu Ke-3</option>
+                  <option value="3">Minggu Ke-4</option>
+                </select>
               </div>
 
-            </div>
-            <!-- /.box -->
+              <div id="form-bulan">
+                <label>Bulan</label><br>
+                <select name="bulan">
+                  <option value="">Pilih</option>
+                  <option value="1">Januari</option>
+                  <option value="2">Februari</option>
+                  <option value="3">Maret</option>
+                  <option value="4">April</option>
+                  <option value="5">Mei</option>
+                  <option value="6">Juni</option>
+                  <option value="7">Juli</option>
+                  <option value="8">Agustus</option>
+                  <option value="9">September</option>
+                  <option value="10">Oktober</option>
+                  <option value="11">November</option>
+                  <option value="12">Desember</option>
+                </select>
+              </div>
 
+              <button type="submit">Tampilkan</button>
+            </form>
+          </div>
+        </div><br>
+        <!-- Horizontal Form -->
+        <div class="box box-info">
+          <div class="card mb-3">
+            <div class="card-header">
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
+
+                <i class="fa fa-fw fa-plus"></i> Pengajuan Anggaran
+
+              </button>
+
+            </div>
+
+
+            <div class="card-body">
+
+              <div class="table-responsive">
+                <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>ID Pengajuan</th>
+                      <th>Bulan</th>
+                      <th>Pengajuan</th>
+                      <th>Tanggal Mulai </th>
+                      <th>Tanggal Sampai </th>
+                      <th>Total </th>
+
+                      <th>Status </th>
+                      <th>Aksi</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($pengajuan_anggaran as $pengajuan_anggaran) : ?>
+
+                      <tr>
+                        <td width="150">
+                          <?php echo $pengajuan_anggaran->id_pengajuan ?>
+                        </td>
+                        <td>
+                          <?php echo $pengajuan_anggaran->bulan2 ?>
+                        </td>
+                        <td>
+                          <?php echo $pengajuan_anggaran->tgl_pengajuan2 ?>
+                        </td>
+                        <td>
+                          <?php echo $pengajuan_anggaran->tanggal_mulai2 ?>
+                        </td>
+                        <td>
+                          <?php echo $pengajuan_anggaran->tanggal_sampai2 ?>
+                        </td>
+                        <td>
+                          <?php echo $pengajuan_anggaran->total_pengajuan2 ?>
+                        </td>
+                        <td>
+                          <?php
+                          $array = array_intersect(array($pengajuan_anggaran->status2), array_flip($status));
+
+
+                          if (!empty($array)) {
+
+                            echo $status[$array[0]];
+                          }
+                          ?>
+                        </td>
+
+
+
+                        <td class="small">
+                        <td width="250">
+                          <a href="<?php echo site_url('C_ajuananggaran/update_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>" class="btn btn-small"><i class="fas fa-edit"></i> Detail anggaran</a>
+                          <?php
+                          if ($pengajuan_anggaran->status2 < 2) {
+                          ?>
+                            <a href="<?php echo site_url('C_ajuananggaran/delete_datapengajuan/') . $pengajuan_anggaran->id_pengajuan; ?>"><i class="fas fa-trash"></i> Hapus</a>
+
+                          <?php
+                          }
+
+                          ?>
+
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
 
-
         </div>
-        <!-- /.row -->
-      </section>
+        <!-- /.box -->
 
-      <!-- right col -->
     </div>
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Create by</b> Mahasiswa UNS 2020.
-      </div>
-      <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
-      reserved.
-    </footer>
-
-    <!-- /.row (main row) -->
 
 
-    <!-- /.content -->
+  </div>
+  <!-- /.row -->
+  </section>
+
+  <!-- right col -->
+  </div>
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Create by</b> Mahasiswa UNS 2020.
+    </div>
+    <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- /.row (main row) -->
+
+
+  <!-- /.content -->
   </div>
 
   <div class="modal fade" id="modal-info">
