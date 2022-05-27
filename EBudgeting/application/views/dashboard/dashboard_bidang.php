@@ -196,9 +196,13 @@
             <div class="small-box bg-red">
               <div class="inner">
 
+
                 <h4><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguterpakai'], 2, ',', '.'); ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguanggaran'], 2, ',', '.'); ?></h4>
 
-                <p>Pagu Anggaran</p>
+                <p>(<?php echo $pagu['paguanggaran'] == '0' ? '0' :  number_format($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100, 1, ',', '.'); ?>%) Pagu Anggaran</p>
+
+
+
               </div>
               <div class="icon">
                 <i class="fa fa-list"></i>

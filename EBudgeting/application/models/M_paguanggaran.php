@@ -80,6 +80,19 @@ class M_paguanggaran extends CI_Model
        
         $this->db->update('pagu_anggaran', $data, array('id_paguanggaran' => $id));
     }
+    public function checkPagu($tgl)
+
+    {
+        $tanggal = strtotime($tgl);
+        $Convbulan = date('m', $tanggal);
+        
+        $bulan = array("01"=>'Januari', "02"=>'Februari', "03"=>'Maret', "04"=>'April', "05"=>'Mei', "06"=>'Juni', "07"=>'Juli', "08"=>'Agustus', "09"=>'September', "10"=>'Oktober', "11"=>'November', "12"=>'Desember');
+       
+        $tahun = date('Y', $tanggal);
+        // Mencari Pagu yang sesuai tanggal yang ditentukan
+        $pagu = $this->db->get_where('pagu_anggaran', array('bulan' => $bulan[$Convbulan],'tahun' => $tahun), 1)->result_array();
+        
+    }
 
     public function updatepagu($tgl)
     {
@@ -90,33 +103,41 @@ class M_paguanggaran extends CI_Model
        
         $tahun = date('Y', $tanggal);
         // Mencari Pagu yang sesuai tanggal yang ditentukan
-        $pagu = $this->db->get_where('pagu_anggaran', array('bulan' => $bulan[$Convbulan],'tahun' => $tahun), 1)->result_array()[0];
+        $pagu = $this->db->get_where('pagu_anggaran', array('bulan' => $bulan[$Convbulan],'tahun' => $tahun), 1)->result_array();
         
+        if (!empty($pagu)) {
+            // Jumlah pengajuananggaran
+            $bulansebelum = $tahun.'-'.str_pad($Convbulan-1, 2, '0', STR_PAD_LEFT).'-16';
+            $bulansesudah = $tahun.'-'.$Convbulan.'-15';
 
-        // Jumlah pengajuananggaran
-        $bulansebelum = $tahun.'-'.str_pad($Convbulan-1, 2, '0', STR_PAD_LEFT).'-16';
-        $bulansesudah = $tahun.'-'.$Convbulan.'-15';
-
-        $ajuan = $this->db->query(sprintf("SELECT sum(total_pengajuan2) as totalpengajuanpagu FROM `pengajuan_anggaran` WHERE `tgl_pengajuan2` BETWEEN '%s' AND '%s'",$bulansebelum, $bulansesudah))->result_array();
-         
-        // Update pagu anggaran
+            $ajuan = $this->db->query(sprintf("SELECT sum(total_pengajuan2) as totalpengajuanpagu FROM `pengajuan_anggaran` WHERE `status2` > 0 AND `tgl_pengajuan2` BETWEEN '%s' AND '%s'",$bulansebelum, $bulansesudah))->result_array();
+            
+            // Update pagu anggaran
+            
         
-       
-        $data = array(
+            $data = array(
 
-            'id_paguanggaran' => $pagu['id_paguanggaran'],
-            'id_anggota' => $pagu['id_anggota'],
-            'nominal_pagu' => $pagu['nominal_pagu'],
-            'nominal_terpakai' => $ajuan[0]['totalpengajuanpagu'],
-            'bulan' => $pagu['bulan'],
-            'tahun' => $pagu['tahun']
+                'id_paguanggaran' => $pagu[0]['id_paguanggaran'],
+                'id_anggota' => $pagu[0]['id_anggota'],
+                'nominal_pagu' => $pagu[0]['nominal_pagu'],
+                'nominal_terpakai' => $ajuan[0]['totalpengajuanpagu'],
+                'bulan' => $pagu[0]['bulan'],
+                'tahun' => $pagu[0]['tahun']
 
- 
-        );
-       
-        $this->db->update('pagu_anggaran', $data, array('id_paguanggaran' => $pagu['id_paguanggaran']));
+    
+            );
+        
+            $this->db->update('pagu_anggaran', $data, array('id_paguanggaran' => $pagu[0]['id_paguanggaran']));
+            return  array('paguanggaran' =>  $pagu[0]['nominal_pagu'], 'paguterpakai' => $pagu[0]['nominal_terpakai'] );
+        }
+        else {
+            return  array('paguanggaran' =>  0, 'paguterpakai' => 0 );
+            
+        }
+
+        
       
-        return  array('paguanggaran' =>  $pagu['nominal_pagu'], 'paguterpakai' => $pagu['nominal_terpakai'] );
+       
         
     }
 
@@ -125,4 +146,3 @@ class M_paguanggaran extends CI_Model
         $this->db->delete('pagu_anggaran', array("id_paguanggaran" => $id));
     }
 }
-?>

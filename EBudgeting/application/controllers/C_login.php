@@ -88,7 +88,8 @@ class C_login extends CI_Controller
 		$id_anggota = $this->session->userdata('id_anggota');
 		
 		
-		$pagu = $this->M_paguanggaran->updatepagu('May 26 2022');
+		$pagu = $this->M_paguanggaran->updatepagu(date('Y-m-d'));
+		
 		
 
 

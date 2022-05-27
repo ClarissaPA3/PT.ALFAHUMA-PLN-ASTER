@@ -1,2 +1,5 @@
 - Penjelasan Rekapitulasi Anggarna
 - Penjelasan Role Admin
+-di ajuananggarna tidak boleh mengajukan kosong
+
+

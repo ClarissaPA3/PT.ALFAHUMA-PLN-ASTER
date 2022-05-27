@@ -7,6 +7,8 @@ class M_ajuananggaran extends CI_Model
     {
         parent::__construct();
         $this->load->model('M_detailajuan');
+        $this->load->model('M_paguanggaran');
+
     }
     // Sub bidang
     public function add_pengajuan()
@@ -58,9 +60,12 @@ class M_ajuananggaran extends CI_Model
 
     public function update_pengajuan()
     {
+        // $this->M_paguanggaran->checkPagu(date('Y-m-d'));
 
         $id = $this->input->post('id_pengajuan');
         $nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
+        
+
         $data = array(
             'id_pengajuan' => $id,
             'id_anggota' => $this->input->post('id_anggota'),

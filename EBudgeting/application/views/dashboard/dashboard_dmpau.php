@@ -219,47 +219,47 @@
           <div class="col-lg-3 col-xs-6">
             <!-- small box -->
             <div class="small-box bg-red">
-            <div class="inner">
-              
-              <p><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.'.number_format($pagu['paguterpakai'], 2, ',', '.') ; ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.'.number_format($pagu['paguanggaran'], 2, ',', '.'); ?></p>
+              <div class="inner">
 
-              <p>(<?php echo  $pagu['paguterpakai']/$pagu['paguanggaran']*100;?>) Pagu Anggaran</p>
-            </div>
-              <div class="icon">
-                <i class="fa fa-list"></i>
+
+                <h4><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguterpakai'], 2, ',', '.'); ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguanggaran'], 2, ',', '.'); ?></h4>
+
+                <p>(<?php echo $pagu['paguanggaran'] == '0' ? '0' :  number_format($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100, 1, ',', '.'); ?>%) Pagu Anggaran</p>
+
+
+
               </div>
             </div>
+            <!-- ./col -->
           </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-            <!-- Custom tabs (Charts with tabs)-->
-            <div class="nav-tabs-custom">
-              <!-- Tabs within a box -->
-              <ul class="nav nav-tabs pull-right">
-                <li class="active"><a href="#revenue-chart" data-toggle="tab"></a></li>
+          <!-- /.row -->
+          <!-- /.row -->
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-7 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="nav-tabs-custom">
+                <!-- Tabs within a box -->
+                <ul class="nav nav-tabs pull-right">
+                  <li class="active"><a href="#revenue-chart" data-toggle="tab"></a></li>
 
-                <h4 class="box-title"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</h4>
-              </ul>
-              <div class="tab-content no-padding">
-                <!-- Morris chart - Sales -->
-                <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                  <h4 class="box-title"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</h4>
+                </ul>
+                <div class="tab-content no-padding">
+                  <!-- Morris chart - Sales -->
+                  <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                </div>
               </div>
-            </div>
-            <!-- /.nav-tabs-custom -->
+              <!-- /.nav-tabs-custom -->
 
-          </section>
-          <!-- /.Left col -->
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          
-        </div>
-        <!-- /.row (main row) -->
+            </section>
+            <!-- /.Left col -->
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+          </div>
+          <!-- /.row (main row) -->
 
       </section>
       <!-- /.content -->
