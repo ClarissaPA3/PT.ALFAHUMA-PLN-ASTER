@@ -224,8 +224,21 @@
 
                 <h4><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguterpakai'], 2, ',', '.'); ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguanggaran'], 2, ',', '.'); ?></h4>
 
-                <p>(<?php echo $pagu['paguanggaran'] == '0' ? '0' :  number_format($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100, 1, ',', '.'); ?>%) Pagu Anggaran</p>
-
+                <p>(
+                  <?php 
+                if ($pagu['paguanggaran'] != 0 && $pagu['paguterpakai'] != 0) {
+                  echo number_format($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100, 1, ',', '.'); 
+                  
+                }
+                else {
+                  echo '0';
+                }
+                
+                ?>
+                  
+                  
+                  
+                  %) Pagu Anggaran</p>
 
 
               </div>
