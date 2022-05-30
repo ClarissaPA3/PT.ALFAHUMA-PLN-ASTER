@@ -111,6 +111,8 @@ class M_paguanggaran extends CI_Model
             $bulansesudah = $tahun.'-'.$Convbulan.'-15';
 
             $ajuan = $this->db->query(sprintf("SELECT sum(total_pengajuan2) as totalpengajuanpagu FROM `pengajuan_anggaran` WHERE `status2` > 0 AND `tgl_pengajuan2` BETWEEN '%s' AND '%s'",$bulansebelum, $bulansesudah))->result_array();
+
+            print_r($ajuan);
             
             // Update pagu anggaran
             

@@ -100,37 +100,29 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php print_r($subpos); ?>
+                                                <?php 
+                                                $no = 1;
+                                                for ($i=0; $i < count($subpos); $i++) : ?>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>1.1</td>
-                                                    <td>Material</td>
-                                                    <td>Rp. 1.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 7.000.000</td>
+                                                    <td><?= $no++ ?></td>
+                                                    <td><?= $subpos[$i]['id_subpos']; ?></td>
+                                                    <td><?= $subpos[$i]['nama_subpos']; ?></td>
+                                                    <td><?= number_format((int)$hitungajuan[$i]['minggu1']['nominal'], ',', '.');?></td>
+                                                    <td><?= number_format($hitungajuan[$i]['minggu2']['nominal'], ',', '.'); ?></td>
+                                                    <td><?= number_format($hitungajuan[$i]['minggu3']['nominal'], ',', '.'); ?></td>
+                                                    <td><?= number_format($hitungajuan[$i]['minggu4']['nominal'], ',', '.'); ?></td>
+                                                    <td><?= number_format($hitungajuan[$i]['total'], ',', '.'); ?></td>
                                                 </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>1.1</td>
-                                                    <td>Jasa Borongan</td>
-                                                    <td>Rp. 1.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 7.000.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>1.1</td>
-                                                    <td>Material Bangunan</td>
-                                                    <td>Rp. 1.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 7.000.000</td>
-                                                </tr>
+                                                <?php endfor; ?>
+                                                
                                             </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="7">Total Ajuan Anggaran</td>
+                                                    <td><?php echo $totalkeseluruhan; ?></td>
+                                                </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
