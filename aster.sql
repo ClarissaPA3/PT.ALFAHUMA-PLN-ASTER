@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Bulan Mei 2022 pada 03.42
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.15
+-- Waktu pembuatan: 31 Bulan Mei 2022 pada 00.16
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,13 +94,14 @@ CREATE TABLE `pagu_anggaran` (
 INSERT INTO `pagu_anggaran` (`id_paguanggaran`, `id_anggota`, `nominal_pagu`, `nominal_terpakai`, `bulan`, `tahun`) VALUES
 (3, 2, '150000000', '127000000', 'Maret', '2021'),
 (4, 2, '10000000', '8500000', 'April', '2022'),
-(5, 2, '50000000', '30000000', 'Mei', '2022'),
+(5, 2, '50000000', '', 'Mei', '2022'),
 (6, 2, '25000000', '23500000', 'Juni', '2022'),
 (7, 2, '45000000', '43000000', 'Juli', '2022'),
 (8, 2, '75000000', '71000000', 'Agustus', '2022'),
 (9, 2, '240000000', '238000000', 'Januari', '2021'),
 (10, 2, '68000000', '65000000', 'Mei', '2021'),
-(11, 2, '250000000', '239000000', 'April', '2021');
+(11, 2, '250000000', '239000000', 'April', '2021'),
+(12, 2, '6000000', '4500000', 'Mei', '2022');
 
 -- --------------------------------------------------------
 
@@ -280,7 +281,7 @@ CREATE TABLE `transfer` (
 --
 
 INSERT INTO `transfer` (`id_transfer`, `id_anggota`, `nama_pengirim`, `email`, `no_telp`, `no_rekening`, `nama_bank`, `tgl_kirim`, `kategori`, `PPN`, `PPH_21`, `PPH_22`, `PPH_23`, `denda`, `administrasi_bank`, `total_dibayar`, `berita`, `honor_asesmen`, `honor_evaluator`, `nilai_kontrak`, `honor_tester`, `honor_feedback`, `pekerjaan`, `honor_pewawancara`, `honor_korektor_pauli`, `lumpsum_transport_bandara`, `lumpsum_komsumsi`, `lumpsum_transpoet_lok`, `waktu_kerja`, `lumpsum_uang_cod`) VALUES
-(10, 2, 'Rohman Putra', 'rohmanputra@gmail.com', 2147483647, 2147483647, 'BCA', '2022-04-28 12:40:00', 'Transfer dana', 10, 10, 10, 10, 15, 20, 500, 'transfer sukses !', 50, 50, '1.000.000', 50, 50, 'Wiraswasta', 50, 50, '1', '1', '1', '48 jam', '1'),
+(10, 2, 'Rohman Putra', 'rohmanputra@gmail.com', 2147483647, 2147483647, 'BCA', '2022-04-28 12:40:00', 'Transfer dana', 10, 10, 10, 10, 15, 20, 500, 'transfer sukses !', 50, 50, '1000000', 50, 50, 'Wiraswasta', 50, 50, '1', '1', '50000', '48 jam', '1'),
 (12, 1, 'Alfredo Arya', 'arya@gmail.com', 2147483647, 2147483647, 'BNI', '2022-05-09 08:24:00', 'Transfer Dana', 20, 40, 40, 40, 40000, 17000, 16000000, 'sukses', 20, 20, '40', 20, 20, 'Wiraswasta', 20, 20, '10', '10', '10', '48 jam', '10'),
 (13, 3, 'Faris Nur', 'faris@gmail.com', 2147483647, 2147483647, 'BRI', '2022-05-01 08:33:00', 'Pembayaran ATK', 20, 40, 40, 40, 120000, 200000, 20000000, 'Pembayaran diterima', 20, 20, '20000000', 20, 20, 'PNS', 20, 20, '30', '30', '30', '24 jam', '30'),
 (14, 1, 'Bramantyo', 'bram@gmail.com', 2147483647, 2147483647, 'BTN', '2022-05-01 12:36:00', 'Pembayaran Asesor', 20, 20, 20, 20, 1000000, 150000, 20000000, 'Pelunasan pembayaran', 15, 15, '25000000', 15, 15, 'PNS', 15, 15, '10', '10', '10', '24 jam', '10'),
@@ -288,7 +289,9 @@ INSERT INTO `transfer` (`id_transfer`, `id_anggota`, `nama_pengirim`, `email`, `
 (16, 2, 'Eka Wahyu', 'ekawahyu@gmail.com', 2147483647, 2147483647, 'BNI', '2022-05-03 13:05:00', 'Pembayaran Alat Tulis Kantor', 30, 30, 30, 30, 500000, 120000, 40000000, 'Pelunasan pembayaran', 20, 25, '1200000', 25, 25, 'Wiraswasta', 25, 25, '15', '15', '15', '48 jam', '15'),
 (17, 2, 'Hilmi Alwi', 'hilmialwi@gmail.com', 2147483647, 2147483647, 'BCA', '2022-04-06 13:11:00', 'Pembayaran Alat Tulis Kantor', 50, 50, 50, 50, 1000000, 100000, 79000000, 'Pelunasan pembayaran', 35, 35, '35000000', 35, 35, 'PNS', 35, 35, '5', '5', '5', '24 jam', '5'),
 (18, 3, 'Alvin Faiz', 'alvinfaiz@gmail.com', 2147483647, 2147483647, 'Bank Jatim', '2022-05-11 13:51:00', 'Pembayaran Asesor 1', 55, 55, 55, 55, 2000000, 100000, 70000000, 'Pelunasan pembayaran', 25, 25, '65000000', 25, 25, 'Pengacara', 25, 25, '15', '15', '15', '24 jam', '15'),
-(19, 3, 'Syifa Al Ghifari', 'syifa@gmail.com', 2147483647, 2147483647, 'Bank Jateng', '2022-06-03 13:55:00', 'Pembayaran Alat Tulis Kantor', 40, 40, 40, 40, 1500000, 300000, 45000000, 'Pelunasan pembayaran', 10, 10, '55000000', 10, 10, 'Apoteker', 10, 10, '20', '20', '20', '24 jam', '20');
+(19, 3, 'Syifa Al Ghifari', 'syifa@gmail.com', 2147483647, 2147483647, 'Bank Jateng', '2022-06-03 13:55:00', 'Pembayaran Alat Tulis Kantor', 40, 40, 40, 40, 1500000, 300000, 45000000, 'Pelunasan pembayaran', 10, 10, '55000000', 10, 10, 'Apoteker', 10, 10, '20', '20', '20', '24 jam', '20'),
+(20, 3, 'Wira Winarya', 'rere@gmail.com', 1234, 3456789, 'BCA', '2022-05-30 20:31:00', 'operasional', 89000, 90000, 90000, 9900, 8000, 7000, 78000, 'biaya operasional', 6700, 87000, '500000', 89000, 88000, 'Reparasi tower', 89000, 78800, '200000', '500000', '50000', '12 Jam', '0'),
+(21, 2, 'Dive', 'xixi@gmail.com', 2147483647, 2147483647, 'BRI', '2022-04-30 08:13:00', 'operasional', 32000, 23000, 22000, 29000, 0, 34000, 84000, 'biaya operasional', 93000, 232000, '1000000', 543000, 134000, 'Reparasi tower', 134000, 323000, '200000', '500000', '50000', '12 Jam', '0');
 
 --
 -- Indexes for dumped tables
@@ -376,7 +379,7 @@ ALTER TABLE `jabatan`
 -- AUTO_INCREMENT untuk tabel `pagu_anggaran`
 --
 ALTER TABLE `pagu_anggaran`
-  MODIFY `id_paguanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_paguanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `pegawai`
@@ -412,7 +415,7 @@ ALTER TABLE `sub_pos2`
 -- AUTO_INCREMENT untuk tabel `transfer`
 --
 ALTER TABLE `transfer`
-  MODIFY `id_transfer` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_transfer` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
