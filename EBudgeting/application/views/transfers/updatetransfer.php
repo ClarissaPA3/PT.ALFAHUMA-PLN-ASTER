@@ -282,7 +282,7 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Lumpsum Transport Lok</label>
                                                         <div class="col-sm-5">
-                                                            <input type="text" class="form-control" name="lumpsum_transport_lok" placeholder="lumpsum_transport_lok" value="<?php echo $key['lumpsum_transport_lok']; ?>">
+                                                            <input type="text" class="form-control" name="lumpsum_transpoet_lok" placeholder="lumpsum_transport_lok" value="<?php echo $key['lumpsum_transpoet_lok']; ?>">
                                                         </div>
                                                     </div>
 
