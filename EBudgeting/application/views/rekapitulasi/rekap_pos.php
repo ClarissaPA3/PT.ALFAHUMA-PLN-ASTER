@@ -108,11 +108,11 @@
                                                     <td><?= $no++ ?></td>
                                                     <td><?= $subpos[$i]['id_subpos']; ?></td>
                                                     <td><?= $subpos[$i]['nama_subpos']; ?></td>
-                                                    <td><?= number_format((int)$hitungajuan[$i]['minggu1']['nominal'], ',', '.');?></td>
-                                                    <td><?= number_format($hitungajuan[$i]['minggu2']['nominal'], ',', '.'); ?></td>
-                                                    <td><?= number_format($hitungajuan[$i]['minggu3']['nominal'], ',', '.'); ?></td>
-                                                    <td><?= number_format($hitungajuan[$i]['minggu4']['nominal'], ',', '.'); ?></td>
-                                                    <td><?= number_format($hitungajuan[$i]['total'], ',', '.'); ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu1']['nominal'], 2, ',', '.');?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu2']['nominal'], 2, ',', '.'); ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu3']['nominal'], 2, ',', '.'); ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu4']['nominal'], 2, ',', '.'); ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['total'],2, ',', '.'); ?></td>
                                                 </tr>
                                                 <?php endfor; ?>
                                                 
@@ -120,7 +120,7 @@
                                             <tfoot>
                                                 <tr>
                                                     <td colspan="7">Total Ajuan Anggaran</td>
-                                                    <td><?php echo $totalkeseluruhan; ?></td>
+                                                    <td>Rp.<?php echo number_format($totalkeseluruhan, 2, ',', '.'); ?></td>
                                                 </tr>
                                             </tfoot>
                                         </table>
