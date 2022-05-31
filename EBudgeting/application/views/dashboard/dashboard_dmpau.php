@@ -227,7 +227,7 @@
                 <p>(
                   <?php 
                 if ($pagu['paguanggaran'] != 0 && $pagu['paguterpakai'] != 0) {
-                  echo number_format($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100, 1, ',', '.'); 
+                  echo number_format(floatval($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100) , 1, ',', '.'); 
                   
                 }
                 else {
