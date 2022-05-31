@@ -103,6 +103,7 @@
 
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover text-center" id="dataTable" width="100%" cellspacing="0">
+                        
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -116,47 +117,29 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                             
+                                                <?php 
+                                                $no = 1;
+                                                for ($i=0; $i < count($pos); $i++) : ?>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>1.1</td>
-                                                    <td>Operasi A</td>
-                                                    <td>Rp. 1.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 7.000.000</td>
+                                                    <td><?= $no++ ?></td>
+                                                    <td><?= $pos[$i]['id_pos']; ?></td>
+                                                    <td><?= $pos[$i]['nama_pos']; ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu1']['nominal'], 2, ',', '.');?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu2']['nominal'], 2, ',', '.'); ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu3']['nominal'], 2, ',', '.'); ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu4']['nominal'], 2, ',', '.'); ?></td>
+                                                    <td>Rp. <?= number_format($hitungajuan[$i]['total'],2, ',', '.'); ?></td>
                                                 </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>1.1</td>
-                                                    <td>Operasi B</td>
-                                                    <td>Rp. 1.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 7.000.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>1.1</td>
-                                                    <td>Pegawai</td>
-                                                    <td>Rp. 1.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 7.000.000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>1.1</td>
-                                                    <td>Pemeliharaan</td>
-                                                    <td>Rp. 1.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 2.000.000</td>
-                                                    <td>Rp. 7.000.000</td>
-                                                </tr>
+                                                <?php endfor; ?>
+                                                
                                             </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="7">Total Ajuan Anggaran</td>
+                                                    <td>Rp.<?php echo number_format($totalkeseluruhan, 2, ',', '.'); ?></td>
+                                                </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>

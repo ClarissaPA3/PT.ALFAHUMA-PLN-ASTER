@@ -4,24 +4,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class C_rekap_anggaran extends CI_Controller
 {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     *	- or -
-     * 		http://example.com/index.php/welcome/index
-     *	- or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see https://codeigniter.com/userguide3/general/urls.html
-     */
+    public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('M_ajuananggaran');
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
+		$this->load->model('M_masterpos_subpos');
+		$this->load->model('M_detailajuan');
+		$this->load->model('M_rekapanggaran');
+	}
     public function index()
     {
-        $this->load->view('rekapitulasi/rekap_anggaran.php');
+        $data['pos'] = $this->M_masterpos_subpos->show_posM();
+		$pos = $data['pos'];
+		$hitungajuan = array ();
+		$data['totalkeseluruhan'] = 0;
+		for ($i=0; $i < count($pos) ; $i++) { 
+			$hitungajuan[$i] = $this->M_rekapanggaran->show_rekapanggaran($pos[$i]['id_pos']);
+			$data['totalkeseluruhan'] += $hitungajuan[$i]['total'];
+			
+		}
+		$data['hitungajuan'] = $hitungajuan;
+		print_r($hitungajuan);
+		
+  
+    
+        $this->load->view('rekapitulasi/rekap_anggaran.php', $data);
         $this->load->view('dashboard/_part/footer');
     }
 }

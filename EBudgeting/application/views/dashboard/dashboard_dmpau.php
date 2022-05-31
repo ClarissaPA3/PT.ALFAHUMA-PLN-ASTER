@@ -234,11 +234,7 @@
                   echo '0';
                 }
                 
-                ?>
-                  
-                  
-                  
-                  %) Pagu Anggaran</p>
+                ?>%) Pagu Anggaran</p>
 
 
               </div>
