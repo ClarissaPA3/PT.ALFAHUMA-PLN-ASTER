@@ -48,67 +48,7 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-                              <div class="col-xs-4">
-                                <div class="box">
-                                    <div class="box-body">
-                                        <form action="<?= base_url('C_ajuananggaran/view_transfer') ?>" method="POST" class="navbar-form navbar-left" role="search">
-                                            <div class="form-group">
-                                                <label for="Nama bulan2">Nama bulan2 :</label>
-                                                <?php if(isset($bulan2)) : ?>
-                                                    <select name="bulan2" class="form-control" required>
-                                                        <?php foreach ($bulan as $bl) : ?>
-                                                            <option value="<?= $bl['bulan2'] ?>" <?= ($bl['bulan2'] == $bulan2) ? 'selected' : ''; ?>><?= $bl['bulan2'] ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                    <?php else : ?>
-
-                                                       <select name="bulan2" class="form-control" required>
-                                                        <option value="">Pilih Nama bulan2</option>
-                                                        <?php foreach ($pengajuan_anggaran as $pa) : ?>
-                                                            <option value="<?= $pa['bulan2'] ?>"><?= $pa['bulan2'] ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-
-                                                <?php endif; ?>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Cari</button>
-                                        </form>
-
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xs-4">
-                                <div class="box">
-                                    <div class="box-body">
-                                        <form action="<?= base_url('C_ajuananggaran/view_transfer') ?>" method="POST" class="navbar-form navbar-left" role="search">
-                                            <div class="form-group">
-                                                <label for="Nama Bank">Nama minggu2 :</label>
-                                                <?php if(isset($minggu2)) : ?>
-                                                    <select name="minggu2" class="form-control" required>
-                                                        <?php foreach ($minggu as $mg) : ?>
-                                                            <option value="<?= $mg['minggu2'] ?>" <?= ($mg['minggu2'] == $minggu2) ? 'selected' : ''; ?>><?= $mg['minggu2'] ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                    <?php else : ?>
-
-                                                       <select name="minggu2" class="form-control" required>
-                                                        <option value="">Pilih Nama minggu2</option>
-                                                        <?php foreach ($pengajuan_anggaran as $pa) : ?>
-                                                            <option value="<?= $pa['minggu2'] ?>"><?= $pa['minggu2'] ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-
-                                                <?php endif; ?>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Cari</button>
-                                        </form>
-
-
-                                    </div>
-                                </div>
-                            </div>
+                              
 
         </div><br>
         <!-- Horizontal Form -->
