@@ -22,7 +22,8 @@ class M_input_jabatan extends CI_Model
         $data = array (
             'id_jabatan' => $id,
             'nama_jabatan' => $this->input->post('nama'),
-            'tingkatan_user' => $this->input->post('tingkat')
+            'tingkatan_user' => $this->input->post('tingkat'),
+            'hakakses' =>  $this->input->post('hakakses')
         );
 
         $this->db->update('jabatan', $data, array('id_jabatan' => $id));
@@ -40,4 +41,21 @@ class M_input_jabatan extends CI_Model
         }
         
     }
+
+    public function hakakses()
+    {
+        $id = $this->input->post('id_jabatan');
+        
+        $hakakses = implode(" , ",$this->input->post('hakakses'));
+        
+        $data = array (
+            'id_jabatan' => $id,
+            'nama_jabatan' => $this->input->post('nama'),
+            'tingkatan_user' => $this->input->post('tingkat'),
+            'hakakses' =>  $hakakses
+        );
+
+        $this->db->update('jabatan', $data, array('id_jabatan' => $id));
+    }
+    
 }

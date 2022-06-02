@@ -53,4 +53,26 @@ class C_input_jabatan extends CI_Controller
 
         $this->load->view('jabatan/jabatan', $data);
     }
+
+    public function hakakses($id = null)
+    {
+
+        $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
+        $this->form_validation->set_rules('tingkat', 'Tingkat Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
+        if ($this->form_validation->run() == FALSE) {
+            $data['jabatan'] = $this->M_input_jabatan->show_jabatanM($id)[0];
+            $data['hakakses'] = explode(' , ',$data['jabatan']['hakakses']);
+            print_r($data['hakakses']); 
+
+            $this->load->view('jabatan/hakakses', $data);
+        } else {
+            print_r($this->input->post('hakakses'));
+
+            $this->M_input_jabatan->hakakses();
+            redirect(site_url('C_input_jabatan/show_jabatan'));
+        }
+
+
+
+    }
 }

@@ -66,6 +66,7 @@
                 <form role="form" action="<?php site_url('C_input_jabatan/update') ?>" method="post">
                     <div class="box-body">
                         <div class="form-group">
+                            <input type="hidden" name="hakakses" value="<?php echo $jabatan['hakakses']; ?>">
                             <input type="hidden" name="id_jabatan" value="<?php echo $jabatan['id_jabatan']; ?>">
                             <label for="nama">Nama Jabatan</label>
 

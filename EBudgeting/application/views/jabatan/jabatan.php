@@ -77,6 +77,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Jabatan</th>
+                                            <th>Hak Akses</th>
                                             <th>Tingkat Jabatan</th>
                                             <th colspan="2">Aksi</th>
                                         </tr>
@@ -94,6 +95,7 @@
 
                                                 <td><?php echo $id; ?></td>
                                                 <td><?php echo $nama['nama_jabatan'] ?></td>
+                                                <td><a href="<?php echo site_url('C_input_jabatan/hakakses/').$nama['id_jabatan'] ;?>" class="btn btn-primary">Hak Akses</a></td>
                                                 <td><?php echo $nama['tingkatan_user'] ?></td>
                                                 <td><a href="<?php echo site_url('C_input_jabatan/update_jabatan/') . $nama['id_jabatan']; ?>" class="btn btn-block btn-primary">Edit</a></td>
                                                 <td> <a href="<?php echo site_url('C_input_jabatan/delete_jabatan/') . $nama['id_jabatan']; ?>" class="btn btn-block btn-danger">Hapus</a></td>
