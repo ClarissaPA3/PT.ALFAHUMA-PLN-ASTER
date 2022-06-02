@@ -28,11 +28,30 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>Tambah Ajuan Anggaran</h1>
+
             </section>
 
             <!-- Main content -->
             <section class="content">
                 <div class="row">
+                    <?php
+                    if (null !== $this->session->flashdata('pagu')) {
+                        # code...
+
+                    ?>
+                        <div class="col-md-12">
+                            <div class="box box-danger">
+                                <div class="box-header">
+                                    <h1 class="text-center">Pengajuan anggaran lebih banyak dari pagu anggaran yang tersedia</h1>
+                                    <h2 class="text-center">Hapus nominal pengajuan sebesar Rp. <?php echo number_format($this->session->flashdata('pagu'), 2, ',', '.') ?> </h2>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    <?php
+                    }
+                    ?>
 
                     <div class="col-md-12">
                         <!-- Horizontal Form -->
@@ -189,7 +208,7 @@
                                                             <h4><?php echo $key['kegiatan2']; ?></h4>
                                                         </td>
                                                         <td>
-                                                            <h4><?php echo $key['nominal_pengajuan2']; ?></h4>
+                                                            <h4>Rp. <?php echo number_format($key['nominal_pengajuan2'], 2, ',', '.') ?></h4>
                                                         </td>
                                                         <td>
                                                             <h4><?php echo $key['deskripsi2']; ?></h4>

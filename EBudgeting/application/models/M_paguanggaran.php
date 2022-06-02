@@ -91,24 +91,29 @@ class M_paguanggaran extends CI_Model
         $tahun = date('Y', $tanggal);
         // Mencari Pagu yang sesuai tanggal yang ditentukan
         $pagu = $this->db->get_where('pagu_anggaran', array('bulan' => $bulan[$Convbulan],'tahun' => $tahun), 1)->result_array();
+        return $pagu;
         
     }
 
     public function updatepagu($tgl)
     {
         $tanggal = strtotime($tgl);
+        
+        
         $Convbulan = date('m', $tanggal);
         
+        
         $bulan = array("01"=>'Januari', "02"=>'Februari', "03"=>'Maret', "04"=>'April', "05"=>'Mei', "06"=>'Juni', "07"=>'Juli', "08"=>'Agustus', "09"=>'September', "10"=>'Oktober', "11"=>'November', "12"=>'Desember');
-       
+        print_r($bulan[$Convbulan]);
+        
         $tahun = date('Y', $tanggal);
         // Mencari Pagu yang sesuai tanggal yang ditentukan
         $pagu = $this->db->get_where('pagu_anggaran', array('bulan' => $bulan[$Convbulan],'tahun' => $tahun), 1)->result_array();
         
         if (!empty($pagu)) {
             // Jumlah pengajuananggaran
-            $bulansebelum = $tahun.'-'.str_pad($Convbulan-1, 2, '0', STR_PAD_LEFT).'-16';
-            $bulansesudah = $tahun.'-'.$Convbulan.'-15';
+            $bulansebelum = $tahun.'-'.str_pad($Convbulan-1, 2, '0', STR_PAD_LEFT).'-15';
+            $bulansesudah = $tahun.'-'.$Convbulan.'-16';
 
             $ajuan = $this->db->query(sprintf("SELECT sum(total_pengajuan2) as totalpengajuanpagu FROM `pengajuan_anggaran` WHERE `status2` > 0 AND `tgl_pengajuan2` BETWEEN '%s' AND '%s'",$bulansebelum, $bulansesudah))->result_array();
 

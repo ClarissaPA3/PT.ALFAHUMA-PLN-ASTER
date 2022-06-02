@@ -60,12 +60,14 @@ class M_ajuananggaran extends CI_Model
 
     public function update_pengajuan()
     {
-        // $this->M_paguanggaran->checkPagu(date('Y-m-d'));
+        $pagu = $this->M_paguanggaran->checkPagu(date('Y-m-d'));
+
 
         $id = $this->input->post('id_pengajuan');
         $nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
         
 
+        
         $data = array(
             'id_pengajuan' => $id,
             'id_anggota' => $this->input->post('id_anggota'),
@@ -81,6 +83,8 @@ class M_ajuananggaran extends CI_Model
         );
 
         $this->db->update('pengajuan_anggaran', $data, array('id_pengajuan' => $id));
+
+       
     }
     public function showbyid_pengajuansub($id)
     {

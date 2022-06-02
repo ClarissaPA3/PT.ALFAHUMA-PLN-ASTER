@@ -11,11 +11,17 @@ class C_detailajuan extends CI_Controller
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
 		$this->load->library('user_agent');
+		$this->load->model('M_paguanggaran');
 	}
 
 	public function add_detailanggaran()
 	{
+		$pagu = $this->M_paguanggaran->checkPagu(date('Y-m-d'));
+		$id = $this->input->post('id_pengajuan');
+		$nominal = $this->input->post('nominal');
+		$nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
 
+		print_r($pagu);
 
 		$this->form_validation->set_rules('id_subpos2', 'Sub pos 2', 'required');
 		$this->form_validation->set_rules('id_subpos', 'Sub pos', 'required');
@@ -23,17 +29,19 @@ class C_detailajuan extends CI_Controller
 		$this->form_validation->set_rules('nominal', 'Nominal Pengajuan', 'required');
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 		$this->form_validation->set_rules('kegiatan', 'Kegiatan', 'required');
-		if ($this->form_validation->run() == FALSE) {
-			
-
-		} else {
+		if (($nominalpengajuan+$pagu[0]['nominal_terpakai']+$nominal > $pagu[0]['nominal_pagu'])) {
+			// Mengecheck apakah nominalpengajuan lebih besar dari pagu
+			$pengajuan = $nominalpengajuan+$pagu[0]['nominal_terpakai'] - $pagu[0]['nominal_pagu'];
+			$this->session->set_flashdata('pagu', $pengajuan);
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+		else {
 			$this->M_detailajuan->add_detailanggaranM();
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 
 
-		$this->M_detailajuan->add_detailanggaranM();
-		redirect($_SERVER['HTTP_REFERER']);
+		
 	}
 	public function delete_detailanggaran($id)
 	{
