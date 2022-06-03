@@ -6,7 +6,7 @@ class Cetak_Filter extends CI_Controller {
 
  public function index()
  {
-  $data['title'] = "filter data berdasarkan bulan";
+  $data['title'] = "filter data berdasarkan minggu";
   $data['filterb'] = $this->db->get('filterb')->result();
   $this->load->view('filterbl/filter', $data);  
  }
