@@ -48,7 +48,10 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-                              
+          
+	                                <div class="box-header">
+                                    <a href="<?php echo site_url('Cetak_Filter/'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Filter Bulan</a>
+                                </div>
 
         </div><br>
         <!-- Horizontal Form -->
