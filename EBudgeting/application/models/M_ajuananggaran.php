@@ -14,7 +14,7 @@ class M_ajuananggaran extends CI_Model
     public function add_pengajuan()
     {
 
-        print_r($_POST);
+        
         $data = array(
             'id_pengajuan' => '',
             'id_anggota' => $this->session->userdata('id_anggota'),

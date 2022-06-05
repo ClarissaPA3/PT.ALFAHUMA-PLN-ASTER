@@ -125,8 +125,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-              <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+              <li><a href="<?php echo site_url("C_ajuananggaran/show_rekapposanggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="<?php echo site_url("C_ajuananggaran/show_rekapitulasianggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
             </ul>
           </li>
       </section>
@@ -214,6 +214,7 @@
                   
                   
                   %) Pagu Anggaran</p>
+                  <p>Tersisa : Rp. <?= number_format($pagu['tersisa'], 2,',','.');?></p>
 
 
               </div>

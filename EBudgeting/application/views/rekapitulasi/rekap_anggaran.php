@@ -93,7 +93,7 @@
                                 <?php
                                 $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
                                 $jlh_bln = count($bulan);
-                                for ($c = 0; $c < $jlh_bln; $c += 1) {
+                                for ($c = 0; $c <= $jlh_bln; $c += 1) {
                                     echo "<option value=$bulan[$c]> $bulan[$c] </option>";
                                 }
                                 ?>

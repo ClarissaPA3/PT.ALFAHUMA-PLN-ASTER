@@ -26,7 +26,7 @@ class C_ajuananggaran extends CI_Controller
 		$this->M_detailajuan->delete_alldetailanggaranM($id);
 		$this->M_ajuananggaran->delete_pengajuan($id);
 
-		redirect(site_url('C_ajuananggaran/update_datapengajuan/3'));
+		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
 	}
 	public function update_datapengajuan($id = null)
 	{
@@ -60,6 +60,7 @@ class C_ajuananggaran extends CI_Controller
 				redirect($_SERVER['HTTP_REFERER']);
 			}
 			else {
+				print_r($this->input->post('tgl_pengajuan2'));
 				$this->M_ajuananggaran->update_pengajuan();
 				redirect(site_url('C_ajuananggaran/show_datapengajuan'));
 				
@@ -134,50 +135,49 @@ class C_ajuananggaran extends CI_Controller
 
 		$this->load->view('anggaran/rekapdraftanggaran', $data);
 	}
-	public function show_rekapposanggaran()
+
+
+	public function show_rekapitulasianggaran()
 	{
-		$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
-		$subpos = $data['subpos'];
-		$hitungajuan = array();
+		$data['pos'] = $this->M_masterpos_subpos->show_posM();
+		$pos = $data['pos'];
+		$hitungajuan = array ();
 		$data['totalkeseluruhan'] = 0;
-		for ($i = 0; $i < count($subpos); $i++) {
-			$hitungajuan[$i] = $this->M_rekapanggaran->show_rekapposanggaran($subpos[$i]['id_subpos']);
+		for ($i=0; $i < count($pos) ; $i++) { 
+			$hitungajuan[$i] = $this->M_rekapanggaran->show_rekapanggaran($pos[$i]['id_pos']);
 			$data['totalkeseluruhan'] += $hitungajuan[$i]['total'];
+			
 		}
 		$data['hitungajuan'] = $hitungajuan;
-		print_r($hitungajuan);
-
-		$this->load->view('rekapitulasi/rekap_pos.php', $data);
-		$this->load->view('dashboard/_part/footer');
+		
+		
+  
+    
+        $this->load->view('rekapitulasi/rekap_anggaran.php', $data);
+        $this->load->view('dashboard/_part/footer');
+	}
+	public function show_rekapposanggaran()
+	{
+		
+		
+		$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
+		$subpos = $data['subpos'];
+		$hitungajuan = array ();
+		$data['totalkeseluruhan'] = 0;
+		for ($i=0; $i < count($subpos) ; $i++) { 
+			$bulan = $this->input->get('bln');
+			$hitungajuan[$i] = $this->M_rekapanggaran->show_rekapposanggaran($subpos[$i]['id_subpos'], $bulan);
+			$data['totalkeseluruhan'] += $hitungajuan[$i]['total'];
+			
+		}
+		$data['hitungajuan'] = $hitungajuan;
+		
+		
+        $this->load->view('rekapitulasi/rekap_pos.php', $data);
+        $this->load->view('dashboard/_part/footer');
 	}
 
 
 	// Baru Persetujuan DM
-	public function testing($id = null)
-	{
-		$this->form_validation->set_rules('id_pengajuan', 'Id pengajuan', 'required');
-
-
-		if ($this->form_validation->run() == FALSE) {
-			$data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
-			$data['pos'] = $this->M_masterpos_subpos->show_posM();
-			$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
-			$data['subpos2'] = $this->M_masterpos_subpos->show_subpos2M();
-			$data['detailajuan'] = $this->M_detailajuan->showbyid_detailanggaranM($id);
-			$data['id'] = $id;
-			$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
-			$data['minggu'] = array('1', '2', '3', '4');
-
-
-
-
-
-			$this->load->view('testing', $data);
-		} else {
-
-
-			$this->M_ajuananggaran->update_pengajuan();
-			redirect(site_url('C_ajuananggaran/show_datapengajuan'));
-		}
-	}
+	
 }

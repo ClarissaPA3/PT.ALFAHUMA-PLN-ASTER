@@ -48,10 +48,10 @@
       <!-- Main content -->
       <section class="content">
         <div class="row">
-          
-	                                <div class="box-header">
-                                    <a href="<?php echo site_url('Cetak_Filter/'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Filter Minggu</a>
-                                </div>
+
+          <div class="box-header">
+            <a href="<?php echo site_url('Cetak_Filter/'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Filter Minggu</a>
+          </div>
 
         </div><br>
         <!-- Horizontal Form -->
@@ -105,7 +105,7 @@
                           <?php echo $pengajuan_anggaran->tanggal_sampai2 ?>
                         </td>
                         <td>
-                          <?php echo $pengajuan_anggaran->total_pengajuan2 ?>
+                          <?php echo  $pengajuan_anggaran->total_pengajuan2 != null ?  'Rp. '.number_format($pengajuan_anggaran->total_pengajuan2, 2,',','.') : ''; ?>
                         </td>
                         <td>
                           <?php

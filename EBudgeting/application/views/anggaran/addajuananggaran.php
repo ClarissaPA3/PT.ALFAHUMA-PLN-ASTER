@@ -66,6 +66,7 @@
 
                                         <input type="hidden" name="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
                                         <input type="hidden" name="id_anggota" value="<?php echo $ajuan['id_anggota']; ?>">
+                                        <input type="hidden" name="tgl_pengajuan2" value="<?php echo $ajuan['tgl_pengajuan2']; ?>">
                                         <?php
                                         if ($ajuan['status2'] >= 2) {
                                         ?>

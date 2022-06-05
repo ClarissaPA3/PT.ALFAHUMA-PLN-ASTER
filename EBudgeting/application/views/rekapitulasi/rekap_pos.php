@@ -42,7 +42,7 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -73,16 +73,26 @@
                     <div class="row">
 
                         <div class="col-md-12">
-                            <select name="bln" style="margin-bottom: 10px;margin-top: 10px;">
-                                <option selected="selected">Bulan</option>
-                                <?php
-                                $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
-                                $jlh_bln = count($bulan);
-                                for ($c = 0; $c < $jlh_bln; $c += 1) {
-                                    echo "<option value=$bulan[$c]> $bulan[$c] </option>";
-                                }
-                                ?>
-                            </select>
+                            <form id="formbulan" action="<?php base_url('C_ajuananggaran/show_rekapposanggaran') ?>" method="get">
+                                <select name="bln" style="margin-bottom: 10px;margin-top: 10px;" id="bulan">
+                                    <option selected="selected">Bulan</option>
+                                    <?php
+                                    $bulan = array("1"=>'Januari', "2"=>'Februari', "3"=>'Maret', "4"=>'April', "5"=>'Mei', "6"=>'Juni', "7"=>'Juli', "8"=>'Agustus', "9"=>'September', "10"=>'Oktober', "11"=>'November', "12"=>'Desember');
+                                    $jlh_bln = count($bulan);
+                                    for ($c = 1; $c <= $jlh_bln; $c += 1) {
+                                        ?> 
+                                        <option value=<?=  $c?> <?php if ($this->input->get('bln')== $c) { echo "selected";} ?>><?= $bulan[$c]?></option>
+                                        
+                                        
+                                        <?php
+
+                                       
+                                       
+                                        
+                                    }
+                                    ?>
+                                </select>
+                            </form>
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -100,22 +110,22 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php print_r($subpos); ?>
-                                                <?php 
+
+                                                <?php
                                                 $no = 1;
-                                                for ($i=0; $i < count($subpos); $i++) : ?>
-                                                <tr>
-                                                    <td><?= $no++ ?></td>
-                                                    <td><?= $subpos[$i]['id_subpos']; ?></td>
-                                                    <td><?= $subpos[$i]['nama_subpos']; ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu1']['nominal'], 2, ',', '.');?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu2']['nominal'], 2, ',', '.'); ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu3']['nominal'], 2, ',', '.'); ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu4']['nominal'], 2, ',', '.'); ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['total'],2, ',', '.'); ?></td>
-                                                </tr>
+                                                for ($i = 0; $i < count($subpos); $i++) : ?>
+                                                    <tr>
+                                                        <td><?= $no++ ?></td>
+                                                        <td><?= $subpos[$i]['id_subpos']; ?></td>
+                                                        <td><?= $subpos[$i]['nama_subpos']; ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu1']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu2']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu3']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu4']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['total'], 2, ',', '.'); ?></td>
+                                                    </tr>
                                                 <?php endfor; ?>
-                                                
+
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -146,8 +156,20 @@
 
         <!-- jQuery 3 -->
         <script src="<?php echo base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+
         <!-- jQuery UI 1.11.4 -->
         <script src="<?php echo base_url() ?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                console.log('test');
+                $('#bulan').change(function() {
+                    $("#formbulan").submit();
+
+
+                });
+            });
+        </script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
             $.widget.bridge('uibutton', $.ui.button);
