@@ -125,8 +125,8 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="<?php echo site_url("C_rekap_pos"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
-              <li><a href="<?php echo site_url("C_rekap_anggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
+            <li><a href="<?php echo site_url("C_ajuananggaran/show_rekapposanggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Pos Anggaran</a></li>
+              <li><a href="<?php echo site_url("C_ajuananggaran/show_rekapitulasianggaran"); ?>"><i class="fa fa-circle-o"></i> Rekap Anggaran </a></li>
             </ul>
           </li>
       </section>
@@ -151,7 +151,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h4><?php echo $pengajuan['totalanggaran'] == 0 ? '0' : $pengajuan['totalanggaran']; ?></h4>
+                <h3><?php echo $pengajuan['totalanggaran'] == 0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
 
                 <p>Total Ajuan Anggaran</p>
               </div>
@@ -166,7 +166,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
               <div class="inner">
-                <h4><?php echo $pengajuan['totaldisetujui'] == 0 ? '0' : $pengajuan['totaldisetujui']; ?></h4>
+                <h3><?php echo $pengajuan['totaldisetujui'] == 0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
 
                 <p>Pengajuan Disetujui</p>
               </div>
@@ -181,7 +181,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h4><?php echo $pengajuan['totalrevisi'] == 0 ? '0' : $pengajuan['totalrevisi']; ?></h4>
+                <h3><?php echo $pengajuan['totalrevisi'] == 0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
 
                 <p>Koreksi</p>
               </div>
@@ -197,7 +197,7 @@
               <div class="inner">
 
 
-                <h4><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguterpakai'], 2, ',', '.'); ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguanggaran'], 2, ',', '.'); ?></h4>
+                <h7><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguterpakai'], 2, ',', '.'); ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguanggaran'], 2, ',', '.'); ?></h7>
 
                 <p>(
                   <?php
@@ -207,11 +207,8 @@
                     echo '0';
                   }
 
-                  ?>
-
-
-
-                  %) Pagu Anggaran</p>
+                  ?>%) Pagu Anggaran</p>
+                  <p>Tersisa : Rp. <?= number_format($pagu['tersisa'], 2,',','.');?></p>
 
 
               </div>
@@ -233,7 +230,7 @@
               <ul class="nav nav-tabs pull-right">
                 <li class="active"><a href="#revenue-chart" data-toggle="tab"></a></li>
 
-                <h4 class="box-title"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</h4>
+                <h3 class="box-title"><i class="fa fa-inbox"></i> History Pengajuan dan Persetujuan Anggaran</h3>
               </ul>
               <div class="tab-content no-padding">
                 <!-- Morris chart - Sales -->

@@ -93,7 +93,7 @@
                                 <?php
                                 $bulan = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
                                 $jlh_bln = count($bulan);
-                                for ($c = 0; $c < $jlh_bln; $c += 1) {
+                                for ($c = 0; $c <= $jlh_bln; $c += 1) {
                                     echo "<option value=$bulan[$c]> $bulan[$c] </option>";
                                 }
                                 ?>
@@ -103,7 +103,7 @@
 
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover text-center" id="dataTable" width="100%" cellspacing="0">
-                        
+
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -117,22 +117,22 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                             
-                                                <?php 
+
+                                                <?php
                                                 $no = 1;
-                                                for ($i=0; $i < count($pos); $i++) : ?>
-                                                <tr>
-                                                    <td><?= $no++ ?></td>
-                                                    <td><?= $pos[$i]['id_pos']; ?></td>
-                                                    <td><?= $pos[$i]['nama_pos']; ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu1']['nominal'], 2, ',', '.');?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu2']['nominal'], 2, ',', '.'); ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu3']['nominal'], 2, ',', '.'); ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['minggu4']['nominal'], 2, ',', '.'); ?></td>
-                                                    <td>Rp. <?= number_format($hitungajuan[$i]['total'],2, ',', '.'); ?></td>
-                                                </tr>
+                                                for ($i = 0; $i < count($pos); $i++) : ?>
+                                                    <tr>
+                                                        <td><?= $no++ ?></td>
+                                                        <td><?= $pos[$i]['id_pos']; ?></td>
+                                                        <td><?= $pos[$i]['nama_pos']; ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu1']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu2']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu3']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['minggu4']['nominal'], 2, ',', '.'); ?></td>
+                                                        <td>Rp. <?= number_format($hitungajuan[$i]['total'], 2, ',', '.'); ?></td>
+                                                    </tr>
                                                 <?php endfor; ?>
-                                                
+
                                             </tbody>
                                             <tfoot>
                                                 <tr>

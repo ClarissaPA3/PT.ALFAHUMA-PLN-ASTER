@@ -134,10 +134,10 @@ class M_paguanggaran extends CI_Model
             );
         
             $this->db->update('pagu_anggaran', $data, array('id_paguanggaran' => $pagu[0]['id_paguanggaran']));
-            return  array('paguanggaran' =>  $pagu[0]['nominal_pagu'], 'paguterpakai' => $pagu[0]['nominal_terpakai'] );
+            return  array('paguanggaran' =>  $pagu[0]['nominal_pagu'], 'paguterpakai' => $pagu[0]['nominal_terpakai'], 'tersisa' => $pagu[0]['nominal_pagu']-$pagu[0]['nominal_terpakai']);
         }
         else {
-            return  array('paguanggaran' =>  0, 'paguterpakai' => 0 );
+            return  array('paguanggaran' =>  0, 'paguterpakai' => 0,  'tersisa' => 0 );
             
         }
 

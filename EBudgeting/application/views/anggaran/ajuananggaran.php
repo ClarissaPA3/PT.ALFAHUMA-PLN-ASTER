@@ -107,7 +107,7 @@
                           <?php echo $pengajuan_anggaran->tanggal_sampai2 ?>
                         </td>
                         <td>
-                          <?php echo $pengajuan_anggaran->total_pengajuan2 ?>
+                          <?php echo  $pengajuan_anggaran->total_pengajuan2 != null ?  'Rp. ' . number_format($pengajuan_anggaran->total_pengajuan2, 2, ',', '.') : ''; ?>
                         </td>
                         <td>
                           <?php
