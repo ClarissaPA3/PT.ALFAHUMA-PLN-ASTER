@@ -43,7 +43,6 @@ class M_paguanggaran extends CI_Model
 
     public function save()
     {
-        print_r($_POST);
         $data = array(
 
             'id_paguanggaran' => '',
@@ -104,7 +103,7 @@ class M_paguanggaran extends CI_Model
         
         
         $bulan = array("01"=>'Januari', "02"=>'Februari', "03"=>'Maret', "04"=>'April', "05"=>'Mei', "06"=>'Juni', "07"=>'Juli', "08"=>'Agustus', "09"=>'September', "10"=>'Oktober', "11"=>'November', "12"=>'Desember');
-        print_r($bulan[$Convbulan]);
+        
         
         $tahun = date('Y', $tanggal);
         // Mencari Pagu yang sesuai tanggal yang ditentukan
@@ -117,7 +116,7 @@ class M_paguanggaran extends CI_Model
 
             $ajuan = $this->db->query(sprintf("SELECT sum(total_pengajuan2) as totalpengajuanpagu FROM `pengajuan_anggaran` WHERE `status2` > 0 AND `tgl_pengajuan2` BETWEEN '%s' AND '%s'",$bulansebelum, $bulansesudah))->result_array();
 
-            print_r($ajuan);
+            
             
             // Update pagu anggaran
             

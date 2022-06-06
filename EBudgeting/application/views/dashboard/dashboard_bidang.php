@@ -151,7 +151,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
               <div class="inner">
-                <h3><?php echo $pengajuan['totalanggaran'] == 0 ? '0' : $pengajuan['totalanggaran']; ?></h3>
+                <h4><?php echo $pengajuan['totalanggaran'] == 0 ? '0' : $pengajuan['totalanggaran']; ?></h4>
 
                 <p>Total Ajuan Anggaran</p>
               </div>
@@ -166,7 +166,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
               <div class="inner">
-                <h3><?php echo $pengajuan['totaldisetujui'] == 0 ? '0' : $pengajuan['totaldisetujui']; ?></h3>
+                <h4><?php echo $pengajuan['totaldisetujui'] == 0 ? '0' : $pengajuan['totaldisetujui']; ?></h4>
 
                 <p>Pengajuan Disetujui</p>
               </div>
@@ -181,7 +181,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h3><?php echo $pengajuan['totalrevisi'] == 0 ? '0' : $pengajuan['totalrevisi']; ?></h3>
+                <h4><?php echo $pengajuan['totalrevisi'] == 0 ? '0' : $pengajuan['totalrevisi']; ?></h4>
 
                 <p>Koreksi</p>
               </div>
@@ -200,19 +200,17 @@
                 <h4><?php echo $pagu['paguterpakai'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguterpakai'], 2, ',', '.'); ?>/<?php echo $pagu['paguanggaran'] == 0 ? '0' :  'Rp.' . number_format($pagu['paguanggaran'], 2, ',', '.'); ?></h4>
 
                 <p>(
-                  <?php 
-                if ($pagu['paguanggaran'] != 0 && $pagu['paguterpakai'] != 0) {
-                  echo number_format(floatval($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100) , 1, ',', '.'); 
-                  
-                }
-                else {
-                  echo '0';
-                }
-                
-                ?>
-                  
-                  
-                  
+                  <?php
+                  if ($pagu['paguanggaran'] != 0 && $pagu['paguterpakai'] != 0) {
+                    echo number_format(floatval($pagu['paguterpakai'] / $pagu['paguanggaran'] * 100), 1, ',', '.');
+                  } else {
+                    echo '0';
+                  }
+
+                  ?>
+
+
+
                   %) Pagu Anggaran</p>
 
 

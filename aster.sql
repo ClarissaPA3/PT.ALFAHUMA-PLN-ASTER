@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 12:49 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Generation Time: Jun 06, 2022 at 05:40 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,26 +56,6 @@ INSERT INTO `detail_pengajuananggaran` (`id_detailpengajuan`, `id_subpos2`, `id_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `filterb`
---
-
-CREATE TABLE `filterb` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `filterb`
---
-
-INSERT INTO `filterb` (`id`, `name`) VALUES
-(1, 'minggu pertama'),
-(2, 'minggu kedua'),
-(3, 'minggu ketiga');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `jabatan`
 --
 
@@ -91,8 +71,8 @@ CREATE TABLE `jabatan` (
 --
 
 INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `tingkatan_user`, `hakakses`) VALUES
-(1, 'Sub Bidang', 'staff', 'masterpos , mastersubpos , mastersubpos2 , rekapanggaran'),
-(2, 'DM', 'kepala bidang', ''),
+(1, 'Sub Bidang', 'Staff', 'masterpos , mastersubpos , mastersubpos2 , rekapanggaran'),
+(2, 'DM', 'Kepala Bidang', ''),
 (3, 'DMPAU', 'Admin Keuangan', '');
 
 -- --------------------------------------------------------
@@ -118,7 +98,7 @@ INSERT INTO `pagu_anggaran` (`id_paguanggaran`, `id_anggota`, `nominal_pagu`, `n
 (3, 2, '150000000', '127000000', 'Maret', '2021'),
 (4, 2, '10000000', '8500000', 'April', '2022'),
 (5, 2, '50000000', '', 'Mei', '2022'),
-(6, 2, '25000000', '2100000', 'Juni', '2022'),
+(6, 2, '25000000', '100000', 'Juni', '2022'),
 (7, 2, '45000000', '43000000', 'Juli', '2022'),
 (8, 2, '75000000', '71000000', 'Agustus', '2022'),
 (9, 2, '240000000', '238000000', 'Januari', '2021'),
@@ -183,9 +163,12 @@ CREATE TABLE `pengajuan_anggaran` (
 --
 
 INSERT INTO `pengajuan_anggaran` (`id_pengajuan`, `id_anggota`, `catatan_dm2`, `total_pengajuan2`, `minggu2`, `bulan2`, `catatan_dmpau2`, `status2`, `tanggal_mulai2`, `tanggal_sampai2`, `tgl_pengajuan2`) VALUES
-(20, 1, '', '2000000', '1', 'Juni', '', 1, '2022-06-01 00:00:00', '2022-06-10 00:00:00', '2022-06-02 00:00:00'),
-(21, 1, '', '1300000', '1', 'Juni', '', 1, '2022-06-03 00:00:00', '2022-06-10 00:00:00', '0000-00-00 00:00:00'),
-(22, 1, '', '100000', '3', 'Juni', '', 3, '2022-06-19 10:13:22', '2022-06-23 10:13:22', '2022-06-15 10:13:22');
+(20, 1, '', '2200000', '1', 'Agustus', '', 1, '2022-06-01 00:00:00', '2022-06-10 00:00:00', '0000-00-00 00:00:00'),
+(21, 1, '', '1300000', '1', 'Februari', '', 1, '2022-06-03 00:00:00', '2022-06-10 00:00:00', '0000-00-00 00:00:00'),
+(22, 1, '', '100000', '3', 'Juni', '', 3, '2022-06-19 10:13:22', '2022-06-23 10:13:22', '2022-06-15 10:13:22'),
+(23, 1, '', '', '2', 'April', '', 0, '2022-04-10 00:00:00', '2022-06-04 00:00:00', '2022-06-03 00:00:00'),
+(24, 1, '', '', '4', 'Januari', '', 0, '2022-01-29 00:00:00', '2022-02-28 00:00:00', '2022-06-03 00:00:00'),
+(25, 1, '', '', '2', 'Maret', '', 0, '2022-03-06 00:00:00', '2022-04-30 00:00:00', '2022-06-06 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -206,7 +189,8 @@ INSERT INTO `pos` (`id_pos`, `nama_pos`) VALUES
 (6, 'Operasi A'),
 (7, 'Pegawai'),
 (8, 'Pemeliharaan'),
-(9, 'Operasi B');
+(9, 'Operasi B'),
+(10, 'Material B');
 
 -- --------------------------------------------------------
 
@@ -226,8 +210,7 @@ CREATE TABLE `sub_pos` (
 INSERT INTO `sub_pos` (`id_subpos`, `nama_subpos`) VALUES
 (2, 'Material '),
 (3, 'Jasa Borongan'),
-(5, 'Material Bangunan'),
-(6, 'test');
+(5, 'Material Bangunan');
 
 -- --------------------------------------------------------
 
@@ -302,7 +285,7 @@ INSERT INTO `transfer` (`id_transfer`, `id_anggota`, `nama_pengirim`, `email`, `
 (17, 2, 'Hilmi Alwi', 'hilmialwi@gmail.com', 2147483647, 2147483647, 'BCA', '2022-04-06 13:11:00', 'Pembayaran Alat Tulis Kantor', 50, 50, 50, 50, 1000000, 100000, 79000000, 'Pelunasan pembayaran', 35, 35, '35000000', 35, 35, 'PNS', 35, 35, '5', '5', '5', '24 jam', '5'),
 (18, 3, 'Alvin Faiz', 'alvinfaiz@gmail.com', 2147483647, 2147483647, 'Bank Jatim', '2022-05-11 13:51:00', 'Pembayaran Asesor 1', 55, 55, 55, 55, 2000000, 100000, 70000000, 'Pelunasan pembayaran', 25, 25, '65000000', 25, 25, 'Pengacara', 25, 25, '15', '15', '15', '24 jam', '15'),
 (19, 3, 'Syifa Al Ghifari', 'syifa@gmail.com', 2147483647, 2147483647, 'Bank Jateng', '2022-06-03 13:55:00', 'Pembayaran Alat Tulis Kantor', 40, 40, 40, 40, 1500000, 300000, 45000000, 'Pelunasan pembayaran', 10, 10, '55000000', 10, 10, 'Apoteker', 10, 10, '20', '20', '20', '24 jam', '20'),
-(20, 3, 'Wira Winarya', 'rere@gmail.com', 1234, 3456789, 'BCA', '2022-05-30 20:31:00', 'operasional', 89000, 90000, 90000, 9900, 8000, 7000, 78000, 'biaya operasional', 6700, 87000, '500000', 89000, 88000, 'Reparasi tower', 89000, 78800, '200000', '500000', '50000', '12 Jam', '0'),
+(20, 3, 'Wira Winarya', 'rere@gmail.com', 1234, 3456789, 'BCA', '2022-05-30 20:31:00', 'operasional', 89000, 90000, 90000, 9900, 8000, 7000, 78000, 'biaya operasional', 6700, 87000, '500000', 89000, 88000, 'Reparasi tower', 89000, 78800, '200000', '500000', '50000', '24 Jam', '0'),
 (21, 2, 'Dive', 'xixi@gmail.com', 2147483647, 2147483647, 'BRI', '2022-04-30 08:13:00', 'operasional', 32000, 23000, 22000, 29000, 0, 34000, 84000, 'biaya operasional', 93000, 232000, '1000000', 543000, 134000, 'Reparasi tower', 134000, 323000, '200000', '500000', '50000', '12 Jam', '0');
 
 --
@@ -318,12 +301,6 @@ ALTER TABLE `detail_pengajuananggaran`
   ADD KEY `id_subpos` (`id_subpos`),
   ADD KEY `id_subpos2` (`id_subpos2`),
   ADD KEY `id_pengajuan` (`id_pengajuan`);
-
---
--- Indexes for table `filterb`
---
-ALTER TABLE `filterb`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `jabatan`
@@ -388,12 +365,6 @@ ALTER TABLE `detail_pengajuananggaran`
   MODIFY `id_detailpengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `filterb`
---
-ALTER TABLE `filterb`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
@@ -415,13 +386,13 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `pengajuan_anggaran`
 --
 ALTER TABLE `pengajuan_anggaran`
-  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `pos`
 --
 ALTER TABLE `pos`
-  MODIFY `id_pos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sub_pos`

@@ -42,17 +42,16 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>Tambah Ajuan Anggaran</h1>
+        <h1>Pengajuan Anggaran</h1>
       </section>
 
       <!-- Main content -->
       <section class="content">
         <div class="row">
-          
-	                                <div class="box-header">
-                                    <a href="<?php echo site_url('Cetak_Filter/'); ?>" class="btn btn-block btn-info"><i class="fa fa-fw fa-plus"></i> Filter Minggu</a>
-                                </div>
-
+          <div class="col-xs-2">
+            <a href="<?php echo site_url('SearchController2/'); ?>" class="btn btn-block btn-info"></i> Filter Minggu</a>
+            <a href="<?php echo site_url('SearchController/'); ?>" class="btn btn-block btn-info"></i> Filter Bulan</a>
+          </div>
         </div><br>
         <!-- Horizontal Form -->
         <div class="box box-info">
@@ -74,12 +73,12 @@
                   <thead>
                     <tr>
                       <th>ID Pengajuan</th>
+                      <th>Minggu Ke</th>
                       <th>Bulan</th>
                       <th>Pengajuan</th>
                       <th>Tanggal Mulai </th>
                       <th>Tanggal Sampai </th>
                       <th>Total </th>
-
                       <th>Status </th>
                       <th>Aksi</th>
 
@@ -89,8 +88,11 @@
                     <?php foreach ($pengajuan_anggaran as $pengajuan_anggaran) : ?>
 
                       <tr>
-                        <td width="150">
+                        <td>
                           <?php echo $pengajuan_anggaran->id_pengajuan ?>
+                        </td>
+                        <td>
+                          <?php echo $pengajuan_anggaran->minggu2 ?>
                         </td>
                         <td>
                           <?php echo $pengajuan_anggaran->bulan2 ?>
