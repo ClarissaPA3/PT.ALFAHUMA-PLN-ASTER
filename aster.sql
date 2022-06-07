@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2022 at 05:40 AM
+-- Generation Time: Jun 07, 2022 at 04:23 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,9 +71,9 @@ CREATE TABLE `jabatan` (
 --
 
 INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`, `tingkatan_user`, `hakakses`) VALUES
-(1, 'Sub Bidang', 'Staff', 'masterpos , mastersubpos , mastersubpos2 , rekapanggaran'),
-(2, 'DM', 'Kepala Bidang', ''),
-(3, 'DMPAU', 'Admin Keuangan', '');
+(1, 'Sub Bidang', 'subbidang', 'mastersubpos , rekapanggaran , menutransfer'),
+(2, 'Kepala Bidang', 'dm', 'rekapanggaran , menutransfer'),
+(3, 'Admin Keuangan', 'dmpau', 'mastersubpos , mastersubpos2 , rekapanggaran');
 
 -- --------------------------------------------------------
 
@@ -166,7 +166,7 @@ INSERT INTO `pengajuan_anggaran` (`id_pengajuan`, `id_anggota`, `catatan_dm2`, `
 (20, 1, '', '2200000', '1', 'Agustus', '', 1, '2022-06-01 00:00:00', '2022-06-10 00:00:00', '0000-00-00 00:00:00'),
 (21, 1, '', '1300000', '1', 'Februari', '', 1, '2022-06-03 00:00:00', '2022-06-10 00:00:00', '0000-00-00 00:00:00'),
 (22, 1, '', '100000', '3', 'Juni', '', 3, '2022-06-19 10:13:22', '2022-06-23 10:13:22', '2022-06-15 10:13:22'),
-(23, 1, '', '', '2', 'April', '', 0, '2022-04-10 00:00:00', '2022-06-04 00:00:00', '2022-06-03 00:00:00'),
+(23, 1, '', '', '2', 'Juni', '', 0, '2022-04-10 00:00:00', '2022-06-04 00:00:00', '2022-06-03 00:00:00'),
 (24, 1, '', '', '4', 'Januari', '', 0, '2022-01-29 00:00:00', '2022-02-28 00:00:00', '2022-06-03 00:00:00'),
 (25, 1, '', '', '2', 'Maret', '', 0, '2022-03-06 00:00:00', '2022-04-30 00:00:00', '2022-06-06 00:00:00');
 

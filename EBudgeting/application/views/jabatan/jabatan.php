@@ -127,10 +127,7 @@
 
 
 
-            <div id="demo">
-                <h2>The XMLHttpRequest Object</h2>
-                <button type="button" onclick="loadDoc()">Change Content</button>
-            </div>
+         
 
             <div class="pull-right hidden-xs">
                 <b>Create by</b> Mahasiswa UNS 2020.
