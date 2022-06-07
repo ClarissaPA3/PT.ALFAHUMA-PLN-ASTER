@@ -17,6 +17,11 @@ class C_koreksi_anggaran extends CI_Controller
     
     public function index()
     {
+        if ($this->session->userdata('jabatan') != 'subbidang') {
+			
+			
+			redirect(site_url('C_login'));
+		}
         $data['pengajuan_anggaran'] = $this->M_ajuananggaran->koreksi_data();
         
 		$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
@@ -27,6 +32,12 @@ class C_koreksi_anggaran extends CI_Controller
     }
 	public function update_koreksi($id= null,$status=null)
 	{
+        // cek jabatan user login
+        if ($this->session->userdata('jabatan') != 'subbidang') {
+			
+			
+			redirect(site_url('C_login'));
+		}
 		$this->form_validation->set_rules('id_pengajuan', 'Id pengajuan', 'required');
 
         if ($this->form_validation->run() == FALSE) {

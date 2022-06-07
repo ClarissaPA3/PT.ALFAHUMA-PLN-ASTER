@@ -57,5 +57,19 @@ class M_input_jabatan extends CI_Model
 
         $this->db->update('jabatan', $data, array('id_jabatan' => $id));
     }
+
+    public function cekhakakses($id)
+    {
+        // Mengecheck hak akses
+        
+      
+        $query = $this->db->get_where('jabatan', array('id_jabatan' => $id));
+        return explode(' , ', $query->result_array()[0]['hakakses']);
+       
+
+
+        
+
+    }
     
 }

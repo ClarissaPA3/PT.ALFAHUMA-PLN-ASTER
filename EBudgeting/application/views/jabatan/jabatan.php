@@ -76,9 +76,9 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Jabatan</th>
+                                            <th>Tingkatan Jabatan</th>
                                             <th>Hak Akses</th>
-                                            <th>Tingkat Jabatan</th>
+                                            <th>Tingkatan User</th>
                                             <th colspan="2">Aksi</th>
                                         </tr>
 
@@ -95,7 +95,7 @@
 
                                                 <td><?php echo $id; ?></td>
                                                 <td><?php echo $nama['nama_jabatan'] ?></td>
-                                                <td><a href="<?php echo site_url('C_input_jabatan/hakakses/').$nama['id_jabatan'] ;?>" class="btn btn-primary">Hak Akses</a></td>
+                                                <td><a href="<?php echo site_url('C_input_jabatan/hakakses/') . $nama['id_jabatan']; ?>" class="btn btn-primary">Hak Akses</a></td>
                                                 <td><?php echo $nama['tingkatan_user'] ?></td>
                                                 <td><a href="<?php echo site_url('C_input_jabatan/update_jabatan/') . $nama['id_jabatan']; ?>" class="btn btn-block btn-primary">Edit</a></td>
                                                 <td> <a href="<?php echo site_url('C_input_jabatan/delete_jabatan/') . $nama['id_jabatan']; ?>" class="btn btn-block btn-danger">Hapus</a></td>
@@ -124,6 +124,14 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
+
+
+
+            <div id="demo">
+                <h2>The XMLHttpRequest Object</h2>
+                <button type="button" onclick="loadDoc()">Change Content</button>
+            </div>
+
             <div class="pull-right hidden-xs">
                 <b>Create by</b> Mahasiswa UNS 2020.
             </div>
@@ -136,5 +144,13 @@
        immediately after the control sidebar -->
         <div class="control-sidebar-bg"></div>
     </div>
+
+    
+
+
     <!-- ./wrapper -->
     <?php $this->load->view('dashboard/_part/js'); ?>
+
+</body>
+
+</html>

@@ -11,6 +11,8 @@ class C_login extends CI_Controller
 		$this->load->library('session');
 		$this->load->model('M_ajuananggaran');
 		$this->load->model('M_paguanggaran');
+		$this->load->model('M_input_jabatan','jabatan');
+
 	}
 
 
@@ -61,45 +63,42 @@ class C_login extends CI_Controller
 				$id_jabatan = $query['id_jabatan'];
 				$nama_anggota = $query['nama_anggota'];
 				$id_anggota = $query['id_anggota'];
+				$hakakses = $this->jabatan->cekhakakses($id_jabatan);
+				
+
+				
 				$akun = array(
 					'id_jabatan' => $id_jabatan,
 					'nama_anggota' => $nama_anggota,
-					'id_anggota' =>  $id_anggota
+					'id_anggota' =>  $id_anggota,
+					'hakakses' => $hakakses
+					
 				);
 				$this->session->set_userdata($akun);
-				$d = strtotime("April 2022");
+				
 				
 				redirect('C_login/login_admin');
 
 			}
 		}
-
-
-
-
-
-		// $status_admin = $_POST['status'];
-
-
-
 	}
 	public function login_admin()
 	{
+		$jabatan = $this->jabatan->show_jabatanM($this->session->userdata('id_jabatan'))[0];
+		$this->session->set_userdata('jabatan', $jabatan['tingkatan_user']);
+		
+		
 		$id_anggota = $this->session->userdata('id_anggota');
+
 		
 		
 		$pagu = $this->M_paguanggaran->updatepagu(date('Y-m-d'));
+		print_r($jabatan['tingkatan_user']);
 		
 		
 
 
-
-
-
-
-
-		$id_jabatan = $this->session->userdata('id_jabatan');
-		if ($id_jabatan == "3") {
+		if ($jabatan['tingkatan_user'] == "dmpau") {
 			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuandmpau($id_anggota);
 
 			$datanotifikasi = array(
@@ -112,10 +111,9 @@ class C_login extends CI_Controller
 			$this->session->set_userdata($datanotifikasi);
 			$data['pengajuan'] = $pengajuan;
 			$data['pagu'] = $pagu;
-
-
+			
 			$this->load->view('dashboard/dashboard_dmpau', $data);
-		} elseif ($id_jabatan == "2") {
+		} elseif ($jabatan['tingkatan_user'] == "dm") {
 			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuandm($id_anggota);
 
 			$datanotifikasi = array(
@@ -132,7 +130,7 @@ class C_login extends CI_Controller
 
 
 			$this->load->view('dashboard/dashboard_bidang.php', $data);
-		} elseif ($id_jabatan == "1") {
+		} elseif ($jabatan['tingkatan_user'] == "subbidang") {
 			$pengajuan = $this->M_ajuananggaran->showbyid_pengajuansub($id_anggota);
 
 			$datanotifikasi = array(
@@ -150,6 +148,7 @@ class C_login extends CI_Controller
 
 			$this->load->view('dashboard/dashboard_subbidang.php', $data);
 		} else {
+			
 			redirect(base_url("C_login"));
 		}
 	}

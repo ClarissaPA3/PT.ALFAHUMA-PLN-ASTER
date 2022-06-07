@@ -9,25 +9,13 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/Ionicons/css/ionicons.min.css">
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+ 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,26 +49,39 @@
       </section>
 
       <!-- Main content -->
-      <div class="box box-primary">
-        <!-- form start -->
-        <form role="form" action="<?php site_url('C_input_jabatan/add'); ?>" method="post">
-          <div class="box-body">
-            <div class="form-group">
-              <label for="nama">Nama Jabatan</label>
-              <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Jabatan">
-            </div>
+      <section class="content">
+        <div class="box box-primary">
+          <!-- form start -->
+          <form role="form" action="<?php site_url('C_input_jabatan/add'); ?>" method="post">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="nama">Nama Jabatan</label>
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Jabatan">
+              </div>
 
-            <div class="form-group">
-              <label for="tingkat">Tingkat Jabatan</label>
-              <input type="text" class="form-control" id="tingkat" name="tingkat" placeholder="Tingkat Jabatan">
-            </div>
+              <div class="form-group">
+                <label for="tingkat">Tingkatan</label>
+                <select name="tingkat" id="tingkat" class="form-control">
+                  <option selected disabled>========== Pilih Tingkatan user ========</option>
+                  <?php 
+                  foreach ($tingkatjabatan as $key=>$value) {
+                    echo '<option value='. $key.'>'.$value.'</option>';
+                  }
+                  ?>
 
-            <div class="box-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-      </div>
-      <!-- /.box -->
+                </select>
+        
+              </div>
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+        </div>
+        <!-- /.box -->
+
+
+      </section>
 
       <!-- right col -->
     </div>

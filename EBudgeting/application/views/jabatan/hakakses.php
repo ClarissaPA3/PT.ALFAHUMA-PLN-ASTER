@@ -49,7 +49,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-                <h1>Edit Data Jabatan</h1>
+                <h1>Hak Akses Jabatan</h1>
             </section>
             <!-- Main content -->
             <section class="content">
@@ -62,42 +62,66 @@
                                 <input type="hidden" name="id_jabatan" value="<?php echo $jabatan['id_jabatan']; ?>">
 
                                 <!-- checkbox -->
-                                <div class="form-group">
-
-                                    <label>
-
-                                        <input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("masterpos", $hakakses) ? 'checked' : ''; ?> value="masterpos">
-                                        <h2>Data Master Pos</h2>
-                                    </label>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>
-
-                                        <input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("mastersubpos", $hakakses) ? 'checked' : ''; ?> value="mastersubpos">
-                                        <h2>Data Master Sub Pos</h2>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-
-                                        <input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("mastersubpos2", $hakakses) ? 'checked' : ''; ?> value="mastersubpos2">
-                                        <h2>Data Master Sub Pos Barang</h2>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-
-                                        <input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("rekapanggaran", $hakakses) ? 'checked' : ''; ?> value="rekapanggaran">
-                                        <h2>Rekap anggaran</h2>
-                                    </label>
-                                </div>
+                               
                                 <input type="hidden" class="form-control" id="nama" name="nama" placeholder="Nama Jabatan" value="<?php echo $jabatan['nama_jabatan']; ?>">
 
 
                                 <input type="hidden" class="form-control" id="tingkat" name="tingkat" placeholder="Tingkat Jabatan" value="<?php echo $jabatan['tingkatan_user']; ?>">
                             </div>
 
+
+
+                            <table id="example2" class="table table-bordered table-hover text-center">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Hak Akses</th>
+                                        <th>Hak Akses</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <h2>Data Master POS</h2>
+                                        </td>
+                                        <td><input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("masterpos", $hakakses) ? 'checked' : ''; ?> value="masterpos"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <h2>Data Master Sub Pos</h2>
+                                        </td>
+                                        <td> <input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("mastersubpos", $hakakses) ? 'checked' : ''; ?> value="mastersubpos"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <h2>Data Master Sub Pos 2</h2>
+                                        </td>
+                                        <td> <input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("mastersubpos2", $hakakses) ? 'checked' : ''; ?> value="mastersubpos2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>
+                                            <h2>Rekap anggaran</h2>
+                                        </td>
+                                        <td> <input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("rekapanggaran", $hakakses) ? 'checked' : ''; ?> value="rekapanggaran"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><h2>Menu Transfer</h2></td>
+                                        <td><input type="checkbox" class="flat-red" name="hakakses[]" <?php echo in_array("menutransfer", $hakakses) ? 'checked' : ''; ?> value="menutransfer"></td>
+                                    </tr>
+
+
+
+                                </tbody>
+                                <tfoot>
+
+                                </tfoot>
+                            </table>
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>

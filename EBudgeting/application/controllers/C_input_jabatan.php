@@ -17,7 +17,13 @@ class C_input_jabatan extends CI_Controller
         $this->form_validation->set_rules('nama', 'Nama Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
         $this->form_validation->set_rules('tingkat', 'Tingkat Jabatan', 'required|alpha_numeric_spaces|max_length[64]');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('jabatan/addjabatan');
+            $data['tingkatjabatan'] = array(
+                'subbidang' => 'Sub Bidang',
+                'dm' => 'DM',
+                'dmpau' => 'DMPAU'
+
+            );
+            $this->load->view('jabatan/addjabatan', $data);
         } else {
 
             $this->M_input_jabatan->add_jabatanM();
@@ -37,6 +43,12 @@ class C_input_jabatan extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $data['jabatan'] = $this->M_input_jabatan->show_jabatanM($id)[0];
+            $data['tingkatjabatan'] = array(
+                'subbidang' => 'Sub Bidang',
+                'dm' => 'DM',
+                'dmpau' => 'DMPAU'
+
+            );
 
 
             $this->load->view('jabatan/updatejabatan', $data);
@@ -62,7 +74,7 @@ class C_input_jabatan extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $data['jabatan'] = $this->M_input_jabatan->show_jabatanM($id)[0];
             $data['hakakses'] = explode(' , ',$data['jabatan']['hakakses']);
-            print_r($data['hakakses']); 
+            
 
             $this->load->view('jabatan/hakakses', $data);
         } else {
@@ -75,4 +87,5 @@ class C_input_jabatan extends CI_Controller
 
 
     }
+   
 }

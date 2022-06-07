@@ -17,12 +17,18 @@ class C_ajuananggaran extends CI_Controller
 
 	public function add_datapengajuan()
 	{
+		if ($this->session->userdata('jabatan') != "subbidang") {
+			redirect(site_url('C_login'));
+		} 
 		$this->M_ajuananggaran->add_pengajuan();
 
 		redirect(site_url('C_ajuananggaran/show_datapengajuan'));
 	}
 	public function delete_datapengajuan($id)
 	{
+		if ($this->session->userdata('jabatan') != "subbidang") {
+			redirect(site_url('C_login'));
+		} 
 		$this->M_detailajuan->delete_alldetailanggaranM($id);
 		$this->M_ajuananggaran->delete_pengajuan($id);
 
@@ -30,6 +36,9 @@ class C_ajuananggaran extends CI_Controller
 	}
 	public function update_datapengajuan($id = null)
 	{
+		if ($this->session->userdata('jabatan') != "subbidang") {
+			redirect(site_url('C_login'));
+		} 
 		$this->form_validation->set_rules('id_pengajuan', 'Id pengajuan', 'required');
 
 
@@ -87,26 +96,30 @@ class C_ajuananggaran extends CI_Controller
 
 	public function show_datapengajuan()
 	{
+		
+		if ($this->session->userdata('jabatan') != "subbidang") {
+			redirect(site_url('C_login'));
+		} 
 		$data['pengajuan_anggaran'] = $this->M_ajuananggaran->show_pengajuan();
-		$data['status'] = array(
-			'0' => '<span class="btn btn-danger"><i class="fa fa-fw fa-warning"></i>Draft</span>',
-			'1' => '<span class="btn btn-info"><i class="fa fa-fw fa-thumbs-up"></i> Telah diajukan oleh subidang</span>',
-			'2' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Telah disetujui oleh DM</span>',
-			'3' => '<span class="btn btn-success"><i class="fa fa-fw fa-check"></i> Telah disetujui oleh DMPAU</span>',
+			$data['status'] = array(
+				'0' => '<span class="btn btn-danger"><i class="fa fa-fw fa-warning"></i>Draft</span>',
+				'1' => '<span class="btn btn-info"><i class="fa fa-fw fa-thumbs-up"></i> Telah diajukan oleh subidang</span>',
+				'2' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Telah disetujui oleh DM</span>',
+				'3' => '<span class="btn btn-success"><i class="fa fa-fw fa-check"></i> Telah disetujui oleh DMPAU</span>',
 
-			'5' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Koreksi Anggaran oleh DM</span>',
-			'6' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Koreksi Anggaran oleh DMPAU</span>',
+				'5' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Koreksi Anggaran oleh DM</span>',
+				'6' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Koreksi Anggaran oleh DMPAU</span>',
 
-			'7' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Anggaran telah dikoreksi [DM]</span>',
-			'8' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Anggaran telah dikoreksi [DMPAU]</span>'
+				'7' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Anggaran telah dikoreksi [DM]</span>',
+				'8' => '<span class="btn btn-warning"><i class="fa fa-fw fa-check"></i> Anggaran telah dikoreksi [DMPAU]</span>'
 
 
 
-		);
-		$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
-		$data['minggu'] = array('1', '2', '3', '4');
+			);
+			$data['bulan'] = array('01' => 'Januari', '02' => 'Februari', '03' => 'Maret', '04' => 'April', '05' => 'Mei', '06' => 'Juni', '07' => 'Juli', '08' => 'Agustus', '09' => 'September', '10' => 'Oktober', '11' => 'November', '12' => 'Desember');
+			$data['minggu'] = array('1', '2', '3', '4');
 
-		$this->load->view('anggaran/ajuananggaran', $data);
+			$this->load->view('anggaran/ajuananggaran', $data);
 	}
 
 	public function show_koreksidata()
@@ -114,6 +127,13 @@ class C_ajuananggaran extends CI_Controller
 	}
 	public function show_rekapanggaran($id)
 	{
+
+		if ($this->session->userdata('jabatan') != 'subbidang') {
+			
+			
+			redirect(site_url('C_login'));
+		}
+
 		$data['ajuan'] = $this->M_ajuananggaran->show_pengajuan($id)[0];
 		$data['pos'] = $this->M_masterpos_subpos->show_posM();
 		$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
@@ -130,6 +150,12 @@ class C_ajuananggaran extends CI_Controller
 
 	public function show_rekapitulasianggaran()
 	{
+		if ($this->session->userdata('hakakses') != 'rekapanggaran') {
+			
+			
+			redirect(site_url('C_login'));
+		}
+
 		$data['pos'] = $this->M_masterpos_subpos->show_posM();
 		$pos = $data['pos'];
 		$hitungajuan = array();
@@ -149,6 +175,11 @@ class C_ajuananggaran extends CI_Controller
 
 	public function show_rekapposanggaran()
 	{
+		if ($this->session->userdata('hakakses') != 'rekapanggaran') {
+			
+			
+			redirect(site_url('C_login'));
+		}
 		$data['subpos'] = $this->M_masterpos_subpos->show_subposM();
 		$subpos = $data['subpos'];
 		$hitungajuan = array();

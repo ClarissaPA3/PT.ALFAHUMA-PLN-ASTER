@@ -10,6 +10,15 @@ class C_paguanggaran extends CI_Controller
         $this->load->model("M_paguanggaran");
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
+        
+        // cek jabatan user login
+        if ($this->session->userdata('jabatan') != 'dmpau') {
+			
+			
+			redirect(site_url('C_login'));
+		}
+
+
     }
 
     public function index()
