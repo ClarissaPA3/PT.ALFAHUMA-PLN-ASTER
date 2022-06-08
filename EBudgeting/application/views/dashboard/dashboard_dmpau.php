@@ -268,7 +268,7 @@
                   }
 
                   ?>%) Pagu Anggaran</p>
-                <p>Tersisa : Rp. <?= number_format($pagu['tersisa'], 2, ',', '.'); ?></p>
+                <p>Tersisa : Rp. <?= number_format(floatval($pagu['tersisa']), 2, ',', '.'); ?></p>
 
               </div>
             </div>

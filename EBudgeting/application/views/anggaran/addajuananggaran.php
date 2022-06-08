@@ -137,87 +137,104 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <table class="table table-bordered text-center">
-                                                <tr>
-                                                    <th>POS</th>
-                                                    <th>SUB POS</th>
-                                                    <th>SUB POS</th>
-                                                    <th>Kegiatan</th>
-                                                    <th>nominal</th>
-                                                    <th colspan="2">Deskripsi</th>
-                                                </tr>
-                                                <tr>
-                                                    <form action="<?php echo site_url('C_detailajuan/add_detailanggaran') ?>" method="post">
-                                                        <input type="hidden" name="id_pengajuan" id="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
-
-                                                        <td>
-                                                            <select name="id_pos" id="id_pos" class="form-control">
-                                                                <option value="" selected disabled>Pos</option>
-                                                                <?php foreach ($pos as $poss) : ?>
-
-                                                                    <option <?= set_select('id_pos', $poss['id_pos']) ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                            <?php echo form_error('id_pos'); ?>
-                                                        </td>
-                                                        <td>
-                                                            <select name="id_subpos" id="id_subpos" class="form-control">
-                                                                <option value="" selected disabled>Sub pos</option>
-                                                                <?php foreach ($subpos as $poss) : ?>
-                                                                    <option <?= set_select('id_subpos', $poss['id_subpos']) ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                            <?php echo form_error('id_subpos'); ?>
-                                                        </td>
-                                                        <td>
-                                                            <select name="id_subpos2" id="id_subpos2" class="form-control">
-                                                                <option value="" selected disabled>Sub Pos</option>
-                                                                <?php foreach ($subpos2 as $poss) : ?>
-                                                                    <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-
-                                                            <?php echo form_error('id_subpos2'); ?>
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" name="kegiatan" id="kegiatan" placeholder="kegiatan" class="form-control">
-                                                            <?php echo form_error('kegiatan'); ?>
-                                                        </td>
-                                                        <td>
-                                                            <input type="number" name="nominal" id="nominal" placeholder="nominal" class="form-control">
-                                                            <?php echo form_error('nominal'); ?>
-                                                        </td>
-                                                        <td> <input type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" class="form-control">
-                                                            <?php echo form_error('deskripsi'); ?></td>
-                                                        <td><button type="submit">Kirim</button></td>
-                                                    </form>
-                                                </tr>
-                                                <?php foreach ($detailajuan as $key) : ?>
+                                                <thead>
                                                     <tr>
-
-
-
-                                                        <td>
-                                                            <h4><?php echo $key['nama_pos']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['nama_subpos']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['nama_subpos2']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['kegiatan2']; ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4>Rp. <?php echo number_format($key['nominal_pengajuan2'], 2, ',', '.') ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <h4><?php echo $key['deskripsi2']; ?></h4>
-                                                        </td>
-                                                        <td><a href="<?php echo site_url('C_detailajuan/delete_detailanggaran/') . $key['id_detailpengajuan']; ?>">Hapus</a></td>
-
+                                                        <th>POS</th>
+                                                        <th>SUB POS</th>
+                                                        <th>SUB POS</th>
+                                                        <th>Kegiatan</th>
+                                                        <th>nominal</th>
+                                                        <th colspan="2">Deskripsi</th>
                                                     </tr>
-                                                <?php endforeach; ?>
+                                                </thead>
+                                                <form class="form-horizontal" id="aju" action="<?php echo site_url('C_detailajuan/add_detailanggaran'); ?>" method="post">
+                                                    <tbody>
+
+                                                        <tr>
+
+                                                            <input type="hidden" name="id_pengajuan" id="id_pengajuan" value="<?php echo $ajuan['id_pengajuan']; ?>">
+
+                                                            <td>
+                                                                <select name="id_pos" id="id_pos" class="form-control">
+                                                                    <option value="" selected disabled>Pos</option>
+                                                                    <?php foreach ($pos as $poss) : ?>
+
+                                                                        <option <?= set_select('id_pos', $poss['id_pos']) ?> value="<?= $poss['id_pos'] ?>"><?= $poss['nama_pos'] ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                                <?php echo form_error('id_pos'); ?>
+                                                            </td>
+                                                            <td>
+                                                                <select name="id_subpos" id="id_subpos" class="form-control">
+                                                                    <option value="" selected disabled>Sub pos</option>
+                                                                    <?php foreach ($subpos as $poss) : ?>
+                                                                        <option <?= set_select('id_subpos', $poss['id_subpos']) ?> value="<?= $poss['id_subpos'] ?>"><?= $poss['nama_subpos'] ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                                <?php echo form_error('id_subpos'); ?>
+                                                            </td>
+                                                            <td>
+                                                                <select name="id_subpos2" id="id_subpos2" class="form-control">
+                                                                    <option value="" selected disabled>Sub Pos</option>
+                                                                    <?php foreach ($subpos2 as $poss) : ?>
+                                                                        <option <?= set_select('id_subpos2', $poss['id_subpos2']) ?> value="<?= $poss['id_subpos2'] ?>"><?= $poss['nama_subpos2'] ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+
+                                                                <?php echo form_error('id_subpos2'); ?>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" name="kegiatan" id="kegiatan" placeholder="kegiatan" class="form-control">
+                                                                <?php echo form_error('kegiatan'); ?>
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" name="nominal" id="nominal" placeholder="nominal" class="form-control">
+                                                                <?php echo form_error('nominal'); ?>
+                                                            </td>
+                                                            <td> <input type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" class="form-control">
+                                                                <?php echo form_error('deskripsi'); ?></td>
+                                                            <!-- Tambah detail -->
+                                                            <td><button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus"></i></button></td>
+
+                                                        </tr>
+
+
+
+                                                        <?php foreach ($detailajuan as $key) : ?>
+
+
+                                                            <tr>
+
+
+
+                                                                <td>
+                                                                    <h4><?php echo $key['nama_pos']; ?></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <h4><?php echo $key['nama_subpos']; ?></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <h4><?php echo $key['nama_subpos2']; ?></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <h4><?php echo $key['kegiatan2']; ?></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <h4>Rp. <?php echo number_format($key['nominal_pengajuan2'], 2, ',', '.') ?></h4>
+                                                                </td>
+                                                                <td>
+                                                                    <h4><?php echo $key['deskripsi2']; ?></h4>
+                                                                </td>
+                                                                <!-- Tombol Hapus -->
+                                                                <td><a class="btn btn-danger" href="<?php echo site_url('C_detailajuan/delete_detailanggaran/') . $key['id_detailpengajuan']; ?>"><i class="fa fa-fw fa-trash"></i></a></td>
+
+                                                            </tr>
+                                                        <?php endforeach; ?>
+
+
+                                                    </tbody>
+                                                </form>
+
 
 
                                             </table>
@@ -271,18 +288,17 @@
             <!-- right col -->
         </div>
         <!-- /.row (main row) -->
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Create by</b> Mahasiswa UNS 2020.
+            </div>
+            <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
+            reserved.
+        </footer>
 
-        </section>
-        <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Create by</b> Mahasiswa UNS 2020.
-        </div>
-        <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
-        reserved.
-    </footer>
+
 
 
     <script>

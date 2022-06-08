@@ -81,10 +81,10 @@
                                                             </td>
 
                                                             <td>
-                                                                <h4><?php echo $key['nominal_pengajuan2']; ?></h4>
+                                                                <h4><?php 'Rp.' . number_format(floatval($key['nominal_pengajuan2']),2,',','.'); ?></h4>
                                                             </td>
                                                             <td>
-                                                                <h4><?php echo $key['nominal_persetujuan2']; ?></h4>
+                                                                <h4><?php echo 'Rp.' . number_format(floatval($key['nominal_persetujuan2']),2,',','.'); ?></h4>
                                                             </td>
 
 
@@ -96,10 +96,10 @@
                                                 <tfoot class="bg-gray">
                                                     <td colspan="5"><b> Total Anggaran diajukan Minggu ke - <?= $ajuan['minggu2']; ?></b></td>
                                                     <td>
-                                                        <h4><?php echo "Rp. " . $total['nominal_pengajuan2']; ?></h4>
+                                                        <h4><?php echo "Rp. " . number_format($total['nominal_pengajuan2'],2,',','.'); ?></h4>
                                                     </td>
                                                     <td>
-                                                        <h4><?php echo "Rp. " .  $total['nominal_persetujuan2']; ?></h4>
+                                                        <h4><?php echo "Rp. " .  number_format($total['nominal_persetujuan2'], 2,',','.'); ?></h4>
                                                     </td>
                                                 </tfoot>
 
@@ -134,6 +134,13 @@
             </section>
 
         </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Create by</b> Mahasiswa UNS 2020.
+            </div>
+            <strong>Copyright &copy; 2022 <a href="https://adminlte.io">PLN ASTER</a>.</strong> All rights
+            reserved.
+        </footer>
 
     </div>
 

@@ -21,8 +21,7 @@ class C_detailajuan extends CI_Controller
 		$nominal = $this->input->post('nominal');
 		$nominalpengajuan = $this->M_detailajuan->hitunganggaran($id)[0]['nominal_pengajuan2'];
 
-		print_r($pagu);
-
+		
 		$this->form_validation->set_rules('id_subpos2', 'Sub pos 2', 'required');
 		$this->form_validation->set_rules('id_subpos', 'Sub pos', 'required');
 		$this->form_validation->set_rules('id_pos', 'Pos', 'required');
@@ -36,6 +35,7 @@ class C_detailajuan extends CI_Controller
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 		else {
+			
 			$this->M_detailajuan->add_detailanggaranM();
 			redirect($_SERVER['HTTP_REFERER']);
 		}
@@ -59,9 +59,9 @@ class C_detailajuan extends CI_Controller
 	}
 	public function show_detailanggaran()
 	{
-		$data['pengajuan_anggaran'] = $this->M_detailajuan->show_pengajuan();
+		echo json_encode($this->M_detailajuan->show_detailanggaranM());
 
 
-		$this->load->view('anggaran/ajuananggaran', $data);
+		// $this->load->view('anggaran/ajuananggaran', $data);
 	}
 }
